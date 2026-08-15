@@ -43,9 +43,17 @@ STABILITY_CUTOFFS = (
     "2024-12-31",
     "2026-07-30",
 )
+ORIENTATION_MODELS = (
+    "OLS",
+    "OLS oriented",
+    "Monotone linear",
+    "Choquet 1-additive",
+    "Choquet 2-additive",
+)
 CAP_WEIGHT_MODELS = (
     "Historical mean",
     "OLS",
+    "OLS oriented",
     "Monotone linear",
     "Explicit interactions",
     "Gradient boosting",
@@ -113,6 +121,13 @@ for horizon, horizon_result in result.horizons.items():
             score_column="validation RMSE",
         ),
         f"experiment_2a_validation_selected_choquet_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"orientation ablation h{horizon}"] = save_table(
+        horizon_result.metrics[
+            horizon_result.metrics.index.isin(ORIENTATION_MODELS)
+        ],
+        f"experiment_2a_orientation_ablation_h{horizon}.csv",
         paths,
     )
     artifacts[f"failures h{horizon}"] = save_table(

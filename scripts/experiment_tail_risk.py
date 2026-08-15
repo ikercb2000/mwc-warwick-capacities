@@ -47,9 +47,16 @@ STABILITY_CUTOFFS = (
     "2024-12-31",
     "2026-07-30",
 )
+ORIENTATION_MODELS = (
+    "Logistic",
+    "Logistic oriented",
+    "Choquistic 1-additive",
+    "Choquistic 2-additive",
+)
 ROBUSTNESS_MODELS = (
     "Prior probability",
     "Logistic",
+    "Logistic oriented",
     "Penalized logistic",
     "Gradient boosting",
     "Choquistic 1-additive",
@@ -58,6 +65,7 @@ ROBUSTNESS_MODELS = (
 REPORT_MODELS = (
     "Prior probability",
     "Logistic",
+    "Logistic oriented",
     "Explicit interactions",
     "Gradient boosting",
     "Choquistic 1-additive",
@@ -134,6 +142,13 @@ for horizon, horizon_result in primary.items():
     artifacts[f"selected parameters h{horizon}"] = save_table(
         horizon_result.selected_parameters,
         f"experiment_2b_selected_parameters_h{horizon}_a095.csv",
+        paths,
+    )
+    artifacts[f"orientation ablation h{horizon}"] = save_table(
+        horizon_result.metrics[
+            horizon_result.metrics.index.isin(ORIENTATION_MODELS)
+        ],
+        f"experiment_2b_orientation_ablation_h{horizon}_a095.csv",
         paths,
     )
     artifacts[f"failures h{horizon}"] = save_table(
@@ -281,6 +296,13 @@ for horizon, horizon_result in rare.items():
     artifacts[f"rare-event metrics h{horizon}"] = save_table(
         horizon_result.metrics,
         f"experiment_2b_classification_metrics_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event orientation ablation h{horizon}"] = save_table(
+        horizon_result.metrics[
+            horizon_result.metrics.index.isin(ORIENTATION_MODELS)
+        ],
+        f"experiment_2b_orientation_ablation_h{horizon}_a0975.csv",
         paths,
     )
     artifacts[f"rare-event failures h{horizon}"] = save_table(

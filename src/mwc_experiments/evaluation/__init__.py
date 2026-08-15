@@ -10,6 +10,13 @@ from mwc_experiments.evaluation.metrics import (
     optimal_f1_threshold,
     regression_metrics,
 )
+from mwc_experiments.evaluation.robustness import (
+    EmpiricalStressDefinition,
+    clipping_diagnostics,
+    fit_empirical_stress_definition,
+    regression_estimation_robustness,
+    regression_regime_metrics,
+)
 from mwc_experiments.evaluation.plots import (
     plot_actual_predictions,
     plot_classifier_diagnostics,
@@ -21,6 +28,9 @@ from mwc_experiments.evaluation.plots import (
 __all__ = [
     "capacity_summary",
     "classification_metrics",
+    "clipping_diagnostics",
+    "EmpiricalStressDefinition",
+    "fit_empirical_stress_definition",
     "hac_model_comparison",
     "high_loss_regime_metrics",
     "optimal_f1_threshold",
@@ -31,5 +41,7 @@ __all__ = [
     "plot_metric_ranking",
     "plot_shapley",
     "regression_metrics",
+    "regression_estimation_robustness",
+    "regression_regime_metrics",
     "top_interactions",
 ]

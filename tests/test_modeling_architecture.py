@@ -15,6 +15,7 @@ from mwc_experiments.modeling.selection import (
     select_regression_model,
 )
 from mwc_experiments.modeling.types import Candidate
+from mwc_experiments.modeling.types import CorrelationOrientationTransformer
 from mwc_experiments.workflows.common import select_model_family_by_validation
 
 
@@ -30,9 +31,93 @@ def test_registries_use_native_pipelines_and_shared_tree_preprocessing() -> None
         "preprocessor"
     ]
     assert isinstance(tree_preprocessor.named_steps["scale"], StandardScaler)
+    assert "orient" not in tree_preprocessor.named_steps
+
+    oriented_preprocessor = regressors["OLS oriented"].estimator.named_steps[
+        "preprocessor"
+    ]
+    assert isinstance(
+        oriented_preprocessor.named_steps["orient"],
+        CorrelationOrientationTransformer,
+    )
+
+    capacity_preprocessor = regressors["Choquet 1-additive"].estimator.named_steps[
+        "preprocessor"
+    ]
+    assert isinstance(
+        capacity_preprocessor.named_steps["orient"],
+        CorrelationOrientationTransformer,
+    )
+
+    logistic_preprocessor = classifiers["Logistic"].estimator.named_steps[
+        "preprocessor"
+    ]
+    assert "orient" not in logistic_preprocessor.named_steps
+
+    oriented_logistic_preprocessor = classifiers[
+        "Logistic oriented"
+    ].estimator.named_steps["preprocessor"]
+    assert isinstance(
+        oriented_logistic_preprocessor.named_steps["orient"],
+        CorrelationOrientationTransformer,
+    )
 
     choquet = regressors["Choquet 2-additive"].estimator.named_steps["regressor"]
     assert isinstance(choquet, TransformedTargetRegressor)
+
+
+def test_ols_orientation_ablation_preserves_predictions() -> None:
+    """Show that sign orientation does not change unrestricted OLS predictions."""
+    rng = np.random.default_rng(12)
+    X = pd.DataFrame(
+        rng.normal(size=(80, 3)),
+        columns=["positive", "negative", "noise"],
+    )
+    y = pd.Series(
+        1.5 * X["positive"] - 2.0 * X["negative"] + 0.1 * X["noise"]
+    )
+    candidates = regression_candidates(
+        3,
+        include_mlp=False,
+        include_dummy=False,
+        include_regularized_choquet=False,
+    )
+    plain = candidates["OLS"].estimator.fit(X, y)
+    oriented = candidates["OLS oriented"].estimator.fit(X, y)
+
+    np.testing.assert_allclose(
+        plain.predict(X),
+        oriented.predict(X),
+        atol=1e-10,
+        rtol=1e-10,
+    )
+
+
+def test_logistic_orientation_ablation_preserves_probabilities() -> None:
+    """Show that sign orientation does not change unrestricted logistic fits."""
+    rng = np.random.default_rng(21)
+    X = pd.DataFrame(
+        rng.normal(size=(160, 3)),
+        columns=["x1", "x2", "x3"],
+    )
+    y = pd.Series(
+        (
+            1.2 * X["x1"]
+            - 0.9 * X["x2"]
+            + 0.2 * rng.normal(size=len(X))
+            > 0
+        ).astype(int)
+    )
+    candidates = classification_candidates(3, include_mlp=False)
+    plain = candidates["Logistic"].estimator.fit(X, y)
+    oriented = candidates["Logistic oriented"].estimator.fit(X, y)
+
+    np.testing.assert_allclose(
+        plain.predict_proba(X),
+        oriented.predict_proba(X),
+        atol=1e-10,
+        rtol=1e-10,
+    )
 
 
 def test_one_additive_choquet_matches_monotone_linear_on_simplex_solution() -> None:

@@ -12,12 +12,16 @@ import pandas as pd
 
 from mwc_experiments.data import load_or_build_processed_data
 from mwc_experiments.evaluation import (
+    clipping_diagnostics,
+    fit_empirical_stress_definition,
     hac_model_comparison,
     orientation_table,
     plot_actual_predictions,
     plot_matrix,
     plot_metric_ranking,
     plot_shapley,
+    regression_estimation_robustness,
+    regression_regime_metrics,
     top_interactions,
 )
 from mwc_experiments.settings import FACTOR_COLUMNS
@@ -42,6 +46,23 @@ STABILITY_CUTOFFS = (
     "2022-12-30",
     "2024-12-31",
     "2026-07-30",
+)
+ORIENTATION_MODELS = (
+    "OLS",
+    "OLS oriented",
+    "Monotone linear",
+    "Choquet 1-additive",
+    "Choquet 2-additive",
+)
+EXTREME_ROBUSTNESS_MODELS = (
+    "OLS",
+    "Ridge",
+    "Lasso",
+    "Monotone linear",
+    "Gradient boosting",
+    "Choquet 1-additive",
+    "Choquet 2-additive",
+    "Choquet 2-additive L1",
 )
 
 
@@ -76,6 +97,27 @@ residual_summary = (
     .set_index("model")
     .sort_values("Frobenius norm")
 )
+in_sample_residual_rows: list[dict[str, float | str]] = []
+for model, residuals in result.in_sample_residuals.items():
+    covariance = residuals.cov()
+    off_diagonal = covariance.to_numpy()[
+        ~np.eye(len(covariance), dtype=bool)
+    ]
+    in_sample_residual_rows.append(
+        {
+            "model": model,
+            "trace": float(np.trace(covariance)),
+            "Frobenius norm": float(np.linalg.norm(covariance.to_numpy())),
+            "mean absolute off-diagonal": float(
+                np.mean(np.abs(off_diagonal))
+            ),
+        }
+    )
+in_sample_residual_summary = (
+    pd.DataFrame(in_sample_residual_rows)
+    .set_index("model")
+    .sort_values("Frobenius norm")
+)
 aggregate = result.metrics.groupby("model")[[
     "RMSE",
     "MAE",
@@ -92,9 +134,100 @@ selected_choquet = select_model_family_by_validation(
     family_prefix="Choquet",
     score_column="validation RMSE",
 )
+orientation_ablation = result.metrics[
+    result.metrics.index.get_level_values("model").isin(ORIENTATION_MODELS)
+]
+stress_metric_panels: list[pd.DataFrame] = []
+stress_audits: list[pd.Series] = []
+clipping_panels: list[pd.DataFrame] = []
+estimation_robustness_panels: list[pd.DataFrame] = []
+for asset, split in result.splits.items():
+    X_fit = pd.concat([split.X_train, split.X_validation])
+    y_fit = pd.concat([split.y_train, split.y_validation])
+    stress = fit_empirical_stress_definition(X_fit, y_fit)
+    fit_extreme_mask = stress.mask(X_fit, y_fit)
+    test_stress_mask = stress.mask(split.X_test, split.y_test)
+
+    for sample, X_sample, y_sample in (
+        ("estimation", X_fit, y_fit),
+        ("test", split.X_test, split.y_test),
+    ):
+        audit = stress.audit(X_sample, y_sample, sample=sample)
+        audit.name = (asset, sample)
+        stress_audits.append(audit)
+
+    asset_predictions = pd.DataFrame(
+        {
+            model: predictions[asset]
+            for model, predictions in result.predictions.items()
+            if asset in predictions
+        }
+    ).reindex(split.X_test.index)
+    stress_metrics = regression_regime_metrics(
+        split.y_test,
+        asset_predictions,
+        test_stress_mask,
+    )
+    stress_metrics["asset"] = asset
+    stress_metric_panels.append(stress_metrics.reset_index())
+
+    clipping_reference = result.fitted_models.get((asset, "OLS"))
+    if clipping_reference is not None:
+        for sample, X_sample in (
+            ("estimation", X_fit),
+            ("test", split.X_test),
+        ):
+            clipping = clipping_diagnostics(
+                clipping_reference,
+                X_sample,
+                sample=sample,
+            )
+            clipping["asset"] = asset
+            clipping_panels.append(clipping.reset_index(names="feature"))
+
+    robustness_models = {
+        model: result.fitted_models[(asset, model)]
+        for model in EXTREME_ROBUSTNESS_MODELS
+        if (asset, model) in result.fitted_models
+    }
+    robustness = regression_estimation_robustness(
+        robustness_models,
+        X_fit,
+        y_fit,
+        split.X_test,
+        split.y_test,
+        asset_predictions,
+        fit_extreme_mask=fit_extreme_mask,
+        test_stress_mask=test_stress_mask,
+    )
+    robustness["asset"] = asset
+    estimation_robustness_panels.append(robustness.reset_index())
+
+factor_stress_metrics = pd.concat(
+    stress_metric_panels,
+    ignore_index=True,
+).set_index(["asset", "model"])
+factor_stress_audit = pd.DataFrame(stress_audits)
+factor_stress_audit.index = pd.MultiIndex.from_tuples(
+    factor_stress_audit.index,
+    names=["asset", "sample"],
+)
+factor_clipping_audit = pd.concat(
+    clipping_panels,
+    ignore_index=True,
+).set_index(["asset", "sample", "feature"])
+factor_estimation_robustness = pd.concat(
+    estimation_robustness_panels,
+    ignore_index=True,
+).set_index(["asset", "model"])
 
 artifacts["asset-model metrics"] = save_table(
     result.metrics, "experiment_1_asset_model_metrics.csv", paths
+)
+artifacts["in-sample asset-model metrics"] = save_table(
+    result.in_sample_metrics,
+    "experiment_1_in_sample_asset_model_metrics.csv",
+    paths,
 )
 artifacts["aggregate metrics"] = save_table(
     aggregate, "experiment_1_aggregate_metrics.csv", paths
@@ -107,6 +240,11 @@ artifacts["residual covariance summary"] = save_table(
     "experiment_1_residual_covariance_summary.csv",
     paths,
 )
+artifacts["in-sample residual covariance summary"] = save_table(
+    in_sample_residual_summary,
+    "experiment_1_in_sample_residual_covariance_summary.csv",
+    paths,
+)
 artifacts["selected parameters"] = save_table(
     result.selected_parameters,
     "experiment_1_selected_parameters.csv",
@@ -115,6 +253,31 @@ artifacts["selected parameters"] = save_table(
 artifacts["validation-selected Choquet"] = save_table(
     selected_choquet,
     "experiment_1_validation_selected_choquet.csv",
+    paths,
+)
+artifacts["orientation ablation"] = save_table(
+    orientation_ablation,
+    "experiment_1_orientation_ablation.csv",
+    paths,
+)
+artifacts["empirical stress audit"] = save_table(
+    factor_stress_audit,
+    "experiment_1_empirical_stress_audit.csv",
+    paths,
+)
+artifacts["empirical stress metrics"] = save_table(
+    factor_stress_metrics,
+    "experiment_1_empirical_stress_metrics.csv",
+    paths,
+)
+artifacts["clipping audit"] = save_table(
+    factor_clipping_audit,
+    "experiment_1_clipping_audit.csv",
+    paths,
+)
+artifacts["extreme-estimation robustness"] = save_table(
+    factor_estimation_robustness,
+    "experiment_1_extreme_estimation_robustness.csv",
     paths,
 )
 artifacts["failures"] = save_table(
@@ -130,6 +293,15 @@ for model, residuals in result.residuals.items():
     slug = artifact_slug(model)
     artifacts[f"residuals {model}"] = save_table(
         residuals, f"experiment_1_residuals_{slug}.parquet", paths
+    )
+for model, residuals in result.in_sample_residuals.items():
+    if model not in EXTREME_ROBUSTNESS_MODELS:
+        continue
+    slug = artifact_slug(model)
+    artifacts[f"in-sample residual covariance {model}"] = save_table(
+        residuals.cov(),
+        f"experiment_1_in_sample_residual_covariance_{slug}.csv",
+        paths,
     )
 
 shapley_panel = pd.DataFrame()

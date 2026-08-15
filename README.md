@@ -164,10 +164,18 @@ Choquet regressions. Choquet specifications include 1-additive, 2-additive and
 interaction-regularised 2-additive capacities. Capacity order and interaction
 regularisation are selected using validation RMSE, never test performance.
 
-Capacity inputs are clipped, oriented using training-sample correlations and
-scaled to a common interval. The monotone linear benchmark uses the same
-capacity preprocessing, which separates the effect of monotonicity from the
-additional normalisation and interaction structure imposed by Choquet models.
+Classical models use clipping and their usual scaling without target-driven
+feature orientation. Capacity models are additionally oriented using
+training-sample correlations and scaled to a common interval because their
+monotonicity constraints require a common increasing direction. The monotone
+linear benchmark uses the same capacity preprocessing.
+
+The experiment registries also include `OLS oriented` and
+`Logistic oriented` controls. Dedicated orientation-ablation tables compare
+the ordinary classical model, its oriented counterpart, the monotone linear
+benchmark where applicable, and the Choquet/Choquistic models. This makes it
+possible to distinguish effects caused by orientation from those caused by
+monotonicity, capacity normalisation and interactions.
 
 ## Outputs and notebooks
 

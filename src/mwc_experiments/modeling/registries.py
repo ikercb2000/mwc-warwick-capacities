@@ -30,6 +30,7 @@ from capacities_ml_fin.ml.optimization import KAdditivity, L1Penalty
 
 from mwc_experiments.modeling.preprocessing import (
     make_capacity_preprocessor,
+    make_oriented_standard_preprocessor,
     make_standard_preprocessor,
 )
 from mwc_experiments.modeling.types import Candidate
@@ -81,6 +82,7 @@ def regression_candidates(
     if n_features < 1:
         raise ValueError("n_features must be positive.")
     standard = make_standard_preprocessor()
+    oriented_standard = make_oriented_standard_preprocessor()
     capacity = make_capacity_preprocessor()
 
     def pipeline(regressor: BaseEstimator, *, capacity_input: bool = False) -> Pipeline:
@@ -97,6 +99,14 @@ def regression_candidates(
     candidates.update(
         {
             "OLS": Candidate(pipeline(LinearRegression()), {}),
+            "OLS oriented": Candidate(
+                _model_pipeline(
+                    oriented_standard,
+                    LinearRegression(),
+                    step_name="regressor",
+                ),
+                {},
+            ),
             "Monotone linear": Candidate(
                 pipeline(
                     _target_scaled_regressor(LinearRegression(positive=True)),
@@ -235,6 +245,7 @@ def classification_candidates(
     if n_features < 1:
         raise ValueError("n_features must be positive.")
     standard = make_standard_preprocessor()
+    oriented_standard = make_oriented_standard_preprocessor()
     capacity = make_capacity_preprocessor()
 
     def pipeline(classifier: BaseEstimator, *, capacity_input: bool = False) -> Pipeline:
@@ -254,6 +265,18 @@ def classification_candidates(
                     max_iter=5_000,
                     class_weight="balanced",
                 )
+            ),
+            {},
+        ),
+        "Logistic oriented": Candidate(
+            _model_pipeline(
+                oriented_standard,
+                LogisticRegression(
+                    C=1e6,
+                    max_iter=5_000,
+                    class_weight="balanced",
+                ),
+                step_name="classifier",
             ),
             {},
         ),

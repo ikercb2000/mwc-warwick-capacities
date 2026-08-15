@@ -2,6 +2,7 @@
 
 from mwc_experiments.modeling.preprocessing import (
     make_capacity_preprocessor,
+    make_oriented_standard_preprocessor,
     make_standard_preprocessor,
 )
 from mwc_experiments.modeling.registries import (
@@ -31,6 +32,7 @@ __all__ = [
     "chronological_split",
     "classification_candidates",
     "make_capacity_preprocessor",
+    "make_oriented_standard_preprocessor",
     "make_standard_preprocessor",
     "refit_selected",
     "regression_candidates",
