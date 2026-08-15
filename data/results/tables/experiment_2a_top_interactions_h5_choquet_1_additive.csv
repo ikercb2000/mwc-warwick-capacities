@@ -1,0 +1,13 @@
+first,second,interaction,interpretation
+market_loss_1d,average_equity_correlation_60d,-2.374389312775838e-17,redundant
+liquidity_stress_20d,baa_credit_spread_pct,1.890552261732854e-17,complementary
+baa_credit_spread_pct,negative_momentum_21d,1.635300093124839e-17,complementary
+liquidity_stress_20d,negative_momentum_21d,1.56260691889343e-17,complementary
+realized_volatility_20d,liquidity_stress_20d,1.303224456294993e-17,complementary
+market_loss_1d,liquidity_stress_20d,-1.1889949375250211e-17,redundant
+realized_volatility_20d,baa_credit_spread_pct,1.1336070497550381e-17,complementary
+market_loss_1d,baa_credit_spread_pct,-1.116301763293612e-17,redundant
+average_equity_correlation_60d,negative_momentum_21d,-9.015264757917205e-18,redundant
+liquidity_stress_20d,average_equity_correlation_60d,-8.874834762242896e-18,redundant
+baa_credit_spread_pct,average_equity_correlation_60d,-8.147903019928808e-18,redundant
+realized_volatility_20d,negative_momentum_21d,6.845064165299318e-18,complementary

@@ -1,0 +1,11 @@
+,validation-selected threshold
+Prior probability,0.01
+Logistic,0.051881928748811555
+Penalized logistic,0.29280666339068107
+Explicit interactions,0.7245249889369679
+RBF SVM,0.008500708553910335
+Random forest,0.23807191976329312
+Gradient boosting,0.002484615842781106
+Choquistic 1-additive,0.030380405438849376
+Choquistic 2-additive,0.0008291475191743551
+MLP,0.20682059986692303

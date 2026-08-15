@@ -1,0 +1,333 @@
+"""Run and persist the complete financial factor-model experiment."""
+
+from __future__ import annotations
+
+# The full pipeline intentionally lives in this executable script.
+
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+from mwc_experiments.data import load_or_build_processed_data
+from mwc_experiments.evaluation import (
+    hac_model_comparison,
+    orientation_table,
+    plot_actual_predictions,
+    plot_matrix,
+    plot_metric_ranking,
+    plot_shapley,
+    top_interactions,
+)
+from mwc_experiments.settings import FACTOR_COLUMNS
+from mwc_experiments.workflows import (
+    expanding_capacity_stability,
+    run_factor_experiment,
+    select_model_family_by_validation,
+)
+from mwc_experiments.workflows.experiment_support import (
+    artifact_slug,
+    parse_experiment_args,
+    prepare_output_paths,
+    print_artifacts,
+    save_figure,
+    save_table,
+)
+
+
+STABILITY_CUTOFFS = (
+    "2018-12-31",
+    "2020-12-31",
+    "2022-12-30",
+    "2024-12-31",
+    "2026-07-30",
+)
+
+
+args = parse_experiment_args("Run the complete financial factor experiment.")
+quick = args.quick
+verbose = not args.quiet
+paths = prepare_output_paths()
+data = load_or_build_processed_data(paths)
+result = run_factor_experiment(
+    data.factor_frames,
+    quick=quick,
+    verbose=verbose,
+)
+artifacts: dict[str, Path] = {}
+
+residual_rows: list[dict[str, float | str]] = []
+for model, residuals in result.residuals.items():
+    covariance = residuals.cov()
+    off_diagonal = covariance.to_numpy()[
+        ~np.eye(len(covariance), dtype=bool)
+    ]
+    residual_rows.append(
+        {
+            "model": model,
+            "trace": float(np.trace(covariance)),
+            "Frobenius norm": float(np.linalg.norm(covariance.to_numpy())),
+            "mean absolute off-diagonal": float(np.mean(np.abs(off_diagonal))),
+        }
+    )
+residual_summary = (
+    pd.DataFrame(residual_rows)
+    .set_index("model")
+    .sort_values("Frobenius norm")
+)
+aggregate = result.metrics.groupby("model")[[
+    "RMSE",
+    "MAE",
+    "OOS R2",
+    "Correlation",
+    "parameter count",
+    "refit runtime seconds",
+]].agg(["mean", "std"])
+aggregate.columns = [f"{metric} {statistic}" for metric, statistic in aggregate.columns]
+mean_metrics = result.metrics.groupby("model")[["RMSE", "MAE", "OOS R2"]].mean()
+asset_rmse = result.metrics["RMSE"].unstack("model")
+selected_choquet = select_model_family_by_validation(
+    result.metrics,
+    family_prefix="Choquet",
+    score_column="validation RMSE",
+)
+
+artifacts["asset-model metrics"] = save_table(
+    result.metrics, "experiment_1_asset_model_metrics.csv", paths
+)
+artifacts["aggregate metrics"] = save_table(
+    aggregate, "experiment_1_aggregate_metrics.csv", paths
+)
+artifacts["asset RMSE"] = save_table(
+    asset_rmse, "experiment_1_asset_rmse.csv", paths
+)
+artifacts["residual covariance summary"] = save_table(
+    residual_summary,
+    "experiment_1_residual_covariance_summary.csv",
+    paths,
+)
+artifacts["selected parameters"] = save_table(
+    result.selected_parameters,
+    "experiment_1_selected_parameters.csv",
+    paths,
+)
+artifacts["validation-selected Choquet"] = save_table(
+    selected_choquet,
+    "experiment_1_validation_selected_choquet.csv",
+    paths,
+)
+artifacts["failures"] = save_table(
+    result.failures, "experiment_1_failures.csv", paths, index=False
+)
+
+for model, predictions in result.predictions.items():
+    slug = artifact_slug(model)
+    artifacts[f"predictions {model}"] = save_table(
+        predictions, f"experiment_1_predictions_{slug}.parquet", paths
+    )
+for model, residuals in result.residuals.items():
+    slug = artifact_slug(model)
+    artifacts[f"residuals {model}"] = save_table(
+        residuals, f"experiment_1_residuals_{slug}.parquet", paths
+    )
+
+shapley_panel = pd.DataFrame()
+if result.shapley:
+    shapley_panel = pd.concat(result.shapley, axis=1).T
+    artifacts["Shapley indices"] = save_table(
+        shapley_panel, "experiment_1_shapley_indices.csv", paths
+    )
+for asset, matrix in result.interactions.items():
+    slug = artifact_slug(asset)
+    artifacts[f"interactions {asset}"] = save_table(
+        matrix, f"experiment_1_interactions_{slug}.csv", paths
+    )
+    artifacts[f"top interactions {asset}"] = save_table(
+        top_interactions(matrix, n=10),
+        f"experiment_1_top_interactions_{slug}.csv",
+        paths,
+        index=False,
+    )
+
+aapl_frame = data.factor_frames["AAPL"]
+stability = expanding_capacity_stability(
+    aapl_frame[list(FACTOR_COLUMNS)],
+    aapl_frame["target_excess_loss"],
+    cutoffs=STABILITY_CUTOFFS,
+    task="regression",
+    purge=0,
+    verbose=verbose,
+)
+artifacts["AAPL Shapley stability"] = save_table(
+    stability.shapley,
+    "experiment_1_aapl_shapley_stability.csv",
+    paths,
+)
+artifacts["AAPL interaction stability"] = save_table(
+    stability.interaction_long,
+    "experiment_1_aapl_interaction_stability_long.csv",
+    paths,
+    index=False,
+)
+artifacts["AAPL stability summary"] = save_table(
+    stability.interaction_stability(),
+    "experiment_1_aapl_interaction_stability_summary.csv",
+    paths,
+)
+artifacts["AAPL stability failures"] = save_table(
+    stability.failures,
+    "experiment_1_aapl_stability_failures.csv",
+    paths,
+    index=False,
+)
+
+reference = "Choquet 2-additive"
+if reference in result.predictions:
+    aapl_predictions = pd.concat(
+        {
+            model: frame["AAPL"]
+            for model, frame in result.predictions.items()
+            if "AAPL" in frame
+        },
+        axis=1,
+    ).dropna()
+    aapl_actual = aapl_frame.loc[
+        aapl_predictions.index, "target_excess_loss"
+    ]
+    artifacts["AAPL HAC comparison"] = save_table(
+        hac_model_comparison(
+            aapl_actual,
+            aapl_predictions,
+            reference=reference,
+            loss="squared",
+            max_lags=10,
+        ),
+        "experiment_1_aapl_hac_comparison.csv",
+        paths,
+    )
+chosen = result.fitted_models.get(("AAPL", reference))
+if chosen is not None:
+    artifacts["AAPL orientation"] = save_table(
+        orientation_table(chosen),
+        "experiment_1_aapl_orientation.csv",
+        paths,
+    )
+
+axis = plot_matrix(
+    aapl_frame[list(FACTOR_COLUMNS)].corr(),
+    title="Correlation of ETF factor proxies",
+    symmetric=True,
+)
+artifacts["factor correlation figure"] = save_figure(
+    axis.figure, "experiment_1_factor_correlation.png", paths
+)
+
+axis = plot_metric_ranking(mean_metrics, "RMSE")
+artifacts["mean RMSE figure"] = save_figure(
+    axis.figure, "experiment_1_mean_rmse.png", paths
+)
+
+figure, axis = plt.subplots(figsize=(12, 5))
+image = axis.imshow(asset_rmse.to_numpy(), aspect="auto")
+axis.set_xticks(range(asset_rmse.shape[1]), asset_rmse.columns, rotation=90)
+axis.set_yticks(range(asset_rmse.shape[0]), asset_rmse.index)
+axis.set_title("Test RMSE by asset and model")
+figure.colorbar(image, ax=axis, fraction=0.03, pad=0.02)
+figure.tight_layout()
+artifacts["asset RMSE figure"] = save_figure(
+    figure, "experiment_1_asset_rmse.png", paths
+)
+
+for model in (
+    "OLS",
+    "Choquet 1-additive",
+    "Choquet 2-additive",
+):
+    if model in result.residuals:
+        axis = plot_matrix(
+            result.residual_covariance(model),
+            title=f"Residual covariance — {model}",
+            symmetric=True,
+        )
+        artifacts[f"residual covariance figure {model}"] = save_figure(
+            axis.figure,
+            f"experiment_1_residual_covariance_{artifact_slug(model)}.png",
+            paths,
+        )
+
+for asset in ("AAPL", "JPM", "XOM"):
+    available = [
+        model
+        for model in (
+            "OLS",
+            "Explicit interactions",
+            "Gradient boosting",
+            "Choquet 2-additive",
+        )
+        if model in result.predictions and asset in result.predictions[model]
+    ]
+    if available:
+        predictions = pd.concat(
+            {model: result.predictions[model][asset] for model in available},
+            axis=1,
+        )
+        actual = data.factor_frames[asset].loc[
+            predictions.index, "target_excess_loss"
+        ]
+        axis = plot_actual_predictions(
+            actual,
+            predictions,
+            title=f"{asset}: out-of-sample excess-loss fit",
+            start="2020-01-01",
+        )
+        artifacts[f"prediction figure {asset}"] = save_figure(
+            axis.figure,
+            f"experiment_1_predictions_{artifact_slug(asset)}.png",
+            paths,
+        )
+
+if not shapley_panel.empty:
+    axis = plot_shapley(
+        shapley_panel.mean().sort_values(ascending=False),
+        title="Average Choquet Shapley importance across assets",
+    )
+    artifacts["average Shapley figure"] = save_figure(
+        axis.figure, "experiment_1_average_shapley.png", paths
+    )
+    figure, axis = plt.subplots(figsize=(10, 5))
+    image = axis.imshow(shapley_panel.to_numpy(), aspect="auto")
+    axis.set_xticks(
+        range(shapley_panel.shape[1]), shapley_panel.columns, rotation=90
+    )
+    axis.set_yticks(range(shapley_panel.shape[0]), shapley_panel.index)
+    axis.set_title("Shapley importance by asset")
+    figure.colorbar(image, ax=axis, fraction=0.03, pad=0.02)
+    figure.tight_layout()
+    artifacts["Shapley panel figure"] = save_figure(
+        figure, "experiment_1_shapley_by_asset.png", paths
+    )
+
+for asset in ("AAPL", "JPM", "XOM"):
+    if asset in result.interactions:
+        axis = plot_matrix(
+            result.interactions[asset],
+            title=f"{asset}: pairwise interaction indices",
+            symmetric=True,
+        )
+        artifacts[f"interaction figure {asset}"] = save_figure(
+            axis.figure,
+            f"experiment_1_interactions_{artifact_slug(asset)}.png",
+            paths,
+        )
+
+axis = stability.shapley.plot(
+    figsize=(11, 5), marker="o", title="AAPL factor Shapley stability"
+)
+axis.set_ylabel("Shapley importance")
+axis.grid(alpha=0.25)
+axis.figure.tight_layout()
+artifacts["AAPL stability figure"] = save_figure(
+    axis.figure, "experiment_1_aapl_shapley_stability.png", paths
+)
+print_artifacts(artifacts)

@@ -1,0 +1,8 @@
+,training_correlation,orientation_sign,transformation
+market_excess_return,-0.6397539205763685,-1.0,multiplied by -1
+sector_excess_return,-0.763203231191948,-1.0,multiplied by -1
+size_spread,-0.009990181878551288,-1.0,multiplied by -1
+value_growth_spread,0.3694421640236163,1.0,unchanged
+momentum_spread,-0.08927239399403387,-1.0,multiplied by -1
+quality_spread,0.014524234624066218,1.0,unchanged
+low_volatility_spread,0.5443184067723886,1.0,unchanged

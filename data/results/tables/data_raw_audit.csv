@@ -1,0 +1,11 @@
+group,field,rows,columns,start,end,missing_fraction
+equity,market_cap,3162,9,2014-01-02,2026-07-30,0.0
+equity,px_high,3162,9,2014-01-02,2026-07-30,0.0
+equity,px_last,3162,9,2014-01-02,2026-07-30,0.0
+equity,px_low,3162,9,2014-01-02,2026-07-30,0.0
+equity,px_open,3162,9,2014-01-02,2026-07-30,0.0
+equity,total_return_index,3162,9,2014-01-02,2026-07-30,0.0
+equity,volume,3162,9,2014-01-02,2026-07-30,0.0
+etf,px_last,3162,13,2014-01-02,2026-07-30,0.0
+etf,total_return_index,3162,13,2014-01-02,2026-07-30,0.0
+fred,daily_panel,3162,6,2014-01-02,2026-07-30,0.0

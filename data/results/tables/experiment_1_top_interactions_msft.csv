@@ -1,0 +1,11 @@
+first,second,interaction,interpretation
+market_excess_return,value_growth_spread,0.06994557812767105,complementary
+market_excess_return,quality_spread,0.05859959406188199,complementary
+size_spread,value_growth_spread,0.05597824397695238,complementary
+quality_spread,low_volatility_spread,-0.052783120325656796,redundant
+size_spread,quality_spread,-0.04219171626129844,redundant
+size_spread,low_volatility_spread,0.04105170112001886,complementary
+sector_excess_return,size_spread,0.03024391900747749,complementary
+market_excess_return,sector_excess_return,0.03014204458888299,complementary
+value_growth_spread,momentum_spread,0.026976742543474853,complementary
+momentum_spread,quality_spread,-0.023567207461687435,redundant

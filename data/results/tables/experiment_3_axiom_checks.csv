@@ -1,0 +1,4 @@
+measure,monotonicity,cash_invariance,positive_homogeneity,subadditivity,convexity,comonotonic_additivity
+ES 97.5%,True,True,True,True,True,
+PH gamma=0.70,True,True,True,True,True,
+PH gamma=1.20,True,True,True,False,False,

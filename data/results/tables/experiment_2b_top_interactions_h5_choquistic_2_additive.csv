@@ -1,0 +1,13 @@
+first,second,interaction,interpretation
+liquidity_stress_20d,baa_credit_spread_pct,-0.5390127029598486,redundant
+realized_volatility_20d,term_spread_10y_2y_pct,0.10902149241242422,complementary
+liquidity_stress_20d,negative_momentum_21d,0.08817117117717753,complementary
+market_loss_1d,negative_momentum_21d,0.07722532723281174,complementary
+term_spread_10y_2y_pct,lagged_portfolio_loss_1d,0.07193597155764807,complementary
+negative_momentum_21d,lagged_portfolio_loss_1d,-0.05656069909910854,redundant
+market_loss_1d,liquidity_stress_20d,0.04644626729466554,complementary
+market_loss_1d,baa_credit_spread_pct,-0.011626368266334848,redundant
+realized_volatility_20d,liquidity_stress_20d,6.7094384631413056e-15,complementary
+vix,baa_credit_spread_pct,-3.3258250598991827e-15,redundant
+realized_volatility_20d,lagged_portfolio_loss_1d,-2.952081908076917e-15,redundant
+vix,realized_volatility_20d,-2.571191959789704e-15,redundant

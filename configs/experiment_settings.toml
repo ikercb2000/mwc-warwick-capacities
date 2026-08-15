@@ -1,0 +1,93 @@
+[dates]
+sample_start = "2014-01-02"
+train_end = "2018-12-31"
+classification_train_end = "2017-12-31"
+validation_end = "2019-12-31"
+sample_end = "2026-07-30"
+
+[forecasting]
+horizons = [1, 5, 10]
+annualization_factor = 252
+
+[tail_risk]
+primary_alpha = 0.95
+robustness_alpha = 0.975
+rolling_window = 250
+minimum_history = 250
+
+[computation]
+random_state = 42
+quick_mode_default = true
+
+[assets]
+equities = ["AAPL", "AMZN", "JPM", "KO", "MSFT", "NVDA", "UNH", "WMT", "XOM"]
+market_etfs = ["SPY"]
+style_etfs = ["IWM", "IVE", "IVW", "MTUM", "QUAL", "USMV"]
+sector_etfs = ["XLE", "XLF", "XLK", "XLP", "XLV", "XLY"]
+
+[assets.sector_etf_by_asset]
+AAPL = "XLK"
+AMZN = "XLY"
+JPM = "XLF"
+KO = "XLP"
+MSFT = "XLK"
+NVDA = "XLK"
+UNH = "XLV"
+WMT = "XLP"
+XOM = "XLE"
+
+[fred.series]
+VIXCLS = "vix"
+DGS3MO = "treasury_3m_yield_pct"
+DGS2 = "treasury_2y_yield_pct"
+DGS10 = "treasury_10y_yield_pct"
+BAA10Y = "baa_credit_spread_pct"
+DFF = "fed_funds_effective_pct"
+
+[features]
+factor_columns = [
+    "market_excess_return",
+    "sector_excess_return",
+    "size_spread",
+    "value_growth_spread",
+    "momentum_spread",
+    "quality_spread",
+    "low_volatility_spread",
+]
+main_risk = [
+    "market_loss_1d",
+    "vix",
+    "realized_volatility_20d",
+    "drawdown_severity",
+    "liquidity_stress_20d",
+    "baa_credit_spread_pct",
+    "term_spread_10y_2y_pct",
+    "average_equity_correlation_60d",
+    "negative_momentum_21d",
+    "lagged_portfolio_loss_1d",
+]
+extended_risk = [
+    "market_loss_1d",
+    "vix",
+    "realized_volatility_20d",
+    "drawdown_severity",
+    "liquidity_stress_20d",
+    "baa_credit_spread_pct",
+    "term_spread_10y_2y_pct",
+    "average_equity_correlation_60d",
+    "negative_momentum_21d",
+    "lagged_portfolio_loss_1d",
+    "vix_change_1d",
+    "realized_volatility_60d",
+    "baa_credit_spread_change_5d_bps",
+    "treasury_2y_change_5d_bps",
+    "sector_return_dispersion_20d",
+    "small_cap_relative_loss_1d",
+    "lagged_portfolio_loss_5d",
+]
+
+[notes]
+fundamentals_included = false
+factor_data = "Tradable ETF proxies available in the repository"
+portfolio_primary = "Equal weight"
+portfolio_robustness = "One-day-lagged market-cap weight"

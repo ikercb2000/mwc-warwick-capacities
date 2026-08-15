@@ -1,0 +1,3 @@
+model,test,statistic,p_value
+VaR 99%,Kupiec unconditional coverage,2.7396354831494136,0.09788709343387356
+VaR 99%,Christoffersen independence,8.70934523531588,0.0031658289525302316
