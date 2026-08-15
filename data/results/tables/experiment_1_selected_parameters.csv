@@ -1,91 +1,109 @@
 asset,model,best parameters
 AAPL,OLS,{}
-AAPL,Ridge,{'regressor__alpha': 1.0}
-AAPL,Lasso,{'regressor__alpha': 0.001}
-AAPL,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-AAPL,Explicit interactions,{'regressor__ridge__alpha': 1.0}
-AAPL,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-AAPL,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+AAPL,OLS oriented,{}
+AAPL,Monotone linear,{}
+AAPL,Ridge,{'regressor__alpha': 0.01}
+AAPL,Lasso,{'regressor__alpha': 1e-05}
+AAPL,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
+AAPL,Explicit interactions,{'regressor__ridge__alpha': 0.01}
+AAPL,Random forest,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+AAPL,Gradient boosting,"{'regressor__l2_regularization': 0.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
 AAPL,Choquet 1-additive,{}
 AAPL,Choquet 2-additive,{}
 AAPL,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
 AMZN,OLS,{}
-AMZN,Ridge,{'regressor__alpha': 1.0}
-AMZN,Lasso,{'regressor__alpha': 0.001}
-AMZN,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-AMZN,Explicit interactions,{'regressor__ridge__alpha': 1.0}
-AMZN,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-AMZN,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+AMZN,OLS oriented,{}
+AMZN,Monotone linear,{}
+AMZN,Ridge,{'regressor__alpha': 0.01}
+AMZN,Lasso,{'regressor__alpha': 1e-05}
+AMZN,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
+AMZN,Explicit interactions,{'regressor__ridge__alpha': 10.0}
+AMZN,Random forest,"{'regressor__max_depth': None, 'regressor__min_samples_leaf': 5}"
+AMZN,Gradient boosting,"{'regressor__l2_regularization': 0.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 7}"
 AMZN,Choquet 1-additive,{}
 AMZN,Choquet 2-additive,{}
-AMZN,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
+AMZN,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
 JPM,OLS,{}
-JPM,Ridge,{'regressor__alpha': 1.0}
-JPM,Lasso,{'regressor__alpha': 0.001}
-JPM,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-JPM,Explicit interactions,{'regressor__ridge__alpha': 1.0}
-JPM,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-JPM,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+JPM,OLS oriented,{}
+JPM,Monotone linear,{}
+JPM,Ridge,{'regressor__alpha': 0.01}
+JPM,Lasso,{'regressor__alpha': 1e-05}
+JPM,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
+JPM,Explicit interactions,{'regressor__ridge__alpha': 0.01}
+JPM,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 5}"
+JPM,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 15}"
 JPM,Choquet 1-additive,{}
 JPM,Choquet 2-additive,{}
 JPM,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
 KO,OLS,{}
-KO,Ridge,{'regressor__alpha': 1.0}
-KO,Lasso,{'regressor__alpha': 0.001}
-KO,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-KO,Explicit interactions,{'regressor__ridge__alpha': 1.0}
+KO,OLS oriented,{}
+KO,Monotone linear,{}
+KO,Ridge,{'regressor__alpha': 0.01}
+KO,Lasso,{'regressor__alpha': 1e-05}
+KO,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
+KO,Explicit interactions,{'regressor__ridge__alpha': 0.1}
 KO,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-KO,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+KO,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 7}"
 KO,Choquet 1-additive,{}
 KO,Choquet 2-additive,{}
-KO,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
+KO,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
 MSFT,OLS,{}
-MSFT,Ridge,{'regressor__alpha': 1.0}
-MSFT,Lasso,{'regressor__alpha': 0.001}
-MSFT,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-MSFT,Explicit interactions,{'regressor__ridge__alpha': 1.0}
-MSFT,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-MSFT,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+MSFT,OLS oriented,{}
+MSFT,Monotone linear,{}
+MSFT,Ridge,{'regressor__alpha': 10.0}
+MSFT,Lasso,{'regressor__alpha': 0.0001}
+MSFT,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}"
+MSFT,Explicit interactions,{'regressor__ridge__alpha': 10.0}
+MSFT,Random forest,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+MSFT,Gradient boosting,"{'regressor__l2_regularization': 0.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
 MSFT,Choquet 1-additive,{}
 MSFT,Choquet 2-additive,{}
-MSFT,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
+MSFT,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
 NVDA,OLS,{}
-NVDA,Ridge,{'regressor__alpha': 1.0}
-NVDA,Lasso,{'regressor__alpha': 0.001}
-NVDA,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-NVDA,Explicit interactions,{'regressor__ridge__alpha': 1.0}
-NVDA,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-NVDA,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+NVDA,OLS oriented,{}
+NVDA,Monotone linear,{}
+NVDA,Ridge,{'regressor__alpha': 0.01}
+NVDA,Lasso,{'regressor__alpha': 1e-05}
+NVDA,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
+NVDA,Explicit interactions,{'regressor__ridge__alpha': 0.01}
+NVDA,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 5}"
+NVDA,Gradient boosting,"{'regressor__l2_regularization': 0.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 15}"
 NVDA,Choquet 1-additive,{}
 NVDA,Choquet 2-additive,{}
-NVDA,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
+NVDA,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
 UNH,OLS,{}
-UNH,Ridge,{'regressor__alpha': 1.0}
-UNH,Lasso,{'regressor__alpha': 0.001}
-UNH,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-UNH,Explicit interactions,{'regressor__ridge__alpha': 1.0}
+UNH,OLS oriented,{}
+UNH,Monotone linear,{}
+UNH,Ridge,{'regressor__alpha': 0.01}
+UNH,Lasso,{'regressor__alpha': 0.0001}
+UNH,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}"
+UNH,Explicit interactions,{'regressor__ridge__alpha': 0.01}
 UNH,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-UNH,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+UNH,Gradient boosting,"{'regressor__l2_regularization': 0.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
 UNH,Choquet 1-additive,{}
 UNH,Choquet 2-additive,{}
 UNH,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
 WMT,OLS,{}
-WMT,Ridge,{'regressor__alpha': 1.0}
+WMT,OLS oriented,{}
+WMT,Monotone linear,{}
+WMT,Ridge,{'regressor__alpha': 10.0}
 WMT,Lasso,{'regressor__alpha': 0.001}
-WMT,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-WMT,Explicit interactions,{'regressor__ridge__alpha': 1.0}
-WMT,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-WMT,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+WMT,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}"
+WMT,Explicit interactions,{'regressor__ridge__alpha': 10.0}
+WMT,Random forest,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+WMT,Gradient boosting,"{'regressor__l2_regularization': 0.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
 WMT,Choquet 1-additive,{}
 WMT,Choquet 2-additive,{}
 WMT,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
 XOM,OLS,{}
-XOM,Ridge,{'regressor__alpha': 1.0}
-XOM,Lasso,{'regressor__alpha': 0.001}
-XOM,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}"
-XOM,Explicit interactions,{'regressor__ridge__alpha': 1.0}
+XOM,OLS oriented,{}
+XOM,Monotone linear,{}
+XOM,Ridge,{'regressor__alpha': 0.01}
+XOM,Lasso,{'regressor__alpha': 0.0001}
+XOM,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}"
+XOM,Explicit interactions,{'regressor__ridge__alpha': 0.01}
 XOM,Random forest,"{'regressor__max_depth': 6, 'regressor__min_samples_leaf': 20}"
-XOM,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 15}"
+XOM,Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.1, 'regressor__max_leaf_nodes': 7}"
 XOM,Choquet 1-additive,{}
 XOM,Choquet 2-additive,{}
-XOM,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"
+XOM,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}"

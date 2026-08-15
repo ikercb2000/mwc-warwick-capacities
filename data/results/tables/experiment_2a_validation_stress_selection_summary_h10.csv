@@ -1,0 +1,3 @@
+regime,validation-selected model,selected validation RMSE,selected model test RMSE,best test model,best test RMSE,selection regret
+excluding 2020-2021,Historical mean,0.03377287182906116,0.03195586367816248,Random forest,0.0318469755660822,0.00010888811208027704
+including stress,Historical mean,0.03942332359099937,0.03195586367816248,Random forest,0.0318469755660822,0.00010888811208027704

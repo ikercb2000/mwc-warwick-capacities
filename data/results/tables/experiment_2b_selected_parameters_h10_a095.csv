@@ -1,11 +1,12 @@
 model,best parameters
 Prior probability,{}
 Logistic,{}
-Penalized logistic,{'classifier__C': 1.0}
-Explicit interactions,{'classifier__logistic__C': 0.1}
-RBF SVM,"{'classifier__C': 1.0, 'classifier__gamma': 0.1}"
-Random forest,"{'classifier__max_depth': 6, 'classifier__min_samples_leaf': 20}"
-Gradient boosting,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.1, 'classifier__max_leaf_nodes': 15}"
+Logistic oriented,{}
+Penalized logistic,{'classifier__C': 0.1}
+Explicit interactions,{'classifier__logistic__C': 1.0}
+RBF SVM,"{'classifier__C': 10.0, 'classifier__gamma': 'scale'}"
+Random forest,"{'classifier__max_depth': 3, 'classifier__min_samples_leaf': 5}"
+Gradient boosting,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 7}"
 Choquistic 1-additive,{}
 Choquistic 2-additive,{}
-MLP,"{'classifier__alpha': 0.001, 'classifier__hidden_layer_sizes': (32, 16)}"
+MLP,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16)}"

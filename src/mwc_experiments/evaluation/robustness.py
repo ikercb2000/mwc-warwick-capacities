@@ -166,7 +166,7 @@ def regression_regime_metrics(
     }
     result = pd.DataFrame(rows).T
     result.insert(0, "stress observations", int(mask.sum()))
-    return result.sort_values("RMSE")
+    return result.sort_values("RMSE").rename_axis("model")
 
 
 def regression_estimation_robustness(

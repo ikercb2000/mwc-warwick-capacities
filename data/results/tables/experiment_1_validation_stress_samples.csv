@@ -1,0 +1,46 @@
+asset,sample,observations,start,end
+AAPL,initial training,1006,2014-01-03,2017-12-29
+AAPL,walk-forward validation,1008,2018-01-02,2021-12-31
+AAPL,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+AAPL,final refit,2014,2014-01-03,2021-12-31
+AAPL,test,1147,2022-01-03,2026-07-30
+AMZN,initial training,1006,2014-01-03,2017-12-29
+AMZN,walk-forward validation,1008,2018-01-02,2021-12-31
+AMZN,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+AMZN,final refit,2014,2014-01-03,2021-12-31
+AMZN,test,1147,2022-01-03,2026-07-30
+JPM,initial training,1006,2014-01-03,2017-12-29
+JPM,walk-forward validation,1008,2018-01-02,2021-12-31
+JPM,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+JPM,final refit,2014,2014-01-03,2021-12-31
+JPM,test,1147,2022-01-03,2026-07-30
+KO,initial training,1006,2014-01-03,2017-12-29
+KO,walk-forward validation,1008,2018-01-02,2021-12-31
+KO,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+KO,final refit,2014,2014-01-03,2021-12-31
+KO,test,1147,2022-01-03,2026-07-30
+MSFT,initial training,1006,2014-01-03,2017-12-29
+MSFT,walk-forward validation,1008,2018-01-02,2021-12-31
+MSFT,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+MSFT,final refit,2014,2014-01-03,2021-12-31
+MSFT,test,1147,2022-01-03,2026-07-30
+NVDA,initial training,1006,2014-01-03,2017-12-29
+NVDA,walk-forward validation,1008,2018-01-02,2021-12-31
+NVDA,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+NVDA,final refit,2014,2014-01-03,2021-12-31
+NVDA,test,1147,2022-01-03,2026-07-30
+UNH,initial training,1006,2014-01-03,2017-12-29
+UNH,walk-forward validation,1008,2018-01-02,2021-12-31
+UNH,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+UNH,final refit,2014,2014-01-03,2021-12-31
+UNH,test,1147,2022-01-03,2026-07-30
+WMT,initial training,1006,2014-01-03,2017-12-29
+WMT,walk-forward validation,1008,2018-01-02,2021-12-31
+WMT,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+WMT,final refit,2014,2014-01-03,2021-12-31
+WMT,test,1147,2022-01-03,2026-07-30
+XOM,initial training,1006,2014-01-03,2017-12-29
+XOM,walk-forward validation,1008,2018-01-02,2021-12-31
+XOM,validation excluding 2020-2021,503,2018-01-02,2019-12-31
+XOM,final refit,2014,2014-01-03,2021-12-31
+XOM,test,1147,2022-01-03,2026-07-30

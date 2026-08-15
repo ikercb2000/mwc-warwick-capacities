@@ -1,0 +1,6 @@
+sample,observations,start,end
+initial training,942,2014-03-31,2017-12-21
+walk-forward validation,1003,2018-01-02,2021-12-23
+validation excluding 2020-2021,503,2018-01-02,2019-12-31
+final refit,1950,2014-03-31,2021-12-23
+test,1142,2022-01-03,2026-07-23

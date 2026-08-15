@@ -71,6 +71,7 @@ def test_clipping_and_estimation_robustness_use_raw_extreme_dates() -> None:
 
     assert (clipping["sample"] == "test").all()
     assert clipping["clipped observations"].sum() > 0
+    assert regime.index.name == "model"
     assert regime.loc["OLS", "stress observations"] == int(test_mask.sum())
     assert robustness.loc["OLS", "failure"] == ""
     assert robustness.loc["OLS", "extreme fit observations removed"] == int(
