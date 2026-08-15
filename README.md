@@ -151,6 +151,9 @@ The default boundaries are configured in
 Forecast-horizon observations are purged from the end of training and
 validation partitions to prevent overlapping future targets from crossing split
 boundaries. Preprocessing is fitted only on the relevant training sample.
+The Amihud liquidity feature is normalised point-in-time: each date uses the
+expanding median of positive portfolio illiquidity observed strictly before that
+date, rather than a full-sample median.
 
 Each candidate is selected using validation performance, refitted on the
 combined training and validation samples, and evaluated on the test sample.

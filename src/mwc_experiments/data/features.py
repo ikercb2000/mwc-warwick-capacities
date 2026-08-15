@@ -51,11 +51,11 @@ def _portfolio_liquidity(
         values = amihud.mul(weights.reindex(amihud.columns), axis=1).sum(axis=1)
     else:
         values = (amihud * weights.reindex(index=amihud.index, columns=amihud.columns)).sum(axis=1)
-    # Amihud values are tiny and very skewed. log(1+x) after scaling retains order and
-    # produces a numerically stable stress indicator.
+    # Amihud values are tiny and very skewed. Use only strictly prior positive
+    # observations to set each date's scale: a full-sample median would leak the
+    # validation and test distributions into earlier features.
     positive = values.where(values > 0.0)
-    scale = positive.median(skipna=True)
-    scale = 1.0 if not np.isfinite(scale) or scale <= 0.0 else scale
+    scale = positive.expanding(min_periods=1).median().shift(1)
     return np.log1p(values / scale).rename("liquidity_stress_20d")
 
 
