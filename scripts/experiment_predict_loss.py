@@ -11,6 +11,8 @@ import pandas as pd
 
 from mwc_experiments.data import load_or_build_processed_data
 from mwc_experiments.evaluation import (
+    clipping_diagnostics,
+    fit_empirical_stress_definition,
     hac_model_comparison,
     high_loss_regime_metrics,
     orientation_table,
@@ -18,6 +20,8 @@ from mwc_experiments.evaluation import (
     plot_matrix,
     plot_metric_ranking,
     plot_shapley,
+    regression_estimation_robustness,
+    regression_regime_metrics,
     top_interactions,
 )
 from mwc_experiments.settings import HORIZONS, MAIN_RISK_FEATURES
@@ -56,6 +60,16 @@ CAP_WEIGHT_MODELS = (
     "OLS oriented",
     "Monotone linear",
     "Explicit interactions",
+    "Gradient boosting",
+    "Choquet 1-additive",
+    "Choquet 2-additive",
+    "Choquet 2-additive L1",
+)
+EXTREME_ROBUSTNESS_MODELS = (
+    "OLS",
+    "Ridge",
+    "Lasso",
+    "Monotone linear",
     "Gradient boosting",
     "Choquet 1-additive",
     "Choquet 2-additive",
@@ -145,6 +159,74 @@ for horizon, horizon_result in result.horizons.items():
     artifacts[f"high-loss metrics h{horizon}"] = save_table(
         tail_metrics,
         f"experiment_2a_high_loss_metrics_h{horizon}.csv",
+        paths,
+    )
+
+    split = horizon_result.split
+    X_fit = pd.concat([split.X_train, split.X_validation])
+    y_fit = pd.concat([split.y_train, split.y_validation])
+    stress = fit_empirical_stress_definition(X_fit, y_fit)
+    fit_extreme_mask = stress.mask(X_fit, y_fit)
+    test_stress_mask = stress.mask(split.X_test, split.y_test)
+    stress_audit = pd.DataFrame(
+        [
+            stress.audit(X_fit, y_fit, sample="estimation"),
+            stress.audit(split.X_test, split.y_test, sample="test"),
+        ]
+    ).set_index("sample")
+    artifacts[f"empirical stress audit h{horizon}"] = save_table(
+        stress_audit,
+        f"experiment_2a_empirical_stress_audit_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"empirical stress metrics h{horizon}"] = save_table(
+        regression_regime_metrics(
+            split.y_test,
+            horizon_result.predictions,
+            test_stress_mask,
+        ),
+        f"experiment_2a_empirical_stress_metrics_h{horizon}.csv",
+        paths,
+    )
+    clipping_reference = horizon_result.fitted_models.get("OLS")
+    if clipping_reference is not None:
+        clipping_audit = pd.concat(
+            [
+                clipping_diagnostics(
+                    clipping_reference,
+                    X_fit,
+                    sample="estimation",
+                ),
+                clipping_diagnostics(
+                    clipping_reference,
+                    split.X_test,
+                    sample="test",
+                ),
+            ]
+        )
+        clipping_audit.index.name = "feature"
+        artifacts[f"clipping audit h{horizon}"] = save_table(
+            clipping_audit,
+            f"experiment_2a_clipping_audit_h{horizon}.csv",
+            paths,
+        )
+    robustness_models = {
+        model: horizon_result.fitted_models[model]
+        for model in EXTREME_ROBUSTNESS_MODELS
+        if model in horizon_result.fitted_models
+    }
+    artifacts[f"extreme-estimation robustness h{horizon}"] = save_table(
+        regression_estimation_robustness(
+            robustness_models,
+            X_fit,
+            y_fit,
+            split.X_test,
+            split.y_test,
+            horizon_result.predictions,
+            fit_extreme_mask=fit_extreme_mask,
+            test_stress_mask=test_stress_mask,
+        ),
+        f"experiment_2a_extreme_estimation_robustness_h{horizon}.csv",
         paths,
     )
     reference = (

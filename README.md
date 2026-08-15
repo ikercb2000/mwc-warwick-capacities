@@ -177,6 +177,35 @@ benchmark where applicable, and the Choquet/Choquistic models. This makes it
 possible to distinguish effects caused by orientation from those caused by
 monotonicity, capacity normalisation and interactions.
 
+### Extremes, clipping and factor-risk diagnostics
+
+Clipping is part of each fitted preprocessing pipeline. Its bounds are estimated
+without the test sample and it caps predictor values passed to the estimator; it
+does not discard observations, alter the target or overwrite the raw datasets.
+The experiment scripts save clipping audits with the raw minima and maxima,
+fitted bounds, and the number of observations affected in estimation and test
+samples.
+
+Regression robustness uses one empirical stress definition shared by all
+models. Thresholds are estimated on the combined training and validation
+sample: an observation is extreme when its raw loss is at or above the 99th
+percentile, or when any raw predictor lies outside its 0.5th--99.5th percentile
+interval. Those fixed thresholds are then applied to the held-out test sample.
+The saved stress tables therefore compare classical and Choquet models on the
+same dates, before model-specific preprocessing.
+
+A separate estimation-stability check clones each already selected model,
+removes the extreme observations from its estimation sample, and refits it with
+the same selected hyperparameters. The resulting tables report changes in test
+and stress-period RMSE and in predictions. This isolates sensitivity of the
+estimated model from performance conditional on an extreme event.
+
+For the factor experiment, in-sample fitted values and residual covariance are
+saved as descriptive risk diagnostics. They answer how the factor
+representation decomposes the observed sample, but they are not used to rank
+forecasting models. Model comparison and selection remain based on validation
+and held-out out-of-sample results.
+
 ## Outputs and notebooks
 
 Experiment artifacts are written to:

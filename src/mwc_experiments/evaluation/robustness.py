@@ -140,7 +140,22 @@ def regression_regime_metrics(
     """Evaluate every model on one shared set of raw-data stress dates."""
     mask = stress_mask.reindex(y_true.index).fillna(False).astype(bool)
     if not mask.any():
-        raise ValueError("The empirical stress regime contains no observations.")
+        columns = [
+            "stress observations",
+            "MSE",
+            "RMSE",
+            "MAE",
+            "Tail-weighted MAE",
+            "OOS R2",
+            "Correlation",
+        ]
+        return pd.DataFrame(
+            {
+                column: 0 if column == "stress observations" else np.nan
+                for column in columns
+            },
+            index=predictions.columns,
+        ).rename_axis("model")
     aligned = predictions.reindex(y_true.index)
     rows = {
         model: regression_metrics(

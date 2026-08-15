@@ -153,6 +153,7 @@ for asset, split in result.splits.items():
         ("test", split.X_test, split.y_test),
     ):
         audit = stress.audit(X_sample, y_sample, sample=sample)
+        audit = audit.drop(labels="sample")
         audit.name = (asset, sample)
         stress_audits.append(audit)
 
@@ -295,9 +296,12 @@ for model, residuals in result.residuals.items():
         residuals, f"experiment_1_residuals_{slug}.parquet", paths
     )
 for model, residuals in result.in_sample_residuals.items():
-    if model not in EXTREME_ROBUSTNESS_MODELS:
-        continue
     slug = artifact_slug(model)
+    artifacts[f"in-sample residuals {model}"] = save_table(
+        residuals,
+        f"experiment_1_in_sample_residuals_{slug}.parquet",
+        paths,
+    )
     artifacts[f"in-sample residual covariance {model}"] = save_table(
         residuals.cov(),
         f"experiment_1_in_sample_residual_covariance_{slug}.csv",
