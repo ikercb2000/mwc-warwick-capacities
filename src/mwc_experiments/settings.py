@@ -39,6 +39,14 @@ CLASSIFICATION_TRAIN_END = str(_DATES["classification_train_end"])
 VALIDATION_END = str(_DATES["validation_end"])
 SAMPLE_END = str(_DATES["sample_end"])
 
+_VALIDATION_STRESS = _SETTINGS["validation_stress"]
+VALIDATION_STRESS_VALIDATION_START = str(
+    _VALIDATION_STRESS["validation_start"]
+)
+VALIDATION_STRESS_END = str(_VALIDATION_STRESS["validation_end"])
+VALIDATION_STRESS_START = str(_VALIDATION_STRESS["stress_start"])
+VALIDATION_STRESS_PERIOD_END = str(_VALIDATION_STRESS["stress_end"])
+
 _FORECASTING = _SETTINGS["forecasting"]
 HORIZONS = tuple(int(value) for value in _FORECASTING["horizons"])
 ANNUALIZATION_FACTOR = int(_FORECASTING["annualization_factor"])

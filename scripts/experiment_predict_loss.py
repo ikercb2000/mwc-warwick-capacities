@@ -26,6 +26,7 @@ from mwc_experiments.evaluation import (
 )
 from mwc_experiments.settings import HORIZONS, MAIN_RISK_FEATURES
 from mwc_experiments.workflows import (
+    compare_validation_stress_regimes,
     expanding_capacity_stability,
     run_future_loss_experiment,
     select_model_family_by_validation,
@@ -228,6 +229,34 @@ for horizon, horizon_result in result.horizons.items():
         ),
         f"experiment_2a_extreme_estimation_robustness_h{horizon}.csv",
         paths,
+    )
+    validation_comparison = compare_validation_stress_regimes(
+        dataset[list(MAIN_RISK_FEATURES)],
+        dataset[f"future_loss_h{horizon}"],
+        model_names=tuple(horizon_result.metrics.index.astype(str)),
+        horizon=horizon,
+        quick=quick,
+    )
+    artifacts[f"validation-stress comparison h{horizon}"] = save_table(
+        validation_comparison.metrics,
+        f"experiment_2a_validation_stress_comparison_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"validation-stress samples h{horizon}"] = save_table(
+        validation_comparison.sample_summary,
+        f"experiment_2a_validation_stress_samples_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"validation-stress selection summary h{horizon}"] = save_table(
+        validation_comparison.selection_summary,
+        f"experiment_2a_validation_stress_selection_summary_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"validation-stress failures h{horizon}"] = save_table(
+        validation_comparison.failures,
+        f"experiment_2a_validation_stress_failures_h{horizon}.csv",
+        paths,
+        index=False,
     )
     reference = (
         "Choquet 2-additive"

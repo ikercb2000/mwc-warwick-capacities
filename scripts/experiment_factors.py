@@ -26,6 +26,7 @@ from mwc_experiments.evaluation import (
 )
 from mwc_experiments.settings import FACTOR_COLUMNS
 from mwc_experiments.workflows import (
+    compare_validation_stress_regimes,
     expanding_capacity_stability,
     run_factor_experiment,
     select_model_family_by_validation,
@@ -141,6 +142,10 @@ stress_metric_panels: list[pd.DataFrame] = []
 stress_audits: list[pd.Series] = []
 clipping_panels: list[pd.DataFrame] = []
 estimation_robustness_panels: list[pd.DataFrame] = []
+validation_stress_panels: list[pd.DataFrame] = []
+validation_stress_summaries: list[pd.DataFrame] = []
+validation_stress_samples: list[pd.DataFrame] = []
+validation_stress_failures: list[pd.DataFrame] = []
 for asset, split in result.splits.items():
     X_fit = pd.concat([split.X_train, split.X_validation])
     y_fit = pd.concat([split.y_train, split.y_validation])
@@ -204,6 +209,28 @@ for asset, split in result.splits.items():
     robustness["asset"] = asset
     estimation_robustness_panels.append(robustness.reset_index())
 
+    validation_comparison = compare_validation_stress_regimes(
+        data.factor_frames[asset][list(FACTOR_COLUMNS)],
+        data.factor_frames[asset]["target_excess_loss"],
+        model_names=tuple(
+            result.metrics.xs(asset, level="asset").index.astype(str)
+        ),
+        quick=quick,
+    )
+    validation_metrics = validation_comparison.metrics.reset_index()
+    validation_metrics["asset"] = asset
+    validation_stress_panels.append(validation_metrics)
+    validation_summary = validation_comparison.selection_summary.reset_index()
+    validation_summary["asset"] = asset
+    validation_stress_summaries.append(validation_summary)
+    validation_samples = validation_comparison.sample_summary.reset_index()
+    validation_samples["asset"] = asset
+    validation_stress_samples.append(validation_samples)
+    if not validation_comparison.failures.empty:
+        validation_failures = validation_comparison.failures.copy()
+        validation_failures["asset"] = asset
+        validation_stress_failures.append(validation_failures)
+
 factor_stress_metrics = pd.concat(
     stress_metric_panels,
     ignore_index=True,
@@ -221,6 +248,23 @@ factor_estimation_robustness = pd.concat(
     estimation_robustness_panels,
     ignore_index=True,
 ).set_index(["asset", "model"])
+factor_validation_stress = pd.concat(
+    validation_stress_panels,
+    ignore_index=True,
+).set_index(["asset", "regime", "model"])
+factor_validation_stress_samples = pd.concat(
+    validation_stress_samples,
+    ignore_index=True,
+).set_index(["asset", "sample"])
+factor_validation_stress_summary = pd.concat(
+    validation_stress_summaries,
+    ignore_index=True,
+).set_index(["asset", "regime"])
+factor_validation_stress_failures = (
+    pd.concat(validation_stress_failures, ignore_index=True)
+    if validation_stress_failures
+    else pd.DataFrame(columns=["regime", "model", "message", "asset"])
+)
 
 artifacts["asset-model metrics"] = save_table(
     result.metrics, "experiment_1_asset_model_metrics.csv", paths
@@ -280,6 +324,27 @@ artifacts["extreme-estimation robustness"] = save_table(
     factor_estimation_robustness,
     "experiment_1_extreme_estimation_robustness.csv",
     paths,
+)
+artifacts["validation-stress comparison"] = save_table(
+    factor_validation_stress,
+    "experiment_1_validation_stress_comparison.csv",
+    paths,
+)
+artifacts["validation-stress samples"] = save_table(
+    factor_validation_stress_samples,
+    "experiment_1_validation_stress_samples.csv",
+    paths,
+)
+artifacts["validation-stress selection summary"] = save_table(
+    factor_validation_stress_summary,
+    "experiment_1_validation_stress_selection_summary.csv",
+    paths,
+)
+artifacts["validation-stress failures"] = save_table(
+    factor_validation_stress_failures,
+    "experiment_1_validation_stress_failures.csv",
+    paths,
+    index=False,
 )
 artifacts["failures"] = save_table(
     result.failures, "experiment_1_failures.csv", paths, index=False

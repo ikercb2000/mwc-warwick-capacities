@@ -209,6 +209,26 @@ representation decomposes the observed sample, but they are not used to rank
 forecasting models. Model comparison and selection remain based on validation
 and held-out out-of-sample results.
 
+### Validation-regime robustness
+
+The primary split is unchanged: its validation sample ends in 2019, so the
+2020--2021 financial-stress period belongs to the primary test and cannot affect
+the main hyperparameter selection. A separate robustness design tests whether
+results would change if that episode were available during validation.
+
+This comparison generates annual walk-forward predictions from 2018 through
+2021: every validation year is predicted by a model fitted on all strictly
+earlier observations. One regime scores candidates on all those pseudo-OOS
+predictions; the other excludes 2020--2021 from scoring. After selection, both
+regimes refit on the identical complete sample through 2021 and use the common
+post-2021 test. Consequently, differences in selected parameters, validation
+ranks and test RMSE isolate the selection effect of the stressed period rather
+than a difference in final training data. The fitted test models use the full
+history through 2021, rather than only the short initial training window.
+The relevant dates are configurable under `[validation_stress]` in the TOML
+settings. Use `--full` when analysing this comparison because `--quick` retains
+only one hyperparameter combination per model family.
+
 ## Outputs and notebooks
 
 Experiment artifacts are written to:

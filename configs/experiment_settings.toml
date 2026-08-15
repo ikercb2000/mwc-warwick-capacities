@@ -5,6 +5,12 @@ classification_train_end = "2017-12-31"
 validation_end = "2019-12-31"
 sample_end = "2026-07-30"
 
+[validation_stress]
+validation_start = "2018-01-01"
+validation_end = "2021-12-31"
+stress_start = "2020-01-01"
+stress_end = "2021-12-31"
+
 [forecasting]
 horizons = [1, 5, 10]
 annualization_factor = 252

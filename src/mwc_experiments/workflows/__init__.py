@@ -31,6 +31,10 @@ from mwc_experiments.workflows.tail_risk import (
     TailClassificationResult,
     run_tail_classification_experiment,
 )
+from mwc_experiments.workflows.validation_stress import (
+    ValidationStressComparisonResult,
+    compare_validation_stress_regimes,
+)
 
 __all__ = [
     "ARComparisonResult",
@@ -39,8 +43,10 @@ __all__ = [
     "FutureLossExperimentResult",
     "HorizonRegressionResult",
     "TailClassificationResult",
+    "ValidationStressComparisonResult",
     "capital_backtest_table",
     "compare_choquet_autoregression",
+    "compare_validation_stress_regimes",
     "coverage_test_table",
     "diversification_table",
     "expanding_capacity_stability",

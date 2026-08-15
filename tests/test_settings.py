@@ -15,3 +15,9 @@ def test_runtime_settings_are_loaded_from_the_repository_toml() -> None:
     assert settings.EQUITY_TICKERS == tuple(raw["assets"]["equities"])
     assert settings.FRED_SERIES == raw["fred"]["series"]
     assert settings.MAIN_RISK_FEATURES == tuple(raw["features"]["main_risk"])
+    assert settings.VALIDATION_STRESS_START == raw["validation_stress"][
+        "stress_start"
+    ]
+    assert settings.VALIDATION_STRESS_PERIOD_END == raw[
+        "validation_stress"
+    ]["stress_end"]
