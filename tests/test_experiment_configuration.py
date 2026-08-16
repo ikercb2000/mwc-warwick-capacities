@@ -51,6 +51,30 @@ def test_distortion_risk_real_data_configuration_is_coherent() -> None:
     assert float(real_data["stress_vix_threshold"]) > 0.0
 
 
+def test_factor_experiment_only_configures_linear_models() -> None:
+    config = load_experiment_config("factor_models")
+    allowed = {
+        "OLS",
+        "OLS oriented",
+        "Monotone linear",
+        "Ridge",
+        "Lasso",
+        "Elastic net",
+        "Choquet 1-additive",
+    }
+
+    assert set(config["models"]["main"]) == allowed
+    for model_group in (
+        "orientation",
+        "extreme_robustness",
+        "residual_covariance",
+        "prediction",
+    ):
+        assert set(config["models"][model_group]).issubset(allowed)
+    assert config["analysis"]["representative_model"] == "Choquet 1-additive"
+    assert set(parameter_grid_overrides(config)).issubset(allowed)
+
+
 @pytest.mark.parametrize(
     ("experiment_id", "task", "n_features"),
     [

@@ -200,7 +200,7 @@ poetry run python scripts/run_smoke_experiments.py
 | Script | Purpose |
 | --- | --- |
 | `build_experiment_data.py` | Construct processed datasets and generate data audits and EDA. |
-| `experiment_factors.py` | Compare linear, nonlinear and Choquet factor models for each equity. |
+| `experiment_factors.py` | Compare classical linear and 1-additive Choquet factor models for each equity. |
 | `experiment_predict_loss.py` | Forecast 1-, 5- and 10-day portfolio losses and test portfolio-weight robustness. |
 | `experiment_tail_risk.py` | Classify 95% tail events and run a 97.5% robustness specification. |
 | `experiment_distortion_risk.py` | Study distortion capital, backtests and diversification using observed Bloomberg equity losses. |
@@ -266,11 +266,13 @@ Both forecasting experiments additionally persist `*_walk_forward_folds_*`,
 `*_walk_forward_metrics_*`, `*_orientation_history_*` and
 `*_shapley_history_*` tables.
 
-Regression benchmarks include OLS, monotone linear regression, regularised
-linear models, explicit interactions, trees, boosting, neural networks and
-Choquet regressions. Choquet specifications include 1-additive, 2-additive and
-interaction-regularised 2-additive capacities. Capacity order and interaction
-regularisation are selected using validation RMSE, never test performance.
+Experiment 1 intentionally restricts the factor-model comparison to OLS,
+oriented OLS, monotone linear regression, Ridge, Lasso, Elastic Net and the
+1-additive Choquet regression. The latter is a positively monotone, normalised
+linear combination, so the experiment compares only linear specifications.
+The forecasting experiments retain their broader nonlinear benchmarks and
+2-additive Choquet specifications. Hyperparameters are selected using
+validation performance, never test performance.
 
 Classical models use clipping and their usual scaling without target-driven
 feature orientation. Capacity models are additionally oriented using

@@ -1,8 +1,8 @@
-,training_correlation,orientation_sign,transformation
-market_excess_return,-0.6397539205763685,-1.0,multiplied by -1
-sector_excess_return,-0.763203231191948,-1.0,multiplied by -1
-size_spread,-0.009990181878551288,-1.0,multiplied by -1
-value_growth_spread,0.3694421640236163,1.0,unchanged
-momentum_spread,-0.08927239399403387,-1.0,multiplied by -1
-quality_spread,0.014524234624066218,1.0,unchanged
-low_volatility_spread,0.5443184067723886,1.0,unchanged
+,training_correlation,absolute_training_correlation,minimum_absolute_correlation,meets_correlation_threshold,subperiod_sign_agreement,sign_stable,stability_required,orientation_supported,orientation_sign,transformation,orientation_training_observations,orientation_source,training_subperiod_1_correlation,training_subperiod_2_correlation,training_subperiod_3_correlation
+market_excess_return,-0.6181468866836787,0.6181468866836787,0.2,True,1.0,True,False,True,-1.0,multiplied by -1,1257,training only (frozen before validation refit),-0.5616424224839311,-0.5793937013328392,-0.7043923679600723
+sector_excess_return,-0.7486142203576635,0.7486142203576635,0.2,True,1.0,True,False,True,-1.0,multiplied by -1,1257,training only (frozen before validation refit),-0.6988070209573042,-0.7188916986208104,-0.8133649537191319
+size_spread,0.006071477298211524,0.006071477298211524,0.2,False,0.6666666666666666,False,False,False,1.0,unchanged (below absolute correlation threshold),1257,training only (frozen before validation refit),0.0527208502528586,-0.10756983170641791,0.07294169874325915
+value_growth_spread,0.44925884429006424,0.44925884429006424,0.2,True,1.0,True,False,True,1.0,unchanged (positive training correlation),1257,training only (frozen before validation refit),0.390851870007145,0.28117951264612767,0.6158920773941017
+momentum_spread,-0.14985230705876199,0.14985230705876199,0.2,False,0.6666666666666666,False,False,False,1.0,unchanged (below absolute correlation threshold),1257,training only (frozen before validation refit),-0.04616656309089772,0.07364376148193769,-0.44377085872732935
+quality_spread,0.041019346015221815,0.041019346015221815,0.2,False,0.6666666666666666,False,False,False,1.0,unchanged (below absolute correlation threshold),1257,training only (frozen before validation refit),-0.14162745189768025,0.10445663469518565,0.1960625934308238
+low_volatility_spread,0.5246675574335546,0.5246675574335546,0.2,True,1.0,True,False,True,1.0,unchanged (positive training correlation),1257,training only (frozen before validation refit),0.4881112843273263,0.4410349030808938,0.6486405453547747

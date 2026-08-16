@@ -19,27 +19,24 @@ features = [
 [models]
 main = [
     "OLS", "OLS oriented", "Monotone linear", "Ridge", "Lasso",
-    "Elastic net", "Explicit interactions", "Random forest",
-    "Gradient boosting", "Choquet 1-additive", "Choquet 2-additive",
-    "Choquet 2-additive L1",
+    "Elastic net", "Choquet 1-additive",
 ]
 orientation = [
     "OLS", "OLS oriented", "Monotone linear",
-    "Choquet 1-additive", "Choquet 2-additive",
+    "Choquet 1-additive",
 ]
 extreme_robustness = [
-    "OLS", "Ridge", "Lasso", "Monotone linear", "Gradient boosting",
-    "Choquet 1-additive", "Choquet 2-additive", "Choquet 2-additive L1",
+    "OLS", "Ridge", "Lasso", "Elastic net", "Monotone linear",
+    "Choquet 1-additive",
 ]
-residual_covariance = ["OLS", "Choquet 1-additive", "Choquet 2-additive"]
-prediction = ["OLS", "Explicit interactions", "Gradient boosting", "Choquet 2-additive"]
+residual_covariance = ["OLS", "Choquet 1-additive"]
+prediction = ["OLS", "Ridge", "Lasso", "Choquet 1-additive"]
 
 [analysis]
 stability_asset = "AAPL"
 stability_cutoffs = ["2018-12-31", "2020-12-31", "2022-12-30", "2024-12-31", "2026-07-30"]
 prediction_assets = ["AAPL", "JPM", "XOM"]
-representative_model = "Choquet 2-additive"
-top_interactions = 10
+representative_model = "Choquet 1-additive"
 hac_max_lags = 10
 stability_purge = 0
 
@@ -58,18 +55,3 @@ stress_end = "2021-12-31"
 [parameter_grids."Elastic net"]
 "regressor__alpha" = [0.00001, 0.0001, 0.001]
 "regressor__l1_ratio" = [0.25, 0.5, 0.75]
-
-[parameter_grids."Explicit interactions"]
-"regressor__ridge__alpha" = [0.01, 0.1, 1.0, 10.0]
-
-[parameter_grids."Random forest"]
-"regressor__max_depth" = [3, 6, "__none__"]
-"regressor__min_samples_leaf" = [5, 20]
-
-[parameter_grids."Gradient boosting"]
-"regressor__learning_rate" = [0.03, 0.1]
-"regressor__max_leaf_nodes" = [7, 15]
-"regressor__l2_regularization" = [0.0, 1.0]
-
-[parameter_grids."Choquet 2-additive L1"]
-"regressor__regressor__penalty" = [0.00001, 0.0001, 0.001, 0.01]

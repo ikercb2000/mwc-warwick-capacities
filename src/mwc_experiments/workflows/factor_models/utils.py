@@ -160,13 +160,12 @@ def run_factor_experiment(
                 ] = in_sample_residual
                 fitted_models[(asset, model_name)] = fitted
 
-                if model_name == "Choquet 2-additive":
-                    asset_shapley, asset_interactions = capacity_summary(
+                if model_name == "Choquet 1-additive":
+                    asset_shapley, _ = capacity_summary(
                         fitted,
                         list(features),
                     )
                     shapley[asset] = asset_shapley
-                    interactions[asset] = asset_interactions
             except Exception as error:
                 failure_rows.append(
                     {

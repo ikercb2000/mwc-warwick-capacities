@@ -27,7 +27,6 @@ from mwc_experiments.evaluation import (
     plot_shapley,
     regression_estimation_robustness,
     regression_regime_metrics,
-    top_interactions,
 )
 from mwc_experiments.workflows import (
     compare_validation_stress_regimes,
@@ -404,44 +403,20 @@ if result.shapley:
     artifacts["Shapley indices"] = save_table(
         shapley_panel, "experiment_1_shapley_indices.csv", paths
     )
-for asset, matrix in result.interactions.items():
-    slug = artifact_slug(asset)
-    artifacts[f"interactions {asset}"] = save_table(
-        matrix, f"experiment_1_interactions_{slug}.csv", paths
-    )
-    artifacts[f"top interactions {asset}"] = save_table(
-        top_interactions(
-            matrix,
-            n=int(analysis_config["top_interactions"]),
-        ),
-        f"experiment_1_top_interactions_{slug}.csv",
-        paths,
-        index=False,
-    )
-
 aapl_frame = data.factor_frames[STABILITY_ASSET]
+reference = str(analysis_config["representative_model"])
 stability = expanding_capacity_stability(
     aapl_frame[list(FACTOR_COLUMNS)],
     aapl_frame["target_excess_loss"],
     cutoffs=STABILITY_CUTOFFS,
     task="regression",
+    model_name=reference,
     purge=int(analysis_config["stability_purge"]),
     verbose=verbose,
 )
 artifacts["AAPL Shapley stability"] = save_table(
     stability.shapley,
     "experiment_1_aapl_shapley_stability.csv",
-    paths,
-)
-artifacts["AAPL interaction stability"] = save_table(
-    stability.interaction_long,
-    "experiment_1_aapl_interaction_stability_long.csv",
-    paths,
-    index=False,
-)
-artifacts["AAPL stability summary"] = save_table(
-    stability.interaction_stability(),
-    "experiment_1_aapl_interaction_stability_summary.csv",
     paths,
 )
 artifacts["AAPL stability failures"] = save_table(
@@ -451,7 +426,6 @@ artifacts["AAPL stability failures"] = save_table(
     index=False,
 )
 
-reference = str(analysis_config["representative_model"])
 if reference in result.predictions:
     aapl_predictions = pd.concat(
         {
@@ -567,19 +541,6 @@ if not shapley_panel.empty:
     artifacts["Shapley panel figure"] = save_figure(
         figure, "experiment_1_shapley_by_asset.png", paths
     )
-
-for asset in PREDICTION_ASSETS:
-    if asset in result.interactions:
-        axis = plot_matrix(
-            result.interactions[asset],
-            title=f"{asset}: pairwise interaction indices",
-            symmetric=True,
-        )
-        artifacts[f"interaction figure {asset}"] = save_figure(
-            axis.figure,
-            f"experiment_1_interactions_{artifact_slug(asset)}.png",
-            paths,
-        )
 
 axis = stability.shapley.plot(
     figsize=(11, 5), marker="o", title="AAPL factor Shapley stability"
