@@ -1,0 +1,75 @@
+[experiment]
+id = "tail_risk"
+script = "scripts/experiment_tail_risk.py"
+notebook = "notebooks/03_tail_risk_classification.ipynb"
+description = "Tail-event classification"
+
+[execution]
+quick_mode_default = true
+random_state = 42
+
+[dataset]
+horizons = [1, 5, 10]
+primary_alpha = 0.95
+robustness_alpha = 0.975
+features = [
+    "market_loss_1d", "vix", "realized_volatility_20d",
+    "drawdown_severity", "liquidity_stress_20d", "baa_credit_spread_pct",
+    "term_spread_10y_2y_pct", "average_equity_correlation_60d",
+    "negative_momentum_21d", "lagged_portfolio_loss_1d",
+]
+
+[split]
+train_end = "2017-12-31"
+validation_end = "2019-12-31"
+
+[models]
+main = [
+    "Prior probability", "Logistic", "Logistic oriented",
+    "Penalized logistic", "Explicit interactions", "RBF SVM",
+    "Random forest", "Gradient boosting", "Choquistic 1-additive",
+    "Choquistic 2-additive", "MLP",
+]
+robustness = [
+    "Prior probability", "Logistic", "Logistic oriented",
+    "Penalized logistic", "Gradient boosting", "Choquistic 1-additive",
+    "Choquistic 2-additive",
+]
+orientation = [
+    "Logistic", "Logistic oriented", "Choquistic 1-additive",
+    "Choquistic 2-additive",
+]
+report = [
+    "Prior probability", "Logistic", "Logistic oriented",
+    "Explicit interactions", "Gradient boosting", "Choquistic 1-additive",
+    "Choquistic 2-additive",
+]
+
+[analysis]
+stability_horizon = 5
+stability_cutoffs = ["2018-12-31", "2020-12-31", "2022-12-30", "2024-12-31", "2026-07-30"]
+stability_purge = 5
+top_interactions = 12
+
+[parameter_grids."Penalized logistic"]
+"classifier__C" = [0.01, 0.1, 1.0, 10.0]
+
+[parameter_grids."Explicit interactions"]
+"classifier__logistic__C" = [0.01, 0.1, 1.0]
+
+[parameter_grids."RBF SVM"]
+"classifier__C" = [0.1, 1.0, 10.0]
+"classifier__gamma" = ["scale", 0.1]
+
+[parameter_grids."Random forest"]
+"classifier__max_depth" = [3, 6, "__none__"]
+"classifier__min_samples_leaf" = [5, 20]
+
+[parameter_grids."Gradient boosting"]
+"classifier__learning_rate" = [0.03, 0.1]
+"classifier__max_leaf_nodes" = [7, 15]
+"classifier__l2_regularization" = [0.0, 1.0]
+
+[parameter_grids.MLP]
+"classifier__hidden_layer_sizes" = [[32], [32, 16]]
+"classifier__alpha" = [0.0001, 0.001]

@@ -1,6 +1,7 @@
 """Expose the public data-pipeline API."""
 
 from mwc_experiments.data.datasets import (
+    StaleProcessedDataError,
     build_experiment_data,
     build_portfolio_dataset,
     load_or_build_processed_data,
@@ -21,6 +22,7 @@ __all__ = [
     "PreparedMarketData",
     "ProcessedExperimentData",
     "RawMarketData",
+    "StaleProcessedDataError",
     "build_experiment_data",
     "build_portfolio_dataset",
     "factor_frame",

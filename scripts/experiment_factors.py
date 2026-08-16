@@ -10,6 +10,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from mwc_experiments.configuration import (
+    load_experiment_config,
+    parameter_grid_overrides,
+)
 from mwc_experiments.data import load_or_build_processed_data
 from mwc_experiments.evaluation import (
     clipping_diagnostics,
@@ -24,7 +28,6 @@ from mwc_experiments.evaluation import (
     regression_regime_metrics,
     top_interactions,
 )
-from mwc_experiments.settings import FACTOR_COLUMNS
 from mwc_experiments.workflows import (
     compare_validation_stress_regimes,
     expanding_capacity_stability,
@@ -41,40 +44,47 @@ from mwc_experiments.workflows.experiment_support import (
 )
 
 
-STABILITY_CUTOFFS = (
-    "2018-12-31",
-    "2020-12-31",
-    "2022-12-30",
-    "2024-12-31",
-    "2026-07-30",
+args = parse_experiment_args(
+    "Run the complete financial factor experiment.",
+    experiment_id="factor_models",
 )
-ORIENTATION_MODELS = (
-    "OLS",
-    "OLS oriented",
-    "Monotone linear",
-    "Choquet 1-additive",
-    "Choquet 2-additive",
-)
-EXTREME_ROBUSTNESS_MODELS = (
-    "OLS",
-    "Ridge",
-    "Lasso",
-    "Monotone linear",
-    "Gradient boosting",
-    "Choquet 1-additive",
-    "Choquet 2-additive",
-    "Choquet 2-additive L1",
-)
-
-
-args = parse_experiment_args("Run the complete financial factor experiment.")
 quick = args.quick
 verbose = not args.quiet
 paths = prepare_output_paths()
+config = load_experiment_config("factor_models", paths.root)
+dataset_config = config["dataset"]
+model_config = config["models"]
+analysis_config = config["analysis"]
+stress_config = config["validation_stress"]
+execution_config = config["execution"]
+FACTOR_COLUMNS = tuple(str(value) for value in dataset_config["features"])
+ASSETS = tuple(str(value) for value in dataset_config["assets"])
+MAIN_MODELS = tuple(str(value) for value in model_config["main"])
+ORIENTATION_MODELS = tuple(str(value) for value in model_config["orientation"])
+EXTREME_ROBUSTNESS_MODELS = tuple(
+    str(value) for value in model_config["extreme_robustness"]
+)
+RESIDUAL_COVARIANCE_MODELS = tuple(
+    str(value) for value in model_config["residual_covariance"]
+)
+PREDICTION_MODELS = tuple(str(value) for value in model_config["prediction"])
+STABILITY_CUTOFFS = tuple(
+    str(value) for value in analysis_config["stability_cutoffs"]
+)
+STABILITY_ASSET = str(analysis_config["stability_asset"])
+PREDICTION_ASSETS = tuple(
+    str(value) for value in analysis_config["prediction_assets"]
+)
+PARAMETER_GRIDS = parameter_grid_overrides(config)
 data = load_or_build_processed_data(paths)
 result = run_factor_experiment(
     data.factor_frames,
+    assets=ASSETS,
+    features=FACTOR_COLUMNS,
     quick=quick,
+    model_names=MAIN_MODELS,
+    random_state=int(execution_config["random_state"]),
+    parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
 artifacts: dict[str, Path] = {}
@@ -216,6 +226,12 @@ for asset, split in result.splits.items():
             result.metrics.xs(asset, level="asset").index.astype(str)
         ),
         quick=quick,
+        random_state=int(execution_config["random_state"]),
+        validation_start=str(stress_config["validation_start"]),
+        validation_end=str(stress_config["validation_end"]),
+        stress_start=str(stress_config["stress_start"]),
+        stress_end=str(stress_config["stress_end"]),
+        parameter_grids=PARAMETER_GRIDS,
     )
     validation_metrics = validation_comparison.metrics.reset_index()
     validation_metrics["asset"] = asset
@@ -385,19 +401,22 @@ for asset, matrix in result.interactions.items():
         matrix, f"experiment_1_interactions_{slug}.csv", paths
     )
     artifacts[f"top interactions {asset}"] = save_table(
-        top_interactions(matrix, n=10),
+        top_interactions(
+            matrix,
+            n=int(analysis_config["top_interactions"]),
+        ),
         f"experiment_1_top_interactions_{slug}.csv",
         paths,
         index=False,
     )
 
-aapl_frame = data.factor_frames["AAPL"]
+aapl_frame = data.factor_frames[STABILITY_ASSET]
 stability = expanding_capacity_stability(
     aapl_frame[list(FACTOR_COLUMNS)],
     aapl_frame["target_excess_loss"],
     cutoffs=STABILITY_CUTOFFS,
     task="regression",
-    purge=0,
+    purge=int(analysis_config["stability_purge"]),
     verbose=verbose,
 )
 artifacts["AAPL Shapley stability"] = save_table(
@@ -423,13 +442,13 @@ artifacts["AAPL stability failures"] = save_table(
     index=False,
 )
 
-reference = "Choquet 2-additive"
+reference = str(analysis_config["representative_model"])
 if reference in result.predictions:
     aapl_predictions = pd.concat(
         {
-            model: frame["AAPL"]
+            model: frame[STABILITY_ASSET]
             for model, frame in result.predictions.items()
-            if "AAPL" in frame
+            if STABILITY_ASSET in frame
         },
         axis=1,
     ).dropna()
@@ -442,12 +461,12 @@ if reference in result.predictions:
             aapl_predictions,
             reference=reference,
             loss="squared",
-            max_lags=10,
+            max_lags=int(analysis_config["hac_max_lags"]),
         ),
         "experiment_1_aapl_hac_comparison.csv",
         paths,
     )
-chosen = result.fitted_models.get(("AAPL", reference))
+chosen = result.fitted_models.get((STABILITY_ASSET, reference))
 if chosen is not None:
     artifacts["AAPL orientation"] = save_table(
         orientation_table(chosen),
@@ -480,11 +499,7 @@ artifacts["asset RMSE figure"] = save_figure(
     figure, "experiment_1_asset_rmse.png", paths
 )
 
-for model in (
-    "OLS",
-    "Choquet 1-additive",
-    "Choquet 2-additive",
-):
+for model in RESIDUAL_COVARIANCE_MODELS:
     if model in result.residuals:
         axis = plot_matrix(
             result.residual_covariance(model),
@@ -497,15 +512,10 @@ for model in (
             paths,
         )
 
-for asset in ("AAPL", "JPM", "XOM"):
+for asset in PREDICTION_ASSETS:
     available = [
         model
-        for model in (
-            "OLS",
-            "Explicit interactions",
-            "Gradient boosting",
-            "Choquet 2-additive",
-        )
+        for model in PREDICTION_MODELS
         if model in result.predictions and asset in result.predictions[model]
     ]
     if available:
@@ -549,7 +559,7 @@ if not shapley_panel.empty:
         figure, "experiment_1_shapley_by_asset.png", paths
     )
 
-for asset in ("AAPL", "JPM", "XOM"):
+for asset in PREDICTION_ASSETS:
     if asset in result.interactions:
         axis = plot_matrix(
             result.interactions[asset],

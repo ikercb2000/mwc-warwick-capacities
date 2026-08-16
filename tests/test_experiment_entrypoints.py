@@ -91,6 +91,48 @@ def test_notebooks_only_load_persisted_report_artifacts() -> None:
 def test_only_reusable_experiment_support_lives_in_workflows() -> None:
     """Keep shared helpers reusable without hiding complete pipelines in src."""
     workflow_dir = ROOT / "src" / "mwc_experiments" / "workflows"
-    assert (workflow_dir / "experiment_support.py").is_file()
+    support = workflow_dir / "experiment_support"
+    assert support.is_dir()
+    assert (support / "types.py").is_file()
+    assert (support / "utils.py").is_file()
+    assert (support / "__init__.py").is_file()
     assert not (workflow_dir / "data_preparation.py").exists()
     assert not (ROOT / "src" / "mwc_experiments" / "experiments").exists()
+
+
+def test_domain_modules_follow_the_types_utils_mappings_convention() -> None:
+    """Prevent classes, functions and dictionary mappings being mixed again."""
+    source_root = ROOT / "src" / "mwc_experiments"
+    permitted_modules = {
+        "__init__.py",
+        "types.py",
+        "utils.py",
+        "mappings.py",
+        "constants.py",
+    }
+    for path in source_root.rglob("*.py"):
+        assert path.name in permitted_modules, path.relative_to(source_root)
+        tree = ast.parse(path.read_text(encoding="utf-8"))
+        top_level_classes = [
+            node for node in tree.body if isinstance(node, ast.ClassDef)
+        ]
+        top_level_functions = [
+            node
+            for node in tree.body
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef))
+        ]
+        literal_mappings = [
+            node
+            for node in tree.body
+            if isinstance(node, (ast.Assign, ast.AnnAssign))
+            and isinstance(node.value, (ast.Dict, ast.DictComp))
+        ]
+        if path.name == "types.py":
+            assert not top_level_functions, path.relative_to(source_root)
+            assert not literal_mappings, path.relative_to(source_root)
+        elif path.name == "utils.py":
+            assert not top_level_classes, path.relative_to(source_root)
+            assert not literal_mappings, path.relative_to(source_root)
+        elif path.name == "mappings.py":
+            assert not top_level_classes, path.relative_to(source_root)
+            assert not top_level_functions, path.relative_to(source_root)

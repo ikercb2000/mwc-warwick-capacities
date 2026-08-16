@@ -1,0 +1,84 @@
+[experiment]
+id = "future_loss"
+script = "scripts/experiment_predict_loss.py"
+notebook = "notebooks/02_future_loss_regression.ipynb"
+description = "Future portfolio-loss regression"
+
+[execution]
+quick_mode_default = true
+random_state = 42
+
+[dataset]
+horizons = [1, 5, 10]
+features = [
+    "market_loss_1d", "vix", "realized_volatility_20d",
+    "drawdown_severity", "liquidity_stress_20d", "baa_credit_spread_pct",
+    "term_spread_10y_2y_pct", "average_equity_correlation_60d",
+    "negative_momentum_21d", "lagged_portfolio_loss_1d",
+]
+
+[models]
+main = [
+    "Historical mean", "OLS", "OLS oriented", "Monotone linear", "Ridge",
+    "Lasso", "Elastic net", "Explicit interactions", "Random forest",
+    "Gradient boosting", "Choquet 1-additive", "Choquet 2-additive",
+    "Choquet 2-additive L1", "MLP",
+]
+cap_weight = [
+    "Historical mean", "OLS", "OLS oriented", "Monotone linear",
+    "Explicit interactions", "Gradient boosting", "Choquet 1-additive",
+    "Choquet 2-additive", "Choquet 2-additive L1",
+]
+orientation = [
+    "OLS", "OLS oriented", "Monotone linear",
+    "Choquet 1-additive", "Choquet 2-additive",
+]
+extreme_robustness = [
+    "OLS", "Ridge", "Lasso", "Monotone linear", "Gradient boosting",
+    "Choquet 1-additive", "Choquet 2-additive", "Choquet 2-additive L1",
+]
+
+[analysis]
+cap_weight_horizon = 5
+stability_horizon = 5
+stability_cutoffs = ["2018-12-31", "2020-12-31", "2022-12-30", "2024-12-31", "2026-07-30"]
+stability_purge = 5
+high_loss_quantile = 0.90
+top_interactions = 12
+hac_minimum_lags = 10
+forecast_plot_start = "2020-01-01"
+
+[validation_stress]
+validation_start = "2018-01-01"
+validation_end = "2021-12-31"
+stress_start = "2020-01-01"
+stress_end = "2021-12-31"
+
+[parameter_grids.Ridge]
+"regressor__alpha" = [0.01, 0.1, 1.0, 10.0]
+
+[parameter_grids.Lasso]
+"regressor__alpha" = [0.00001, 0.0001, 0.001, 0.01]
+
+[parameter_grids."Elastic net"]
+"regressor__alpha" = [0.00001, 0.0001, 0.001]
+"regressor__l1_ratio" = [0.25, 0.5, 0.75]
+
+[parameter_grids."Explicit interactions"]
+"regressor__ridge__alpha" = [0.01, 0.1, 1.0, 10.0]
+
+[parameter_grids."Random forest"]
+"regressor__max_depth" = [3, 6, "__none__"]
+"regressor__min_samples_leaf" = [5, 20]
+
+[parameter_grids."Gradient boosting"]
+"regressor__learning_rate" = [0.03, 0.1]
+"regressor__max_leaf_nodes" = [7, 15]
+"regressor__l2_regularization" = [0.0, 1.0]
+
+[parameter_grids."Choquet 2-additive L1"]
+"regressor__regressor__penalty" = [0.00001, 0.0001, 0.001, 0.01]
+
+[parameter_grids.MLP]
+"regressor__hidden_layer_sizes" = [[32], [32, 16]]
+"regressor__alpha" = [0.0001, 0.001]

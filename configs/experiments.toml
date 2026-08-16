@@ -1,0 +1,17 @@
+[experiments.data_preparation]
+config = "configs/experiments/data_preparation.toml"
+
+[experiments.factor_models]
+config = "configs/experiments/factor_models.toml"
+
+[experiments.future_loss]
+config = "configs/experiments/future_loss.toml"
+
+[experiments.tail_risk]
+config = "configs/experiments/tail_risk.toml"
+
+[experiments.distortion_risk]
+config = "configs/experiments/distortion_risk.toml"
+
+[experiments.autoregression]
+config = "configs/experiments/autoregression.toml"

@@ -11,6 +11,10 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics import ConfusionMatrixDisplay
 
+from mwc_experiments.configuration import (
+    load_experiment_config,
+    parameter_grid_overrides,
+)
 from mwc_experiments.data import load_or_build_processed_data
 from mwc_experiments.evaluation import (
     orientation_table,
@@ -19,12 +23,6 @@ from mwc_experiments.evaluation import (
     plot_metric_ranking,
     plot_shapley,
     top_interactions,
-)
-from mwc_experiments.settings import (
-    HORIZONS,
-    MAIN_RISK_FEATURES,
-    PRIMARY_TAIL_ALPHA,
-    ROBUSTNESS_TAIL_ALPHA,
 )
 from mwc_experiments.workflows import (
     expanding_capacity_stability,
@@ -40,65 +38,68 @@ from mwc_experiments.workflows.experiment_support import (
 )
 
 
-STABILITY_CUTOFFS = (
-    "2018-12-31",
-    "2020-12-31",
-    "2022-12-30",
-    "2024-12-31",
-    "2026-07-30",
+args = parse_experiment_args(
+    "Run the complete tail-risk experiment.",
+    experiment_id="tail_risk",
 )
-ORIENTATION_MODELS = (
-    "Logistic",
-    "Logistic oriented",
-    "Choquistic 1-additive",
-    "Choquistic 2-additive",
-)
-ROBUSTNESS_MODELS = (
-    "Prior probability",
-    "Logistic",
-    "Logistic oriented",
-    "Penalized logistic",
-    "Gradient boosting",
-    "Choquistic 1-additive",
-    "Choquistic 2-additive",
-)
-REPORT_MODELS = (
-    "Prior probability",
-    "Logistic",
-    "Logistic oriented",
-    "Explicit interactions",
-    "Gradient boosting",
-    "Choquistic 1-additive",
-    "Choquistic 2-additive",
-)
-
-
-args = parse_experiment_args("Run the complete tail-risk experiment.")
 quick = args.quick
 verbose = not args.quiet
 paths = prepare_output_paths()
+config = load_experiment_config("tail_risk", paths.root)
+dataset_config = config["dataset"]
+model_config = config["models"]
+analysis_config = config["analysis"]
+split_config = config["split"]
+execution_config = config["execution"]
+HORIZONS = tuple(int(value) for value in dataset_config["horizons"])
+MAIN_RISK_FEATURES = tuple(str(value) for value in dataset_config["features"])
+PRIMARY_TAIL_ALPHA = float(dataset_config["primary_alpha"])
+ROBUSTNESS_TAIL_ALPHA = float(dataset_config["robustness_alpha"])
+MAIN_MODELS = tuple(str(value) for value in model_config["main"])
+ORIENTATION_MODELS = tuple(str(value) for value in model_config["orientation"])
+ROBUSTNESS_MODELS = tuple(str(value) for value in model_config["robustness"])
+REPORT_MODELS = tuple(str(value) for value in model_config["report"])
+STABILITY_CUTOFFS = tuple(
+    str(value) for value in analysis_config["stability_cutoffs"]
+)
+STABILITY_HORIZON = int(analysis_config["stability_horizon"])
+PARAMETER_GRIDS = parameter_grid_overrides(config)
 dataset = load_or_build_processed_data(paths).equal_weight_dataset
 primary = run_tail_classification_experiment(
     dataset,
+    features=MAIN_RISK_FEATURES,
     horizons=HORIZONS,
     alpha=PRIMARY_TAIL_ALPHA,
     quick=quick,
+    model_names=MAIN_MODELS,
+    random_state=int(execution_config["random_state"]),
+    train_end=str(split_config["train_end"]),
+    validation_end=str(split_config["validation_end"]),
+    parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
 rare = run_tail_classification_experiment(
     dataset,
+    features=MAIN_RISK_FEATURES,
     horizons=HORIZONS,
     alpha=ROBUSTNESS_TAIL_ALPHA,
     quick=quick,
     model_names=ROBUSTNESS_MODELS,
+    random_state=int(execution_config["random_state"]),
+    train_end=str(split_config["train_end"]),
+    validation_end=str(split_config["validation_end"]),
+    parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
 stability = expanding_capacity_stability(
     dataset[list(MAIN_RISK_FEATURES)],
-    dataset["tail_event_h5_a0p95"].astype(float),
+    dataset[
+        f"tail_event_h{STABILITY_HORIZON}_a"
+        f"{str(PRIMARY_TAIL_ALPHA).replace('.', 'p')}"
+    ].astype(float),
     cutoffs=STABILITY_CUTOFFS,
     task="classification",
-    purge=5,
+    purge=int(analysis_config["stability_purge"]),
     verbose=verbose,
 )
 artifacts: dict[str, Path] = {}
@@ -170,7 +171,10 @@ for horizon, horizon_result in primary.items():
             paths,
         )
         artifacts[f"top interactions h{horizon} {model}"] = save_table(
-            top_interactions(horizon_result.interactions[model], n=12),
+            top_interactions(
+                horizon_result.interactions[model],
+                n=int(analysis_config["top_interactions"]),
+            ),
             f"experiment_2b_top_interactions_h{horizon}_{artifact_slug(model)}.csv",
             paths,
             index=False,

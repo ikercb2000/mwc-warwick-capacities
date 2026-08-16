@@ -1,0 +1,14 @@
+[experiment]
+id = "data_preparation"
+script = "scripts/build_experiment_data.py"
+notebook = "notebooks/00_data_preparation_and_eda.ipynb"
+description = "Raw-data preparation, model-ready datasets and EDA"
+
+[execution]
+quick_mode_default = false
+
+[dataset]
+horizons = [1, 5, 10]
+tail_alphas = [0.95, 0.975]
+tail_window = 250
+minimum_tail_history = 250

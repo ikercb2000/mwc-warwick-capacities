@@ -1,0 +1,28 @@
+[experiment]
+id = "autoregression"
+script = "scripts/experiment_autoregression.py"
+notebook = "notebooks/05_choquet_autoregression_robustness.ipynb"
+description = "Linear and Choquet autoregression robustness"
+
+[execution]
+quick_mode_default = false
+
+[dataset]
+loss_column = "portfolio_loss_1d"
+stress_column = "vix"
+
+[split]
+train_end = "2018-12-31"
+validation_end = "2019-12-31"
+
+[selection]
+candidate_lags = [1, 2, 3, 5]
+
+[analysis]
+adf_autolag = "AIC"
+hac_reference = "Choquet AR"
+hac_max_lags = 10
+stress_quantile = 0.90
+diagnostic_lags = 30
+forecast_plot_start = "2020-01-01"
+error_volatility_window = 60

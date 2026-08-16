@@ -1,0 +1,21 @@
+[experiment]
+id = "distortion_risk"
+script = "scripts/experiment_distortion_risk.py"
+notebook = "notebooks/04_distortion_risk_simulation.ipynb"
+description = "Distortion-risk simulation and capital backtests"
+
+[execution]
+quick_mode_default = false
+random_state = 42
+
+[simulation]
+n_observations = 4000
+
+[risk]
+expected_shortfall_alpha = 0.975
+capital_window = 252
+proportional_hazards_gammas = [0.70, 1.20]
+
+[axiom_test]
+cash = 0.01
+scale = 1.5

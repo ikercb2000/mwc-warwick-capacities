@@ -49,6 +49,7 @@ coverage.xml
 *.py.cover
 .hypothesis/
 .pytest_cache/
+.pytest_tmp/
 cover/
 
 # Translations
@@ -216,3 +217,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Immutable local experiment runs. Publish selected snapshots explicitly instead.
+data/results/runs/
+data/results/latest/

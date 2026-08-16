@@ -10,8 +10,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from mwc_experiments.configuration import load_experiment_config
 from mwc_experiments.data import build_experiment_data, save_processed_data
-from mwc_experiments.settings import HORIZONS, PRIMARY_TAIL_ALPHA, ROBUSTNESS_TAIL_ALPHA
 from mwc_experiments.workflows.experiment_support import (
     prepare_output_paths,
     print_artifacts,
@@ -21,7 +21,17 @@ from mwc_experiments.workflows.experiment_support import (
 
 
 paths = prepare_output_paths()
-data = build_experiment_data(paths)
+config = load_experiment_config("data_preparation", paths.root)
+dataset_config = config["dataset"]
+HORIZONS = tuple(int(value) for value in dataset_config["horizons"])
+TAIL_ALPHAS = tuple(float(value) for value in dataset_config["tail_alphas"])
+data = build_experiment_data(
+    paths,
+    horizons=HORIZONS,
+    tail_alphas=TAIL_ALPHAS,
+    tail_window=int(dataset_config["tail_window"]),
+    min_tail_history=int(dataset_config["minimum_tail_history"]),
+)
 processed = save_processed_data(data, paths)
 prepared = data.prepared
 dataset = data.equal_weight_dataset
@@ -44,7 +54,7 @@ portfolio_summary = pd.DataFrame(
 ).describe().T
 event_rows: list[dict[str, float | int]] = []
 for horizon in HORIZONS:
-    for alpha in (PRIMARY_TAIL_ALPHA, ROBUSTNESS_TAIL_ALPHA):
+    for alpha in TAIL_ALPHAS:
         label = str(alpha).replace(".", "p")
         valid = dataset[f"tail_event_h{horizon}_a{label}"].dropna().astype(int)
         event_rows.append(

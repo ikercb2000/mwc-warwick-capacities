@@ -20,10 +20,15 @@ dependencies = [
 
 [tool.poetry]
 packages = [{ include = "mwc_experiments", from = "src" }]
-include = [{ path = "configs/experiment_settings.toml", format = ["sdist", "wheel"] }]
+include = [
+    { path = "configs/experiment_settings.toml", format = ["sdist", "wheel"] },
+    { path = "configs/experiments.toml", format = ["sdist", "wheel"] },
+    { path = "configs/experiments", format = ["sdist", "wheel"] },
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "--basetemp=.pytest_tmp"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

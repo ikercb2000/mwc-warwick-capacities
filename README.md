@@ -41,11 +41,30 @@ Reusable implementation is organised as follows:
 | `src/mwc_experiments/modeling/` | Preprocessing, chronological splits, candidate registries, hyperparameter selection and estimator inspection. |
 | `src/mwc_experiments/workflows/` | Reusable factor, forecasting, classification, risk and autoregression procedures used by the scripts. |
 | `src/mwc_experiments/evaluation/` | Metrics, inference, capacity interpretation and plotting utilities. |
-| `src/mwc_experiments/reporting.py` | Load saved tables and figures without recomputing experiments. |
-| `configs/experiment_settings.toml` | Dates, assets, horizons, tail levels, random seed and feature lists. |
+| `src/mwc_experiments/reporting/` | Load saved tables and figures without recomputing experiments. |
+| `configs/experiment_settings.toml` | Shared market-data universe, source mappings and reusable library defaults. |
+| `configs/experiments.toml` | Small index mapping experiment identifiers to their own TOML files. |
+| `configs/experiments/*.toml` | Models, grids, horizons, samples and analysis parameters owned by each executable experiment. |
 | `scripts/` | Directly executable data and experiment pipelines. |
 | `notebooks/` | Lightweight reports over persisted artifacts. |
 | `tests/` | Data, split, model-selection and architectural checks. |
+
+Every reusable domain follows the same internal convention:
+
+```text
+domain/
+|-- __init__.py   # stable public API and re-exports
+|-- types.py      # classes, dataclasses and exceptions, when present
+|-- utils.py      # functions and runtime state
+|-- mappings.py   # dictionary mappings, when present
+`-- constants.py  # non-mapping settings constants, when needed
+```
+
+For example, run management is implemented in `mwc_experiments/runs/`, with
+`ExperimentRunPaths` in `types.py`, run operations in `utils.py`, and artifact
+and script mappings in `mappings.py`. Callers import from the domain package
+(`from mwc_experiments.runs import ...`) rather than from its internal modules.
+An architectural test enforces this separation throughout `src/mwc_experiments`.
 
 ## Installation
 
@@ -77,8 +96,10 @@ Bloomberg equity files use names such as
 `SPY_daily_etf_data.xlsx`. FRED files must contain `date` and `value`
 columns and follow the pattern `{SERIES_ID}_*.csv`.
 
-The assets, FRED series and sample dates actually loaded are defined in
-`configs/experiment_settings.toml`.
+The raw-data universe and FRED mappings are defined in
+`configs/experiment_settings.toml`. Target horizons and point-in-time tail
+labels are controlled by `configs/experiments/data_preparation.toml`; changing
+that file invalidates the processed-data fingerprint and triggers a rebuild.
 
 ## Execution order
 
@@ -98,9 +119,10 @@ This command:
 6. saves model-ready datasets, audits, summary tables and EDA figures.
 
 Processed datasets are written to `data/experiments/`. Experiment scripts also
-call `load_or_build_processed_data()`, so missing Parquet files are rebuilt
-automatically. Running the build script explicitly is still recommended because
-it produces the complete data audit and EDA output.
+call `load_or_build_processed_data()`. The data manifest hashes the raw inputs,
+configuration and data-building source code. Missing, modified or stale Parquet
+files are rebuilt automatically. Running the build script explicitly is still
+recommended because it produces the complete data audit and EDA output.
 
 Run experiments independently after preparing the data:
 
@@ -110,6 +132,24 @@ poetry run python scripts/experiment_predict_loss.py --full
 poetry run python scripts/experiment_tail_risk.py --full
 poetry run python scripts/experiment_distortion_risk.py
 poetry run python scripts/experiment_autoregression.py
+```
+
+Alternatively, run the complete sequence and final artifact audit with:
+
+```powershell
+.\scripts\run_all_experiments.ps1
+```
+
+Pass `--quick` for a smoke-sized run:
+
+```powershell
+.\scripts\run_all_experiments.ps1 --quick
+```
+
+Inspect existing runs and their status with:
+
+```powershell
+poetry run python scripts/list_runs.py
 ```
 
 The three predictive scripts accept:
@@ -140,8 +180,8 @@ poetry run python scripts/run_smoke_experiments.py
 ## Model selection and evaluation
 
 Predictive experiments use chronological train, validation and test samples.
-The default boundaries are configured in
-`configs/experiment_settings.toml`:
+The boundaries used by each executable are configured in its file under
+`configs/experiments/`:
 
 - regression training ends on 2018-12-31;
 - classification training ends on 2017-12-31;
@@ -225,25 +265,88 @@ post-2021 test. Consequently, differences in selected parameters, validation
 ranks and test RMSE isolate the selection effect of the stressed period rather
 than a difference in final training data. The fitted test models use the full
 history through 2021, rather than only the short initial training window.
-The relevant dates are configurable under `[validation_stress]` in the TOML
-settings. Use `--full` when analysing this comparison because `--quick` retains
-only one hyperparameter combination per model family.
+The relevant dates are configurable under `[validation_stress]` in
+`factor_models.toml` and `future_loss.toml`. Use `--full` when analysing this
+comparison because `--quick` retains only one hyperparameter combination per
+model family.
+
+Each experiment owns one self-contained configuration file:
+
+```text
+configs/experiments/
+|-- data_preparation.toml
+|-- factor_models.toml
+|-- future_loss.toml
+|-- tail_risk.toml
+|-- distortion_risk.toml
+`-- autoregression.toml
+```
+
+The predictive TOMLs contain explicit `[models]` lists and
+`[parameter_grids.<model>]` tables. These grids replace the defaults in the
+sklearn candidate registry and are validated against the actual pipeline
+parameter names before fitting. The scripts load the values near the beginning
+of the file, while the complete pipeline remains written directly in the
+script.
 
 ## Outputs and notebooks
 
-Experiment artifacts are written to:
+Every script execution creates a unique immutable run:
 
 ```text
-data/experiments/       processed model-ready Parquet datasets
-data/results/tables/    metrics, predictions, diagnostics and interpretation
-data/results/figures/   generated PNG figures
-data/results/models/    reserved model-output directory
+data/
+|-- experiments/
+|   |-- manifest.json
+|   `-- model-ready Parquet datasets
+`-- results/
+    |-- runs/{experiment}/{run_id}/
+    |   |-- manifest.json
+    |   |-- shared_config.toml
+    |   |-- experiment_config.toml
+    |   |-- SUCCESS
+    |   |-- logs/run.log
+    |   |-- tables/
+    |   |-- figures/
+    |   `-- models/
+    |-- latest/{experiment}.json
+    |-- tables/                 legacy/published snapshot
+    `-- figures/                legacy/published snapshot
 ```
 
+Run identifiers contain the UTC timestamp, Git commit, execution mode and
+process identifier. A manifest records the command, Git state, Python and
+package versions, configuration hash, data fingerprint, duration, artifact
+sizes and SHA-256 checksums. Files are written atomically. `latest` is updated
+only after every artifact required by the corresponding notebook exists and a
+`SUCCESS` marker has been written. Failed executions therefore cannot replace a
+valid report or mix with artifacts from another run. Local `runs/` and `latest/`
+are ignored by Git; selected flat results can remain as a deliberate dissertation
+snapshot.
+
+Promote a reviewed latest run into that Git-trackable snapshot explicitly:
+
+```powershell
+poetry run python scripts/publish_results.py factor_models
+```
+
+Use `--run-id` to publish a historical run instead. Publication verifies every
+checksum and records its origin under `data/results/published/`; ordinary
+experiment execution never alters the flat dissertation snapshot.
+
 Notebooks do not build data or fit models. They load the saved artifacts through
-`mwc_experiments.reporting`, so they are inexpensive to open and re-execute.
-Run the corresponding experiment first; missing artifacts raise an error naming
-what must be generated.
+`mwc_experiments.reporting`, so they are inexpensive to open and re-execute. By
+default, reporting uses the latest successful run and falls back to the legacy
+flat snapshot only when no run has yet been published. To reproduce a specific
+factor run in PowerShell, set its identifier before starting Jupyter:
+
+```powershell
+$env:MWC_RUN_FACTOR_MODELS="20260815T120000Z_abcdef0_full_1234"
+poetry run jupyter lab
+```
+
+Equivalent variables use the catalogue identifiers `DATA_PREPARATION`,
+`FUTURE_LOSS`, `TAIL_RISK`, `DISTORTION_RISK` and `AUTOREGRESSION`.
+Checksums are verified when an artifact is loaded.
 
 Start Jupyter with:
 
@@ -270,7 +373,15 @@ model registries or experiment architecture:
 poetry run pytest -q
 ```
 
+Audit every notebook against the latest successful runs without opening Jupyter:
+
+```powershell
+poetry run python scripts/audit_results.py
+```
+
 The tests cover forward targets, lagged weights, chronological purging,
 configuration loading, sklearn-compatible model selection, the relationship
 between monotone linear and 1-additive Choquet regression, and the separation
-between executable scripts and reporting notebooks.
+between executable scripts and reporting notebooks. They also cover run
+publication contracts, checksums, latest-run resolution and stale-data
+invalidation.

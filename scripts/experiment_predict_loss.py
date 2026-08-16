@@ -9,6 +9,10 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
+from mwc_experiments.configuration import (
+    load_experiment_config,
+    parameter_grid_overrides,
+)
 from mwc_experiments.data import load_or_build_processed_data
 from mwc_experiments.evaluation import (
     clipping_diagnostics,
@@ -24,7 +28,6 @@ from mwc_experiments.evaluation import (
     regression_regime_metrics,
     top_interactions,
 )
-from mwc_experiments.settings import HORIZONS, MAIN_RISK_FEATURES
 from mwc_experiments.workflows import (
     compare_validation_stress_regimes,
     expanding_capacity_stability,
@@ -41,70 +44,63 @@ from mwc_experiments.workflows.experiment_support import (
 )
 
 
-STABILITY_CUTOFFS = (
-    "2018-12-31",
-    "2020-12-31",
-    "2022-12-30",
-    "2024-12-31",
-    "2026-07-30",
+args = parse_experiment_args(
+    "Run the complete future-loss experiment.",
+    experiment_id="future_loss",
 )
-ORIENTATION_MODELS = (
-    "OLS",
-    "OLS oriented",
-    "Monotone linear",
-    "Choquet 1-additive",
-    "Choquet 2-additive",
-)
-CAP_WEIGHT_MODELS = (
-    "Historical mean",
-    "OLS",
-    "OLS oriented",
-    "Monotone linear",
-    "Explicit interactions",
-    "Gradient boosting",
-    "Choquet 1-additive",
-    "Choquet 2-additive",
-    "Choquet 2-additive L1",
-)
-EXTREME_ROBUSTNESS_MODELS = (
-    "OLS",
-    "Ridge",
-    "Lasso",
-    "Monotone linear",
-    "Gradient boosting",
-    "Choquet 1-additive",
-    "Choquet 2-additive",
-    "Choquet 2-additive L1",
-)
-
-
-args = parse_experiment_args("Run the complete future-loss experiment.")
 quick = args.quick
 verbose = not args.quiet
 paths = prepare_output_paths()
+config = load_experiment_config("future_loss", paths.root)
+dataset_config = config["dataset"]
+model_config = config["models"]
+analysis_config = config["analysis"]
+stress_config = config["validation_stress"]
+execution_config = config["execution"]
+HORIZONS = tuple(int(value) for value in dataset_config["horizons"])
+MAIN_RISK_FEATURES = tuple(str(value) for value in dataset_config["features"])
+MAIN_MODELS = tuple(str(value) for value in model_config["main"])
+ORIENTATION_MODELS = tuple(str(value) for value in model_config["orientation"])
+CAP_WEIGHT_MODELS = tuple(str(value) for value in model_config["cap_weight"])
+EXTREME_ROBUSTNESS_MODELS = tuple(
+    str(value) for value in model_config["extreme_robustness"]
+)
+STABILITY_CUTOFFS = tuple(
+    str(value) for value in analysis_config["stability_cutoffs"]
+)
+CAP_WEIGHT_HORIZON = int(analysis_config["cap_weight_horizon"])
+STABILITY_HORIZON = int(analysis_config["stability_horizon"])
+PARAMETER_GRIDS = parameter_grid_overrides(config)
 data = load_or_build_processed_data(paths)
 dataset = data.equal_weight_dataset
 result = run_future_loss_experiment(
     dataset,
     portfolio="equal",
+    features=MAIN_RISK_FEATURES,
     horizons=HORIZONS,
     quick=quick,
+    model_names=MAIN_MODELS,
+    random_state=int(execution_config["random_state"]),
+    parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
 cap_result = run_future_loss_experiment(
     data.cap_weight_dataset,
     portfolio="cap",
-    horizons=(5,),
+    features=MAIN_RISK_FEATURES,
+    horizons=(CAP_WEIGHT_HORIZON,),
     quick=quick,
     model_names=CAP_WEIGHT_MODELS,
+    random_state=int(execution_config["random_state"]),
+    parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
 stability = expanding_capacity_stability(
     dataset[list(MAIN_RISK_FEATURES)],
-    dataset["future_loss_h5"],
+    dataset[f"future_loss_h{STABILITY_HORIZON}"],
     cutoffs=STABILITY_CUTOFFS,
     task="regression",
-    purge=5,
+    purge=int(analysis_config["stability_purge"]),
     verbose=verbose,
 )
 artifacts: dict[str, Path] = {}
@@ -155,7 +151,7 @@ for horizon, horizon_result in result.horizons.items():
     tail_metrics = high_loss_regime_metrics(
         horizon_result.split.y_test,
         horizon_result.predictions,
-        quantile=0.90,
+        quantile=float(analysis_config["high_loss_quantile"]),
     ).sort_values("RMSE")
     artifacts[f"high-loss metrics h{horizon}"] = save_table(
         tail_metrics,
@@ -236,6 +232,12 @@ for horizon, horizon_result in result.horizons.items():
         model_names=tuple(horizon_result.metrics.index.astype(str)),
         horizon=horizon,
         quick=quick,
+        random_state=int(execution_config["random_state"]),
+        validation_start=str(stress_config["validation_start"]),
+        validation_end=str(stress_config["validation_end"]),
+        stress_start=str(stress_config["stress_start"]),
+        stress_end=str(stress_config["stress_end"]),
+        parameter_grids=PARAMETER_GRIDS,
     )
     artifacts[f"validation-stress comparison h{horizon}"] = save_table(
         validation_comparison.metrics,
@@ -269,7 +271,7 @@ for horizon, horizon_result in result.horizons.items():
             horizon_result.predictions,
             reference=reference,
             loss="squared",
-            max_lags=max(10, horizon),
+            max_lags=max(int(analysis_config["hac_minimum_lags"]), horizon),
         ),
         f"experiment_2a_hac_comparison_h{horizon}.csv",
         paths,
@@ -288,7 +290,10 @@ for horizon, horizon_result in result.horizons.items():
             paths,
         )
         artifacts[f"top interactions h{horizon} {model}"] = save_table(
-            top_interactions(horizon_result.interactions[model], n=12),
+            top_interactions(
+                horizon_result.interactions[model],
+                n=int(analysis_config["top_interactions"]),
+            ),
             f"experiment_2a_top_interactions_h{horizon}_{artifact_slug(model)}.csv",
             paths,
             index=False,
@@ -312,7 +317,7 @@ for horizon, horizon_result in result.horizons.items():
         horizon_result.predictions,
         models=preferred,
         title=f"Observed and predicted future loss — h={horizon}",
-        start="2020-01-01",
+        start=str(analysis_config["forecast_plot_start"]),
     )
     artifacts[f"forecast figure h{horizon}"] = save_figure(
         axis.figure,
@@ -348,7 +353,7 @@ artifacts["all metrics"] = save_table(
     "experiment_2a_all_metrics.csv",
     paths,
 )
-cap_metrics = cap_result.horizons[5].metrics
+cap_metrics = cap_result.horizons[CAP_WEIGHT_HORIZON].metrics
 artifacts["cap-weight robustness"] = save_table(
     cap_metrics,
     "experiment_2a_cap_weight_robustness_h5.csv",
@@ -365,7 +370,7 @@ artifacts["cap-weight validation-selected Choquet"] = save_table(
 )
 comparison = pd.concat(
     {
-        "equal weight": result.horizons[5].metrics["RMSE"],
+        "equal weight": result.horizons[CAP_WEIGHT_HORIZON].metrics["RMSE"],
         "lagged market-cap weight": cap_metrics["RMSE"],
     },
     axis=1,
@@ -397,7 +402,9 @@ artifacts["stability failures"] = save_table(
     paths,
     index=False,
 )
-representative = result.horizons[5].fitted_models.get("Choquet 2-additive")
+representative = result.horizons[STABILITY_HORIZON].fitted_models.get(
+    "Choquet 2-additive"
+)
 if representative is not None:
     artifacts["orientation"] = save_table(
         orientation_table(representative),

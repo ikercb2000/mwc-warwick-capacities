@@ -18,7 +18,7 @@ from capacities_ml_fin.risk import (
     distortion_risk_measure,
     expected_shortfall,
 )
-from mwc_experiments.settings import RANDOM_STATE
+from mwc_experiments.configuration import load_experiment_config
 from mwc_experiments.workflows import (
     capital_backtest_table,
     coverage_test_table,
@@ -36,9 +36,18 @@ from mwc_experiments.workflows.experiment_support import (
 )
 
 
-n_observations = 4_000
-random_state = RANDOM_STATE
 paths = prepare_output_paths()
+config = load_experiment_config("distortion_risk", paths.root)
+execution_config = config["execution"]
+simulation_config = config["simulation"]
+risk_config = config["risk"]
+axiom_config = config["axiom_test"]
+n_observations = int(simulation_config["n_observations"])
+random_state = int(execution_config["random_state"])
+expected_shortfall_alpha = float(risk_config["expected_shortfall_alpha"])
+proportional_hazards_gammas = tuple(
+    float(value) for value in risk_config["proportional_hazards_gammas"]
+)
 simulated = simulate_regime_switching_losses(
     n_observations=n_observations,
     random_state=random_state,
@@ -47,9 +56,12 @@ losses = simulated["portfolio_loss"]
 static = static_risk_table(losses)
 contributions = ordered_risk_contributions(
     losses,
-    distortion=ExpectedShortfallDistortion(0.975),
+    distortion=ExpectedShortfallDistortion(expected_shortfall_alpha),
 )
-capital = rolling_capital_panel(losses, window=252)
+capital = rolling_capital_panel(
+    losses,
+    window=int(risk_config["capital_window"]),
+)
 backtests = capital_backtest_table(
     losses,
     capital,
@@ -67,21 +79,27 @@ first = simulated["asset_a_loss"].to_numpy()
 second = simulated["asset_b_loss"].to_numpy()
 axiom_rows: list[dict[str, object]] = []
 measures = {
-    "ES 97.5%": lambda values: expected_shortfall(values, 0.975),
-    "PH gamma=0.70": lambda values: distortion_risk_measure(
-        values, ProportionalHazardsDistortion(0.70)
+    f"ES {100 * expected_shortfall_alpha:g}%": lambda values: expected_shortfall(
+        values,
+        expected_shortfall_alpha,
     ),
-    "PH gamma=1.20": lambda values: distortion_risk_measure(
-        values, ProportionalHazardsDistortion(1.20)
-    ),
+    **{
+        f"PH gamma={gamma:.2f}": (
+            lambda values, gamma=gamma: distortion_risk_measure(
+                values,
+                ProportionalHazardsDistortion(gamma),
+            )
+        )
+        for gamma in proportional_hazards_gammas
+    },
 }
 for name, measure in measures.items():
     report = check_risk_measure_axioms(
         measure,
         first,
         second,
-        cash=0.01,
-        scale=1.5,
+        cash=float(axiom_config["cash"]),
+        scale=float(axiom_config["scale"]),
     )
     axiom_rows.append({"measure": name, **asdict(report)})
 axioms = pd.DataFrame(axiom_rows).set_index("measure")
