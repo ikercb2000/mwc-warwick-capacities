@@ -1,0 +1,23 @@
+ticker,security,asset_type,relative_path,required_fields,optional_fields,start_date,end_date,period,currency
+AAPL,AAPL US Equity,equity,market_data/equities/daily/AAPL_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+AMZN,AMZN US Equity,equity,market_data/equities/daily/AMZN_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+JPM,JPM US Equity,equity,market_data/equities/daily/JPM_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+KO,KO US Equity,equity,market_data/equities/daily/KO_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+MSFT,MSFT US Equity,equity,market_data/equities/daily/MSFT_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+NVDA,NVDA US Equity,equity,market_data/equities/daily/NVDA_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+UNH,UNH US Equity,equity,market_data/equities/daily/UNH_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+WMT,WMT US Equity,equity,market_data/equities/daily/WMT_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+XOM,XOM US Equity,equity,market_data/equities/daily/XOM_daily_market_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS;PX_LAST;VOLUME;CUR_MKT_CAP,PX_OPEN;PX_HIGH;PX_LOW,2013-12-31,2026-07-30,D,USD
+SPY,SPY US Equity,etf,market_data/etfs/daily/market/SPY_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+IWM,IWM US Equity,etf,market_data/etfs/daily/style/IWM_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+IVE,IVE US Equity,etf,market_data/etfs/daily/style/IVE_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+IVW,IVW US Equity,etf,market_data/etfs/daily/style/IVW_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+MTUM,MTUM US Equity,etf,market_data/etfs/daily/style/MTUM_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+QUAL,QUAL US Equity,etf,market_data/etfs/daily/style/QUAL_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+USMV,USMV US Equity,etf,market_data/etfs/daily/style/USMV_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+XLE,XLE US Equity,etf,market_data/etfs/daily/sector/XLE_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+XLF,XLF US Equity,etf,market_data/etfs/daily/sector/XLF_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+XLK,XLK US Equity,etf,market_data/etfs/daily/sector/XLK_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+XLP,XLP US Equity,etf,market_data/etfs/daily/sector/XLP_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+XLV,XLV US Equity,etf,market_data/etfs/daily/sector/XLV_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD
+XLY,XLY US Equity,etf,market_data/etfs/daily/sector/XLY_daily_etf_data.xlsx,TOT_RETURN_INDEX_GROSS_DVDS,PX_LAST,2013-12-31,2026-07-30,D,USD

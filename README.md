@@ -96,6 +96,12 @@ Bloomberg equity files use names such as
 `SPY_daily_etf_data.xlsx`. FRED files must contain `date` and `value`
 columns and follow the pattern `{SERIES_ID}_*.csv`.
 
+Bloomberg files are licensed inputs and are not stored in Git. The complete
+acquisition contract—including securities, Bloomberg mnemonics, required
+fields, workbook headers, date parsing, units and validation commands—is in
+[`data/raw/README.md`](data/raw/README.md). Quarterly fundamental exports are
+not required by the current experiments.
+
 The raw-data universe and FRED mappings are defined in
 `configs/experiment_settings.toml`. Target horizons and point-in-time tail
 labels are controlled by `configs/experiments/data_preparation.toml`; changing

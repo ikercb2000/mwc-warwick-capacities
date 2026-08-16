@@ -150,6 +150,8 @@ activemq-data/
 
 # Environments
 .env
+.env.*
+!.env.example
 .envrc
 .venv
 env/
@@ -200,9 +202,19 @@ cython_debug/
 #   that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
 #   and can be added to the global gitignore or merged into this file. However, if you prefer, 
 #   you could uncomment the following to ignore the entire vscode folder
-# .vscode/
+.vscode/
 # Temporary file for partial code execution
 tempCodeRunnerFile.py
+
+# Local IDE and operating-system metadata
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+*~
+poetry.toml
 
 # Ruff stuff:
 .ruff_cache/
@@ -221,3 +233,8 @@ __marimo__/
 # Immutable local experiment runs. Publish selected snapshots explicitly instead.
 data/results/runs/
 data/results/latest/
+
+# Licensed vendor inputs and reproducible processed-data cache.
+# See data/raw/README.md for the acquisition and schema contract.
+data/raw/bloomberg/
+data/experiments/
