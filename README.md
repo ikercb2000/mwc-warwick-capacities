@@ -140,16 +140,40 @@ poetry run python scripts/experiment_distortion_risk.py
 poetry run python scripts/experiment_autoregression.py
 ```
 
-Alternatively, run the complete sequence and final artifact audit with:
+Alternatively, run the complete sequence, final artifact audit and HTML report
+rendering with the platform-specific wrapper.
+
+Windows PowerShell:
 
 ```powershell
 .\scripts\run_all_experiments.ps1
+```
+
+macOS/Linux:
+
+```bash
+bash scripts/run_all_experiments.sh
 ```
 
 Pass `--quick` for a smoke-sized run:
 
 ```powershell
 .\scripts\run_all_experiments.ps1 --quick
+```
+
+```bash
+bash scripts/run_all_experiments.sh --quick
+```
+
+Pass `--no-render` if the experiments should finish without executing the
+reporting notebooks:
+
+```powershell
+.\scripts\run_all_experiments.ps1 --full --no-render
+```
+
+```bash
+bash scripts/run_all_experiments.sh --full --no-render
 ```
 
 Inspect existing runs and their status with:
@@ -358,6 +382,49 @@ Start Jupyter with:
 
 ```powershell
 poetry run jupyter lab
+```
+
+Alternatively, execute all reporting notebooks and render standalone HTML
+reports without modifying the source notebooks:
+
+```powershell
+.\scripts\render_notebooks.ps1
+```
+
+On macOS/Linux:
+
+```bash
+bash scripts/render_notebooks.sh
+```
+
+The generated files are written to `data/results/reports/`. They are local,
+regenerable presentation artifacts and are ignored by Git. Rendering stops on
+the first notebook error, so a completed command also verifies that every
+notebook can load and display its selected run artifacts.
+
+To open every generated report at once, use the command for your platform. The
+browser will normally open one tab per report.
+
+Windows PowerShell:
+
+```powershell
+Get-ChildItem .\data\results\reports\*.html | ForEach-Object {
+    Start-Process $_.FullName
+}
+```
+
+macOS:
+
+```bash
+open data/results/reports/*.html
+```
+
+Linux:
+
+```bash
+for report in data/results/reports/*.html; do
+    xdg-open "$report"
+done
 ```
 
 The notebooks are ordered from data preparation through the five empirical

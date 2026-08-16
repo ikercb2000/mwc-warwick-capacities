@@ -136,3 +136,28 @@ def test_domain_modules_follow_the_types_utils_mappings_convention() -> None:
         elif path.name == "mappings.py":
             assert not top_level_classes, path.relative_to(source_root)
             assert not top_level_functions, path.relative_to(source_root)
+
+
+def test_complete_runner_renders_notebook_reports() -> None:
+    """Keep HTML reporting connected on Windows, macOS and Linux."""
+    scripts = ROOT / "scripts"
+    windows_runner = (scripts / "run_all_experiments.ps1").read_text(
+        encoding="utf-8"
+    )
+    unix_runner = (scripts / "run_all_experiments.sh").read_text(
+        encoding="utf-8"
+    )
+    windows_renderer = scripts / "render_notebooks.ps1"
+    unix_renderer = scripts / "render_notebooks.sh"
+
+    assert windows_renderer.is_file()
+    assert unix_renderer.is_file()
+    assert "render_notebooks.ps1" in windows_runner
+    assert "render_notebooks.sh" in unix_runner
+    for runner in (windows_runner, unix_runner):
+        assert "--quick" in runner
+        assert "--full" in runner
+        assert "--no-render" in runner
+        assert "audit_results.py" in runner
+    assert "--execute" in windows_renderer.read_text(encoding="utf-8")
+    assert "--execute" in unix_renderer.read_text(encoding="utf-8")

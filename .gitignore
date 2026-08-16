@@ -233,6 +233,7 @@ __marimo__/
 # Immutable local experiment runs. Publish selected snapshots explicitly instead.
 data/results/runs/
 data/results/latest/
+data/results/reports/
 
 # Licensed vendor inputs and reproducible processed-data cache.
 # See data/raw/README.md for the acquisition and schema contract.

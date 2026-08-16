@@ -51,10 +51,6 @@ class RepoPaths:
         return self.results / "tables"
 
     @property
-    def models(self) -> Path:
-        return self.results / "models"
-
-    @property
     def runs(self) -> Path:
         return self.results / "runs"
 
@@ -71,7 +67,6 @@ class RepoPaths:
             self.experiments,
             self.figures,
             self.tables,
-            self.models,
             self.runs,
             self.latest,
             self.published,
