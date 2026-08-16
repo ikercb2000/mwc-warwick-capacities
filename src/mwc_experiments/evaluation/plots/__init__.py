@@ -5,7 +5,8 @@ from .utils import (
     plot_actual_predictions,
     plot_matrix,
     plot_shapley,
-    plot_classifier_diagnostics,
+    plot_classifier_discrimination,
+    plot_probability_calibration,
 )
 
 __all__ = [
@@ -13,5 +14,6 @@ __all__ = [
     "plot_actual_predictions",
     "plot_matrix",
     "plot_shapley",
-    "plot_classifier_diagnostics",
+    "plot_classifier_discrimination",
+    "plot_probability_calibration",
 ]

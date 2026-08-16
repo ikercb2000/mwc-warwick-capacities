@@ -19,9 +19,10 @@ from mwc_experiments.data import load_or_build_processed_data
 from mwc_experiments.evaluation import (
     orientation_table,
     orientation_tables,
-    plot_classifier_diagnostics,
+    plot_classifier_discrimination,
     plot_matrix,
     plot_metric_ranking,
+    plot_probability_calibration,
     plot_shapley,
     top_interactions,
 )
@@ -271,18 +272,18 @@ for horizon, horizon_result in primary.items():
     preferred = [
         model for model in REPORT_MODELS if model in horizon_result.probabilities
     ]
-    axes = plot_classifier_diagnostics(
+    axes = plot_classifier_discrimination(
         horizon_result.split.y_test,
         horizon_result.probabilities,
         models=preferred,
         legend_outside=True,
     )
     axes[0].figure.suptitle(
-        f"Classifier diagnostics — h={horizon}", y=1.03
+        f"Classifier discrimination — h={horizon}", y=1.03
     )
-    artifacts[f"classifier diagnostics h{horizon}"] = save_figure(
+    artifacts[f"classifier discrimination h{horizon}"] = save_figure(
         axes[0].figure,
-        f"experiment_2b_classifier_diagnostics_h{horizon}_a095.png",
+        f"experiment_2b_classifier_discrimination_h{horizon}_a095.png",
         paths,
     )
     calibration_bases = (
@@ -299,17 +300,17 @@ for horizon, horizon_result in primary.items():
         )
         if model in horizon_result.probabilities
     ]
-    axes = plot_classifier_diagnostics(
+    axis = plot_probability_calibration(
         horizon_result.split.y_test,
         horizon_result.probabilities,
         models=calibration_models,
         legend_outside=True,
     )
-    axes[0].figure.suptitle(
+    axis.figure.suptitle(
         f"Uncalibrated vs calibrated probabilities — h={horizon}", y=1.03
     )
     artifacts[f"calibration comparison h{horizon}"] = save_figure(
-        axes[0].figure,
+        axis.figure,
         f"experiment_2b_calibration_comparison_h{horizon}_a095.png",
         paths,
     )

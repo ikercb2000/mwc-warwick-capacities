@@ -223,6 +223,10 @@ def test_tail_risk_persists_separate_probability_evaluations() -> None:
     ):
         assert artifact_name in source
 
+    assert "experiment_2b_classifier_discrimination_h{horizon}_a095.png" in source
+    assert "experiment_2b_calibration_comparison_h{horizon}_a095.png" in source
+    assert "experiment_2b_classifier_diagnostics_h{horizon}_a095.png" not in source
+
 
 def test_forecasting_experiments_persist_walk_forward_audits() -> None:
     expected = {

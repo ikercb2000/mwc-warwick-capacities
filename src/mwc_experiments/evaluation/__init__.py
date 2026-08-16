@@ -22,9 +22,10 @@ from mwc_experiments.evaluation.robustness import (
 )
 from mwc_experiments.evaluation.plots import (
     plot_actual_predictions,
-    plot_classifier_diagnostics,
+    plot_classifier_discrimination,
     plot_matrix,
     plot_metric_ranking,
+    plot_probability_calibration,
     plot_shapley,
 )
 
@@ -41,9 +42,10 @@ __all__ = [
     "orientation_table",
     "orientation_tables",
     "plot_actual_predictions",
-    "plot_classifier_diagnostics",
+    "plot_classifier_discrimination",
     "plot_matrix",
     "plot_metric_ranking",
+    "plot_probability_calibration",
     "plot_shapley",
     "probability_calibration_metrics",
     "regression_metrics",

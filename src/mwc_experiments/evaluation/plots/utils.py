@@ -63,29 +63,24 @@ def plot_shapley(shapley: pd.Series, *, title: str):
     return axis
 
 
-def plot_classifier_diagnostics(
+def plot_classifier_discrimination(
     y_true,
     probabilities: pd.DataFrame,
     *,
     models: list[str] | None = None,
     legend_outside: bool = False,
 ):
+    """Plot ROC and precision-recall curves for classifier discrimination."""
     selected_models = list(probabilities.columns) if models is None else models
-    fig, axes = plt.subplots(1, 3, figsize=(16, 4))
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4))
     for model in selected_models:
         probability = probabilities[model]
         RocCurveDisplay.from_predictions(y_true, probability, name=model, ax=axes[0])
         PrecisionRecallDisplay.from_predictions(y_true, probability, name=model, ax=axes[1])
-        observed, predicted = calibration_curve(y_true, probability, n_bins=10, strategy="quantile")
-        axes[2].plot(predicted, observed, marker="o", label=model)
     axes[0].set_title("ROC curves")
     axes[1].set_title("Precision-recall curves")
-    axes[2].plot([0, 1], [0, 1], linestyle="--", linewidth=1, label="perfect calibration")
-    axes[2].set_title("Probability calibration")
-    axes[2].set_xlabel("Mean predicted probability")
-    axes[2].set_ylabel("Observed frequency")
     if legend_outside:
-        handles, labels = axes[2].get_legend_handles_labels()
+        handles, labels = axes[1].get_legend_handles_labels()
         for axis in axes:
             legend = axis.get_legend()
             if legend is not None:
@@ -99,6 +94,46 @@ def plot_classifier_diagnostics(
         )
         fig.tight_layout(rect=(0.0, 0.0, 0.80, 1.0))
     else:
-        axes[2].legend(fontsize=8)
         fig.tight_layout()
     return axes
+
+
+def plot_probability_calibration(
+    y_true,
+    probabilities: pd.DataFrame,
+    *,
+    models: list[str] | None = None,
+    legend_outside: bool = False,
+):
+    """Plot reliability curves without mixing in discrimination diagnostics."""
+    selected_models = list(probabilities.columns) if models is None else models
+    fig, axis = plt.subplots(figsize=(7, 4))
+    for model in selected_models:
+        observed, predicted = calibration_curve(
+            y_true,
+            probabilities[model],
+            n_bins=10,
+            strategy="quantile",
+        )
+        axis.plot(predicted, observed, marker="o", label=model)
+    axis.plot(
+        [0, 1],
+        [0, 1],
+        linestyle="--",
+        linewidth=1,
+        label="perfect calibration",
+    )
+    axis.set_title("Probability calibration")
+    axis.set_xlabel("Mean predicted probability")
+    axis.set_ylabel("Observed frequency")
+    if legend_outside:
+        axis.legend(
+            loc="center left",
+            bbox_to_anchor=(1.01, 0.5),
+            fontsize=8,
+        )
+        fig.tight_layout(rect=(0.0, 0.0, 0.72, 1.0))
+    else:
+        axis.legend(fontsize=8)
+        fig.tight_layout()
+    return axis
