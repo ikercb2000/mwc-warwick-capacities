@@ -27,7 +27,10 @@ calibration_window_months = 24
 oos_block_years = 1
 
 [calibration]
-methods = ["sigmoid", "isotonic"]
+methods = ["sigmoid"]
+
+[class_weight]
+modes = ["balanced", "unweighted"]
 
 [models]
 main = [

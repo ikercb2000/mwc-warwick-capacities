@@ -276,10 +276,13 @@ def classification_candidates(
     *,
     random_state: int = 42,
     include_mlp: bool = True,
+    class_weight: str | None = "balanced",
 ) -> dict[str, Candidate]:
     """Build classification candidates and validation grids as sklearn pipelines."""
     if n_features < 1:
         raise ValueError("n_features must be positive.")
+    if class_weight not in {"balanced", None}:
+        raise ValueError("class_weight must be 'balanced' or None.")
     standard = make_standard_preprocessor()
     oriented_standard = make_oriented_standard_preprocessor()
     capacity = make_capacity_preprocessor()
@@ -299,7 +302,7 @@ def classification_candidates(
                 LogisticRegression(
                     C=1e6,
                     max_iter=5_000,
-                    class_weight="balanced",
+                    class_weight=class_weight,
                 )
             ),
             {},
@@ -310,14 +313,19 @@ def classification_candidates(
                 LogisticRegression(
                     C=1e6,
                     max_iter=5_000,
-                    class_weight="balanced",
+                    class_weight=class_weight,
                 ),
                 step_name="classifier",
             ),
             {},
         ),
         "Penalized logistic": Candidate(
-            pipeline(LogisticRegression(max_iter=5_000, class_weight="balanced")),
+            pipeline(
+                LogisticRegression(
+                    max_iter=5_000,
+                    class_weight=class_weight,
+                )
+            ),
             {"classifier__C": [0.01, 0.1, 1.0, 10.0]},
         ),
         "Explicit interactions": Candidate(
@@ -336,7 +344,7 @@ def classification_candidates(
                             "logistic",
                             LogisticRegression(
                                 max_iter=5_000,
-                                class_weight="balanced",
+                                class_weight=class_weight,
                             ),
                         ),
                     ]
@@ -348,7 +356,7 @@ def classification_candidates(
             pipeline(
                 SVC(
                     probability=True,
-                    class_weight="balanced",
+                    class_weight=class_weight,
                     random_state=random_state,
                 )
             ),
@@ -361,7 +369,7 @@ def classification_candidates(
             pipeline(
                 RandomForestClassifier(
                     n_estimators=400,
-                    class_weight="balanced_subsample",
+                    class_weight=class_weight,
                     random_state=random_state,
                     n_jobs=-1,
                 )
@@ -372,7 +380,12 @@ def classification_candidates(
             },
         ),
         "Gradient boosting": Candidate(
-            pipeline(HistGradientBoostingClassifier(random_state=random_state)),
+            pipeline(
+                HistGradientBoostingClassifier(
+                    random_state=random_state,
+                    class_weight=class_weight,
+                )
+            ),
             {
                 "classifier__learning_rate": [0.03, 0.1],
                 "classifier__max_leaf_nodes": [7, 15],
@@ -385,7 +398,7 @@ def classification_candidates(
                     sparsity=KAdditivity(order=1),
                     solver="scipy",
                     solver_options={"options": {"maxiter": 2_000}},
-                    class_weight="balanced",
+                    class_weight=class_weight,
                 ),
                 capacity_input=True,
             ),
@@ -397,7 +410,7 @@ def classification_candidates(
                     sparsity=KAdditivity(order=2),
                     solver="scipy",
                     solver_options={"options": {"maxiter": 2_000}},
-                    class_weight="balanced",
+                    class_weight=class_weight,
                 ),
                 capacity_input=True,
             ),

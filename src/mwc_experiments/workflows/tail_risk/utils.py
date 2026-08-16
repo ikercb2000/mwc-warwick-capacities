@@ -116,18 +116,28 @@ def run_tail_classification_experiment(
     selection_window_months: int = 18,
     calibration_window_months: int = 24,
     oos_block_years: int = 1,
-    calibration_methods: tuple[str, ...] = ("sigmoid", "isotonic"),
+    calibration_methods: tuple[str, ...] = ("sigmoid",),
+    class_weight_modes: tuple[str, ...] = ("balanced", "unweighted"),
     verbose: bool = True,
 ) -> dict[int, TailClassificationResult]:
     """Run rolling selection, calibration and OOS tail classification."""
-    unsupported = set(calibration_methods) - {"sigmoid", "isotonic"}
+    unsupported = set(calibration_methods) - {"sigmoid"}
     if unsupported:
         raise ValueError(
-            "calibration_methods only supports 'sigmoid' and 'isotonic'; got "
+            "calibration_methods only supports 'sigmoid'; got "
             f"{sorted(unsupported)}."
         )
     if min(selection_window_months, calibration_window_months) < 1:
         raise ValueError("Selection and calibration windows must be positive.")
+    supported_weight_modes = {"balanced", "unweighted"}
+    unsupported_weight_modes = set(class_weight_modes) - supported_weight_modes
+    if unsupported_weight_modes or not class_weight_modes:
+        raise ValueError(
+            "class_weight_modes must contain 'balanced', 'unweighted', or both; "
+            f"got {sorted(set(class_weight_modes))}."
+        )
+    if len(set(class_weight_modes)) != len(class_weight_modes):
+        raise ValueError("class_weight_modes must not contain duplicates.")
 
     results: dict[int, TailClassificationResult] = {}
     alpha_label = str(alpha).replace(".", "p")
@@ -150,20 +160,44 @@ def run_tail_classification_experiment(
                 horizon=horizon,
             )
         )
-        candidates = classification_candidates(
-            len(features),
-            random_state=random_state,
-            include_mlp=True,
-        )
-        candidates = apply_parameter_grid_overrides(
-            candidates,
-            parameter_grids,
-            n_features=len(features),
-        )
-        if quick:
-            candidates = quick_candidates(candidates)
-        if model_names is not None:
-            candidates = {name: candidates[name] for name in model_names}
+        candidates = {}
+        candidate_family: dict[str, str] = {}
+        candidate_weight: dict[str, str] = {}
+        weight_independent_models = {"Rolling prior probability", "MLP"}
+        for weight_mode in class_weight_modes:
+            mode_candidates = classification_candidates(
+                len(features),
+                random_state=random_state,
+                include_mlp=True,
+                class_weight=(
+                    "balanced" if weight_mode == "balanced" else None
+                ),
+            )
+            mode_candidates = apply_parameter_grid_overrides(
+                mode_candidates,
+                parameter_grids,
+                n_features=len(features),
+            )
+            if quick:
+                mode_candidates = quick_candidates(mode_candidates)
+            if model_names is not None:
+                mode_candidates = {
+                    name: mode_candidates[name] for name in model_names
+                }
+            for family, candidate in mode_candidates.items():
+                weight_independent = family in weight_independent_models
+                name = (
+                    family
+                    if weight_independent or len(class_weight_modes) == 1
+                    else f"{family} [{weight_mode}]"
+                )
+                if name in candidates:
+                    continue
+                candidates[name] = candidate
+                candidate_family[name] = family
+                candidate_weight[name] = (
+                    "not applicable" if weight_independent else weight_mode
+                )
 
         probability_chunks: dict[str, list[pd.Series]] = {}
         threshold_chunks: dict[str, list[pd.Series]] = {}
@@ -255,7 +289,8 @@ def run_tail_classification_experiment(
                     fitted_models[name] = fitted
                     common = {
                         "fold": fold.fold,
-                        "base model": name,
+                        "base model": candidate_family[name],
+                        "class weight": candidate_weight[name],
                         "validation PR AUC": selected.validation_score,
                         "selection runtime seconds": selected.runtime_seconds,
                         "refit runtime seconds": refit_runtime,
@@ -422,7 +457,8 @@ def run_tail_classification_experiment(
             metric_rows.append(
                 {
                     "model": name,
-                    "base model": base,
+                    "base model": candidate_family[base],
+                    "class weight": candidate_weight[base],
                     "probability calibration": variant_method[name],
                     "threshold source": (
                         "selection validation"
@@ -463,6 +499,7 @@ def run_tail_classification_experiment(
         )
         discrimination_columns = [
             "base model",
+            "class weight",
             "probability calibration",
             "ROC AUC",
             "PR AUC",
@@ -470,6 +507,7 @@ def run_tail_classification_experiment(
         ]
         calibration_columns = [
             "base model",
+            "class weight",
             "probability calibration",
             "Brier",
             "Log loss",

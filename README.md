@@ -242,10 +242,13 @@ PR AUC on the chronological selection-validation block and are then refitted on
 training plus that block. The later calibration block is not included in model
 selection or base-model fitting.
 
-Experiment 2b evaluates each fitted classifier in three forms: uncalibrated,
-sigmoid-calibrated and isotonic-calibrated. Both calibrated forms apply
-`CalibratedClassifierCV` to a `FrozenEstimator` containing the complete fitted
-pipeline, so calibration cannot refit preprocessing or the classifier. Its
+Experiment 2b fits every classifier that supports class weighting in two
+separate forms: `class_weight="balanced"` and unweighted (`class_weight=None`).
+The rolling-prior and MLP controls are fitted once because they do not expose
+that class-weight parameter. Each fitted variant is evaluated uncalibrated and
+with sigmoid calibration. `CalibratedClassifierCV` is applied to a
+`FrozenEstimator` containing the complete fitted pipeline, so calibration
+cannot refit preprocessing or the classifier. Its
 decision threshold is estimated on the calibration block; the uncalibrated
 threshold remains selection-validation based. The current or future OOS block
 is never used for selection, fitting, threshold choice or calibration.
@@ -258,8 +261,9 @@ fold, not across the complete concatenated OOS sample.
 Discrimination is reported separately with ROC-AUC and PR-AUC. Probability
 calibration is reported with Brier score, log loss, mean predicted probability,
 observed event prevalence and their calibration gap. Window lengths and block
-size are configurable through `[walk_forward]`, while methods remain under
-`[calibration]` in `configs/experiments/tail_risk.toml`. Separate
+size is configurable through `[walk_forward]`; calibration and weighting are
+configured under `[calibration]` and `[class_weight]` in
+`configs/experiments/tail_risk.toml`. Separate
 `experiment_2b_discrimination_*`, `experiment_2b_calibration_*` and
 `experiment_2b_calibration_sample_*` tables make the comparison auditable.
 Both forecasting experiments additionally persist `*_walk_forward_folds_*`,

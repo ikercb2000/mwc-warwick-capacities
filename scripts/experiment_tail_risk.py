@@ -53,6 +53,7 @@ model_config = config["models"]
 analysis_config = config["analysis"]
 walk_forward_config = config["walk_forward"]
 calibration_config = config["calibration"]
+class_weight_config = config["class_weight"]
 execution_config = config["execution"]
 HORIZONS = tuple(int(value) for value in dataset_config["horizons"])
 MAIN_RISK_FEATURES = tuple(str(value) for value in dataset_config["features"])
@@ -64,6 +65,9 @@ ROBUSTNESS_MODELS = tuple(str(value) for value in model_config["robustness"])
 REPORT_MODELS = tuple(str(value) for value in model_config["report"])
 CALIBRATION_METHODS = tuple(
     str(value) for value in calibration_config["methods"]
+)
+CLASS_WEIGHT_MODES = tuple(
+    str(value) for value in class_weight_config["modes"]
 )
 STABILITY_CUTOFFS = tuple(
     str(value) for value in analysis_config["stability_cutoffs"]
@@ -91,6 +95,7 @@ primary = run_tail_classification_experiment(
     ),
     oos_block_years=int(walk_forward_config["oos_block_years"]),
     calibration_methods=CALIBRATION_METHODS,
+    class_weight_modes=CLASS_WEIGHT_MODES,
     parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
@@ -114,6 +119,7 @@ rare = run_tail_classification_experiment(
     ),
     oos_block_years=int(walk_forward_config["oos_block_years"]),
     calibration_methods=CALIBRATION_METHODS,
+    class_weight_modes=CLASS_WEIGHT_MODES,
     parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
@@ -208,7 +214,10 @@ for horizon, horizon_result in primary.items():
     )
     artifacts[f"orientation ablation h{horizon}"] = save_table(
         horizon_result.metrics[
-            horizon_result.metrics.index.isin(ORIENTATION_MODELS)
+            horizon_result.metrics["base model"].isin(ORIENTATION_MODELS)
+            & horizon_result.metrics["probability calibration"].eq(
+                "uncalibrated"
+            )
         ],
         f"experiment_2b_orientation_ablation_h{horizon}_a095.csv",
         paths,
@@ -228,15 +237,19 @@ for horizon, horizon_result in primary.items():
         index=False,
     )
     for model, shapley in horizon_result.shapley.items():
-        legacy_name = model.lower().replace(" ", "_")
+        base_model = str(horizon_result.metrics.loc[model, "base model"])
+        weight_mode = str(horizon_result.metrics.loc[model, "class weight"])
+        weight_suffix = "" if weight_mode == "balanced" else "_unweighted"
+        table_slug = base_model.lower().replace(" ", "_") + weight_suffix
+        figure_slug = artifact_slug(base_model) + weight_suffix
         artifacts[f"Shapley h{horizon} {model}"] = save_table(
             shapley,
-            f"experiment_2b_shapley_h{horizon}_{legacy_name}.csv",
+            f"experiment_2b_shapley_h{horizon}_{table_slug}.csv",
             paths,
         )
         artifacts[f"interactions h{horizon} {model}"] = save_table(
             horizon_result.interactions[model],
-            f"experiment_2b_interactions_h{horizon}_{legacy_name}.csv",
+            f"experiment_2b_interactions_h{horizon}_{table_slug}.csv",
             paths,
         )
         artifacts[f"top interactions h{horizon} {model}"] = save_table(
@@ -244,7 +257,7 @@ for horizon, horizon_result in primary.items():
                 horizon_result.interactions[model],
                 n=int(analysis_config["top_interactions"]),
             ),
-            f"experiment_2b_top_interactions_h{horizon}_{artifact_slug(model)}.csv",
+            f"experiment_2b_top_interactions_h{horizon}_{figure_slug}.csv",
             paths,
             index=False,
         )
@@ -269,9 +282,12 @@ for horizon, horizon_result in primary.items():
         f"experiment_2b_brier_ranking_h{horizon}_a095.png",
         paths,
     )
-    preferred = [
-        model for model in REPORT_MODELS if model in horizon_result.probabilities
-    ]
+    preferred = horizon_result.metrics.index[
+        horizon_result.metrics["base model"].isin(REPORT_MODELS)
+        & horizon_result.metrics["probability calibration"].eq(
+            "uncalibrated"
+        )
+    ].tolist()
     axes = plot_classifier_discrimination(
         horizon_result.split.y_test,
         horizon_result.probabilities,
@@ -291,15 +307,9 @@ for horizon, horizon_result in primary.items():
         "Gradient boosting",
         "Choquistic 2-additive",
     )
-    calibration_models = [
-        model
-        for base in calibration_bases
-        for model in (
-            base,
-            *(f"{base} [{method}]" for method in CALIBRATION_METHODS),
-        )
-        if model in horizon_result.probabilities
-    ]
+    calibration_models = horizon_result.metrics.index[
+        horizon_result.metrics["base model"].isin(calibration_bases)
+    ].tolist()
     axis = plot_probability_calibration(
         horizon_result.split.y_test,
         horizon_result.probabilities,
@@ -315,15 +325,17 @@ for horizon, horizon_result in primary.items():
         paths,
     )
 
-    probability_models = [
-        model
-        for model in (
-            "Logistic",
-            "Gradient boosting",
-            "Choquistic 2-additive",
+    probability_families = (
+        "Logistic",
+        "Gradient boosting",
+        "Choquistic 2-additive",
+    )
+    probability_models = horizon_result.metrics.index[
+        horizon_result.metrics["base model"].isin(probability_families)
+        & horizon_result.metrics["probability calibration"].eq(
+            "uncalibrated"
         )
-        if model in horizon_result.probabilities
-    ]
+    ].tolist()
     figure, axis = plt.subplots(figsize=(13, 4))
     horizon_result.probabilities[probability_models].plot(
         ax=axis, linewidth=0.9
@@ -354,15 +366,7 @@ for horizon, horizon_result in primary.items():
         paths,
     )
 
-    confusion_models = [
-        model
-        for model in (
-            "Logistic",
-            "Gradient boosting",
-            "Choquistic 2-additive",
-        )
-        if model in horizon_result.probabilities
-    ]
+    confusion_models = probability_models
     figure, axes = plt.subplots(
         1, len(confusion_models), figsize=(5 * len(confusion_models), 4)
     )
@@ -388,7 +392,10 @@ for horizon, horizon_result in primary.items():
     )
 
     for model, shapley in horizon_result.shapley.items():
-        slug = artifact_slug(model)
+        base_model = str(horizon_result.metrics.loc[model, "base model"])
+        weight_mode = str(horizon_result.metrics.loc[model, "class weight"])
+        weight_suffix = "" if weight_mode == "balanced" else "_unweighted"
+        slug = artifact_slug(base_model) + weight_suffix
         axis = plot_shapley(
             shapley,
             title=f"{model}: Shapley importance, h={horizon}",
@@ -461,7 +468,10 @@ for horizon, horizon_result in rare.items():
     )
     artifacts[f"rare-event orientation ablation h{horizon}"] = save_table(
         horizon_result.metrics[
-            horizon_result.metrics.index.isin(ORIENTATION_MODELS)
+            horizon_result.metrics["base model"].isin(ORIENTATION_MODELS)
+            & horizon_result.metrics["probability calibration"].eq(
+                "uncalibrated"
+            )
         ],
         f"experiment_2b_orientation_ablation_h{horizon}_a0975.csv",
         paths,
@@ -503,7 +513,11 @@ artifacts["stability failures"] = save_table(
     paths,
     index=False,
 )
-representative = primary[5].fitted_models.get("Choquistic 2-additive")
+representative = primary[5].fitted_models.get(
+    "Choquistic 2-additive [balanced]"
+)
+if representative is None:
+    representative = primary[5].fitted_models.get("Choquistic 2-additive")
 if representative is not None:
     artifacts["orientation"] = save_table(
         orientation_table(representative),

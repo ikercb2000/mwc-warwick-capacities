@@ -1,141 +1,281 @@
 fold,model,feature,Shapley importance
-0,Choquistic 1-additive,average_equity_correlation_60d,-2.3612890743236648e-17
-0,Choquistic 1-additive,baa_credit_spread_pct,0.03271342909607533
-0,Choquistic 1-additive,drawdown_severity,4.198572912950113e-18
-0,Choquistic 1-additive,lagged_portfolio_loss_1d,-1.1141192686227848e-16
-0,Choquistic 1-additive,liquidity_stress_20d,0.278201437147726
-0,Choquistic 1-additive,market_loss_1d,1.1307559637445135e-16
-0,Choquistic 1-additive,negative_momentum_21d,0.6890851337562016
-0,Choquistic 1-additive,realized_volatility_20d,2.0407029688494658e-16
-0,Choquistic 1-additive,term_spread_10y_2y_pct,8.399146437051835e-17
-0,Choquistic 1-additive,vix,2.0345651798841169e-16
-0,Choquistic 2-additive,average_equity_correlation_60d,0.1566015413212253
-0,Choquistic 2-additive,baa_credit_spread_pct,0.225690898520448
-0,Choquistic 2-additive,drawdown_severity,1.795791218212065e-15
-0,Choquistic 2-additive,lagged_portfolio_loss_1d,0.32558745813891854
-0,Choquistic 2-additive,liquidity_stress_20d,0.11770756015832191
-0,Choquistic 2-additive,market_loss_1d,1.215968763163883e-15
-0,Choquistic 2-additive,negative_momentum_21d,0.1744125418610779
-0,Choquistic 2-additive,realized_volatility_20d,1.624637229888036e-15
-0,Choquistic 2-additive,term_spread_10y_2y_pct,6.352673873863984e-16
-0,Choquistic 2-additive,vix,8.901805984545322e-16
-1,Choquistic 1-additive,average_equity_correlation_60d,1.8221415785230217e-16
-1,Choquistic 1-additive,baa_credit_spread_pct,1.2516830123633284e-16
-1,Choquistic 1-additive,drawdown_severity,0.2106244618025786
-1,Choquistic 1-additive,lagged_portfolio_loss_1d,0.21935525319205593
-1,Choquistic 1-additive,liquidity_stress_20d,-3.939388360272047e-17
-1,Choquistic 1-additive,market_loss_1d,9.318760696408643e-19
-1,Choquistic 1-additive,negative_momentum_21d,5.794630372977686e-18
-1,Choquistic 1-additive,realized_volatility_20d,0.570020285005367
-1,Choquistic 1-additive,term_spread_10y_2y_pct,7.530900558006104e-17
-1,Choquistic 1-additive,vix,3.2281044088362504e-17
-1,Choquistic 2-additive,average_equity_correlation_60d,0.07181022209038809
-1,Choquistic 2-additive,baa_credit_spread_pct,-1.8090944214418154e-16
-1,Choquistic 2-additive,drawdown_severity,0.08139227051221476
-1,Choquistic 2-additive,lagged_portfolio_loss_1d,0.38453899436435196
-1,Choquistic 2-additive,liquidity_stress_20d,-5.421536708881711e-16
-1,Choquistic 2-additive,market_loss_1d,0.07295482323619758
-1,Choquistic 2-additive,negative_momentum_21d,0.0729548232361974
-1,Choquistic 2-additive,realized_volatility_20d,0.31634886656065014
-1,Choquistic 2-additive,term_spread_10y_2y_pct,3.9000247740583376e-17
-1,Choquistic 2-additive,vix,7.571082177237076e-17
-2,Choquistic 1-additive,average_equity_correlation_60d,2.5979417637510164e-17
-2,Choquistic 1-additive,baa_credit_spread_pct,0.4485778010915413
-2,Choquistic 1-additive,drawdown_severity,8.374413074992009e-18
-2,Choquistic 1-additive,lagged_portfolio_loss_1d,0.1563605231187113
-2,Choquistic 1-additive,liquidity_stress_20d,8.28885880896501e-17
-2,Choquistic 1-additive,market_loss_1d,2.959344350363988e-17
-2,Choquistic 1-additive,negative_momentum_21d,0.10767419519125143
-2,Choquistic 1-additive,realized_volatility_20d,0.2143349115602067
-2,Choquistic 1-additive,term_spread_10y_2y_pct,0.0730525690382889
-2,Choquistic 1-additive,vix,-3.902182484195816e-17
-2,Choquistic 2-additive,average_equity_correlation_60d,0.03175843736334829
-2,Choquistic 2-additive,baa_credit_spread_pct,0.3913274081857917
-2,Choquistic 2-additive,drawdown_severity,-3.8324838041400245e-16
-2,Choquistic 2-additive,lagged_portfolio_loss_1d,0.12503490180471305
-2,Choquistic 2-additive,liquidity_stress_20d,0.07926603896760946
-2,Choquistic 2-additive,market_loss_1d,0.02824546401522955
-2,Choquistic 2-additive,negative_momentum_21d,0.048973750982609254
-2,Choquistic 2-additive,realized_volatility_20d,0.14956765010209427
-2,Choquistic 2-additive,term_spread_10y_2y_pct,0.12971783747295593
-2,Choquistic 2-additive,vix,0.016108511105648836
-3,Choquistic 1-additive,average_equity_correlation_60d,9.21588774875529e-16
-3,Choquistic 1-additive,baa_credit_spread_pct,5.852516196645831e-16
-3,Choquistic 1-additive,drawdown_severity,3.30175125669412e-16
-3,Choquistic 1-additive,lagged_portfolio_loss_1d,0.025292075141216144
-3,Choquistic 1-additive,liquidity_stress_20d,1.0678572086191813e-15
-3,Choquistic 1-additive,market_loss_1d,0.030673627926756573
-3,Choquistic 1-additive,negative_momentum_21d,0.818060201380927
-3,Choquistic 1-additive,realized_volatility_20d,8.315824584894924e-17
-3,Choquistic 1-additive,term_spread_10y_2y_pct,0.1259740955510991
-3,Choquistic 1-additive,vix,2.464434320875616e-15
-3,Choquistic 2-additive,average_equity_correlation_60d,1.2837838478639787e-14
-3,Choquistic 2-additive,baa_credit_spread_pct,3.4929765573046812e-15
-3,Choquistic 2-additive,drawdown_severity,1.4322938295456433e-14
-3,Choquistic 2-additive,lagged_portfolio_loss_1d,0.11709468271226932
-3,Choquistic 2-additive,liquidity_stress_20d,4.5650390651192015e-15
-3,Choquistic 2-additive,market_loss_1d,0.17623504195164663
-3,Choquistic 2-additive,negative_momentum_21d,0.4752721575164077
-3,Choquistic 2-additive,realized_volatility_20d,0.11175147832017288
-3,Choquistic 2-additive,term_spread_10y_2y_pct,0.11964663949945158
-3,Choquistic 2-additive,vix,1.65056092070805e-14
-4,Choquistic 1-additive,average_equity_correlation_60d,2.587226137143515e-15
-4,Choquistic 1-additive,baa_credit_spread_pct,8.210692308481833e-16
-4,Choquistic 1-additive,drawdown_severity,6.253078377789868e-16
-4,Choquistic 1-additive,lagged_portfolio_loss_1d,7.628872422175806e-16
-4,Choquistic 1-additive,liquidity_stress_20d,9.913267469088642e-16
-4,Choquistic 1-additive,market_loss_1d,4.4009917375973256e-16
-4,Choquistic 1-additive,negative_momentum_21d,0.5125765321981058
-4,Choquistic 1-additive,realized_volatility_20d,-1.109506332570027e-15
-4,Choquistic 1-additive,term_spread_10y_2y_pct,3.2616269074360087e-16
-4,Choquistic 1-additive,vix,0.4874234678018897
-4,Choquistic 2-additive,average_equity_correlation_60d,0.17625876536107582
-4,Choquistic 2-additive,baa_credit_spread_pct,-8.326056983878479e-16
-4,Choquistic 2-additive,drawdown_severity,-1.0009847643875646e-15
-4,Choquistic 2-additive,lagged_portfolio_loss_1d,0.042332974047402404
-4,Choquistic 2-additive,liquidity_stress_20d,-1.4076400382777647e-15
-4,Choquistic 2-additive,market_loss_1d,0.17684072078709923
-4,Choquistic 2-additive,negative_momentum_21d,0.35829218086521264
-4,Choquistic 2-additive,realized_volatility_20d,0.08229811316263311
-4,Choquistic 2-additive,term_spread_10y_2y_pct,-8.784449663844503e-16
-4,Choquistic 2-additive,vix,0.16397724577658168
-5,Choquistic 1-additive,average_equity_correlation_60d,-8.273136351709502e-16
-5,Choquistic 1-additive,baa_credit_spread_pct,-8.745966050608366e-16
-5,Choquistic 1-additive,drawdown_severity,-2.3138590504427264e-15
-5,Choquistic 1-additive,lagged_portfolio_loss_1d,-1.3667441275342463e-15
-5,Choquistic 1-additive,liquidity_stress_20d,-8.735099992154668e-16
-5,Choquistic 1-additive,market_loss_1d,-1.5926513012262422e-15
-5,Choquistic 1-additive,negative_momentum_21d,0.7010158835224075
-5,Choquistic 1-additive,realized_volatility_20d,-2.6164806766932207e-15
-5,Choquistic 1-additive,term_spread_10y_2y_pct,0.29898411647760564
-5,Choquistic 1-additive,vix,-2.390071149872278e-15
-5,Choquistic 2-additive,average_equity_correlation_60d,1.8015194748150482e-15
-5,Choquistic 2-additive,baa_credit_spread_pct,2.099950188307063e-15
-5,Choquistic 2-additive,drawdown_severity,5.3388136075944284e-15
-5,Choquistic 2-additive,lagged_portfolio_loss_1d,4.245799542804637e-15
-5,Choquistic 2-additive,liquidity_stress_20d,2.2844776367667956e-15
-5,Choquistic 2-additive,market_loss_1d,0.013605174981774855
-5,Choquistic 2-additive,negative_momentum_21d,0.4999999999999878
-5,Choquistic 2-additive,realized_volatility_20d,2.699821180324231e-15
-5,Choquistic 2-additive,term_spread_10y_2y_pct,0.48639482501821524
-5,Choquistic 2-additive,vix,2.7082372169656265e-15
-6,Choquistic 1-additive,average_equity_correlation_60d,-8.472822761080658e-16
-6,Choquistic 1-additive,baa_credit_spread_pct,-9.20124939554194e-16
-6,Choquistic 1-additive,drawdown_severity,-4.690795106152086e-16
-6,Choquistic 1-additive,lagged_portfolio_loss_1d,-7.059776987482603e-16
-6,Choquistic 1-additive,liquidity_stress_20d,-9.762778405922016e-16
-6,Choquistic 1-additive,market_loss_1d,-6.763025932015225e-16
-6,Choquistic 1-additive,negative_momentum_21d,0.2865454445806609
-6,Choquistic 1-additive,realized_volatility_20d,0.24036236944052336
-6,Choquistic 1-additive,term_spread_10y_2y_pct,-8.039800157691181e-16
-6,Choquistic 1-additive,vix,0.47309218597881775
-6,Choquistic 2-additive,average_equity_correlation_60d,-2.0010717392956617e-15
-6,Choquistic 2-additive,baa_credit_spread_pct,-1.538909491452552e-15
-6,Choquistic 2-additive,drawdown_severity,-2.223737668432101e-15
-6,Choquistic 2-additive,lagged_portfolio_loss_1d,0.028754369640090344
-6,Choquistic 2-additive,liquidity_stress_20d,-1.3420720295996657e-15
-6,Choquistic 2-additive,market_loss_1d,0.01766262575755122
-6,Choquistic 2-additive,negative_momentum_21d,0.26899655558303076
-6,Choquistic 2-additive,realized_volatility_20d,0.08146734369883417
-6,Choquistic 2-additive,term_spread_10y_2y_pct,0.2133408186594219
-6,Choquistic 2-additive,vix,0.3897782866610797
+0,Choquistic 1-additive [balanced],average_equity_correlation_60d,-2.3612890743236648e-17
+0,Choquistic 1-additive [balanced],baa_credit_spread_pct,0.03271342909607533
+0,Choquistic 1-additive [balanced],drawdown_severity,4.198572912950113e-18
+0,Choquistic 1-additive [balanced],lagged_portfolio_loss_1d,-1.1141192686227848e-16
+0,Choquistic 1-additive [balanced],liquidity_stress_20d,0.278201437147726
+0,Choquistic 1-additive [balanced],market_loss_1d,1.1307559637445135e-16
+0,Choquistic 1-additive [balanced],negative_momentum_21d,0.6890851337562016
+0,Choquistic 1-additive [balanced],realized_volatility_20d,2.0407029688494658e-16
+0,Choquistic 1-additive [balanced],term_spread_10y_2y_pct,8.399146437051835e-17
+0,Choquistic 1-additive [balanced],vix,2.0345651798841169e-16
+0,Choquistic 1-additive [unweighted],average_equity_correlation_60d,1.2817646587117782e-17
+0,Choquistic 1-additive [unweighted],baa_credit_spread_pct,0.16012823418861044
+0,Choquistic 1-additive [unweighted],drawdown_severity,1.5491803933630282e-16
+0,Choquistic 1-additive [unweighted],lagged_portfolio_loss_1d,0.12469343621918413
+0,Choquistic 1-additive [unweighted],liquidity_stress_20d,0.060530729492172274
+0,Choquistic 1-additive [unweighted],market_loss_1d,0.045091643473600576
+0,Choquistic 1-additive [unweighted],negative_momentum_21d,0.3956463455068654
+0,Choquistic 1-additive [unweighted],realized_volatility_20d,0.2139096111195684
+0,Choquistic 1-additive [unweighted],term_spread_10y_2y_pct,-9.31903205906681e-18
+0,Choquistic 1-additive [unweighted],vix,-1.6703813172243576e-17
+0,Choquistic 2-additive [balanced],average_equity_correlation_60d,0.1566015413212253
+0,Choquistic 2-additive [balanced],baa_credit_spread_pct,0.225690898520448
+0,Choquistic 2-additive [balanced],drawdown_severity,1.795791218212065e-15
+0,Choquistic 2-additive [balanced],lagged_portfolio_loss_1d,0.32558745813891854
+0,Choquistic 2-additive [balanced],liquidity_stress_20d,0.11770756015832191
+0,Choquistic 2-additive [balanced],market_loss_1d,1.215968763163883e-15
+0,Choquistic 2-additive [balanced],negative_momentum_21d,0.1744125418610779
+0,Choquistic 2-additive [balanced],realized_volatility_20d,1.624637229888036e-15
+0,Choquistic 2-additive [balanced],term_spread_10y_2y_pct,6.352673873863984e-16
+0,Choquistic 2-additive [balanced],vix,8.901805984545322e-16
+0,Choquistic 2-additive [unweighted],average_equity_correlation_60d,0.008137643017679152
+0,Choquistic 2-additive [unweighted],baa_credit_spread_pct,0.241028199560669
+0,Choquistic 2-additive [unweighted],drawdown_severity,1.0809741249106976e-16
+0,Choquistic 2-additive [unweighted],lagged_portfolio_loss_1d,0.14470239757870448
+0,Choquistic 2-additive [unweighted],liquidity_stress_20d,0.04310214436047921
+0,Choquistic 2-additive [unweighted],market_loss_1d,0.02865468970139767
+0,Choquistic 2-additive [unweighted],negative_momentum_21d,0.27230497572591916
+0,Choquistic 2-additive [unweighted],realized_volatility_20d,0.1189672196620188
+0,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.14310273039313232
+0,Choquistic 2-additive [unweighted],vix,4.7389778121461905e-17
+1,Choquistic 1-additive [balanced],average_equity_correlation_60d,1.8221415785230217e-16
+1,Choquistic 1-additive [balanced],baa_credit_spread_pct,1.2516830123633284e-16
+1,Choquistic 1-additive [balanced],drawdown_severity,0.2106244618025786
+1,Choquistic 1-additive [balanced],lagged_portfolio_loss_1d,0.21935525319205593
+1,Choquistic 1-additive [balanced],liquidity_stress_20d,-3.939388360272047e-17
+1,Choquistic 1-additive [balanced],market_loss_1d,9.318760696408643e-19
+1,Choquistic 1-additive [balanced],negative_momentum_21d,5.794630372977686e-18
+1,Choquistic 1-additive [balanced],realized_volatility_20d,0.570020285005367
+1,Choquistic 1-additive [balanced],term_spread_10y_2y_pct,7.530900558006104e-17
+1,Choquistic 1-additive [balanced],vix,3.2281044088362504e-17
+1,Choquistic 1-additive [unweighted],average_equity_correlation_60d,-3.402417949876328e-18
+1,Choquistic 1-additive [unweighted],baa_credit_spread_pct,-2.8677900038902226e-17
+1,Choquistic 1-additive [unweighted],drawdown_severity,0.18339008310175958
+1,Choquistic 1-additive [unweighted],lagged_portfolio_loss_1d,0.2150920228173207
+1,Choquistic 1-additive [unweighted],liquidity_stress_20d,3.354648406376285e-18
+1,Choquistic 1-additive [unweighted],market_loss_1d,0.08965741352416073
+1,Choquistic 1-additive [unweighted],negative_momentum_21d,-1.3023926029377984e-17
+1,Choquistic 1-additive [unweighted],realized_volatility_20d,0.5118604805567583
+1,Choquistic 1-additive [unweighted],term_spread_10y_2y_pct,1.5547658335680414e-17
+1,Choquistic 1-additive [unweighted],vix,-2.4748455702131225e-19
+1,Choquistic 2-additive [balanced],average_equity_correlation_60d,0.07181022209038809
+1,Choquistic 2-additive [balanced],baa_credit_spread_pct,-1.8090944214418154e-16
+1,Choquistic 2-additive [balanced],drawdown_severity,0.08139227051221476
+1,Choquistic 2-additive [balanced],lagged_portfolio_loss_1d,0.38453899436435196
+1,Choquistic 2-additive [balanced],liquidity_stress_20d,-5.421536708881711e-16
+1,Choquistic 2-additive [balanced],market_loss_1d,0.07295482323619758
+1,Choquistic 2-additive [balanced],negative_momentum_21d,0.0729548232361974
+1,Choquistic 2-additive [balanced],realized_volatility_20d,0.31634886656065014
+1,Choquistic 2-additive [balanced],term_spread_10y_2y_pct,3.9000247740583376e-17
+1,Choquistic 2-additive [balanced],vix,7.571082177237076e-17
+1,Choquistic 2-additive [unweighted],average_equity_correlation_60d,0.1010888778917525
+1,Choquistic 2-additive [unweighted],baa_credit_spread_pct,0.00013310769005459624
+1,Choquistic 2-additive [unweighted],drawdown_severity,0.027419961921472214
+1,Choquistic 2-additive [unweighted],lagged_portfolio_loss_1d,0.3084270622740261
+1,Choquistic 2-additive [unweighted],liquidity_stress_20d,0.09040819154575963
+1,Choquistic 2-additive [unweighted],market_loss_1d,0.05571000207032167
+1,Choquistic 2-additive [unweighted],negative_momentum_21d,0.09017351667373852
+1,Choquistic 2-additive [unweighted],realized_volatility_20d,0.3266392799328746
+1,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,-5.233178998113763e-18
+1,Choquistic 2-additive [unweighted],vix,2.1736600487372284e-17
+2,Choquistic 1-additive [balanced],average_equity_correlation_60d,2.5979417637510164e-17
+2,Choquistic 1-additive [balanced],baa_credit_spread_pct,0.4485778010915413
+2,Choquistic 1-additive [balanced],drawdown_severity,8.374413074992009e-18
+2,Choquistic 1-additive [balanced],lagged_portfolio_loss_1d,0.1563605231187113
+2,Choquistic 1-additive [balanced],liquidity_stress_20d,8.28885880896501e-17
+2,Choquistic 1-additive [balanced],market_loss_1d,2.959344350363988e-17
+2,Choquistic 1-additive [balanced],negative_momentum_21d,0.10767419519125143
+2,Choquistic 1-additive [balanced],realized_volatility_20d,0.2143349115602067
+2,Choquistic 1-additive [balanced],term_spread_10y_2y_pct,0.0730525690382889
+2,Choquistic 1-additive [balanced],vix,-3.902182484195816e-17
+2,Choquistic 1-additive [unweighted],average_equity_correlation_60d,2.9837266598726113e-18
+2,Choquistic 1-additive [unweighted],baa_credit_spread_pct,0.5534889729429688
+2,Choquistic 1-additive [unweighted],drawdown_severity,2.4872329243044935e-17
+2,Choquistic 1-additive [unweighted],lagged_portfolio_loss_1d,0.15402926712532358
+2,Choquistic 1-additive [unweighted],liquidity_stress_20d,-5.213038714569636e-20
+2,Choquistic 1-additive [unweighted],market_loss_1d,-1.0364505858657242e-17
+2,Choquistic 1-additive [unweighted],negative_momentum_21d,0.027031481641190205
+2,Choquistic 1-additive [unweighted],realized_volatility_20d,0.265450278290517
+2,Choquistic 1-additive [unweighted],term_spread_10y_2y_pct,2.6851675147650148e-17
+2,Choquistic 1-additive [unweighted],vix,-1.9432607736132497e-17
+2,Choquistic 2-additive [balanced],average_equity_correlation_60d,0.03175843736334829
+2,Choquistic 2-additive [balanced],baa_credit_spread_pct,0.3913274081857917
+2,Choquistic 2-additive [balanced],drawdown_severity,-3.8324838041400245e-16
+2,Choquistic 2-additive [balanced],lagged_portfolio_loss_1d,0.12503490180471305
+2,Choquistic 2-additive [balanced],liquidity_stress_20d,0.07926603896760946
+2,Choquistic 2-additive [balanced],market_loss_1d,0.02824546401522955
+2,Choquistic 2-additive [balanced],negative_momentum_21d,0.048973750982609254
+2,Choquistic 2-additive [balanced],realized_volatility_20d,0.14956765010209427
+2,Choquistic 2-additive [balanced],term_spread_10y_2y_pct,0.12971783747295593
+2,Choquistic 2-additive [balanced],vix,0.016108511105648836
+2,Choquistic 2-additive [unweighted],average_equity_correlation_60d,4.416828601442433e-17
+2,Choquistic 2-additive [unweighted],baa_credit_spread_pct,0.4404771671582225
+2,Choquistic 2-additive [unweighted],drawdown_severity,5.343211606518912e-17
+2,Choquistic 2-additive [unweighted],lagged_portfolio_loss_1d,0.1002132792210958
+2,Choquistic 2-additive [unweighted],liquidity_stress_20d,0.09832505261642017
+2,Choquistic 2-additive [unweighted],market_loss_1d,0.014840848158389944
+2,Choquistic 2-additive [unweighted],negative_momentum_21d,0.031451723818345635
+2,Choquistic 2-additive [unweighted],realized_volatility_20d,0.18672816854798416
+2,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.07940693139795366
+2,Choquistic 2-additive [unweighted],vix,0.048556829081589384
+3,Choquistic 1-additive [balanced],average_equity_correlation_60d,9.21588774875529e-16
+3,Choquistic 1-additive [balanced],baa_credit_spread_pct,5.852516196645831e-16
+3,Choquistic 1-additive [balanced],drawdown_severity,3.30175125669412e-16
+3,Choquistic 1-additive [balanced],lagged_portfolio_loss_1d,0.025292075141216144
+3,Choquistic 1-additive [balanced],liquidity_stress_20d,1.0678572086191813e-15
+3,Choquistic 1-additive [balanced],market_loss_1d,0.030673627926756573
+3,Choquistic 1-additive [balanced],negative_momentum_21d,0.818060201380927
+3,Choquistic 1-additive [balanced],realized_volatility_20d,8.315824584894924e-17
+3,Choquistic 1-additive [balanced],term_spread_10y_2y_pct,0.1259740955510991
+3,Choquistic 1-additive [balanced],vix,2.464434320875616e-15
+3,Choquistic 1-additive [unweighted],average_equity_correlation_60d,6.363400290523895e-18
+3,Choquistic 1-additive [unweighted],baa_credit_spread_pct,-5.6507284876792424e-18
+3,Choquistic 1-additive [unweighted],drawdown_severity,1.8593016959671947e-17
+3,Choquistic 1-additive [unweighted],lagged_portfolio_loss_1d,0.16372267304891672
+3,Choquistic 1-additive [unweighted],liquidity_stress_20d,-6.080982069257154e-18
+3,Choquistic 1-additive [unweighted],market_loss_1d,0.10777946062371946
+3,Choquistic 1-additive [unweighted],negative_momentum_21d,0.6502000106313535
+3,Choquistic 1-additive [unweighted],realized_volatility_20d,1.627471907775595e-16
+3,Choquistic 1-additive [unweighted],term_spread_10y_2y_pct,0.07829785569601184
+3,Choquistic 1-additive [unweighted],vix,-2.057148953457811e-18
+3,Choquistic 2-additive [balanced],average_equity_correlation_60d,1.2837838478639787e-14
+3,Choquistic 2-additive [balanced],baa_credit_spread_pct,3.4929765573046812e-15
+3,Choquistic 2-additive [balanced],drawdown_severity,1.4322938295456433e-14
+3,Choquistic 2-additive [balanced],lagged_portfolio_loss_1d,0.11709468271226932
+3,Choquistic 2-additive [balanced],liquidity_stress_20d,4.5650390651192015e-15
+3,Choquistic 2-additive [balanced],market_loss_1d,0.17623504195164663
+3,Choquistic 2-additive [balanced],negative_momentum_21d,0.4752721575164077
+3,Choquistic 2-additive [balanced],realized_volatility_20d,0.11175147832017288
+3,Choquistic 2-additive [balanced],term_spread_10y_2y_pct,0.11964663949945158
+3,Choquistic 2-additive [balanced],vix,1.65056092070805e-14
+3,Choquistic 2-additive [unweighted],average_equity_correlation_60d,-1.1353382800849047e-17
+3,Choquistic 2-additive [unweighted],baa_credit_spread_pct,6.738123421146068e-18
+3,Choquistic 2-additive [unweighted],drawdown_severity,3.9762867799851243e-17
+3,Choquistic 2-additive [unweighted],lagged_portfolio_loss_1d,0.22767820919834994
+3,Choquistic 2-additive [unweighted],liquidity_stress_20d,1.3265643187496396e-17
+3,Choquistic 2-additive [unweighted],market_loss_1d,0.20353758118132023
+3,Choquistic 2-additive [unweighted],negative_momentum_21d,0.39413886473529997
+3,Choquistic 2-additive [unweighted],realized_volatility_20d,0.12417353711110046
+3,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.050471807773930656
+3,Choquistic 2-additive [unweighted],vix,6.71535081925673e-18
+4,Choquistic 1-additive [balanced],average_equity_correlation_60d,2.587226137143515e-15
+4,Choquistic 1-additive [balanced],baa_credit_spread_pct,8.210692308481833e-16
+4,Choquistic 1-additive [balanced],drawdown_severity,6.253078377789868e-16
+4,Choquistic 1-additive [balanced],lagged_portfolio_loss_1d,7.628872422175806e-16
+4,Choquistic 1-additive [balanced],liquidity_stress_20d,9.913267469088642e-16
+4,Choquistic 1-additive [balanced],market_loss_1d,4.4009917375973256e-16
+4,Choquistic 1-additive [balanced],negative_momentum_21d,0.5125765321981058
+4,Choquistic 1-additive [balanced],realized_volatility_20d,-1.109506332570027e-15
+4,Choquistic 1-additive [balanced],term_spread_10y_2y_pct,3.2616269074360087e-16
+4,Choquistic 1-additive [balanced],vix,0.4874234678018897
+4,Choquistic 1-additive [unweighted],average_equity_correlation_60d,5.013926171593988e-18
+4,Choquistic 1-additive [unweighted],baa_credit_spread_pct,4.065938590937645e-17
+4,Choquistic 1-additive [unweighted],drawdown_severity,4.5997410245106515e-17
+4,Choquistic 1-additive [unweighted],lagged_portfolio_loss_1d,0.15092876919651055
+4,Choquistic 1-additive [unweighted],liquidity_stress_20d,-2.5146075580368992e-18
+4,Choquistic 1-additive [unweighted],market_loss_1d,0.09271965906147181
+4,Choquistic 1-additive [unweighted],negative_momentum_21d,0.36827087739590825
+4,Choquistic 1-additive [unweighted],realized_volatility_20d,-1.2001583294262057e-16
+4,Choquistic 1-additive [unweighted],term_spread_10y_2y_pct,-1.5917342901734783e-17
+4,Choquistic 1-additive [unweighted],vix,0.3880806943461078
+4,Choquistic 2-additive [balanced],average_equity_correlation_60d,0.17625876536107582
+4,Choquistic 2-additive [balanced],baa_credit_spread_pct,-8.326056983878479e-16
+4,Choquistic 2-additive [balanced],drawdown_severity,-1.0009847643875646e-15
+4,Choquistic 2-additive [balanced],lagged_portfolio_loss_1d,0.042332974047402404
+4,Choquistic 2-additive [balanced],liquidity_stress_20d,-1.4076400382777647e-15
+4,Choquistic 2-additive [balanced],market_loss_1d,0.17684072078709923
+4,Choquistic 2-additive [balanced],negative_momentum_21d,0.35829218086521264
+4,Choquistic 2-additive [balanced],realized_volatility_20d,0.08229811316263311
+4,Choquistic 2-additive [balanced],term_spread_10y_2y_pct,-8.784449663844503e-16
+4,Choquistic 2-additive [balanced],vix,0.16397724577658168
+4,Choquistic 2-additive [unweighted],average_equity_correlation_60d,0.04051499820372212
+4,Choquistic 2-additive [unweighted],baa_credit_spread_pct,1.1142465163315754e-17
+4,Choquistic 2-additive [unweighted],drawdown_severity,8.642679448930907e-17
+4,Choquistic 2-additive [unweighted],lagged_portfolio_loss_1d,0.229818570138357
+4,Choquistic 2-additive [unweighted],liquidity_stress_20d,-2.6980283061387758e-17
+4,Choquistic 2-additive [unweighted],market_loss_1d,0.25616591765264213
+4,Choquistic 2-additive [unweighted],negative_momentum_21d,0.20718859317803626
+4,Choquistic 2-additive [unweighted],realized_volatility_20d,0.0629928366836056
+4,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.06299283668360557
+4,Choquistic 2-additive [unweighted],vix,0.14032624746003028
+5,Choquistic 1-additive [balanced],average_equity_correlation_60d,-8.273136351709502e-16
+5,Choquistic 1-additive [balanced],baa_credit_spread_pct,-8.745966050608366e-16
+5,Choquistic 1-additive [balanced],drawdown_severity,-2.3138590504427264e-15
+5,Choquistic 1-additive [balanced],lagged_portfolio_loss_1d,-1.3667441275342463e-15
+5,Choquistic 1-additive [balanced],liquidity_stress_20d,-8.735099992154668e-16
+5,Choquistic 1-additive [balanced],market_loss_1d,-1.5926513012262422e-15
+5,Choquistic 1-additive [balanced],negative_momentum_21d,0.7010158835224075
+5,Choquistic 1-additive [balanced],realized_volatility_20d,-2.6164806766932207e-15
+5,Choquistic 1-additive [balanced],term_spread_10y_2y_pct,0.29898411647760564
+5,Choquistic 1-additive [balanced],vix,-2.390071149872278e-15
+5,Choquistic 1-additive [unweighted],average_equity_correlation_60d,-6.437499903338537e-17
+5,Choquistic 1-additive [unweighted],baa_credit_spread_pct,-4.3447818949696533e-17
+5,Choquistic 1-additive [unweighted],drawdown_severity,-1.3027882421533646e-16
+5,Choquistic 1-additive [unweighted],lagged_portfolio_loss_1d,-3.097723866157459e-17
+5,Choquistic 1-additive [unweighted],liquidity_stress_20d,8.60158502211382e-18
+5,Choquistic 1-additive [unweighted],market_loss_1d,3.5358880083187504e-17
+5,Choquistic 1-additive [unweighted],negative_momentum_21d,0.7077643561376713
+5,Choquistic 1-additive [unweighted],realized_volatility_20d,-1.0436611527148692e-16
+5,Choquistic 1-additive [unweighted],term_spread_10y_2y_pct,0.29223564386233103
+5,Choquistic 1-additive [unweighted],vix,1.6754614587553886e-17
+5,Choquistic 2-additive [balanced],average_equity_correlation_60d,1.8015194748150482e-15
+5,Choquistic 2-additive [balanced],baa_credit_spread_pct,2.099950188307063e-15
+5,Choquistic 2-additive [balanced],drawdown_severity,5.3388136075944284e-15
+5,Choquistic 2-additive [balanced],lagged_portfolio_loss_1d,4.245799542804637e-15
+5,Choquistic 2-additive [balanced],liquidity_stress_20d,2.2844776367667956e-15
+5,Choquistic 2-additive [balanced],market_loss_1d,0.013605174981774855
+5,Choquistic 2-additive [balanced],negative_momentum_21d,0.4999999999999878
+5,Choquistic 2-additive [balanced],realized_volatility_20d,2.699821180324231e-15
+5,Choquistic 2-additive [balanced],term_spread_10y_2y_pct,0.48639482501821524
+5,Choquistic 2-additive [balanced],vix,2.7082372169656265e-15
+5,Choquistic 2-additive [unweighted],average_equity_correlation_60d,-2.0048875937078544e-17
+5,Choquistic 2-additive [unweighted],baa_credit_spread_pct,-5.891030343487584e-17
+5,Choquistic 2-additive [unweighted],drawdown_severity,5.076541962018759e-17
+5,Choquistic 2-additive [unweighted],lagged_portfolio_loss_1d,-6.724787606031871e-19
+5,Choquistic 2-additive [unweighted],liquidity_stress_20d,2.4385497061136076e-18
+5,Choquistic 2-additive [unweighted],market_loss_1d,0.036182634164582284
+5,Choquistic 2-additive [unweighted],negative_momentum_21d,0.4999999999999993
+5,Choquistic 2-additive [unweighted],realized_volatility_20d,2.5808148038073202e-17
+5,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.46381736583541777
+5,Choquistic 2-additive [unweighted],vix,7.979538143351505e-18
+6,Choquistic 1-additive [balanced],average_equity_correlation_60d,-8.472822761080658e-16
+6,Choquistic 1-additive [balanced],baa_credit_spread_pct,-9.20124939554194e-16
+6,Choquistic 1-additive [balanced],drawdown_severity,-4.690795106152086e-16
+6,Choquistic 1-additive [balanced],lagged_portfolio_loss_1d,-7.059776987482603e-16
+6,Choquistic 1-additive [balanced],liquidity_stress_20d,-9.762778405922016e-16
+6,Choquistic 1-additive [balanced],market_loss_1d,-6.763025932015225e-16
+6,Choquistic 1-additive [balanced],negative_momentum_21d,0.2865454445806609
+6,Choquistic 1-additive [balanced],realized_volatility_20d,0.24036236944052336
+6,Choquistic 1-additive [balanced],term_spread_10y_2y_pct,-8.039800157691181e-16
+6,Choquistic 1-additive [balanced],vix,0.47309218597881775
+6,Choquistic 1-additive [unweighted],average_equity_correlation_60d,3.215456930961632e-19
+6,Choquistic 1-additive [unweighted],baa_credit_spread_pct,-2.2749567249728474e-17
+6,Choquistic 1-additive [unweighted],drawdown_severity,5.390946062036343e-16
+6,Choquistic 1-additive [unweighted],lagged_portfolio_loss_1d,0.0608851317902636
+6,Choquistic 1-additive [unweighted],liquidity_stress_20d,-4.124809098831497e-18
+6,Choquistic 1-additive [unweighted],market_loss_1d,0.09512000808201243
+6,Choquistic 1-additive [unweighted],negative_momentum_21d,0.23969678666450395
+6,Choquistic 1-additive [unweighted],realized_volatility_20d,0.3569618336847816
+6,Choquistic 1-additive [unweighted],term_spread_10y_2y_pct,-2.1305246348992427e-17
+6,Choquistic 1-additive [unweighted],vix,0.2473362397784348
+6,Choquistic 2-additive [balanced],average_equity_correlation_60d,-2.0010717392956617e-15
+6,Choquistic 2-additive [balanced],baa_credit_spread_pct,-1.538909491452552e-15
+6,Choquistic 2-additive [balanced],drawdown_severity,-2.223737668432101e-15
+6,Choquistic 2-additive [balanced],lagged_portfolio_loss_1d,0.028754369640090344
+6,Choquistic 2-additive [balanced],liquidity_stress_20d,-1.3420720295996657e-15
+6,Choquistic 2-additive [balanced],market_loss_1d,0.01766262575755122
+6,Choquistic 2-additive [balanced],negative_momentum_21d,0.26899655558303076
+6,Choquistic 2-additive [balanced],realized_volatility_20d,0.08146734369883417
+6,Choquistic 2-additive [balanced],term_spread_10y_2y_pct,0.2133408186594219
+6,Choquistic 2-additive [balanced],vix,0.3897782866610797
+6,Choquistic 2-additive [unweighted],average_equity_correlation_60d,5.909283457018709e-17
+6,Choquistic 2-additive [unweighted],baa_credit_spread_pct,1.5705763634395194e-17
+6,Choquistic 2-additive [unweighted],drawdown_severity,-3.359508908629393e-18
+6,Choquistic 2-additive [unweighted],lagged_portfolio_loss_1d,0.031755766418049364
+6,Choquistic 2-additive [unweighted],liquidity_stress_20d,-9.342995000333121e-18
+6,Choquistic 2-additive [unweighted],market_loss_1d,-1.2743575086199515e-16
+6,Choquistic 2-additive [unweighted],negative_momentum_21d,0.26486595288729076
+6,Choquistic 2-additive [unweighted],realized_volatility_20d,0.19154671000052714
+6,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.1820387311746084
+6,Choquistic 2-additive [unweighted],vix,0.32979283951952443

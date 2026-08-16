@@ -128,6 +128,34 @@ def test_logistic_orientation_ablation_preserves_probabilities() -> None:
     )
 
 
+def test_classifier_registry_exposes_balanced_and_unweighted_variants() -> None:
+    balanced = classification_candidates(
+        3,
+        include_mlp=False,
+        class_weight="balanced",
+    )
+    unweighted = classification_candidates(
+        3,
+        include_mlp=False,
+        class_weight=None,
+    )
+    parameter_by_model = {
+        "Logistic": "classifier__class_weight",
+        "Logistic oriented": "classifier__class_weight",
+        "Penalized logistic": "classifier__class_weight",
+        "Explicit interactions": "classifier__logistic__class_weight",
+        "RBF SVM": "classifier__class_weight",
+        "Random forest": "classifier__class_weight",
+        "Gradient boosting": "classifier__class_weight",
+        "Choquistic 1-additive": "classifier__class_weight",
+        "Choquistic 2-additive": "classifier__class_weight",
+    }
+
+    for model, parameter in parameter_by_model.items():
+        assert balanced[model].estimator.get_params()[parameter] == "balanced"
+        assert unweighted[model].estimator.get_params()[parameter] is None
+
+
 def test_orientation_threshold_and_chronological_sign_stability() -> None:
     """Reject weak and unstable directions while retaining their diagnostics."""
     target_values = np.tile(np.arange(10, dtype=float), 3)

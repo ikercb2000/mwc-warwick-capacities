@@ -46,7 +46,8 @@ def _run(dataset: pd.DataFrame):
         selection_window_months=12,
         calibration_window_months=12,
         oos_block_years=1,
-        calibration_methods=("sigmoid", "isotonic"),
+        calibration_methods=("sigmoid",),
+        class_weight_modes=("balanced", "unweighted"),
         verbose=False,
     )[1]
 
@@ -55,18 +56,33 @@ def test_tail_risk_uses_frozen_full_pipelines_for_temporal_calibration() -> None
     result = _run(_classification_dataset())
 
     assert list(result.probabilities) == [
-        "Logistic",
-        "Logistic [sigmoid]",
-        "Logistic [isotonic]",
+        "Logistic [balanced]",
+        "Logistic [balanced] [sigmoid]",
+        "Logistic [unweighted]",
+        "Logistic [unweighted] [sigmoid]",
     ]
     assert set(result.calibrated_models) == {
-        "Logistic [sigmoid]",
-        "Logistic [isotonic]",
+        "Logistic [balanced] [sigmoid]",
+        "Logistic [unweighted] [sigmoid]",
     }
     for calibrated in result.calibrated_models.values():
         assert isinstance(calibrated, CalibratedClassifierCV)
         assert isinstance(calibrated.estimator, FrozenEstimator)
         assert isinstance(calibrated.estimator.estimator, Pipeline)
+
+    assert set(result.metrics["class weight"]) == {"balanced", "unweighted"}
+    assert (
+        result.fitted_models["Logistic [balanced]"]
+        .named_steps["classifier"]
+        .class_weight
+        == "balanced"
+    )
+    assert (
+        result.fitted_models["Logistic [unweighted]"]
+        .named_steps["classifier"]
+        .class_weight
+        is None
+    )
 
     summary = result.calibration_sample_summary
     for fold in summary.index.get_level_values("fold").unique():
@@ -127,7 +143,19 @@ def test_tail_risk_calibration_is_configurable() -> None:
     assert config["walk_forward"]["selection_window_months"] == 18
     assert config["walk_forward"]["calibration_window_months"] == 24
     assert config["walk_forward"]["oos_block_years"] == 1
-    assert config["calibration"]["methods"] == ["sigmoid", "isotonic"]
+    assert config["calibration"]["methods"] == ["sigmoid"]
+    assert config["class_weight"]["modes"] == ["balanced", "unweighted"]
     for collection in ("main", "robustness", "report"):
         assert "Rolling prior probability" in config["models"][collection]
         assert "Prior probability" not in config["models"][collection]
+
+
+def test_tail_risk_rejects_non_sigmoid_calibration() -> None:
+    with pytest.raises(ValueError, match="only supports 'sigmoid'"):
+        run_tail_classification_experiment(
+            _classification_dataset(),
+            features=("signal", "trend"),
+            horizons=(1,),
+            calibration_methods=("isotonic",),
+            verbose=False,
+        )
