@@ -161,3 +161,37 @@ def test_complete_runner_renders_notebook_reports() -> None:
         assert "audit_results.py" in runner
     assert "--execute" in windows_renderer.read_text(encoding="utf-8")
     assert "--execute" in unix_renderer.read_text(encoding="utf-8")
+
+
+def test_scale_dominant_series_have_inclusive_and_exclusive_figures() -> None:
+    """Keep NVDA and VIX from obscuring the scale of the remaining series."""
+    artifact_names = (
+        "data_equity_wealth_with_nvda.png",
+        "data_equity_wealth_without_nvda.png",
+        "data_raw_market_panels_with_vix.png",
+        "data_raw_market_panels_without_vix.png",
+    )
+    data_script = (ROOT / "scripts" / "build_experiment_data.py").read_text(
+        encoding="utf-8"
+    )
+    notebook = json.loads(
+        (ROOT / "notebooks" / "00_data_preparation_and_eda.ipynb").read_text(
+            encoding="utf-8"
+        )
+    )
+    notebook_source = "\n".join(
+        "".join(cell.get("source", ""))
+        if isinstance(cell.get("source", ""), list)
+        else cell.get("source", "")
+        for cell in notebook["cells"]
+    )
+
+    for artifact_name in artifact_names:
+        assert artifact_name in data_script
+        assert artifact_name in notebook_source
+    for obsolete_name in (
+        "data_equity_wealth.png",
+        "data_raw_market_panels.png",
+    ):
+        assert f'"{obsolete_name}"' not in data_script
+        assert f'"{obsolete_name}"' not in notebook_source

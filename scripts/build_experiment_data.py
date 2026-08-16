@@ -100,28 +100,46 @@ artifacts.update(tables)
 
 wealth = np.exp(prepared.equity_returns.fillna(0.0).cumsum())
 axis = wealth.plot(figsize=(12, 5), linewidth=1.0)
-axis.set_title("Equity total-return wealth indices, normalized to 1")
+axis.set_title("Equity total-return wealth indices, including NVDA")
 axis.set_ylabel("wealth")
 axis.grid(alpha=0.2)
 axis.figure.tight_layout()
-artifacts["equity wealth figure"] = save_figure(
-    axis.figure, "data_equity_wealth.png", paths
+artifacts["equity wealth figure with NVDA"] = save_figure(
+    axis.figure, "data_equity_wealth_with_nvda.png", paths
 )
 
-figure, axes = plt.subplots(1, 2, figsize=(14, 5))
-correlation = prepared.equity_returns.corr()
-image = axes[0].imshow(correlation, vmin=-1, vmax=1)
-axes[0].set_xticks(range(len(correlation)), correlation.columns, rotation=90)
-axes[0].set_yticks(range(len(correlation)), correlation.index)
-axes[0].set_title("Full-sample equity return correlation")
-figure.colorbar(image, ax=axes[0], fraction=0.046, pad=0.04)
-prepared.fred.plot(ax=axes[1], linewidth=0.8)
-axes[1].set_title("Available FRED series (different units)")
-axes[1].grid(alpha=0.2)
-figure.tight_layout()
-artifacts["raw panels figure"] = save_figure(
-    figure, "data_raw_market_panels.png", paths
+wealth_without_nvda = wealth.drop(columns="NVDA")
+axis = wealth_without_nvda.plot(figsize=(12, 5), linewidth=1.0)
+axis.set_title("Equity total-return wealth indices, excluding NVDA")
+axis.set_ylabel("wealth")
+axis.grid(alpha=0.2)
+axis.figure.tight_layout()
+artifacts["equity wealth figure without NVDA"] = save_figure(
+    axis.figure, "data_equity_wealth_without_nvda.png", paths
 )
+
+correlation = prepared.equity_returns.corr()
+for vix_title, fred_panel, output_name in (
+    ("including VIX", prepared.fred, "data_raw_market_panels_with_vix.png"),
+    (
+        "excluding VIX",
+        prepared.fred.drop(columns="vix"),
+        "data_raw_market_panels_without_vix.png",
+    ),
+):
+    figure, axes = plt.subplots(1, 2, figsize=(14, 5))
+    image = axes[0].imshow(correlation, vmin=-1, vmax=1)
+    axes[0].set_xticks(range(len(correlation)), correlation.columns, rotation=90)
+    axes[0].set_yticks(range(len(correlation)), correlation.index)
+    axes[0].set_title("Full-sample equity return correlation")
+    figure.colorbar(image, ax=axes[0], fraction=0.046, pad=0.04)
+    fred_panel.plot(ax=axes[1], linewidth=0.8)
+    axes[1].set_title(f"Available FRED series, {vix_title}")
+    axes[1].grid(alpha=0.2)
+    figure.tight_layout()
+    artifacts[f"raw panels figure {vix_title.lower()}"] = save_figure(
+        figure, output_name, paths
+    )
 
 portfolio_wealth = pd.DataFrame(
     {
