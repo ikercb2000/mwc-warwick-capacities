@@ -14,13 +14,12 @@ from mwc_experiments.workflows.future_loss import (
     HorizonRegressionResult,
     run_future_loss_experiment,
 )
-from mwc_experiments.workflows.risk_simulation import (
+from mwc_experiments.workflows.risk_analysis import (
     capital_backtest_table,
     coverage_test_table,
     diversification_table,
     ordered_risk_contributions,
     rolling_capital_panel,
-    simulate_regime_switching_losses,
     static_risk_table,
 )
 from mwc_experiments.workflows.stability import (
@@ -56,6 +55,5 @@ __all__ = [
     "run_factor_experiment",
     "run_future_loss_experiment",
     "run_tail_classification_experiment",
-    "simulate_regime_switching_losses",
     "static_risk_table",
 ]

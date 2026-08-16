@@ -1,11 +1,11 @@
 measure,parameter,capital
-Identity / mean loss,-,0.0005373917488114832
-Proportional hazards,gamma=0.85,0.0027011017972045706
-Proportional hazards,gamma=0.7,0.005916106800383021
-Proportional hazards,gamma=0.5,0.01358652681197383
-Value-at-Risk,alpha=0.95,0.019188095119599218
-Value-at-Risk,alpha=0.975,0.03008061966650709
-Expected Shortfall,alpha=0.95,0.03662773443966538
-Value-at-Risk,alpha=0.99,0.04480881670177808
-Expected Shortfall,alpha=0.975,0.049751442308053215
-Expected Shortfall,alpha=0.99,0.06977240421552945
+Identity / mean loss,-,-0.0007826261310641191
+Proportional hazards,gamma=0.85,0.0010619481534566595
+Proportional hazards,gamma=0.7,0.00373377769022427
+Proportional hazards,gamma=0.5,0.010115487350637452
+Value-at-Risk,alpha=0.95,0.016952207292044275
+Value-at-Risk,alpha=0.975,0.02362004402873552
+Expected Shortfall,alpha=0.95,0.027986693110311423
+Value-at-Risk,alpha=0.99,0.033902115167202415
+Expected Shortfall,alpha=0.975,0.03602051610006853
+Expected Shortfall,alpha=0.99,0.04843691489031647

@@ -1,15 +1,17 @@
 [experiment]
 id = "distortion_risk"
 script = "scripts/experiment_distortion_risk.py"
-notebook = "notebooks/04_distortion_risk_simulation.ipynb"
-description = "Distortion-risk simulation and capital backtests"
+notebook = "notebooks/04_distortion_risk.ipynb"
+description = "Distortion-risk capital analysis with observed Bloomberg losses"
 
 [execution]
 quick_mode_default = false
-random_state = 42
 
-[simulation]
-n_observations = 4000
+[real_data]
+assets = ["AAPL", "AMZN", "JPM", "KO", "MSFT", "NVDA", "UNH", "WMT", "XOM"]
+correlation_assets = ["AAPL", "JPM", "XOM"]
+diversification_assets = ["AAPL", "JPM"]
+stress_vix_threshold = 30.0
 
 [risk]
 expected_shortfall_alpha = 0.975

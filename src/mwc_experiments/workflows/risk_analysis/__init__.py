@@ -1,7 +1,6 @@
-"""Public API for the risk simulation domain."""
+"""Public API for the distortion-risk analysis domain."""
 
 from .utils import (
-    simulate_regime_switching_losses,
     static_risk_table,
     rolling_capital_panel,
     capital_backtest_table,
@@ -11,7 +10,6 @@ from .utils import (
 )
 
 __all__ = [
-    "simulate_regime_switching_losses",
     "static_risk_table",
     "rolling_capital_panel",
     "capital_backtest_table",

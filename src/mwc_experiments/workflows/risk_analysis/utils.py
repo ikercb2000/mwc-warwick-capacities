@@ -1,4 +1,4 @@
-"""Risk Simulation domain."""
+"""Distortion-risk analysis domain."""
 
 from __future__ import annotations
 from dataclasses import asdict
@@ -22,69 +22,6 @@ from capacities_ml_fin.risk import (
     stress_backtest,
     value_at_risk,
 )
-
-def simulate_regime_switching_losses(
-    n_observations: int = 4_000,
-    *,
-    random_state: int = 42,
-) -> pd.DataFrame:
-    """Simulate three heavy-tailed asset-loss series with persistent stress regimes.
-
-    The simulation is deliberately transparent rather than calibrated to a particular
-    market. It creates calm and stress states, correlated Student-t shocks and a sharper
-    increase in common dependence during stress. The resulting sample is useful for
-    illustrating distortion risk measures, capital backtests and diversification.
-    """
-    if n_observations < 300:
-        raise ValueError("n_observations must be at least 300.")
-    rng = np.random.default_rng(random_state)
-
-    stress = np.zeros(n_observations, dtype=bool)
-    for t in range(1, n_observations):
-        if stress[t - 1]:
-            stress[t] = rng.random() > 0.12  # persistent stress state
-        else:
-            stress[t] = rng.random() < 0.018
-
-    calm_correlation = np.array(
-        [[1.0, 0.25, 0.15], [0.25, 1.0, 0.20], [0.15, 0.20, 1.0]]
-    )
-    stress_correlation = np.array(
-        [[1.0, 0.72, 0.58], [0.72, 1.0, 0.64], [0.58, 0.64, 1.0]]
-    )
-    calm_scale = np.array([0.010, 0.008, 0.009])
-    stress_scale = np.array([0.030, 0.025, 0.028])
-    calm_cholesky = np.linalg.cholesky(calm_correlation)
-    stress_cholesky = np.linalg.cholesky(stress_correlation)
-
-    losses = np.empty((n_observations, 3), dtype=float)
-    degrees_of_freedom = 5.0
-    for t in range(n_observations):
-        normal = rng.standard_normal(3)
-        radial = np.sqrt(rng.chisquare(degrees_of_freedom) / degrees_of_freedom)
-        if stress[t]:
-            shock = stress_cholesky @ normal / radial
-            losses[t] = 0.0018 + stress_scale * shock
-        else:
-            shock = calm_cholesky @ normal / radial
-            losses[t] = -0.0002 + calm_scale * shock
-
-    # A few rare common jumps make tail comparisons visible without determining them.
-    jump = rng.random(n_observations) < 0.006
-    losses[jump] += rng.lognormal(mean=-3.3, sigma=0.45, size=(jump.sum(), 1))
-
-    index = pd.bdate_range("2008-01-02", periods=n_observations)
-    frame = pd.DataFrame(
-        losses,
-        index=index,
-        columns=["asset_a_loss", "asset_b_loss", "asset_c_loss"],
-    )
-    frame["portfolio_loss"] = frame[
-        ["asset_a_loss", "asset_b_loss", "asset_c_loss"]
-    ].mean(axis=1)
-    frame["stress"] = stress
-    return frame
-
 
 def static_risk_table(
     losses: pd.Series | np.ndarray,

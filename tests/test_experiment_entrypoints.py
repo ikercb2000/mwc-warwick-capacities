@@ -228,6 +228,44 @@ def test_tail_risk_persists_separate_probability_evaluations() -> None:
     assert "experiment_2b_classifier_diagnostics_h{horizon}_a095.png" not in source
 
 
+def test_distortion_risk_uses_only_real_data_artifacts() -> None:
+    """Keep experiment 3 empirical and prevent simulated artifacts returning."""
+    script = (ROOT / "scripts" / "experiment_distortion_risk.py").read_text(
+        encoding="utf-8"
+    )
+    notebook = json.loads(
+        (ROOT / "notebooks" / "04_distortion_risk.ipynb").read_text(
+            encoding="utf-8"
+        )
+    )
+    notebook_source = "\n".join(
+        "".join(cell.get("source", ""))
+        if isinstance(cell.get("source", ""), list)
+        else cell.get("source", "")
+        for cell in notebook["cells"]
+    )
+
+    for suffix in (
+        "real_losses.parquet",
+        "static_risk_measures.csv",
+        "capital_backtests.csv",
+        "coverage_tests.csv",
+        "diversification.csv",
+        "loss_process.png",
+        "rolling_capital.png",
+    ):
+        artifact = f"experiment_3_{suffix}"
+        assert artifact in script
+        assert artifact in notebook_source
+    assert "experiment_3a_" not in script
+    assert "experiment_3b_" not in script
+    assert "simulate_regime_switching_losses" not in script
+    assert "experiment_3a_" not in notebook_source
+    assert "experiment_3b_" not in notebook_source
+    assert "load_raw_market_data(paths)" in script
+    assert 'real["stress"] = real["vix"] >=' in script
+
+
 def test_forecasting_experiments_persist_walk_forward_audits() -> None:
     expected = {
         "experiment_predict_loss.py": (

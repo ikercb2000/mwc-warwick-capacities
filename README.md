@@ -203,7 +203,7 @@ poetry run python scripts/run_smoke_experiments.py
 | `experiment_factors.py` | Compare linear, nonlinear and Choquet factor models for each equity. |
 | `experiment_predict_loss.py` | Forecast 1-, 5- and 10-day portfolio losses and test portfolio-weight robustness. |
 | `experiment_tail_risk.py` | Classify 95% tail events and run a 97.5% robustness specification. |
-| `experiment_distortion_risk.py` | Simulate regime-switching losses and study distortion capital, backtests and diversification. |
+| `experiment_distortion_risk.py` | Study distortion capital, backtests and diversification using observed Bloomberg equity losses. |
 | `experiment_autoregression.py` | Compare linear and Choquet autoregressions and evaluate high-volatility performance. |
 | `run_smoke_experiments.py` | Run representative model-family checks without producing the complete report. |
 
@@ -482,7 +482,7 @@ experiments:
 2. `01_choquet_factor_models.ipynb`
 3. `02_future_loss_regression.ipynb`
 4. `03_tail_risk_classification.ipynb`
-5. `04_distortion_risk_simulation.ipynb`
+5. `04_distortion_risk.ipynb` — distortion-risk analysis with observed market losses
 6. `05_choquet_autoregression_robustness.ipynb`
 
 ## Reproducibility checks

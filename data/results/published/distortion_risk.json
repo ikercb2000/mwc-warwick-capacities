@@ -1,88 +1,88 @@
 {
   "artifacts": [
     {
-      "destination": "data\\results\\tables\\experiment_3_simulated_losses.parquet",
-      "sha256": "08e0210f37c3970e936e461cf43342cf368a1d08385fbc68f4ff54d151214a8c",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_simulated_losses.parquet"
+      "destination": "data\\results\\tables\\experiment_3_real_losses.parquet",
+      "sha256": "f3e76c9e1d5cfe2794e2a34a0f05a5f567a3fd48411615f7ba8426f5c1aea65e",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_real_losses.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_3_static_risk_measures.csv",
-      "sha256": "e76739f5c0c522f0c3c8cc527f1b47b6c319da77376d9804419faa1841e24656",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_static_risk_measures.csv"
+      "sha256": "9c7affb4c99e0e5c5f3e15df4e39cffc254c6624a7439fcc4c9b572cb2815d16",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_static_risk_measures.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_3_rolling_capital.parquet",
-      "sha256": "97431cbaa8443435a09036af6e25b9f910bedac37e7c044566b974e8b89b1d33",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_rolling_capital.parquet"
+      "sha256": "3a973761449a8693e0fa76ccb6d90f44098a564eeada85ee09f7432e6be8d2fa",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_rolling_capital.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_3_capital_backtests.csv",
-      "sha256": "f48785ad6d9d3be9d146da3c2dee0d45c60c61a9fbbce60891c31b49f08caeb1",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_capital_backtests.csv"
+      "sha256": "6353ab7a69defed3f85576361f1ed0e40c93a36ca57fce082a652f1158dd1d6b",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_capital_backtests.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_3_coverage_tests.csv",
-      "sha256": "6749274722f5af478a3d1ed1a9c458af86b41f8653ea5b2f946aea65ad4a0d18",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_coverage_tests.csv"
+      "sha256": "7a96c5441803d1ab8ffdb7f52489782850cb1196416f8176884040370748db66",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_coverage_tests.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_3_stress_comparison.csv",
-      "sha256": "3d656d7fea3a7c4773afee0a711b5a0ef1d0787ed217983e5040760170070053",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_stress_comparison.csv"
+      "sha256": "886bc98e49b1c79dd19be18a043a034624cdd8c502c9b938eb81dd2c2ec4fb6e",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_stress_comparison.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_3_diversification.csv",
-      "sha256": "50b39b919b76659ddda022196a2d6a3f31e58b48125abd4d0e2de18f41a79082",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_diversification.csv"
+      "sha256": "231bc2b0d6a878db10b7bf74efdedc3ff3308f1f140042b4e04475f27bfec0e6",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_diversification.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_3_es_contributions.parquet",
-      "sha256": "4123d957fc6e0d0f6f1a35170940de6fa7241c99b3c54bf920c42d07b18a75ec",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_es_contributions.parquet"
+      "sha256": "3010ffe314f24066f7a53aacd1ee121d85913275c58b8a8a75fe28d0bb029f9f",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_es_contributions.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_3_axiom_checks.csv",
       "sha256": "7baecfb186bab5b4fef64e01631499c66d3f2e1c938df5bf491dfc18d220adc5",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\tables\\experiment_3_axiom_checks.csv"
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\tables\\experiment_3_axiom_checks.csv"
     },
     {
       "destination": "data\\results\\figures\\experiment_3_loss_process.png",
-      "sha256": "2006cbed6b7033ff8ae19f4f82d42064d86fba42e68c156bb0b4c68e708bf981",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\figures\\experiment_3_loss_process.png"
+      "sha256": "b36d96a5b08716a60db2a152857454acc5f76f65a6a6132997d8c2ba29ddcb21",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\figures\\experiment_3_loss_process.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_3_regime_correlations.png",
-      "sha256": "e593015e437d70abc9758f80d106ac82bd03d5a49509f420cb07770345e06192",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\figures\\experiment_3_regime_correlations.png"
+      "sha256": "af8ccae9ffd791d3aefa2702611436bc5698f4fcef6db29ac9cf8a81eeb9b43b",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\figures\\experiment_3_regime_correlations.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_3_static_capital.png",
-      "sha256": "c986b059ec39f1e5f03a8c60784af38b3601057f8d70af78dd3b6d688a0593e8",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\figures\\experiment_3_static_capital.png"
+      "sha256": "a8aef828242f5b955ca6841ace3616c2e46461548435b4869fde8db05678594f",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\figures\\experiment_3_static_capital.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_3_es_contributions.png",
-      "sha256": "7611a3ad81ab8a335dc3a6e827554495dabef62592ce57080c929cbdf0fbdc9a",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\figures\\experiment_3_es_contributions.png"
+      "sha256": "4b203c1e3d2efb2c113e5d901110616d0b64cbc20e828d56dff52b39ff396b44",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\figures\\experiment_3_es_contributions.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_3_rolling_capital.png",
-      "sha256": "49b3c3f21e48eae4fc02f7165758e0c43c6f4d8878972313de52f3fc31244252",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\figures\\experiment_3_rolling_capital.png"
+      "sha256": "ad9070fe2e18a5fe4acff4ee32a7652a5f4581bf683b2c33d851ecd4ee571cf8",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\figures\\experiment_3_rolling_capital.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_3_capital_backtests.png",
-      "sha256": "7fc3648c50387d2fd8c8236d8678f2734a70ccc5f1f0e143d7c681f485071d29",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\figures\\experiment_3_capital_backtests.png"
+      "sha256": "bc3cd36ed603909b9ac5cf4eaa6dcad7d1cee0f5c8dd9c2621833aa6a713d34d",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\figures\\experiment_3_capital_backtests.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_3_diversification.png",
-      "sha256": "a20fd890ab2de93df85defae17b17fdb40598d46c47e2706986cc9c0a5ce4729",
-      "source": "data\\results\\runs\\distortion_risk\\20260816T103207Z_7d4c21e_standard_30844\\figures\\experiment_3_diversification.png"
+      "sha256": "7d9125d2eac79005ba2aea8f7ed2658cf07641307e4171e3a68dc318152143b4",
+      "source": "data\\results\\runs\\distortion_risk\\20260816T175609Z_3cb9521_standard_8920\\figures\\experiment_3_diversification.png"
     }
   ],
   "experiment_id": "distortion_risk",
-  "published_at_utc": "2026-08-16T10:35:34.720208+00:00",
-  "run_id": "20260816T103207Z_7d4c21e_standard_30844",
-  "run_manifest_sha256": "21717abe58f8883d1bb1959e9f7eb5fb67f4e9d7847212c93f3767639342320c"
+  "published_at_utc": "2026-08-16T17:56:51.064745+00:00",
+  "run_id": "20260816T175609Z_3cb9521_standard_8920",
+  "run_manifest_sha256": "589fb0e6b8fb74c5abd83a36c7fe33aae26bb81f33d3e56c589389adf1904866"
 }

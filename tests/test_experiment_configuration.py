@@ -39,6 +39,18 @@ def test_catalog_resolves_metadata_from_individual_tomls() -> None:
         assert (paths.root / metadata["notebook"]).is_file()
 
 
+def test_distortion_risk_real_data_configuration_is_coherent() -> None:
+    config = load_experiment_config("distortion_risk")
+    real_data = config["real_data"]
+
+    assets = set(real_data["assets"])
+    assert len(assets) >= 3
+    assert set(real_data["correlation_assets"]).issubset(assets)
+    assert len(real_data["diversification_assets"]) == 2
+    assert set(real_data["diversification_assets"]).issubset(assets)
+    assert float(real_data["stress_vix_threshold"]) > 0.0
+
+
 @pytest.mark.parametrize(
     ("experiment_id", "task", "n_features"),
     [
