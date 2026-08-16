@@ -1,0 +1,83 @@
+{
+  "artifacts": [
+    {
+      "destination": "data\\results\\tables\\robustness_ar_loss_summary.csv",
+      "sha256": "2f2bad1ae761d51f87859b0cf5a8acc04ea78a03af635479ebfc3cb0cb6918e4",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_loss_summary.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_adf.csv",
+      "sha256": "89a32b36b86f112f7cc2b6b1bb52276e37df2e78f555aa2d4229852df40dabb3",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_adf.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_validation.csv",
+      "sha256": "30e14961a2a2b9cdb6c947fe8d6e39429aa615ec47fedba78eff333ab4802802",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_validation.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_test_metrics.csv",
+      "sha256": "3f01c6cf9c9101b9eb7a321a2e6205e1cfcfe52ac96eba363fd1493f7644bad9",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_test_metrics.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_predictions.parquet",
+      "sha256": "0da5d0112700f8503eb5f8aadd09d57e012ded831dd04588d3654115a5351a8f",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_predictions.parquet"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_shapley.csv",
+      "sha256": "bd80b03c5e84c121de89a2101ea7f5821ddcc1e6382572a8d9ff69b4cce3aedd",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_shapley.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_interactions.csv",
+      "sha256": "250f082636601b44387ef3e7a21bafe810eef8e736dd384a982e738e66170822",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_interactions.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_hac_comparison.csv",
+      "sha256": "2b950b2001877395c748210015739bd18c48a067fa140082f232509537885959",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_hac_comparison.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_high_vix_metrics.csv",
+      "sha256": "6b5aa4723b69ecac07ba2e4c08af3749eefb4ccd7eeb92ad69098c6d6313a967",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_high_vix_metrics.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\robustness_ar_model_details.csv",
+      "sha256": "c2461d2fe34f241d3abce12acecce0e2ef30d83735d1c65dfe3299805c682b0d",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\tables\\robustness_ar_model_details.csv"
+    },
+    {
+      "destination": "data\\results\\figures\\robustness_ar_time_series_diagnostics.png",
+      "sha256": "f83374e31e975d6ccb98aa439778d4fb8917cfcde6b803204820d124cd3df241",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\figures\\robustness_ar_time_series_diagnostics.png"
+    },
+    {
+      "destination": "data\\results\\figures\\robustness_ar_forecasts.png",
+      "sha256": "90327a4dfdd3814e06c86479a71f0b6ca9b442c4cc76f229f27adae8e8ad994a",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\figures\\robustness_ar_forecasts.png"
+    },
+    {
+      "destination": "data\\results\\figures\\robustness_ar_forecast_errors.png",
+      "sha256": "fc275b96cb64d98a249f7d545ba05a524854c0287baea694a62afc6406b8431b",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\figures\\robustness_ar_forecast_errors.png"
+    },
+    {
+      "destination": "data\\results\\figures\\robustness_ar_shapley.png",
+      "sha256": "bb88ea51546f89cb4794a1a98bbfaa979609165d3f648c8136dbec67bb047afb",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\figures\\robustness_ar_shapley.png"
+    },
+    {
+      "destination": "data\\results\\figures\\robustness_ar_interactions.png",
+      "sha256": "3a993a6193e19b7db3ef75c1a0c41bd7086d7f7c58341880d1c4aa9268b0dd67",
+      "source": "data\\results\\runs\\autoregression\\20260816T103214Z_7d4c21e_standard_21012\\figures\\robustness_ar_interactions.png"
+    }
+  ],
+  "experiment_id": "autoregression",
+  "published_at_utc": "2026-08-16T10:35:35.825078+00:00",
+  "run_id": "20260816T103214Z_7d4c21e_standard_21012",
+  "run_manifest_sha256": "7b7c875bb31a38e9f32648952215fb50d6e3ce0e1a366f11b6c038d142d351a2"
+}

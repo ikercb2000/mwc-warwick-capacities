@@ -1,0 +1,78 @@
+{
+  "artifacts": [
+    {
+      "destination": "data\\results\\tables\\data_raw_audit.csv",
+      "sha256": "c2df40e62967fd8468e9c65abf8b27efe424131cc24966cdef7704e3555ef6e0",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\tables\\data_raw_audit.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\data_equity_return_summary.csv",
+      "sha256": "e0b0e95d9d1a4491215647b05de1bf6480aba9a19b85b85f21e8ac8cf956c3df",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\tables\\data_equity_return_summary.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\data_portfolio_summary.csv",
+      "sha256": "f29f286a10d2f33c1d9a4a20694d722b39b3fae768b1476d7db370543ca904b2",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\tables\\data_portfolio_summary.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\data_cap_weight_summary.csv",
+      "sha256": "b7acb4ca690bb034dc189faf852d04d21e3225e620cbc6d8f773651df76d6344",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\tables\\data_cap_weight_summary.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\data_dataset_missingness.csv",
+      "sha256": "704fc7322df60e86c74ca4ae32b5bbef065fe317c8a8547e3161c46c0b1199f7",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\tables\\data_dataset_missingness.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\data_dataset_summary.csv",
+      "sha256": "928b0bf1c390765c7a61a8641cc4bf3c4d812956413f3a8b5ae80a0f8aa9629a",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\tables\\data_dataset_summary.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\data_tail_event_audit.csv",
+      "sha256": "1a8c31df6072fe833625451d0c619b990b21b4c014b6edcd5cb721ac7308116b",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\tables\\data_tail_event_audit.csv"
+    },
+    {
+      "destination": "data\\results\\figures\\data_equity_wealth_with_nvda.png",
+      "sha256": "a3506e5385f12ed746af44cbb7ae90bd72e4e977cd0d8f03b260b5dfca66a24b",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\figures\\data_equity_wealth_with_nvda.png"
+    },
+    {
+      "destination": "data\\results\\figures\\data_equity_wealth_without_nvda.png",
+      "sha256": "e615f581dc55f68c271cacfe169dfef254937fe9a4b86663b429a6adb361146f",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\figures\\data_equity_wealth_without_nvda.png"
+    },
+    {
+      "destination": "data\\results\\figures\\data_raw_market_panels_with_vix.png",
+      "sha256": "789b7d7ccf31cc4976327da09583c63d2b9cc81629bc081fe7b38c9094f2b87e",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\figures\\data_raw_market_panels_with_vix.png"
+    },
+    {
+      "destination": "data\\results\\figures\\data_raw_market_panels_without_vix.png",
+      "sha256": "6093ec2ffd422682c696615a89086c5c016e0d9c927c6c64ea4182730de928af",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\figures\\data_raw_market_panels_without_vix.png"
+    },
+    {
+      "destination": "data\\results\\figures\\data_portfolio_wealth.png",
+      "sha256": "24c9a7dc58d0d28c55478a6f7c4f508b4ca8cc4210f7ce11e765cb42445a7ea2",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\figures\\data_portfolio_wealth.png"
+    },
+    {
+      "destination": "data\\results\\figures\\data_cap_weights.png",
+      "sha256": "801787b843ea3e06e7ec0e578b65c96853b3afe070ecc93dc19bf8af08af6e06",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\figures\\data_cap_weights.png"
+    },
+    {
+      "destination": "data\\results\\figures\\data_predictor_history.png",
+      "sha256": "e7f53d76934da2a27841fe40c212aece75a4d09c21c3d1049ec72a4323913363",
+      "source": "data\\results\\runs\\data_preparation\\20260816T102525Z_7d4c21e_standard_11988\\figures\\data_predictor_history.png"
+    }
+  ],
+  "experiment_id": "data_preparation",
+  "published_at_utc": "2026-08-16T10:35:29.671369+00:00",
+  "run_id": "20260816T102525Z_7d4c21e_standard_11988",
+  "run_manifest_sha256": "6fa4d5c67338374eb8e292649e0c137f68878c89cc12fd7c05f4f11335f685fd"
+}

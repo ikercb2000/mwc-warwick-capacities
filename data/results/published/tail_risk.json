@@ -1,0 +1,393 @@
+{
+  "artifacts": [
+    {
+      "destination": "data\\results\\tables\\experiment_2b_tail_label_audit.csv",
+      "sha256": "4aa7d534c7ca6668dcd97f39a0208030e9d77537b59c1077874555ebc43de763",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_tail_label_audit.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_classification_metrics_h1_a095.csv",
+      "sha256": "1f9b9009c44042e5d8ea4b95f90a85041ad054afad5fe4958236d703147e585f",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_classification_metrics_h1_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_probabilities_h1_a095.parquet",
+      "sha256": "81b5fb0165cc328d7c317c3ade6f232d6f9ed3a801a996d6e1b016cef0b98712",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_probabilities_h1_a095.parquet"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_thresholds_h1_a095.csv",
+      "sha256": "d36c52eb8d166252684c7258794ac372f150bec84bbf2f06305c24ebd5cf8fd4",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_thresholds_h1_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_selected_parameters_h1_a095.csv",
+      "sha256": "c97fecdd427025e33baa57d365954b2b8afe590c2a23f1965cf518ec78e79c95",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_selected_parameters_h1_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_orientation_ablation_h1_a095.csv",
+      "sha256": "9ace01320977200ad525b6acc1dc11d7009d91e1fedf135074683aab1d5ee9a9",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_orientation_ablation_h1_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_failures_h1_a095.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_failures_h1_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_shapley_h1_choquistic_1-additive.csv",
+      "sha256": "4010374bcf5658d19d369a12c4c3eb38dbe4432a485049de2627bef8352573b6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_shapley_h1_choquistic_1-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_interactions_h1_choquistic_1-additive.csv",
+      "sha256": "4e6c412470903423cd70c864adedcc48c807ca89cfed5444eae5fb4e0486f1c7",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_interactions_h1_choquistic_1-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_top_interactions_h1_choquistic_1_additive.csv",
+      "sha256": "a0766ea0f5e97bbfcc72c4f6aec73c0a1e8c0721b53f63d569a9de82ff76be65",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_top_interactions_h1_choquistic_1_additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_shapley_h1_choquistic_2-additive.csv",
+      "sha256": "d267add97b2acc5cd9c337a89cc956b5095331e5bdc6c22086ab92a7a9fc9c14",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_shapley_h1_choquistic_2-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_interactions_h1_choquistic_2-additive.csv",
+      "sha256": "ab7388d26ec58e3a203f927296e6142086c6588c58b3e3b20e037909656e91ee",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_interactions_h1_choquistic_2-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_top_interactions_h1_choquistic_2_additive.csv",
+      "sha256": "31b03f8961b00b792eecfdcc18953fea8574383de73f8e22fc08305c1ee28782",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_top_interactions_h1_choquistic_2_additive.csv"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_pr_auc_ranking_h1_a095.png",
+      "sha256": "628b57f27b344cf6ca9e6945aa6e4032be7f00d15857bb16df3e2cb6f9119d3b",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_pr_auc_ranking_h1_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_classifier_diagnostics_h1_a095.png",
+      "sha256": "e2c717727b0c20b068252ee4f8a2835de68e261f554cf218dd603bd1fb5ac55e",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_classifier_diagnostics_h1_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_probability_paths_h1_a095.png",
+      "sha256": "f8d1a9b5c43ab75f00f7ead0b38563712238ac767356085b1bf9885b076ca9c5",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_probability_paths_h1_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_confusion_matrices_h1_a095.png",
+      "sha256": "5facd141b540805e8f73216e90945cb6c43cc7ca817aba97a4f3f4bbcf906c9a",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_confusion_matrices_h1_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_shapley_h1_choquistic_1_additive.png",
+      "sha256": "a70dfb3cdbd68eb8cd87718e0e6fecf55508d284bd1103ccec928a3e2d63fb6f",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_shapley_h1_choquistic_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_interactions_h1_choquistic_1_additive.png",
+      "sha256": "13418d04262e175fc98da3e5c842dfe188afbacab7bfb46f1f2ba9aaa0d256ef",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_interactions_h1_choquistic_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_shapley_h1_choquistic_2_additive.png",
+      "sha256": "1fb096f2f475b9a284f88651fa9520093cfd9d11ff049d7f3033451bf7f82f84",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_shapley_h1_choquistic_2_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_interactions_h1_choquistic_2_additive.png",
+      "sha256": "dc82c6ca666b7a6ee8af16d86c79465638fe51eebd099d3238033b91024ae3e0",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_interactions_h1_choquistic_2_additive.png"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_classification_metrics_h5_a095.csv",
+      "sha256": "c78eacd6de077f4acf74ed5a66c544378201b9090f9e5a107bb3f14235c6abfc",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_classification_metrics_h5_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_probabilities_h5_a095.parquet",
+      "sha256": "a5900b609fc030270730b364997794808f2ff4f69496b63b818d1789cbcb6fe7",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_probabilities_h5_a095.parquet"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_thresholds_h5_a095.csv",
+      "sha256": "ac6b36597886af607a8188177e913344300520c5c44ed3c2b436dd006a734565",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_thresholds_h5_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_selected_parameters_h5_a095.csv",
+      "sha256": "6b59001dee2baf339b49f4150d6ab4e891cd7a138339abe87a81cca4ca6badd5",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_selected_parameters_h5_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_orientation_ablation_h5_a095.csv",
+      "sha256": "6b16ded60b8b2be6e03b2f17dc6eb9a9d11668c6bbafb06182975fd629f16d39",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_orientation_ablation_h5_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_failures_h5_a095.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_failures_h5_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_shapley_h5_choquistic_1-additive.csv",
+      "sha256": "15bb097a076f5eaa8eeb014f8c38891ebbbcfbada38ada160bbcd07f35b34c45",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_shapley_h5_choquistic_1-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_interactions_h5_choquistic_1-additive.csv",
+      "sha256": "717e975c3d74974723a4873cf37daf108d07a060fbab9b954688d699a062d0c5",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_interactions_h5_choquistic_1-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_top_interactions_h5_choquistic_1_additive.csv",
+      "sha256": "423d9d9f6268f9ce1ea7bad7aab2e97132785f601b86ba563a006e4664b4fd45",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_top_interactions_h5_choquistic_1_additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_shapley_h5_choquistic_2-additive.csv",
+      "sha256": "60d2a8eaf597351d7d0f59884df310fff55ca2002b2424b873c7d3e283da51f6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_shapley_h5_choquistic_2-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_interactions_h5_choquistic_2-additive.csv",
+      "sha256": "72879167bd63ef50135829f1b0ffaf8fa63e65f64063655ecbc22ba016f82484",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_interactions_h5_choquistic_2-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_top_interactions_h5_choquistic_2_additive.csv",
+      "sha256": "edc62f14f68ea88f52ee2bd9c3b6520ff0d16ae911c9d913ad2a98ec60cb280a",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_top_interactions_h5_choquistic_2_additive.csv"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_pr_auc_ranking_h5_a095.png",
+      "sha256": "afe37a49454cd4a1aea3e5873d32fa8486df685694879f1f2f1e5d7e4222e02d",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_pr_auc_ranking_h5_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_classifier_diagnostics_h5_a095.png",
+      "sha256": "80e745910566ccc42f2f2f5f7faa5d6f040f6b89bf7f9291bc9de4cc3ea8a77c",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_classifier_diagnostics_h5_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_probability_paths_h5_a095.png",
+      "sha256": "52449b957b32fea203591060430a619d3bd7bd33076deac7cb7e5d4d04da6ffb",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_probability_paths_h5_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_confusion_matrices_h5_a095.png",
+      "sha256": "7ecba1f4bce0e166cc5484a249e81d0db56190393de44c1253b4c2e38a15293f",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_confusion_matrices_h5_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_shapley_h5_choquistic_1_additive.png",
+      "sha256": "a0505ea40056f6148bb7f4c1011d1d052c122739da24dbb7eec2054414f3b1c0",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_shapley_h5_choquistic_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_interactions_h5_choquistic_1_additive.png",
+      "sha256": "f2086e2166f157abf50239e3eaf05f430cc694618b27db8ffc0555d30e8971bd",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_interactions_h5_choquistic_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_shapley_h5_choquistic_2_additive.png",
+      "sha256": "d6c6885567d12b1d8a0eff93159b5a1b5ced42c00ff48dd55ecaa216a8d6d656",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_shapley_h5_choquistic_2_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_interactions_h5_choquistic_2_additive.png",
+      "sha256": "d3c9fa12913211ad9c4a49ce8fead91a9d1d5921c229cfd285b9504d7b3e4b33",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_interactions_h5_choquistic_2_additive.png"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_classification_metrics_h10_a095.csv",
+      "sha256": "66230783b58e6f66202bba50668e3eb22bb76f7e5f3ae324b882b6ef1d6cedab",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_classification_metrics_h10_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_probabilities_h10_a095.parquet",
+      "sha256": "88a383349dccaa70a756a86cfa0fadfaaf6166ee67df5a0562f9b2d3a31dfdff",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_probabilities_h10_a095.parquet"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_thresholds_h10_a095.csv",
+      "sha256": "6e87d78de3dc676189d02567d06366ea67363cc7d23455e2f130a665bdd0a771",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_thresholds_h10_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_selected_parameters_h10_a095.csv",
+      "sha256": "c7196c13aff59d145f9728dbc08966ebdf593cd37fab6bbdca955817da9ee206",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_selected_parameters_h10_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_orientation_ablation_h10_a095.csv",
+      "sha256": "bcd70588589d5afb96b22342d0d6aecd1982ec35c76fa583812ab35f69d12bd3",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_orientation_ablation_h10_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_failures_h10_a095.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_failures_h10_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_shapley_h10_choquistic_1-additive.csv",
+      "sha256": "567607259bfd6610b9236cde879278a41dd66fd2467ffa48b0c744fdbe4e666c",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_shapley_h10_choquistic_1-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_interactions_h10_choquistic_1-additive.csv",
+      "sha256": "5f4005652aad28c4b7109db5e873111d4371e015769559a79f49a459c7625014",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_interactions_h10_choquistic_1-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_top_interactions_h10_choquistic_1_additive.csv",
+      "sha256": "fd3da402f00162f347d79381462a67bbc156274de7a27dd991fbd20e4efaf179",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_top_interactions_h10_choquistic_1_additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_shapley_h10_choquistic_2-additive.csv",
+      "sha256": "f29a05ded72a58fe7386b5798057cd1830412bd8ee211b4bf57c30eebac0feba",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_shapley_h10_choquistic_2-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_interactions_h10_choquistic_2-additive.csv",
+      "sha256": "e5f3ce058859183db83dec9426c7d4daa27d6d53e06799504e5886073d9471c4",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_interactions_h10_choquistic_2-additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_top_interactions_h10_choquistic_2_additive.csv",
+      "sha256": "c4f2a81dbf8bf7525b5be5e0d2dc51f9e86c1ef92187b9e98b93b537a0dceb27",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_top_interactions_h10_choquistic_2_additive.csv"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_pr_auc_ranking_h10_a095.png",
+      "sha256": "567088fad71c548c8b2908d5cdc1217dd5db8308b93fba9bd8d3ee26008428da",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_pr_auc_ranking_h10_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_classifier_diagnostics_h10_a095.png",
+      "sha256": "1c13acf89cc21cf5a1ca7d324f9117932231e7f293ad0e6424ff0e6d80262565",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_classifier_diagnostics_h10_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_probability_paths_h10_a095.png",
+      "sha256": "e801154b2eba245ddeb85e7bb515137fe9b72b78609b57b635129a6154fc3298",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_probability_paths_h10_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_confusion_matrices_h10_a095.png",
+      "sha256": "dad44d9946b07433a8bfe90f1bf5fe03db079389c2baff33e6b721d2bb387b6a",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_confusion_matrices_h10_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_shapley_h10_choquistic_1_additive.png",
+      "sha256": "6390cc7f62e2c9a86a2002db1d0012e625b6ad89fafa17ef822d978561d94e90",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_shapley_h10_choquistic_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_interactions_h10_choquistic_1_additive.png",
+      "sha256": "b3d39b18b79263bee264df5c0bf76bf3000018a298ca59319f14326c654c11c8",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_interactions_h10_choquistic_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_shapley_h10_choquistic_2_additive.png",
+      "sha256": "3314847d0f635f8b5be310b05b7b2bb07c6789b4a9a5021efd61d86423abeb09",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_shapley_h10_choquistic_2_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_interactions_h10_choquistic_2_additive.png",
+      "sha256": "dfa551d4525ab929762a1dd0a070e404c32145bcab3b68b33c01ea9d5e857a8a",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_interactions_h10_choquistic_2_additive.png"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_classification_metrics_h1_a0975.csv",
+      "sha256": "35a395bf19c7ab6d910b26761e8c4edce71332f9a8527ae6b01ad275f16fde1d",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_classification_metrics_h1_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_orientation_ablation_h1_a0975.csv",
+      "sha256": "43c66fc84bad6f4b5b744ed9e1e13c0d3074a5c003105e13a92c5d5cb619a20b",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_orientation_ablation_h1_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_failures_h1_a0975.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_failures_h1_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_classification_metrics_h5_a0975.csv",
+      "sha256": "a099ddb889739025d3c0486ac8d13ab4b5e68c687a281f23464f016358ff12e6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_classification_metrics_h5_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_orientation_ablation_h5_a0975.csv",
+      "sha256": "822f91f28ecb32b8f27edfe1d3f7bbbed6b29c36c05c508a1ac309d354b78361",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_orientation_ablation_h5_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_failures_h5_a0975.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_failures_h5_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_classification_metrics_h10_a0975.csv",
+      "sha256": "cfaec8ba51888511ca13c11d286ab9e8756ddff26046e34f00d5987a142f04aa",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_classification_metrics_h10_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_orientation_ablation_h10_a0975.csv",
+      "sha256": "5ee571ff0ac3de9ce1a39a348600ab1fc71a30da58466c4dc4fca3c5a85d1379",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_orientation_ablation_h10_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_failures_h10_a0975.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_failures_h10_a0975.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_shapley_stability_h5_a095.csv",
+      "sha256": "82f1ddb384e5ff1cdb926ccb198b25f8878674edc784ab2542a5bfe20cb263a7",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_shapley_stability_h5_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_interaction_stability_h5_a095_long.csv",
+      "sha256": "c46f77d7aa0a43fc2a021edb9b5f3b85251d4fd405865a857bf8740c29eebbfd",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_interaction_stability_h5_a095_long.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_interaction_stability_h5_a095_summary.csv",
+      "sha256": "b3fcc4545f25c7adb305f74ef3ffee3394ea82e4297db081c6a0944d59b28274",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_interaction_stability_h5_a095_summary.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_stability_failures_h5_a095.csv",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_stability_failures_h5_a095.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2b_orientation_h5_choquistic_2-additive.csv",
+      "sha256": "50a28c741e24a8055b7a919961fbb848e0db183dc20d7329fdf2d957ca9ed90c",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\tables\\experiment_2b_orientation_h5_choquistic_2-additive.csv"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_tail_thresholds_a095.png",
+      "sha256": "28ef3327bca744732791b3b94f8524618d0de59e4c0d586716ecb3f720562331",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_tail_thresholds_a095.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2b_shapley_stability_h5_a095.png",
+      "sha256": "0b7b09cd2be15c759df5f035e02113358929e997de4d945f1f2fee1427dcb82b",
+      "source": "data\\results\\runs\\tail_risk\\20260816T103054Z_7d4c21e_full_9008\\figures\\experiment_2b_shapley_stability_h5_a095.png"
+    }
+  ],
+  "experiment_id": "tail_risk",
+  "published_at_utc": "2026-08-16T10:35:33.578744+00:00",
+  "run_id": "20260816T103054Z_7d4c21e_full_9008",
+  "run_manifest_sha256": "b9c8a2d05009f30433b776dfacd40c3f0a9b06fdd2f3264a26451f6dad712efa"
+}
