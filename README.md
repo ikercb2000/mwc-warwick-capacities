@@ -209,27 +209,57 @@ poetry run python scripts/run_smoke_experiments.py
 
 ## Model selection and evaluation
 
-Predictive experiments use chronological train, validation and test samples.
-The boundaries used by each executable are configured in its file under
-`configs/experiments/`:
+Predictive experiments 2a and 2b use rolling walk-forward evaluation. The first
+OOS block starts in 2020 and each block covers one year (the final block may be
+partial). Before predicting a block, the complete selection and fitting process
+uses only the configurable five-year lookback immediately preceding it. After
+the block finishes, both the lookback and OOS boundaries advance by one year.
+All OOS block predictions are concatenated before calculating final metrics.
 
-- regression training ends on 2018-12-31;
-- classification training ends on 2017-12-31;
-- validation ends on 2019-12-31;
-- later observations form the held-out test sample.
+For 2a, the last 12 months of each lookback are internal validation and the
+earlier four years are inner training. After hyperparameter selection, the model
+is refitted using both past partitions. For 2b, each five-year lookback is split
+into 18 months of inner training, 18 months of selection validation and 24
+months of probability calibration. The base classifier is refitted on the first
+three years, then its complete fitted pipeline is frozen and calibrated on the
+final two years.
 
-Forecast-horizon observations are purged from the end of training and
-validation partitions to prevent overlapping future targets from crossing split
-boundaries. Preprocessing is fitted only on the relevant training sample.
+Forecast-horizon observations are purged before every inner-validation,
+calibration and OOS boundary, preventing 5-day and 10-day targets from crossing
+into the next partition. Orientation, clipping, scaling, hyperparameters and
+Choquet capacities are newly estimated in every fold. No preprocessing or
+selection state is carried forward, although outcomes from completed OOS blocks
+may legitimately enter later rolling windows as past observations.
 The Amihud liquidity feature is normalised point-in-time: each date uses the
 expanding median of positive portfolio illiquidity observed strictly before that
 date, rather than a full-sample median.
 
-Each candidate is selected using validation performance, refitted on the
-combined training and validation samples, and evaluated on the test sample.
-Regression grids minimise validation RMSE; classification grids maximise
-validation PR AUC, while probability thresholds are also selected from
-validation data.
+Regression candidates are selected using each fold's validation performance,
+refitted on that fold's past training and validation samples, and evaluated on
+the immediately following OOS block.
+Regression grids minimise validation RMSE. Classification candidates maximise
+PR AUC on the chronological selection-validation block and are then refitted on
+training plus that block. The later calibration block is not included in model
+selection or base-model fitting.
+
+Experiment 2b evaluates each fitted classifier in three forms: uncalibrated,
+sigmoid-calibrated and isotonic-calibrated. Both calibrated forms apply
+`CalibratedClassifierCV` to a `FrozenEstimator` containing the complete fitted
+pipeline, so calibration cannot refit preprocessing or the classifier. Its
+decision threshold is estimated on the calibration block; the uncalibrated
+threshold remains selection-validation based. The current or future OOS block
+is never used for selection, fitting, threshold choice or calibration.
+
+Discrimination is reported separately with ROC-AUC and PR-AUC. Probability
+calibration is reported with Brier score, log loss, mean predicted probability,
+observed event prevalence and their calibration gap. Window lengths and block
+size are configurable through `[walk_forward]`, while methods remain under
+`[calibration]` in `configs/experiments/tail_risk.toml`. Separate
+`experiment_2b_discrimination_*`, `experiment_2b_calibration_*` and
+`experiment_2b_calibration_sample_*` tables make the comparison auditable.
+Both forecasting experiments additionally persist `*_walk_forward_folds_*`,
+`*_walk_forward_metrics_*`, `*_orientation_history_*` and
+`*_shapley_history_*` tables.
 
 Regression benchmarks include OLS, monotone linear regression, regularised
 linear models, explicit interactions, trees, boosting, neural networks and
@@ -242,6 +272,19 @@ feature orientation. Capacity models are additionally oriented using
 training-sample correlations and scaled to a common interval because their
 monotonicity constraints require a common increasing direction. The monotone
 linear benchmark uses the same capacity preprocessing.
+
+Orientation is governed by `[orientation]` in
+`configs/experiment_settings.toml`. By default, a feature is eligible for
+orientation only when its absolute training correlation is at least `0.2`.
+The transformer also reports sign agreement across three contiguous
+chronological training subperiods; set `require_sign_stability = true` to leave
+features with an unstable subperiod sign unchanged. Validation may still select
+hyperparameters, but every fold's train-validation refit freezes the
+correlations and signs learned strictly on that fold's inner training sample.
+Its OOS observations are never involved.
+The experiment outputs include complete `*_orientations*.csv` tables containing
+the training correlations, subperiod correlations, stability decision and final
+orientation of every oriented fitted model.
 
 The experiment registries also include `OLS oriented` and
 `Logistic oriented` controls. Dedicated orientation-ablation tables compare
@@ -260,10 +303,10 @@ fitted bounds, and the number of observations affected in estimation and test
 samples.
 
 Regression robustness uses one empirical stress definition shared by all
-models. Thresholds are estimated on the combined training and validation
-sample: an observation is extreme when its raw loss is at or above the 99th
+models in the final rolling block. Thresholds are estimated on that block's
+past training and validation sample: an observation is extreme when its raw loss is at or above the 99th
 percentile, or when any raw predictor lies outside its 0.5th--99.5th percentile
-interval. Those fixed thresholds are then applied to the held-out test sample.
+interval. Those fixed thresholds are then applied to the final OOS block.
 The saved stress tables therefore compare classical and Choquet models on the
 same dates, before model-specific preprocessing.
 
@@ -281,10 +324,10 @@ and held-out out-of-sample results.
 
 ### Validation-regime robustness
 
-The primary split is unchanged: its validation sample ends in 2019, so the
-2020--2021 financial-stress period belongs to the primary test and cannot affect
-the main hyperparameter selection. A separate robustness design tests whether
-results would change if that episode were available during validation.
+In the primary rolling design, 2020--2021 is genuinely OOS when first predicted
+and can only enter later windows after those outcomes have occurred. A separate
+historical robustness design remains available to isolate how selection changes
+when the stress episode is included or excluded from a common validation score.
 
 This comparison generates annual walk-forward predictions from 2018 through
 2021: every validation year is predicted by a model fitted on all strictly

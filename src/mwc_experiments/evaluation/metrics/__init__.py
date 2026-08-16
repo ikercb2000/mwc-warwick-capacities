@@ -6,6 +6,8 @@ from .utils import (
     regression_metrics,
     optimal_f1_threshold,
     classification_metrics,
+    classification_discrimination_metrics,
+    probability_calibration_metrics,
     high_loss_regime_metrics,
 )
 
@@ -15,5 +17,7 @@ __all__ = [
     "regression_metrics",
     "optimal_f1_threshold",
     "classification_metrics",
+    "classification_discrimination_metrics",
+    "probability_calibration_metrics",
     "high_loss_regime_metrics",
 ]

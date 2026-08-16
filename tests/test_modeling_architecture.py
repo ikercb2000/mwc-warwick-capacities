@@ -11,6 +11,7 @@ from mwc_experiments.modeling.registries import (
     regression_candidates,
 )
 from mwc_experiments.modeling.selection import (
+    refit_selected,
     select_classification_model,
     select_regression_model,
 )
@@ -48,6 +49,13 @@ def test_registries_use_native_pipelines_and_shared_tree_preprocessing() -> None
         capacity_preprocessor.named_steps["orient"],
         CorrelationOrientationTransformer,
     )
+    assert (
+        capacity_preprocessor.named_steps[
+            "orient"
+        ].minimum_absolute_correlation
+        == 0.2
+    )
+    assert capacity_preprocessor.named_steps["orient"].stability_subperiods == 3
 
     logistic_preprocessor = classifiers["Logistic"].estimator.named_steps[
         "preprocessor"
@@ -118,6 +126,90 @@ def test_logistic_orientation_ablation_preserves_probabilities() -> None:
         atol=1e-10,
         rtol=1e-10,
     )
+
+
+def test_orientation_threshold_and_chronological_sign_stability() -> None:
+    """Reject weak and unstable directions while retaining their diagnostics."""
+    target_values = np.tile(np.arange(10, dtype=float), 3)
+    weak_values = np.tile([1.0, -1.0] * 5, 3)
+    unstable_values = np.concatenate(
+        [
+            -np.arange(10, dtype=float),
+            -np.arange(10, dtype=float),
+            0.2 * np.arange(10, dtype=float),
+        ]
+    )
+    X = pd.DataFrame(
+        {
+            "stable negative": -target_values,
+            "unstable negative": unstable_values,
+            "weak": weak_values,
+        }
+    )
+    transformer = CorrelationOrientationTransformer(
+        minimum_absolute_correlation=0.2,
+        stability_subperiods=3,
+        require_sign_stability=True,
+    ).fit(X, pd.Series(target_values))
+    table = transformer.orientation_table()
+
+    assert table.loc["stable negative", "orientation_sign"] == -1.0
+    assert bool(table.loc["stable negative", "sign_stable"])
+    assert abs(table.loc["unstable negative", "training_correlation"]) >= 0.2
+    assert not bool(table.loc["unstable negative", "sign_stable"])
+    assert table.loc["unstable negative", "orientation_sign"] == 1.0
+    assert not bool(table.loc["weak", "meets_correlation_threshold"])
+    assert table.loc["weak", "orientation_sign"] == 1.0
+    assert "training_subperiod_3_correlation" in table.columns
+
+
+def test_final_refit_freezes_training_only_orientation() -> None:
+    """Ensure validation can select a model but cannot change feature direction."""
+    train_index = pd.date_range("2017-01-01", periods=30)
+    validation_index = pd.date_range("2018-01-01", periods=30)
+    X_train = pd.DataFrame(
+        {"feature": np.linspace(-1.0, 1.0, len(train_index))},
+        index=train_index,
+    )
+    y_train = pd.Series(-X_train["feature"], index=train_index)
+    X_validation = pd.DataFrame(
+        {"feature": np.linspace(-10.0, 10.0, len(validation_index))},
+        index=validation_index,
+    )
+    y_validation = pd.Series(X_validation["feature"], index=validation_index)
+    candidate = regression_candidates(
+        1,
+        include_mlp=False,
+        include_dummy=False,
+        include_regularized_choquet=False,
+    )["OLS oriented"]
+    selected = select_regression_model(
+        "OLS oriented",
+        candidate,
+        X_train,
+        y_train,
+        X_validation,
+        y_validation,
+    )
+    training_orient = selected.estimator.named_steps["preprocessor"].named_steps[
+        "orient"
+    ]
+    fitted, _ = refit_selected(
+        selected,
+        X_train,
+        y_train,
+        X_validation,
+        y_validation,
+    )
+    final_orient = fitted.named_steps["preprocessor"].named_steps["orient"]
+
+    np.testing.assert_allclose(
+        final_orient.correlations_,
+        training_orient.correlations_,
+    )
+    np.testing.assert_array_equal(final_orient.signs_, training_orient.signs_)
+    assert final_orient.training_observations_ == len(X_train)
+    assert final_orient.orientation_source_.startswith("training only")
 
 
 def test_one_additive_choquet_matches_monotone_linear_on_simplex_solution() -> None:

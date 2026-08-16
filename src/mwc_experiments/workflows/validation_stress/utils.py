@@ -14,6 +14,7 @@ from mwc_experiments.modeling.registries import (
     apply_parameter_grid_overrides,
     regression_candidates,
 )
+from mwc_experiments.modeling.selection import training_orientation_parameters
 from mwc_experiments.settings import (
     RANDOM_STATE,
     VALIDATION_STRESS_END,
@@ -84,6 +85,12 @@ def compare_validation_stress_regimes(
     X_final, y_final = _purge_sample_end(X_final, y_final, horizon)
     if min(len(X_validation), len(X_test), len(X_final)) == 0:
         raise ValueError("A walk-forward validation partition is empty.")
+    initial_mask = X_clean.index < validation_start_date
+    X_initial = X_clean.loc[initial_mask]
+    y_initial = y_clean.loc[initial_mask]
+    X_initial, y_initial = _purge_sample_end(X_initial, y_initial, horizon)
+    if X_initial.empty:
+        raise ValueError("The pre-validation orientation sample is empty.")
 
     candidates = regression_candidates(
         X.shape[1],
@@ -120,10 +127,21 @@ def compare_validation_stress_regimes(
         str,
         list[tuple[dict[str, object], dict[str, float]]],
     ] = {}
+    frozen_orientation_by_model: dict[str, dict[str, object]] = {}
     failures: list[dict[str, str]] = []
     for model, candidate in candidates.items():
+        frozen_orientations = training_orientation_parameters(
+            candidate.estimator,
+            X_initial,
+            y_initial,
+        )
+        frozen_orientation_by_model[model] = frozen_orientations
         configurations: list[tuple[dict[str, object], dict[str, float]]] = []
-        grid = list(ParameterGrid(candidate.param_grid)) if candidate.param_grid else [{}]
+        grid = (
+            list(ParameterGrid(candidate.param_grid))
+            if candidate.param_grid
+            else [{}]
+        )
         for parameters in grid:
             predictions = pd.Series(np.nan, index=X_validation.index)
             try:
@@ -138,7 +156,10 @@ def compare_validation_stress_regimes(
                         y_fold_train,
                         horizon,
                     )
-                    estimator = clone(candidate.estimator).set_params(**parameters)
+                    estimator = clone(candidate.estimator).set_params(
+                        **parameters,
+                        **frozen_orientations,
+                    )
                     estimator.fit(X_fold_train, y_fold_train)
                     predictions.loc[block_index] = estimator.predict(
                         X_validation.loc[block_index]
@@ -181,7 +202,10 @@ def compare_validation_stress_regimes(
                 key=lambda configuration: configuration[1][regime],
             )
             try:
-                fitted = clone(candidate.estimator).set_params(**parameters)
+                fitted = clone(candidate.estimator).set_params(
+                    **parameters,
+                    **frozen_orientation_by_model[model],
+                )
                 fitted.fit(X_final, y_final)
                 prediction = fitted.predict(X_test)
                 rows.append(
@@ -238,9 +262,7 @@ def compare_validation_stress_regimes(
     selection_summary = pd.DataFrame(summary_rows).set_index("regime")
     metrics = metrics.set_index(["regime", "model"]).sort_index()
 
-    initial_index = X_clean.index[X_clean.index < validation_start_date]
-    if horizon:
-        initial_index = initial_index[:-horizon]
+    initial_index = X_initial.index
     calm_index = X_validation.index[
         regime_masks["excluding 2020-2021"].to_numpy()
     ]

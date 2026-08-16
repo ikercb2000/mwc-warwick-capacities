@@ -68,6 +68,7 @@ def plot_classifier_diagnostics(
     probabilities: pd.DataFrame,
     *,
     models: list[str] | None = None,
+    legend_outside: bool = False,
 ):
     selected_models = list(probabilities.columns) if models is None else models
     fig, axes = plt.subplots(1, 3, figsize=(16, 4))
@@ -83,6 +84,21 @@ def plot_classifier_diagnostics(
     axes[2].set_title("Probability calibration")
     axes[2].set_xlabel("Mean predicted probability")
     axes[2].set_ylabel("Observed frequency")
-    axes[2].legend(fontsize=8)
-    fig.tight_layout()
+    if legend_outside:
+        handles, labels = axes[2].get_legend_handles_labels()
+        for axis in axes:
+            legend = axis.get_legend()
+            if legend is not None:
+                legend.remove()
+        fig.legend(
+            handles,
+            labels,
+            loc="center left",
+            bbox_to_anchor=(0.81, 0.5),
+            fontsize=8,
+        )
+        fig.tight_layout(rect=(0.0, 0.0, 0.80, 1.0))
+    else:
+        axes[2].legend(fontsize=8)
+        fig.tight_layout()
     return axes

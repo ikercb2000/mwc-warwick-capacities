@@ -20,6 +20,7 @@ from mwc_experiments.evaluation import (
     hac_model_comparison,
     high_loss_regime_metrics,
     orientation_table,
+    orientation_tables,
     plot_actual_predictions,
     plot_matrix,
     plot_metric_ranking,
@@ -55,6 +56,7 @@ config = load_experiment_config("future_loss", paths.root)
 dataset_config = config["dataset"]
 model_config = config["models"]
 analysis_config = config["analysis"]
+walk_forward_config = config["walk_forward"]
 stress_config = config["validation_stress"]
 execution_config = config["execution"]
 HORIZONS = tuple(int(value) for value in dataset_config["horizons"])
@@ -82,6 +84,14 @@ result = run_future_loss_experiment(
     model_names=MAIN_MODELS,
     random_state=int(execution_config["random_state"]),
     parameter_grids=PARAMETER_GRIDS,
+    oos_start=str(walk_forward_config["oos_start"]),
+    training_window_years=int(
+        walk_forward_config["training_window_years"]
+    ),
+    validation_window_months=int(
+        walk_forward_config["validation_window_months"]
+    ),
+    oos_block_years=int(walk_forward_config["oos_block_years"]),
     verbose=verbose,
 )
 cap_result = run_future_loss_experiment(
@@ -93,6 +103,14 @@ cap_result = run_future_loss_experiment(
     model_names=CAP_WEIGHT_MODELS,
     random_state=int(execution_config["random_state"]),
     parameter_grids=PARAMETER_GRIDS,
+    oos_start=str(walk_forward_config["oos_start"]),
+    training_window_years=int(
+        walk_forward_config["training_window_years"]
+    ),
+    validation_window_months=int(
+        walk_forward_config["validation_window_months"]
+    ),
+    oos_block_years=int(walk_forward_config["oos_block_years"]),
     verbose=verbose,
 )
 stability = expanding_capacity_stability(
@@ -125,6 +143,26 @@ for horizon, horizon_result in result.horizons.items():
         f"experiment_2a_selected_parameters_h{horizon}.csv",
         paths,
     )
+    artifacts[f"walk-forward folds h{horizon}"] = save_table(
+        horizon_result.fold_summary,
+        f"experiment_2a_walk_forward_folds_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"walk-forward metrics h{horizon}"] = save_table(
+        horizon_result.fold_metrics,
+        f"experiment_2a_walk_forward_metrics_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"orientation history h{horizon}"] = save_table(
+        horizon_result.orientation_history,
+        f"experiment_2a_orientation_history_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"Shapley history h{horizon}"] = save_table(
+        horizon_result.shapley_history,
+        f"experiment_2a_shapley_history_h{horizon}.csv",
+        paths,
+    )
     artifacts[f"validation-selected Choquet h{horizon}"] = save_table(
         select_model_family_by_validation(
             horizon_result.metrics,
@@ -139,6 +177,14 @@ for horizon, horizon_result in result.horizons.items():
             horizon_result.metrics.index.isin(ORIENTATION_MODELS)
         ],
         f"experiment_2a_orientation_ablation_h{horizon}.csv",
+        paths,
+    )
+    artifacts[f"final orientations h{horizon}"] = save_table(
+        orientation_tables(
+            horizon_result.fitted_models,
+            key_names=("model",),
+        ),
+        f"experiment_2a_orientations_h{horizon}.csv",
         paths,
     )
     artifacts[f"failures h{horizon}"] = save_table(
@@ -159,7 +205,8 @@ for horizon, horizon_result in result.horizons.items():
         paths,
     )
 
-    split = horizon_result.split
+    split = horizon_result.final_split
+    final_predictions = horizon_result.predictions.loc[split.y_test.index]
     X_fit = pd.concat([split.X_train, split.X_validation])
     y_fit = pd.concat([split.y_train, split.y_validation])
     stress = fit_empirical_stress_definition(X_fit, y_fit)
@@ -179,7 +226,7 @@ for horizon, horizon_result in result.horizons.items():
     artifacts[f"empirical stress metrics h{horizon}"] = save_table(
         regression_regime_metrics(
             split.y_test,
-            horizon_result.predictions,
+            final_predictions,
             test_stress_mask,
         ),
         f"experiment_2a_empirical_stress_metrics_h{horizon}.csv",
@@ -219,7 +266,7 @@ for horizon, horizon_result in result.horizons.items():
             y_fit,
             split.X_test,
             split.y_test,
-            horizon_result.predictions,
+            final_predictions,
             fit_extreme_mask=fit_extreme_mask,
             test_stress_mask=test_stress_mask,
         ),
@@ -458,7 +505,12 @@ axis = stability.shapley.plot(
 )
 axis.set_ylabel("Shapley importance")
 axis.grid(alpha=0.25)
-axis.figure.tight_layout()
+axis.legend(
+    loc="center left",
+    bbox_to_anchor=(1.01, 0.5),
+    fontsize=8,
+)
+axis.figure.tight_layout(rect=(0.0, 0.0, 0.80, 1.0))
 artifacts["stability figure"] = save_figure(
     axis.figure,
     "experiment_2a_shapley_stability_h5.png",

@@ -78,20 +78,59 @@ def classification_metrics(
 ) -> dict[str, float]:
     actual = np.asarray(y_true, dtype=int)
     probability = np.clip(np.asarray(probability, dtype=float), 1e-12, 1.0 - 1e-12)
-    predicted = (probability >= threshold).astype(int)
+    threshold_values = np.asarray(threshold, dtype=float)
+    if threshold_values.ndim == 0:
+        threshold_values = np.repeat(float(threshold_values), actual.size)
+    else:
+        threshold_values = threshold_values.reshape(-1)
+    if threshold_values.size != actual.size:
+        raise ValueError("threshold must be scalar or aligned with y_true.")
+    predicted = (probability >= threshold_values).astype(int)
     result = {
-        "ROC AUC": float(roc_auc_score(actual, probability)) if np.unique(actual).size == 2 else float("nan"),
-        "PR AUC": float(average_precision_score(actual, probability)),
+        **classification_discrimination_metrics(actual, probability),
         "Precision": float(precision_score(actual, predicted, zero_division=0)),
         "Recall": float(recall_score(actual, predicted, zero_division=0)),
         "F1": float(f1_score(actual, predicted, zero_division=0)),
-        "Brier": float(brier_score_loss(actual, probability)),
-        "Log loss": float(log_loss(actual, probability, labels=[0, 1])),
-        "Threshold": float(threshold),
+        **probability_calibration_metrics(actual, probability),
+        "Threshold": float(threshold_values.mean()),
         "Predicted event rate": float(predicted.mean()),
+        # Retained for backwards compatibility with existing result consumers.
         "Observed event rate": float(actual.mean()),
     }
     return result
+
+
+def classification_discrimination_metrics(y_true, probability) -> dict[str, float]:
+    """Return threshold-free ranking metrics for a probabilistic classifier."""
+    actual = np.asarray(y_true, dtype=int)
+    probability = np.asarray(probability, dtype=float)
+    if np.unique(actual).size < 2:
+        return {"ROC AUC": float("nan"), "PR AUC": float("nan")}
+    return {
+        "ROC AUC": float(roc_auc_score(actual, probability)),
+        "PR AUC": float(average_precision_score(actual, probability)),
+    }
+
+
+def probability_calibration_metrics(y_true, probability) -> dict[str, float]:
+    """Return proper scoring rules and marginal probability calibration metrics."""
+    actual = np.asarray(y_true, dtype=int)
+    probability = np.clip(
+        np.asarray(probability, dtype=float),
+        1e-12,
+        1.0 - 1e-12,
+    )
+    prevalence = float(actual.mean())
+    mean_probability = float(probability.mean())
+    gap = mean_probability - prevalence
+    return {
+        "Brier": float(brier_score_loss(actual, probability)),
+        "Log loss": float(log_loss(actual, probability, labels=[0, 1])),
+        "Mean predicted probability": mean_probability,
+        "Observed event prevalence": prevalence,
+        "Calibration gap": gap,
+        "Absolute calibration gap": abs(gap),
+    }
 
 
 def high_loss_regime_metrics(

@@ -18,6 +18,7 @@ from mwc_experiments.configuration import (
 from mwc_experiments.data import load_or_build_processed_data
 from mwc_experiments.evaluation import (
     orientation_table,
+    orientation_tables,
     plot_classifier_diagnostics,
     plot_matrix,
     plot_metric_ranking,
@@ -49,7 +50,8 @@ config = load_experiment_config("tail_risk", paths.root)
 dataset_config = config["dataset"]
 model_config = config["models"]
 analysis_config = config["analysis"]
-split_config = config["split"]
+walk_forward_config = config["walk_forward"]
+calibration_config = config["calibration"]
 execution_config = config["execution"]
 HORIZONS = tuple(int(value) for value in dataset_config["horizons"])
 MAIN_RISK_FEATURES = tuple(str(value) for value in dataset_config["features"])
@@ -59,6 +61,9 @@ MAIN_MODELS = tuple(str(value) for value in model_config["main"])
 ORIENTATION_MODELS = tuple(str(value) for value in model_config["orientation"])
 ROBUSTNESS_MODELS = tuple(str(value) for value in model_config["robustness"])
 REPORT_MODELS = tuple(str(value) for value in model_config["report"])
+CALIBRATION_METHODS = tuple(
+    str(value) for value in calibration_config["methods"]
+)
 STABILITY_CUTOFFS = tuple(
     str(value) for value in analysis_config["stability_cutoffs"]
 )
@@ -73,8 +78,18 @@ primary = run_tail_classification_experiment(
     quick=quick,
     model_names=MAIN_MODELS,
     random_state=int(execution_config["random_state"]),
-    train_end=str(split_config["train_end"]),
-    validation_end=str(split_config["validation_end"]),
+    oos_start=str(walk_forward_config["oos_start"]),
+    training_window_years=int(
+        walk_forward_config["training_window_years"]
+    ),
+    selection_window_months=int(
+        walk_forward_config["selection_window_months"]
+    ),
+    calibration_window_months=int(
+        walk_forward_config["calibration_window_months"]
+    ),
+    oos_block_years=int(walk_forward_config["oos_block_years"]),
+    calibration_methods=CALIBRATION_METHODS,
     parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
@@ -86,8 +101,18 @@ rare = run_tail_classification_experiment(
     quick=quick,
     model_names=ROBUSTNESS_MODELS,
     random_state=int(execution_config["random_state"]),
-    train_end=str(split_config["train_end"]),
-    validation_end=str(split_config["validation_end"]),
+    oos_start=str(walk_forward_config["oos_start"]),
+    training_window_years=int(
+        walk_forward_config["training_window_years"]
+    ),
+    selection_window_months=int(
+        walk_forward_config["selection_window_months"]
+    ),
+    calibration_window_months=int(
+        walk_forward_config["calibration_window_months"]
+    ),
+    oos_block_years=int(walk_forward_config["oos_block_years"]),
+    calibration_methods=CALIBRATION_METHODS,
     parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
@@ -130,6 +155,21 @@ for horizon, horizon_result in primary.items():
         f"experiment_2b_classification_metrics_h{horizon}_a095.csv",
         paths,
     )
+    artifacts[f"discrimination h{horizon}"] = save_table(
+        horizon_result.discrimination_metrics,
+        f"experiment_2b_discrimination_h{horizon}_a095.csv",
+        paths,
+    )
+    artifacts[f"calibration h{horizon}"] = save_table(
+        horizon_result.calibration_metrics,
+        f"experiment_2b_calibration_h{horizon}_a095.csv",
+        paths,
+    )
+    artifacts[f"calibration sample h{horizon}"] = save_table(
+        horizon_result.calibration_sample_summary,
+        f"experiment_2b_calibration_sample_h{horizon}_a095.csv",
+        paths,
+    )
     artifacts[f"probabilities h{horizon}"] = save_table(
         horizon_result.probabilities,
         f"experiment_2b_probabilities_h{horizon}_a095.parquet",
@@ -145,11 +185,39 @@ for horizon, horizon_result in primary.items():
         f"experiment_2b_selected_parameters_h{horizon}_a095.csv",
         paths,
     )
+    artifacts[f"walk-forward folds h{horizon}"] = save_table(
+        horizon_result.fold_summary,
+        f"experiment_2b_walk_forward_folds_h{horizon}_a095.csv",
+        paths,
+    )
+    artifacts[f"walk-forward metrics h{horizon}"] = save_table(
+        horizon_result.fold_metrics,
+        f"experiment_2b_walk_forward_metrics_h{horizon}_a095.csv",
+        paths,
+    )
+    artifacts[f"orientation history h{horizon}"] = save_table(
+        horizon_result.orientation_history,
+        f"experiment_2b_orientation_history_h{horizon}_a095.csv",
+        paths,
+    )
+    artifacts[f"Shapley history h{horizon}"] = save_table(
+        horizon_result.shapley_history,
+        f"experiment_2b_shapley_history_h{horizon}_a095.csv",
+        paths,
+    )
     artifacts[f"orientation ablation h{horizon}"] = save_table(
         horizon_result.metrics[
             horizon_result.metrics.index.isin(ORIENTATION_MODELS)
         ],
         f"experiment_2b_orientation_ablation_h{horizon}_a095.csv",
+        paths,
+    )
+    artifacts[f"final orientations h{horizon}"] = save_table(
+        orientation_tables(
+            horizon_result.fitted_models,
+            key_names=("model",),
+        ),
+        f"experiment_2b_orientations_h{horizon}_a095.csv",
         paths,
     )
     artifacts[f"failures h{horizon}"] = save_table(
@@ -190,6 +258,16 @@ for horizon, horizon_result in primary.items():
         f"experiment_2b_pr_auc_ranking_h{horizon}_a095.png",
         paths,
     )
+    axis = plot_metric_ranking(
+        horizon_result.calibration_metrics,
+        "Brier",
+        lower_is_better=True,
+    )
+    artifacts[f"Brier ranking figure h{horizon}"] = save_figure(
+        axis.figure,
+        f"experiment_2b_brier_ranking_h{horizon}_a095.png",
+        paths,
+    )
     preferred = [
         model for model in REPORT_MODELS if model in horizon_result.probabilities
     ]
@@ -197,6 +275,7 @@ for horizon, horizon_result in primary.items():
         horizon_result.split.y_test,
         horizon_result.probabilities,
         models=preferred,
+        legend_outside=True,
     )
     axes[0].figure.suptitle(
         f"Classifier diagnostics — h={horizon}", y=1.03
@@ -204,6 +283,34 @@ for horizon, horizon_result in primary.items():
     artifacts[f"classifier diagnostics h{horizon}"] = save_figure(
         axes[0].figure,
         f"experiment_2b_classifier_diagnostics_h{horizon}_a095.png",
+        paths,
+    )
+    calibration_bases = (
+        "Logistic",
+        "Gradient boosting",
+        "Choquistic 2-additive",
+    )
+    calibration_models = [
+        model
+        for base in calibration_bases
+        for model in (
+            base,
+            *(f"{base} [{method}]" for method in CALIBRATION_METHODS),
+        )
+        if model in horizon_result.probabilities
+    ]
+    axes = plot_classifier_diagnostics(
+        horizon_result.split.y_test,
+        horizon_result.probabilities,
+        models=calibration_models,
+        legend_outside=True,
+    )
+    axes[0].figure.suptitle(
+        f"Uncalibrated vs calibrated probabilities — h={horizon}", y=1.03
+    )
+    artifacts[f"calibration comparison h{horizon}"] = save_figure(
+        axes[0].figure,
+        f"experiment_2b_calibration_comparison_h{horizon}_a095.png",
         paths,
     )
 
@@ -233,9 +340,13 @@ for horizon, horizon_result in primary.items():
         f"Predicted tail probabilities and realized events — h={horizon}"
     )
     axis.set_ylabel("Probability")
-    axis.legend(ncol=2)
+    axis.legend(
+        loc="center left",
+        bbox_to_anchor=(1.01, 0.5),
+        fontsize=8,
+    )
     axis.grid(alpha=0.2)
-    figure.tight_layout()
+    figure.tight_layout(rect=(0.0, 0.0, 0.82, 1.0))
     artifacts[f"probability paths figure h{horizon}"] = save_figure(
         figure,
         f"experiment_2b_probability_paths_h{horizon}_a095.png",
@@ -302,11 +413,64 @@ for horizon, horizon_result in rare.items():
         f"experiment_2b_classification_metrics_h{horizon}_a0975.csv",
         paths,
     )
+    artifacts[f"rare-event discrimination h{horizon}"] = save_table(
+        horizon_result.discrimination_metrics,
+        f"experiment_2b_discrimination_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event calibration h{horizon}"] = save_table(
+        horizon_result.calibration_metrics,
+        f"experiment_2b_calibration_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event calibration sample h{horizon}"] = save_table(
+        horizon_result.calibration_sample_summary,
+        f"experiment_2b_calibration_sample_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event probabilities h{horizon}"] = save_table(
+        horizon_result.probabilities,
+        f"experiment_2b_probabilities_h{horizon}_a0975.parquet",
+        paths,
+    )
+    artifacts[f"rare-event thresholds h{horizon}"] = save_table(
+        horizon_result.thresholds,
+        f"experiment_2b_thresholds_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event walk-forward folds h{horizon}"] = save_table(
+        horizon_result.fold_summary,
+        f"experiment_2b_walk_forward_folds_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event walk-forward metrics h{horizon}"] = save_table(
+        horizon_result.fold_metrics,
+        f"experiment_2b_walk_forward_metrics_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event orientation history h{horizon}"] = save_table(
+        horizon_result.orientation_history,
+        f"experiment_2b_orientation_history_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event Shapley history h{horizon}"] = save_table(
+        horizon_result.shapley_history,
+        f"experiment_2b_shapley_history_h{horizon}_a0975.csv",
+        paths,
+    )
     artifacts[f"rare-event orientation ablation h{horizon}"] = save_table(
         horizon_result.metrics[
             horizon_result.metrics.index.isin(ORIENTATION_MODELS)
         ],
         f"experiment_2b_orientation_ablation_h{horizon}_a0975.csv",
+        paths,
+    )
+    artifacts[f"rare-event final orientations h{horizon}"] = save_table(
+        orientation_tables(
+            horizon_result.fitted_models,
+            key_names=("model",),
+        ),
+        f"experiment_2b_orientations_h{horizon}_a0975.csv",
         paths,
     )
     artifacts[f"rare-event failures h{horizon}"] = save_table(
@@ -357,9 +521,15 @@ for axis, horizon in zip(axes, HORIZONS):
     axis.set_title(
         f"Point-in-time tail threshold, h={horizon}, alpha=95%"
     )
-    axis.legend()
     axis.grid(alpha=0.2)
-figure.tight_layout()
+handles, labels = axes[0].get_legend_handles_labels()
+figure.legend(
+    handles,
+    labels,
+    loc="center left",
+    bbox_to_anchor=(0.84, 0.5),
+)
+figure.tight_layout(rect=(0.0, 0.0, 0.83, 1.0))
 artifacts["tail threshold figure"] = save_figure(
     figure,
     "experiment_2b_tail_thresholds_a095.png",
@@ -373,7 +543,12 @@ axis = stability.shapley.plot(
 )
 axis.set_ylabel("Shapley importance")
 axis.grid(alpha=0.25)
-axis.figure.tight_layout()
+axis.legend(
+    loc="center left",
+    bbox_to_anchor=(1.01, 0.5),
+    fontsize=8,
+)
+axis.figure.tight_layout(rect=(0.0, 0.0, 0.80, 1.0))
 artifacts["stability figure"] = save_figure(
     axis.figure,
     "experiment_2b_shapley_stability_h5_a095.png",

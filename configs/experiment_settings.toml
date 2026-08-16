@@ -25,6 +25,11 @@ minimum_history = 250
 random_state = 42
 quick_mode_default = true
 
+[orientation]
+minimum_absolute_correlation = 0.2
+stability_subperiods = 3
+require_sign_stability = false
+
 [assets]
 equities = ["AAPL", "AMZN", "JPM", "KO", "MSFT", "NVDA", "UNH", "WMT", "XOM"]
 market_etfs = ["SPY"]

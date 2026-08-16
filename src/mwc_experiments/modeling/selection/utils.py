@@ -8,7 +8,51 @@ import pandas as pd
 from sklearn.base import BaseEstimator, clone
 from sklearn.metrics import average_precision_score, mean_squared_error
 from sklearn.model_selection import ParameterGrid
-from mwc_experiments.modeling.types import Candidate, SelectedModel
+from sklearn.pipeline import Pipeline
+from mwc_experiments.modeling.types import (
+    Candidate,
+    CorrelationOrientationTransformer,
+    SelectedModel,
+)
+
+
+def _frozen_orientation_parameters(
+    estimator: BaseEstimator,
+) -> dict[str, object]:
+    """Extract fitted training orientations as refit-safe estimator parameters."""
+    frozen: dict[str, object] = {}
+    for parameter_name, component in estimator.get_params(deep=True).items():
+        if isinstance(component, CorrelationOrientationTransformer):
+            frozen[f"{parameter_name}__frozen_diagnostics"] = (
+                component.fitted_diagnostics()
+            )
+    return frozen
+
+
+def training_orientation_parameters(
+    estimator: BaseEstimator,
+    X_train: pd.DataFrame,
+    y_train: pd.Series,
+) -> dict[str, object]:
+    """Fit only preprocessing to obtain orientation parameters from training."""
+    if not isinstance(estimator, Pipeline):
+        return {}
+    preprocessor = estimator.named_steps.get("preprocessor")
+    if not isinstance(preprocessor, Pipeline) or not any(
+        isinstance(component, CorrelationOrientationTransformer)
+        for component in preprocessor.get_params(deep=True).values()
+    ):
+        return {}
+    fitted_preprocessor = clone(preprocessor).fit(X_train, y_train)
+    frozen: dict[str, object] = {}
+    for parameter_name, component in fitted_preprocessor.get_params(
+        deep=True
+    ).items():
+        if isinstance(component, CorrelationOrientationTransformer):
+            frozen[
+                f"preprocessor__{parameter_name}__frozen_diagnostics"
+            ] = component.fitted_diagnostics()
+    return frozen
 
 def _select_model(
     name: str,
@@ -119,8 +163,11 @@ def refit_selected(
     X_validation: pd.DataFrame,
     y_validation: pd.Series,
 ) -> tuple[BaseEstimator, float]:
-    """Refit the selected configuration on the combined train-validation sample."""
+    """Refit on train-validation while freezing training-only orientations."""
     estimator = clone(selected.estimator)
+    frozen_orientations = _frozen_orientation_parameters(selected.estimator)
+    if frozen_orientations:
+        estimator.set_params(**frozen_orientations)
     X = pd.concat([X_train, X_validation])
     y = pd.concat([y_train, y_validation])
     started = perf_counter()

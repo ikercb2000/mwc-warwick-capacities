@@ -12,6 +12,7 @@ _VALIDATION_STRESS = _SETTINGS["validation_stress"]
 _FORECASTING = _SETTINGS["forecasting"]
 _TAIL_RISK = _SETTINGS["tail_risk"]
 _COMPUTATION = _SETTINGS["computation"]
+_ORIENTATION = _SETTINGS["orientation"]
 _ASSETS = _SETTINGS["assets"]
 _FEATURES = _SETTINGS["features"]
 

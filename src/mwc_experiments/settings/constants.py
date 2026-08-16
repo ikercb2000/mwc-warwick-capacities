@@ -8,6 +8,7 @@ from .mappings import (
     _DATES,
     _FEATURES,
     _FORECASTING,
+    _ORIENTATION,
     _TAIL_RISK,
     _VALIDATION_STRESS,
 )
@@ -47,6 +48,16 @@ MIN_TAIL_HISTORY = int(_TAIL_RISK["minimum_history"])
 RANDOM_STATE = int(_COMPUTATION["random_state"])
 
 QUICK_MODE_DEFAULT = bool(_COMPUTATION["quick_mode_default"])
+
+ORIENTATION_MINIMUM_ABSOLUTE_CORRELATION = float(
+    _ORIENTATION["minimum_absolute_correlation"]
+)
+
+ORIENTATION_STABILITY_SUBPERIODS = int(_ORIENTATION["stability_subperiods"])
+
+ORIENTATION_REQUIRE_SIGN_STABILITY = bool(
+    _ORIENTATION["require_sign_stability"]
+)
 
 EQUITY_TICKERS = tuple(str(value) for value in _ASSETS["equities"])
 

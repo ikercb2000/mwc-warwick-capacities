@@ -1,15 +1,99 @@
-model,best parameters
-Historical mean,{}
-OLS,{}
-OLS oriented,{}
-Monotone linear,{}
-Ridge,{'regressor__alpha': 10.0}
-Lasso,{'regressor__alpha': 0.001}
-Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}"
-Explicit interactions,{'regressor__ridge__alpha': 10.0}
-Random forest,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 20}"
-Gradient boosting,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
-Choquet 1-additive,{}
-Choquet 2-additive,{}
-Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54])}"
-MLP,"{'regressor__alpha': 0.001, 'regressor__hidden_layer_sizes': (32, 16)}"
+fold,model,OOS start,OOS end,best parameters
+0,Choquet 1-additive,2020-01-01,2021-01-01,{}
+0,Choquet 2-additive,2020-01-01,2021-01-01,{}
+0,Choquet 2-additive L1,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54])}"
+0,Elastic net,2020-01-01,2021-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}"
+0,Explicit interactions,2020-01-01,2021-01-01,{'regressor__ridge__alpha': 10.0}
+0,Gradient boosting,2020-01-01,2021-01-01,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
+0,Historical mean,2020-01-01,2021-01-01,{}
+0,Lasso,2020-01-01,2021-01-01,{'regressor__alpha': 0.001}
+0,MLP,2020-01-01,2021-01-01,"{'regressor__alpha': 0.001, 'regressor__hidden_layer_sizes': (32,)}"
+0,Monotone linear,2020-01-01,2021-01-01,{}
+0,OLS,2020-01-01,2021-01-01,{}
+0,OLS oriented,2020-01-01,2021-01-01,{}
+0,Random forest,2020-01-01,2021-01-01,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 20}"
+0,Ridge,2020-01-01,2021-01-01,{'regressor__alpha': 10.0}
+1,Choquet 1-additive,2021-01-01,2022-01-01,{}
+1,Choquet 2-additive,2021-01-01,2022-01-01,{}
+1,Choquet 2-additive L1,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54])}"
+1,Elastic net,2021-01-01,2022-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.75}"
+1,Explicit interactions,2021-01-01,2022-01-01,{'regressor__ridge__alpha': 10.0}
+1,Gradient boosting,2021-01-01,2022-01-01,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 15}"
+1,Historical mean,2021-01-01,2022-01-01,{}
+1,Lasso,2021-01-01,2022-01-01,{'regressor__alpha': 1e-05}
+1,MLP,2021-01-01,2022-01-01,"{'regressor__alpha': 0.0001, 'regressor__hidden_layer_sizes': (32, 16)}"
+1,Monotone linear,2021-01-01,2022-01-01,{}
+1,OLS,2021-01-01,2022-01-01,{}
+1,OLS oriented,2021-01-01,2022-01-01,{}
+1,Random forest,2021-01-01,2022-01-01,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+1,Ridge,2021-01-01,2022-01-01,{'regressor__alpha': 10.0}
+2,Choquet 1-additive,2022-01-01,2023-01-01,{}
+2,Choquet 2-additive,2022-01-01,2023-01-01,{}
+2,Choquet 2-additive L1,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54])}"
+2,Elastic net,2022-01-01,2023-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}"
+2,Explicit interactions,2022-01-01,2023-01-01,{'regressor__ridge__alpha': 10.0}
+2,Gradient boosting,2022-01-01,2023-01-01,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
+2,Historical mean,2022-01-01,2023-01-01,{}
+2,Lasso,2022-01-01,2023-01-01,{'regressor__alpha': 0.01}
+2,MLP,2022-01-01,2023-01-01,"{'regressor__alpha': 0.001, 'regressor__hidden_layer_sizes': (32,)}"
+2,Monotone linear,2022-01-01,2023-01-01,{}
+2,OLS,2022-01-01,2023-01-01,{}
+2,OLS oriented,2022-01-01,2023-01-01,{}
+2,Random forest,2022-01-01,2023-01-01,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+2,Ridge,2022-01-01,2023-01-01,{'regressor__alpha': 10.0}
+3,Choquet 1-additive,2023-01-01,2024-01-01,{}
+3,Choquet 2-additive,2023-01-01,2024-01-01,{}
+3,Choquet 2-additive L1,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54])}"
+3,Elastic net,2023-01-01,2024-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}"
+3,Explicit interactions,2023-01-01,2024-01-01,{'regressor__ridge__alpha': 10.0}
+3,Gradient boosting,2023-01-01,2024-01-01,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
+3,Historical mean,2023-01-01,2024-01-01,{}
+3,Lasso,2023-01-01,2024-01-01,{'regressor__alpha': 0.01}
+3,MLP,2023-01-01,2024-01-01,"{'regressor__alpha': 0.0001, 'regressor__hidden_layer_sizes': (32, 16)}"
+3,Monotone linear,2023-01-01,2024-01-01,{}
+3,OLS,2023-01-01,2024-01-01,{}
+3,OLS oriented,2023-01-01,2024-01-01,{}
+3,Random forest,2023-01-01,2024-01-01,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+3,Ridge,2023-01-01,2024-01-01,{'regressor__alpha': 10.0}
+4,Choquet 1-additive,2024-01-01,2025-01-01,{}
+4,Choquet 2-additive,2024-01-01,2025-01-01,{}
+4,Choquet 2-additive L1,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54])}"
+4,Elastic net,2024-01-01,2025-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}"
+4,Explicit interactions,2024-01-01,2025-01-01,{'regressor__ridge__alpha': 10.0}
+4,Gradient boosting,2024-01-01,2025-01-01,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
+4,Historical mean,2024-01-01,2025-01-01,{}
+4,Lasso,2024-01-01,2025-01-01,{'regressor__alpha': 0.01}
+4,MLP,2024-01-01,2025-01-01,"{'regressor__alpha': 0.0001, 'regressor__hidden_layer_sizes': (32,)}"
+4,Monotone linear,2024-01-01,2025-01-01,{}
+4,OLS,2024-01-01,2025-01-01,{}
+4,OLS oriented,2024-01-01,2025-01-01,{}
+4,Random forest,2024-01-01,2025-01-01,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+4,Ridge,2024-01-01,2025-01-01,{'regressor__alpha': 10.0}
+5,Choquet 1-additive,2025-01-01,2026-01-01,{}
+5,Choquet 2-additive,2025-01-01,2026-01-01,{}
+5,Choquet 2-additive L1,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54])}"
+5,Elastic net,2025-01-01,2026-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}"
+5,Explicit interactions,2025-01-01,2026-01-01,{'regressor__ridge__alpha': 10.0}
+5,Gradient boosting,2025-01-01,2026-01-01,"{'regressor__l2_regularization': 1.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
+5,Historical mean,2025-01-01,2026-01-01,{}
+5,Lasso,2025-01-01,2026-01-01,{'regressor__alpha': 0.01}
+5,MLP,2025-01-01,2026-01-01,"{'regressor__alpha': 0.0001, 'regressor__hidden_layer_sizes': (32, 16)}"
+5,Monotone linear,2025-01-01,2026-01-01,{}
+5,OLS,2025-01-01,2026-01-01,{}
+5,OLS oriented,2025-01-01,2026-01-01,{}
+5,Random forest,2025-01-01,2026-01-01,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+5,Ridge,2025-01-01,2026-01-01,{'regressor__alpha': 10.0}
+6,Choquet 1-additive,2026-01-01,2027-01-01,{}
+6,Choquet 2-additive,2026-01-01,2027-01-01,{}
+6,Choquet 2-additive L1,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54])}"
+6,Elastic net,2026-01-01,2027-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}"
+6,Explicit interactions,2026-01-01,2027-01-01,{'regressor__ridge__alpha': 10.0}
+6,Gradient boosting,2026-01-01,2027-01-01,"{'regressor__l2_regularization': 0.0, 'regressor__learning_rate': 0.03, 'regressor__max_leaf_nodes': 7}"
+6,Historical mean,2026-01-01,2027-01-01,{}
+6,Lasso,2026-01-01,2027-01-01,{'regressor__alpha': 0.001}
+6,MLP,2026-01-01,2027-01-01,"{'regressor__alpha': 0.001, 'regressor__hidden_layer_sizes': (32,)}"
+6,Monotone linear,2026-01-01,2027-01-01,{}
+6,OLS,2026-01-01,2027-01-01,{}
+6,OLS oriented,2026-01-01,2027-01-01,{}
+6,Random forest,2026-01-01,2027-01-01,"{'regressor__max_depth': 3, 'regressor__min_samples_leaf': 5}"
+6,Ridge,2026-01-01,2027-01-01,{'regressor__alpha': 10.0}

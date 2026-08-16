@@ -19,9 +19,15 @@ features = [
     "negative_momentum_21d", "lagged_portfolio_loss_1d",
 ]
 
-[split]
-train_end = "2017-12-31"
-validation_end = "2019-12-31"
+[walk_forward]
+oos_start = "2020-01-01"
+training_window_years = 5
+selection_window_months = 18
+calibration_window_months = 24
+oos_block_years = 1
+
+[calibration]
+methods = ["sigmoid", "isotonic"]
 
 [models]
 main = [

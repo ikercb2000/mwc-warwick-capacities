@@ -195,3 +195,52 @@ def test_scale_dominant_series_have_inclusive_and_exclusive_figures() -> None:
     ):
         assert f'"{obsolete_name}"' not in data_script
         assert f'"{obsolete_name}"' not in notebook_source
+
+
+def test_experiments_persist_complete_orientation_diagnostics() -> None:
+    """Keep final training correlations and orientations in result artifacts."""
+    expected = {
+        "experiment_factors.py": "experiment_1_orientations.csv",
+        "experiment_predict_loss.py": "experiment_2a_orientations_h{horizon}.csv",
+        "experiment_tail_risk.py": "experiment_2b_orientations_h{horizon}_a095.csv",
+    }
+    for script_name, artifact_name in expected.items():
+        source = (ROOT / "scripts" / script_name).read_text(encoding="utf-8")
+        assert "orientation_tables(" in source
+        assert artifact_name in source
+
+
+def test_tail_risk_persists_separate_probability_evaluations() -> None:
+    """Keep discrimination, calibration and temporal samples auditable."""
+    source = (ROOT / "scripts" / "experiment_tail_risk.py").read_text(
+        encoding="utf-8"
+    )
+
+    for artifact_name in (
+        "experiment_2b_discrimination_h{horizon}_a095.csv",
+        "experiment_2b_calibration_h{horizon}_a095.csv",
+        "experiment_2b_calibration_sample_h{horizon}_a095.csv",
+    ):
+        assert artifact_name in source
+
+
+def test_forecasting_experiments_persist_walk_forward_audits() -> None:
+    expected = {
+        "experiment_predict_loss.py": (
+            "experiment_2a_walk_forward_folds_h{horizon}.csv",
+            "experiment_2a_walk_forward_metrics_h{horizon}.csv",
+            "experiment_2a_orientation_history_h{horizon}.csv",
+            "experiment_2a_shapley_history_h{horizon}.csv",
+        ),
+        "experiment_tail_risk.py": (
+            "experiment_2b_walk_forward_folds_h{horizon}_a095.csv",
+            "experiment_2b_walk_forward_metrics_h{horizon}_a095.csv",
+            "experiment_2b_orientation_history_h{horizon}_a095.csv",
+            "experiment_2b_shapley_history_h{horizon}_a095.csv",
+        ),
+    }
+    for script_name, artifacts in expected.items():
+        source = (ROOT / "scripts" / script_name).read_text(encoding="utf-8")
+        assert "walk_forward_config" in source
+        for artifact in artifacts:
+            assert artifact in source

@@ -20,6 +20,7 @@ from mwc_experiments.evaluation import (
     fit_empirical_stress_definition,
     hac_model_comparison,
     orientation_table,
+    orientation_tables,
     plot_actual_predictions,
     plot_matrix,
     plot_metric_ranking,
@@ -319,6 +320,14 @@ artifacts["validation-selected Choquet"] = save_table(
 artifacts["orientation ablation"] = save_table(
     orientation_ablation,
     "experiment_1_orientation_ablation.csv",
+    paths,
+)
+artifacts["all final orientations"] = save_table(
+    orientation_tables(
+        result.fitted_models,
+        key_names=("asset", "model"),
+    ),
+    "experiment_1_orientations.csv",
     paths,
 )
 artifacts["empirical stress audit"] = save_table(

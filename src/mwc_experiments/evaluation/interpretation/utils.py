@@ -1,6 +1,7 @@
 """Interpretation domain."""
 
 from __future__ import annotations
+from collections.abc import Mapping
 import numpy as np
 import pandas as pd
 from sklearn.pipeline import Pipeline
@@ -75,3 +76,28 @@ def orientation_table(model) -> pd.DataFrame:
     if orient is None or not hasattr(orient, "orientation_table"):
         raise AttributeError("The fitted model has no orientation transformer.")
     return orient.orientation_table()
+
+
+def orientation_tables(
+    models: Mapping[object, object],
+    *,
+    key_names: tuple[str, ...],
+) -> pd.DataFrame:
+    """Combine final orientation diagnostics for every oriented fitted model."""
+    tables: list[pd.DataFrame] = []
+    for raw_key, model in models.items():
+        key = raw_key if isinstance(raw_key, tuple) else (raw_key,)
+        if len(key) != len(key_names):
+            raise ValueError("Model key does not match orientation table key names.")
+        try:
+            table = orientation_table(model).rename_axis("feature").reset_index()
+        except AttributeError:
+            continue
+        for position, (name, value) in enumerate(zip(key_names, key)):
+            table.insert(position, name, value)
+        tables.append(table)
+    if not tables:
+        return pd.DataFrame()
+    return pd.concat(tables, ignore_index=True).set_index(
+        [*key_names, "feature"]
+    )

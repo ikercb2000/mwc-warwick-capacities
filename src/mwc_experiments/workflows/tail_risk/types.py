@@ -34,11 +34,20 @@ class TailClassificationResult:
     horizon: int
     alpha: float
     split: TemporalSplit
+    final_split: TemporalSplit
+    fold_summary: pd.DataFrame
+    fold_metrics: pd.DataFrame
     metrics: pd.DataFrame
+    discrimination_metrics: pd.DataFrame
+    calibration_metrics: pd.DataFrame
+    calibration_sample_summary: pd.DataFrame
     probabilities: pd.DataFrame
-    thresholds: pd.Series
+    thresholds: pd.DataFrame
     selected_parameters: pd.DataFrame
     failures: pd.DataFrame
+    orientation_history: pd.DataFrame = field(default_factory=pd.DataFrame)
+    shapley_history: pd.DataFrame = field(default_factory=pd.DataFrame)
     shapley: dict[str, pd.Series] = field(default_factory=dict)
     interactions: dict[str, pd.DataFrame] = field(default_factory=dict)
     fitted_models: dict[str, object] = field(default_factory=dict)
+    calibrated_models: dict[str, object] = field(default_factory=dict)
