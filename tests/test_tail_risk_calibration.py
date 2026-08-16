@@ -128,3 +128,6 @@ def test_tail_risk_calibration_is_configurable() -> None:
     assert config["walk_forward"]["calibration_window_months"] == 24
     assert config["walk_forward"]["oos_block_years"] == 1
     assert config["calibration"]["methods"] == ["sigmoid", "isotonic"]
+    for collection in ("main", "robustness", "report"):
+        assert "Rolling prior probability" in config["models"][collection]
+        assert "Prior probability" not in config["models"][collection]

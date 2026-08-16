@@ -7,9 +7,9 @@ fold,model,OOS start,OOS end,best parameters
 0,Logistic oriented,2020-01-01,2021-01-01,{}
 0,MLP,2020-01-01,2021-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16)}"
 0,Penalized logistic,2020-01-01,2021-01-01,{'classifier__C': 10.0}
-0,Prior probability,2020-01-01,2021-01-01,{}
 0,RBF SVM,2020-01-01,2021-01-01,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
 0,Random forest,2020-01-01,2021-01-01,"{'classifier__max_depth': 6, 'classifier__min_samples_leaf': 20}"
+0,Rolling prior probability,2020-01-01,2021-01-01,{}
 1,Choquistic 1-additive,2021-01-01,2022-01-01,{}
 1,Choquistic 2-additive,2021-01-01,2022-01-01,{}
 1,Explicit interactions,2021-01-01,2022-01-01,{'classifier__logistic__C': 1.0}
@@ -18,9 +18,9 @@ fold,model,OOS start,OOS end,best parameters
 1,Logistic oriented,2021-01-01,2022-01-01,{}
 1,MLP,2021-01-01,2022-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
 1,Penalized logistic,2021-01-01,2022-01-01,{'classifier__C': 10.0}
-1,Prior probability,2021-01-01,2022-01-01,{}
 1,RBF SVM,2021-01-01,2022-01-01,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
 1,Random forest,2021-01-01,2022-01-01,"{'classifier__max_depth': 3, 'classifier__min_samples_leaf': 20}"
+1,Rolling prior probability,2021-01-01,2022-01-01,{}
 2,Choquistic 1-additive,2022-01-01,2023-01-01,{}
 2,Choquistic 2-additive,2022-01-01,2023-01-01,{}
 2,Explicit interactions,2022-01-01,2023-01-01,{'classifier__logistic__C': 0.01}
@@ -29,9 +29,9 @@ fold,model,OOS start,OOS end,best parameters
 2,Logistic oriented,2022-01-01,2023-01-01,{}
 2,MLP,2022-01-01,2023-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16)}"
 2,Penalized logistic,2022-01-01,2023-01-01,{'classifier__C': 10.0}
-2,Prior probability,2022-01-01,2023-01-01,{}
 2,RBF SVM,2022-01-01,2023-01-01,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
 2,Random forest,2022-01-01,2023-01-01,"{'classifier__max_depth': None, 'classifier__min_samples_leaf': 20}"
+2,Rolling prior probability,2022-01-01,2023-01-01,{}
 3,Choquistic 1-additive,2023-01-01,2024-01-01,{}
 3,Choquistic 2-additive,2023-01-01,2024-01-01,{}
 3,Explicit interactions,2023-01-01,2024-01-01,{'classifier__logistic__C': 1.0}
@@ -40,9 +40,9 @@ fold,model,OOS start,OOS end,best parameters
 3,Logistic oriented,2023-01-01,2024-01-01,{}
 3,MLP,2023-01-01,2024-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
 3,Penalized logistic,2023-01-01,2024-01-01,{'classifier__C': 0.1}
-3,Prior probability,2023-01-01,2024-01-01,{}
 3,RBF SVM,2023-01-01,2024-01-01,"{'classifier__C': 1.0, 'classifier__gamma': 'scale'}"
 3,Random forest,2023-01-01,2024-01-01,"{'classifier__max_depth': 6, 'classifier__min_samples_leaf': 20}"
+3,Rolling prior probability,2023-01-01,2024-01-01,{}
 4,Choquistic 1-additive,2024-01-01,2025-01-01,{}
 4,Choquistic 2-additive,2024-01-01,2025-01-01,{}
 4,Explicit interactions,2024-01-01,2025-01-01,{'classifier__logistic__C': 1.0}
@@ -51,9 +51,9 @@ fold,model,OOS start,OOS end,best parameters
 4,Logistic oriented,2024-01-01,2025-01-01,{}
 4,MLP,2024-01-01,2025-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
 4,Penalized logistic,2024-01-01,2025-01-01,{'classifier__C': 10.0}
-4,Prior probability,2024-01-01,2025-01-01,{}
 4,RBF SVM,2024-01-01,2025-01-01,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
 4,Random forest,2024-01-01,2025-01-01,"{'classifier__max_depth': 3, 'classifier__min_samples_leaf': 5}"
+4,Rolling prior probability,2024-01-01,2025-01-01,{}
 5,Choquistic 1-additive,2025-01-01,2026-01-01,{}
 5,Choquistic 2-additive,2025-01-01,2026-01-01,{}
 5,Explicit interactions,2025-01-01,2026-01-01,{'classifier__logistic__C': 0.01}
@@ -62,9 +62,9 @@ fold,model,OOS start,OOS end,best parameters
 5,Logistic oriented,2025-01-01,2026-01-01,{}
 5,MLP,2025-01-01,2026-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16)}"
 5,Penalized logistic,2025-01-01,2026-01-01,{'classifier__C': 10.0}
-5,Prior probability,2025-01-01,2026-01-01,{}
 5,RBF SVM,2025-01-01,2026-01-01,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
 5,Random forest,2025-01-01,2026-01-01,"{'classifier__max_depth': 3, 'classifier__min_samples_leaf': 20}"
+5,Rolling prior probability,2025-01-01,2026-01-01,{}
 6,Choquistic 1-additive,2026-01-01,2027-01-01,{}
 6,Choquistic 2-additive,2026-01-01,2027-01-01,{}
 6,Explicit interactions,2026-01-01,2027-01-01,{'classifier__logistic__C': 1.0}
@@ -73,6 +73,6 @@ fold,model,OOS start,OOS end,best parameters
 6,Logistic oriented,2026-01-01,2027-01-01,{}
 6,MLP,2026-01-01,2027-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
 6,Penalized logistic,2026-01-01,2027-01-01,{'classifier__C': 0.01}
-6,Prior probability,2026-01-01,2027-01-01,{}
 6,RBF SVM,2026-01-01,2027-01-01,"{'classifier__C': 10.0, 'classifier__gamma': 'scale'}"
 6,Random forest,2026-01-01,2027-01-01,"{'classifier__max_depth': None, 'classifier__min_samples_leaf': 20}"
+6,Rolling prior probability,2026-01-01,2027-01-01,{}

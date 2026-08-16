@@ -290,7 +290,7 @@ def classification_candidates(
         return _model_pipeline(preprocessor, classifier, step_name="classifier")
 
     candidates: dict[str, Candidate] = {
-        "Prior probability": Candidate(
+        "Rolling prior probability": Candidate(
             pipeline(DummyClassifier(strategy="prior")),
             {},
         ),

@@ -17,6 +17,6 @@ Gradient boosting [isotonic],Gradient boosting,isotonic,0.5741146594308774,0.042
 Logistic oriented [sigmoid],Logistic oriented,sigmoid,0.5470790138917878,0.04149809562212334,0.058126995510574715
 Logistic [sigmoid],Logistic,sigmoid,0.5470790138917878,0.04149809562212334,0.058126995510574715
 Gradient boosting [sigmoid],Gradient boosting,sigmoid,0.5431422342818711,0.03544992248571659,0.05975740407076273
-Prior probability [isotonic],Prior probability,isotonic,0.4532920522275563,0.030203731710015547,0.029132968059682376
-Prior probability [sigmoid],Prior probability,sigmoid,0.43444885085461166,0.030203731710015547,0.029132968059682376
-Prior probability,Prior probability,uncalibrated,0.4477376562536237,0.029742771549369183,0.029132968059682376
+Rolling prior probability [isotonic],Rolling prior probability,isotonic,0.4532920522275563,0.030203731710015547,0.029132968059682376
+Rolling prior probability [sigmoid],Rolling prior probability,sigmoid,0.43444885085461166,0.030203731710015547,0.029132968059682376
+Rolling prior probability,Rolling prior probability,uncalibrated,0.4477376562536237,0.029742771549369183,0.029132968059682376

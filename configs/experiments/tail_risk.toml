@@ -31,13 +31,13 @@ methods = ["sigmoid", "isotonic"]
 
 [models]
 main = [
-    "Prior probability", "Logistic", "Logistic oriented",
+    "Rolling prior probability", "Logistic", "Logistic oriented",
     "Penalized logistic", "Explicit interactions", "RBF SVM",
     "Random forest", "Gradient boosting", "Choquistic 1-additive",
     "Choquistic 2-additive", "MLP",
 ]
 robustness = [
-    "Prior probability", "Logistic", "Logistic oriented",
+    "Rolling prior probability", "Logistic", "Logistic oriented",
     "Penalized logistic", "Gradient boosting", "Choquistic 1-additive",
     "Choquistic 2-additive",
 ]
@@ -46,7 +46,7 @@ orientation = [
     "Choquistic 2-additive",
 ]
 report = [
-    "Prior probability", "Logistic", "Logistic oriented",
+    "Rolling prior probability", "Logistic", "Logistic oriented",
     "Explicit interactions", "Gradient boosting", "Choquistic 1-additive",
     "Choquistic 2-additive",
 ]

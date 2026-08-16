@@ -39,7 +39,11 @@ classification = run_tail_classification_experiment(
     horizons=(1,),
     alpha=0.95,
     quick=True,
-    model_names=("Prior probability", "Logistic", "Choquistic 2-additive"),
+    model_names=(
+        "Rolling prior probability",
+        "Logistic",
+        "Choquistic 2-additive",
+    ),
 )
 print("\nTail-classification smoke test")
 print(classification[1].metrics.to_string())

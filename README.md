@@ -250,6 +250,11 @@ decision threshold is estimated on the calibration block; the uncalibrated
 threshold remains selection-validation based. The current or future OOS block
 is never used for selection, fitting, threshold choice or calibration.
 
+The no-feature benchmark is named `Rolling prior probability`: it predicts a
+constant prevalence within each OOS block, but re-estimates that prevalence
+from the past window before every new block. It is therefore constant within a
+fold, not across the complete concatenated OOS sample.
+
 Discrimination is reported separately with ROC-AUC and PR-AUC. Probability
 calibration is reported with Brier score, log loss, mean predicted probability,
 observed event prevalence and their calibration gap. Window lengths and block
