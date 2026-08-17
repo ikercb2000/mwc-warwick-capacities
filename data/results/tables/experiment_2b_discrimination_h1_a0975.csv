@@ -11,8 +11,8 @@ Choquistic 1-additive [balanced] [sigmoid],Choquistic 1-additive,balanced,sigmoi
 Logistic [balanced],Logistic,balanced,uncalibrated,0.6242723625315986,0.06426367303072089,0.058126995510574715
 Logistic oriented [balanced],Logistic oriented,balanced,uncalibrated,0.6242723625315986,0.06426367303072089,0.058126995510574715
 Penalized logistic [balanced],Penalized logistic,balanced,uncalibrated,0.6917716088035436,0.056691328628495796,0.07913506693658856
-Logistic oriented [unweighted] [sigmoid],Logistic oriented,unweighted,sigmoid,0.5337206335953988,0.05375472869987268,0.08633682827571018
 Logistic [unweighted] [sigmoid],Logistic,unweighted,sigmoid,0.5337206335953988,0.05375472869987268,0.08633682827571018
+Logistic oriented [unweighted] [sigmoid],Logistic oriented,unweighted,sigmoid,0.5337206335953988,0.05375472869987268,0.08633682827571018
 Logistic oriented [unweighted],Logistic oriented,unweighted,uncalibrated,0.5459426239012964,0.0496834894235861,0.08633682827571018
 Logistic [unweighted],Logistic,unweighted,uncalibrated,0.5459426239012964,0.0496834894235861,0.08633682827571018
 Penalized logistic [unweighted] [sigmoid],Penalized logistic,unweighted,sigmoid,0.5609823975509636,0.047804663981159144,0.09028294771947208
@@ -24,4 +24,6 @@ Penalized logistic [unweighted],Penalized logistic,unweighted,uncalibrated,0.534
 Gradient boosting [balanced] [sigmoid],Gradient boosting,balanced,sigmoid,0.5690994689116167,0.03632368597231377,0.06840979742115015
 Gradient boosting [unweighted] [sigmoid],Gradient boosting,unweighted,sigmoid,0.5431422342818711,0.03544992248571659,0.05975740407076273
 Rolling prior probability [sigmoid],Rolling prior probability,not applicable,sigmoid,0.43444885085461166,0.030203731710015547,0.029132968059682376
+Choquistic model aggregator [unweighted] [sigmoid],Choquistic model aggregator,unweighted,sigmoid,0.47012917739279664,0.0299914314253377,0.1123364844015257
 Rolling prior probability,Rolling prior probability,not applicable,uncalibrated,0.4477376562536237,0.029742771549369183,0.029132968059682376
+Choquistic model aggregator [unweighted],Choquistic model aggregator,unweighted,uncalibrated,0.44769127298870565,0.027288521936245105,0.1123364844015257

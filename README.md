@@ -244,14 +244,28 @@ selection or base-model fitting.
 
 Experiment 2b fits every classifier that supports class weighting in two
 separate forms: `class_weight="balanced"` and unweighted (`class_weight=None`).
-The rolling-prior and MLP controls are fitted once because they do not expose
-that class-weight parameter. Each fitted variant is evaluated uncalibrated and
+The rolling-prior benchmark, conventional MLP and package
+`Choquet linear classifier` are fitted once because they do not expose
+classifier weights. The latter is the package's deterministic
+`ChoquetClassifier`: it learns a 2-additive capacity, non-negative feature
+scales and a decision threshold. Its direct `[0, 1]` Choquet score is used for
+uncalibrated discrimination, while its `[sigmoid]` variant is the proper
+probability estimate calibrated on the chronological calibration block.
+Each fitted variant is evaluated uncalibrated and
 with sigmoid calibration. `CalibratedClassifierCV` is applied to a
 `FrozenEstimator` containing the complete fitted pipeline, so calibration
 cannot refit preprocessing or the classifier. Its
 decision threshold is estimated on the calibration block; the uncalibrated
 threshold remains selection-validation based. The current or future OOS block
 is never used for selection, fitting, threshold choice or calibration.
+
+The two 2b aggregators also remain weight-specific. The balanced aggregator
+receives only balanced base classifiers plus weight-independent controls; the
+unweighted aggregator receives only unweighted base classifiers plus those
+same controls. They do not combine both versions of every classifier in one
+capacity. Both aggregators use a 2-additive capacity
+(`KAdditivity(order=2)`), as does the single regression aggregator in 2a;
+neither currently adds an L1 penalty.
 
 The no-feature benchmark is named `Rolling prior probability`: it predicts a
 constant prevalence within each OOS block, but re-estimates that prevalence
@@ -270,13 +284,48 @@ Both forecasting experiments additionally persist `*_walk_forward_folds_*`,
 `*_walk_forward_metrics_*`, `*_orientation_history_*` and
 `*_shapley_history_*` tables.
 
-Experiment 1 intentionally restricts the factor-model comparison to OLS,
-oriented OLS, monotone linear regression, Ridge, Lasso, Elastic Net and the
-1-additive Choquet regression. The latter is a positively monotone, normalised
-linear combination, so the experiment compares only linear specifications.
-The forecasting experiments retain their broader nonlinear benchmarks and
-2-additive Choquet specifications. Hyperparameters are selected using
-validation performance, never test performance.
+Experiments 2a and 2b compare a conventional `MLP` with
+`Fuzzy Choquet neural network`. The latter first learns a supervised
+2-additive Choquet integral of the input variables and then passes the resulting
+aggregate through a tanh neural network. Both its capacity layer and neural
+parameters are re-estimated inside every rolling window. The classifier is
+evaluated with both balanced and unweighted fitting, like the other classifiers
+that expose `class_weight`; scikit-learn's conventional MLP has no
+`class_weight` parameter and is therefore fitted once per fold.
+The conventional network receives clipped, standardised predictors. The fuzzy
+network receives clipped, oriented predictors normalised to `[0, 1]`, as
+required by the Choquet capacity, and its Choquet output is also bounded before
+entering the neural part. Both neural benchmarks use the `adam` optimiser; this
+avoids the repeated `lbfgs` iteration-limit failures produced by the package's
+default solver during walk-forward fitting.
+
+Experiments 2a and 2b also include a 2-additive Choquet model aggregator. It is
+deliberately fitted only from the outputs of the configured classical models;
+the Choquet, Choquistic and fuzzy-Choquet candidates are excluded from its
+inputs. The conventional MLP is eligible because it is a classical non-Choquet
+model. In 2a the aggregation capacity is fitted on the inner-validation
+predictions and then applied to the next OOS block. In 2b it is fitted on the
+selection-validation probabilities; its optional sigmoid calibration is fitted
+on the later calibration block before evaluating the next OOS block. Therefore,
+the aggregation capacity, calibration and final comparison never use the test
+block. The aggregator's fit-block score is descriptive and in-sample; model
+comparisons should use the concatenated OOS metrics.
+
+Experiment 1 compares OLS, oriented OLS, monotone linear regression, Ridge,
+Lasso and Elastic Net with six Choquet specifications: 1- and 2-additive,
+their scaled-q versions, and L1-regularised versions of both 2-additive
+models. The 1-additive models remain positively monotone linear
+specifications; the 2-additive models add pairwise interactions. A scaled-q
+model estimates `intercept + q * C_mu(X)` with `q >= 0`, removing the fixed
+overall scale without removing monotonicity. L1 penalises only pairwise
+Möbius terms. Fitted q values, Shapley indices and pairwise interactions are
+persisted in the experiment tables.
+
+Experiment 2a retains the same complete set of six Choquet specifications,
+alongside its broader nonlinear benchmarks. Thus scaled-q models supplement
+rather than replace the ordinary 1-additive, 2-additive and 2-additive-L1
+versions. Hyperparameters are selected using validation performance, never
+test performance.
 
 Classical models use clipping and their usual scaling without target-driven
 feature orientation. Capacity models are additionally oriented using

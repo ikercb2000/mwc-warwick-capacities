@@ -3,15 +3,19 @@ fold,model,OOS start,OOS end,best parameters
 0,Choquistic 1-additive [unweighted],2020-01-01,2021-01-01,{}
 0,Choquistic 2-additive [balanced],2020-01-01,2021-01-01,{}
 0,Choquistic 2-additive [unweighted],2020-01-01,2021-01-01,{}
+0,Choquistic model aggregator [balanced],2020-01-01,2021-01-01,"{'capacity': '2-additive', 'class weight': 'balanced', 'base models': ['Rolling prior probability', 'Logistic [balanced]', 'Logistic oriented [balanced]', 'Penalized logistic [balanced]', 'Explicit interactions [balanced]', 'RBF SVM [balanced]', 'Random forest [balanced]', 'Gradient boosting [balanced]', 'MLP']}"
+0,Choquistic model aggregator [unweighted],2020-01-01,2021-01-01,"{'capacity': '2-additive', 'class weight': 'unweighted', 'base models': ['Rolling prior probability', 'MLP', 'Logistic [unweighted]', 'Logistic oriented [unweighted]', 'Penalized logistic [unweighted]', 'Explicit interactions [unweighted]', 'RBF SVM [unweighted]', 'Random forest [unweighted]', 'Gradient boosting [unweighted]']}"
 0,Explicit interactions [balanced],2020-01-01,2021-01-01,{'classifier__logistic__C': 0.1}
 0,Explicit interactions [unweighted],2020-01-01,2021-01-01,{'classifier__logistic__C': 0.1}
+0,Fuzzy Choquet neural network [balanced],2020-01-01,2021-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,), 'classifier__mlp_solver': 'adam'}"
+0,Fuzzy Choquet neural network [unweighted],2020-01-01,2021-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,), 'classifier__mlp_solver': 'adam'}"
 0,Gradient boosting [balanced],2020-01-01,2021-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.1, 'classifier__max_leaf_nodes': 15}"
 0,Gradient boosting [unweighted],2020-01-01,2021-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.1, 'classifier__max_leaf_nodes': 15}"
 0,Logistic [balanced],2020-01-01,2021-01-01,{}
 0,Logistic [unweighted],2020-01-01,2021-01-01,{}
 0,Logistic oriented [balanced],2020-01-01,2021-01-01,{}
 0,Logistic oriented [unweighted],2020-01-01,2021-01-01,{}
-0,MLP,2020-01-01,2021-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16)}"
+0,MLP,2020-01-01,2021-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
 0,Penalized logistic [balanced],2020-01-01,2021-01-01,{'classifier__C': 1.0}
 0,Penalized logistic [unweighted],2020-01-01,2021-01-01,{'classifier__C': 10.0}
 0,RBF SVM [balanced],2020-01-01,2021-01-01,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
@@ -23,15 +27,19 @@ fold,model,OOS start,OOS end,best parameters
 1,Choquistic 1-additive [unweighted],2021-01-01,2022-01-01,{}
 1,Choquistic 2-additive [balanced],2021-01-01,2022-01-01,{}
 1,Choquistic 2-additive [unweighted],2021-01-01,2022-01-01,{}
+1,Choquistic model aggregator [balanced],2021-01-01,2022-01-01,"{'capacity': '2-additive', 'class weight': 'balanced', 'base models': ['Rolling prior probability', 'Logistic [balanced]', 'Logistic oriented [balanced]', 'Penalized logistic [balanced]', 'Explicit interactions [balanced]', 'RBF SVM [balanced]', 'Random forest [balanced]', 'Gradient boosting [balanced]', 'MLP']}"
+1,Choquistic model aggregator [unweighted],2021-01-01,2022-01-01,"{'capacity': '2-additive', 'class weight': 'unweighted', 'base models': ['Rolling prior probability', 'MLP', 'Logistic [unweighted]', 'Logistic oriented [unweighted]', 'Penalized logistic [unweighted]', 'Explicit interactions [unweighted]', 'RBF SVM [unweighted]', 'Random forest [unweighted]', 'Gradient boosting [unweighted]']}"
 1,Explicit interactions [balanced],2021-01-01,2022-01-01,{'classifier__logistic__C': 0.1}
 1,Explicit interactions [unweighted],2021-01-01,2022-01-01,{'classifier__logistic__C': 0.01}
+1,Fuzzy Choquet neural network [balanced],2021-01-01,2022-01-01,"{'classifier__alpha': 0.001, 'classifier__hidden_layer_sizes': (32,), 'classifier__mlp_solver': 'adam'}"
+1,Fuzzy Choquet neural network [unweighted],2021-01-01,2022-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,), 'classifier__mlp_solver': 'adam'}"
 1,Gradient boosting [balanced],2021-01-01,2022-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 7}"
 1,Gradient boosting [unweighted],2021-01-01,2022-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 15}"
 1,Logistic [balanced],2021-01-01,2022-01-01,{}
 1,Logistic [unweighted],2021-01-01,2022-01-01,{}
 1,Logistic oriented [balanced],2021-01-01,2022-01-01,{}
 1,Logistic oriented [unweighted],2021-01-01,2022-01-01,{}
-1,MLP,2021-01-01,2022-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
+1,MLP,2021-01-01,2022-01-01,"{'classifier__alpha': 0.001, 'classifier__hidden_layer_sizes': (32,)}"
 1,Penalized logistic [balanced],2021-01-01,2022-01-01,{'classifier__C': 0.01}
 1,Penalized logistic [unweighted],2021-01-01,2022-01-01,{'classifier__C': 0.01}
 1,RBF SVM [balanced],2021-01-01,2022-01-01,"{'classifier__C': 1.0, 'classifier__gamma': 'scale'}"
@@ -43,8 +51,12 @@ fold,model,OOS start,OOS end,best parameters
 2,Choquistic 1-additive [unweighted],2022-01-01,2023-01-01,{}
 2,Choquistic 2-additive [balanced],2022-01-01,2023-01-01,{}
 2,Choquistic 2-additive [unweighted],2022-01-01,2023-01-01,{}
+2,Choquistic model aggregator [balanced],2022-01-01,2023-01-01,"{'capacity': '2-additive', 'class weight': 'balanced', 'base models': ['Rolling prior probability', 'Logistic [balanced]', 'Logistic oriented [balanced]', 'Penalized logistic [balanced]', 'Explicit interactions [balanced]', 'RBF SVM [balanced]', 'Random forest [balanced]', 'Gradient boosting [balanced]', 'MLP']}"
+2,Choquistic model aggregator [unweighted],2022-01-01,2023-01-01,"{'capacity': '2-additive', 'class weight': 'unweighted', 'base models': ['Rolling prior probability', 'MLP', 'Logistic [unweighted]', 'Logistic oriented [unweighted]', 'Penalized logistic [unweighted]', 'Explicit interactions [unweighted]', 'RBF SVM [unweighted]', 'Random forest [unweighted]', 'Gradient boosting [unweighted]']}"
 2,Explicit interactions [balanced],2022-01-01,2023-01-01,{'classifier__logistic__C': 0.01}
 2,Explicit interactions [unweighted],2022-01-01,2023-01-01,{'classifier__logistic__C': 0.01}
+2,Fuzzy Choquet neural network [balanced],2022-01-01,2023-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,), 'classifier__mlp_solver': 'adam'}"
+2,Fuzzy Choquet neural network [unweighted],2022-01-01,2023-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,), 'classifier__mlp_solver': 'adam'}"
 2,Gradient boosting [balanced],2022-01-01,2023-01-01,"{'classifier__l2_regularization': 0.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 7}"
 2,Gradient boosting [unweighted],2022-01-01,2023-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 15}"
 2,Logistic [balanced],2022-01-01,2023-01-01,{}
@@ -63,15 +75,19 @@ fold,model,OOS start,OOS end,best parameters
 3,Choquistic 1-additive [unweighted],2023-01-01,2024-01-01,{}
 3,Choquistic 2-additive [balanced],2023-01-01,2024-01-01,{}
 3,Choquistic 2-additive [unweighted],2023-01-01,2024-01-01,{}
+3,Choquistic model aggregator [balanced],2023-01-01,2024-01-01,"{'capacity': '2-additive', 'class weight': 'balanced', 'base models': ['Rolling prior probability', 'Logistic [balanced]', 'Logistic oriented [balanced]', 'Penalized logistic [balanced]', 'Explicit interactions [balanced]', 'RBF SVM [balanced]', 'Random forest [balanced]', 'Gradient boosting [balanced]', 'MLP']}"
+3,Choquistic model aggregator [unweighted],2023-01-01,2024-01-01,"{'capacity': '2-additive', 'class weight': 'unweighted', 'base models': ['Rolling prior probability', 'MLP', 'Logistic [unweighted]', 'Logistic oriented [unweighted]', 'Penalized logistic [unweighted]', 'Explicit interactions [unweighted]', 'RBF SVM [unweighted]', 'Random forest [unweighted]', 'Gradient boosting [unweighted]']}"
 3,Explicit interactions [balanced],2023-01-01,2024-01-01,{'classifier__logistic__C': 0.01}
 3,Explicit interactions [unweighted],2023-01-01,2024-01-01,{'classifier__logistic__C': 0.01}
+3,Fuzzy Choquet neural network [balanced],2023-01-01,2024-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16), 'classifier__mlp_solver': 'adam'}"
+3,Fuzzy Choquet neural network [unweighted],2023-01-01,2024-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16), 'classifier__mlp_solver': 'adam'}"
 3,Gradient boosting [balanced],2023-01-01,2024-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 7}"
 3,Gradient boosting [unweighted],2023-01-01,2024-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 15}"
 3,Logistic [balanced],2023-01-01,2024-01-01,{}
 3,Logistic [unweighted],2023-01-01,2024-01-01,{}
 3,Logistic oriented [balanced],2023-01-01,2024-01-01,{}
 3,Logistic oriented [unweighted],2023-01-01,2024-01-01,{}
-3,MLP,2023-01-01,2024-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16)}"
+3,MLP,2023-01-01,2024-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
 3,Penalized logistic [balanced],2023-01-01,2024-01-01,{'classifier__C': 1.0}
 3,Penalized logistic [unweighted],2023-01-01,2024-01-01,{'classifier__C': 10.0}
 3,RBF SVM [balanced],2023-01-01,2024-01-01,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
@@ -83,15 +99,19 @@ fold,model,OOS start,OOS end,best parameters
 4,Choquistic 1-additive [unweighted],2024-01-01,2025-01-01,{}
 4,Choquistic 2-additive [balanced],2024-01-01,2025-01-01,{}
 4,Choquistic 2-additive [unweighted],2024-01-01,2025-01-01,{}
+4,Choquistic model aggregator [balanced],2024-01-01,2025-01-01,"{'capacity': '2-additive', 'class weight': 'balanced', 'base models': ['Rolling prior probability', 'Logistic [balanced]', 'Logistic oriented [balanced]', 'Penalized logistic [balanced]', 'Explicit interactions [balanced]', 'RBF SVM [balanced]', 'Random forest [balanced]', 'Gradient boosting [balanced]', 'MLP']}"
+4,Choquistic model aggregator [unweighted],2024-01-01,2025-01-01,"{'capacity': '2-additive', 'class weight': 'unweighted', 'base models': ['Rolling prior probability', 'MLP', 'Logistic [unweighted]', 'Logistic oriented [unweighted]', 'Penalized logistic [unweighted]', 'Explicit interactions [unweighted]', 'RBF SVM [unweighted]', 'Random forest [unweighted]', 'Gradient boosting [unweighted]']}"
 4,Explicit interactions [balanced],2024-01-01,2025-01-01,{'classifier__logistic__C': 0.1}
 4,Explicit interactions [unweighted],2024-01-01,2025-01-01,{'classifier__logistic__C': 0.1}
+4,Fuzzy Choquet neural network [balanced],2024-01-01,2025-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,), 'classifier__mlp_solver': 'adam'}"
+4,Fuzzy Choquet neural network [unweighted],2024-01-01,2025-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16), 'classifier__mlp_solver': 'adam'}"
 4,Gradient boosting [balanced],2024-01-01,2025-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 7}"
 4,Gradient boosting [unweighted],2024-01-01,2025-01-01,"{'classifier__l2_regularization': 0.0, 'classifier__learning_rate': 0.1, 'classifier__max_leaf_nodes': 15}"
 4,Logistic [balanced],2024-01-01,2025-01-01,{}
 4,Logistic [unweighted],2024-01-01,2025-01-01,{}
 4,Logistic oriented [balanced],2024-01-01,2025-01-01,{}
 4,Logistic oriented [unweighted],2024-01-01,2025-01-01,{}
-4,MLP,2024-01-01,2025-01-01,"{'classifier__alpha': 0.001, 'classifier__hidden_layer_sizes': (32, 16)}"
+4,MLP,2024-01-01,2025-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
 4,Penalized logistic [balanced],2024-01-01,2025-01-01,{'classifier__C': 0.01}
 4,Penalized logistic [unweighted],2024-01-01,2025-01-01,{'classifier__C': 10.0}
 4,RBF SVM [balanced],2024-01-01,2025-01-01,"{'classifier__C': 0.1, 'classifier__gamma': 'scale'}"
@@ -103,15 +123,19 @@ fold,model,OOS start,OOS end,best parameters
 5,Choquistic 1-additive [unweighted],2025-01-01,2026-01-01,{}
 5,Choquistic 2-additive [balanced],2025-01-01,2026-01-01,{}
 5,Choquistic 2-additive [unweighted],2025-01-01,2026-01-01,{}
+5,Choquistic model aggregator [balanced],2025-01-01,2026-01-01,"{'capacity': '2-additive', 'class weight': 'balanced', 'base models': ['Rolling prior probability', 'Logistic [balanced]', 'Logistic oriented [balanced]', 'Penalized logistic [balanced]', 'Explicit interactions [balanced]', 'RBF SVM [balanced]', 'Random forest [balanced]', 'Gradient boosting [balanced]', 'MLP']}"
+5,Choquistic model aggregator [unweighted],2025-01-01,2026-01-01,"{'capacity': '2-additive', 'class weight': 'unweighted', 'base models': ['Rolling prior probability', 'MLP', 'Logistic [unweighted]', 'Logistic oriented [unweighted]', 'Penalized logistic [unweighted]', 'Explicit interactions [unweighted]', 'RBF SVM [unweighted]', 'Random forest [unweighted]', 'Gradient boosting [unweighted]']}"
 5,Explicit interactions [balanced],2025-01-01,2026-01-01,{'classifier__logistic__C': 1.0}
 5,Explicit interactions [unweighted],2025-01-01,2026-01-01,{'classifier__logistic__C': 1.0}
+5,Fuzzy Choquet neural network [balanced],2025-01-01,2026-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16), 'classifier__mlp_solver': 'adam'}"
+5,Fuzzy Choquet neural network [unweighted],2025-01-01,2026-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16), 'classifier__mlp_solver': 'adam'}"
 5,Gradient boosting [balanced],2025-01-01,2026-01-01,"{'classifier__l2_regularization': 1.0, 'classifier__learning_rate': 0.1, 'classifier__max_leaf_nodes': 15}"
 5,Gradient boosting [unweighted],2025-01-01,2026-01-01,"{'classifier__l2_regularization': 0.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 7}"
 5,Logistic [balanced],2025-01-01,2026-01-01,{}
 5,Logistic [unweighted],2025-01-01,2026-01-01,{}
 5,Logistic oriented [balanced],2025-01-01,2026-01-01,{}
 5,Logistic oriented [unweighted],2025-01-01,2026-01-01,{}
-5,MLP,2025-01-01,2026-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16)}"
+5,MLP,2025-01-01,2026-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
 5,Penalized logistic [balanced],2025-01-01,2026-01-01,{'classifier__C': 1.0}
 5,Penalized logistic [unweighted],2025-01-01,2026-01-01,{'classifier__C': 10.0}
 5,RBF SVM [balanced],2025-01-01,2026-01-01,"{'classifier__C': 10.0, 'classifier__gamma': 'scale'}"
@@ -123,15 +147,19 @@ fold,model,OOS start,OOS end,best parameters
 6,Choquistic 1-additive [unweighted],2026-01-01,2027-01-01,{}
 6,Choquistic 2-additive [balanced],2026-01-01,2027-01-01,{}
 6,Choquistic 2-additive [unweighted],2026-01-01,2027-01-01,{}
+6,Choquistic model aggregator [balanced],2026-01-01,2027-01-01,"{'capacity': '2-additive', 'class weight': 'balanced', 'base models': ['Rolling prior probability', 'Logistic [balanced]', 'Logistic oriented [balanced]', 'Penalized logistic [balanced]', 'Explicit interactions [balanced]', 'RBF SVM [balanced]', 'Random forest [balanced]', 'Gradient boosting [balanced]', 'MLP']}"
+6,Choquistic model aggregator [unweighted],2026-01-01,2027-01-01,"{'capacity': '2-additive', 'class weight': 'unweighted', 'base models': ['Rolling prior probability', 'MLP', 'Logistic [unweighted]', 'Logistic oriented [unweighted]', 'Penalized logistic [unweighted]', 'Explicit interactions [unweighted]', 'RBF SVM [unweighted]', 'Random forest [unweighted]', 'Gradient boosting [unweighted]']}"
 6,Explicit interactions [balanced],2026-01-01,2027-01-01,{'classifier__logistic__C': 1.0}
 6,Explicit interactions [unweighted],2026-01-01,2027-01-01,{'classifier__logistic__C': 1.0}
+6,Fuzzy Choquet neural network [balanced],2026-01-01,2027-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32, 16), 'classifier__mlp_solver': 'adam'}"
+6,Fuzzy Choquet neural network [unweighted],2026-01-01,2027-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,), 'classifier__mlp_solver': 'adam'}"
 6,Gradient boosting [balanced],2026-01-01,2027-01-01,"{'classifier__l2_regularization': 0.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 15}"
 6,Gradient boosting [unweighted],2026-01-01,2027-01-01,"{'classifier__l2_regularization': 0.0, 'classifier__learning_rate': 0.03, 'classifier__max_leaf_nodes': 15}"
 6,Logistic [balanced],2026-01-01,2027-01-01,{}
 6,Logistic [unweighted],2026-01-01,2027-01-01,{}
 6,Logistic oriented [balanced],2026-01-01,2027-01-01,{}
 6,Logistic oriented [unweighted],2026-01-01,2027-01-01,{}
-6,MLP,2026-01-01,2027-01-01,"{'classifier__alpha': 0.0001, 'classifier__hidden_layer_sizes': (32,)}"
+6,MLP,2026-01-01,2027-01-01,"{'classifier__alpha': 0.001, 'classifier__hidden_layer_sizes': (32, 16)}"
 6,Penalized logistic [balanced],2026-01-01,2027-01-01,{'classifier__C': 0.1}
 6,Penalized logistic [unweighted],2026-01-01,2027-01-01,{'classifier__C': 0.01}
 6,RBF SVM [balanced],2026-01-01,2027-01-01,"{'classifier__C': 1.0, 'classifier__gamma': 'scale'}"

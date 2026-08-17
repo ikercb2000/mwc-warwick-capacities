@@ -1,64 +1,109 @@
-asset,model,best parameters
-AAPL,OLS,{}
-AAPL,OLS oriented,{}
-AAPL,Monotone linear,{}
-AAPL,Ridge,{'regressor__alpha': 0.01}
-AAPL,Lasso,{'regressor__alpha': 1e-05}
-AAPL,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
-AAPL,Choquet 1-additive,{}
-AMZN,OLS,{}
-AMZN,OLS oriented,{}
-AMZN,Monotone linear,{}
-AMZN,Ridge,{'regressor__alpha': 0.01}
-AMZN,Lasso,{'regressor__alpha': 1e-05}
-AMZN,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
-AMZN,Choquet 1-additive,{}
-JPM,OLS,{}
-JPM,OLS oriented,{}
-JPM,Monotone linear,{}
-JPM,Ridge,{'regressor__alpha': 0.01}
-JPM,Lasso,{'regressor__alpha': 1e-05}
-JPM,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
-JPM,Choquet 1-additive,{}
-KO,OLS,{}
-KO,OLS oriented,{}
-KO,Monotone linear,{}
-KO,Ridge,{'regressor__alpha': 0.01}
-KO,Lasso,{'regressor__alpha': 1e-05}
-KO,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
-KO,Choquet 1-additive,{}
-MSFT,OLS,{}
-MSFT,OLS oriented,{}
-MSFT,Monotone linear,{}
-MSFT,Ridge,{'regressor__alpha': 10.0}
-MSFT,Lasso,{'regressor__alpha': 0.0001}
-MSFT,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}"
-MSFT,Choquet 1-additive,{}
-NVDA,OLS,{}
-NVDA,OLS oriented,{}
-NVDA,Monotone linear,{}
-NVDA,Ridge,{'regressor__alpha': 0.01}
-NVDA,Lasso,{'regressor__alpha': 1e-05}
-NVDA,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}"
-NVDA,Choquet 1-additive,{}
-UNH,OLS,{}
-UNH,OLS oriented,{}
-UNH,Monotone linear,{}
-UNH,Ridge,{'regressor__alpha': 0.01}
-UNH,Lasso,{'regressor__alpha': 0.0001}
-UNH,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}"
-UNH,Choquet 1-additive,{}
-WMT,OLS,{}
-WMT,OLS oriented,{}
-WMT,Monotone linear,{}
-WMT,Ridge,{'regressor__alpha': 10.0}
-WMT,Lasso,{'regressor__alpha': 0.001}
-WMT,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}"
-WMT,Choquet 1-additive,{}
-XOM,OLS,{}
-XOM,OLS oriented,{}
-XOM,Monotone linear,{}
-XOM,Ridge,{'regressor__alpha': 0.01}
-XOM,Lasso,{'regressor__alpha': 0.0001}
-XOM,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}"
-XOM,Choquet 1-additive,{}
+asset,model,best parameters,fitted q
+AAPL,OLS,{},
+AAPL,OLS oriented,{},
+AAPL,Monotone linear,{},
+AAPL,Ridge,{'regressor__alpha': 0.01},
+AAPL,Lasso,{'regressor__alpha': 1e-05},
+AAPL,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+AAPL,Choquet 1-additive,{},
+AAPL,Choquet 1-additive scaled-q,{},0.13823393616687057
+AAPL,Choquet 2-additive,{},
+AAPL,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AAPL,Choquet 2-additive scaled-q,{},0.1382339361668706
+AAPL,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.1382339361668657
+AMZN,OLS,{},
+AMZN,OLS oriented,{},
+AMZN,Monotone linear,{},
+AMZN,Ridge,{'regressor__alpha': 0.01},
+AMZN,Lasso,{'regressor__alpha': 1e-05},
+AMZN,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+AMZN,Choquet 1-additive,{},
+AMZN,Choquet 1-additive scaled-q,{},0.16252013778201468
+AMZN,Choquet 2-additive,{},
+AMZN,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AMZN,Choquet 2-additive scaled-q,{},0.1625201377820148
+AMZN,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.16252013778201177
+JPM,OLS,{},
+JPM,OLS oriented,{},
+JPM,Monotone linear,{},
+JPM,Ridge,{'regressor__alpha': 0.01},
+JPM,Lasso,{'regressor__alpha': 1e-05},
+JPM,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+JPM,Choquet 1-additive,{},
+JPM,Choquet 1-additive scaled-q,{},0.1282321693039034
+JPM,Choquet 2-additive,{},
+JPM,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+JPM,Choquet 2-additive scaled-q,{},0.12823216930390335
+JPM,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.12823216930389847
+KO,OLS,{},
+KO,OLS oriented,{},
+KO,Monotone linear,{},
+KO,Ridge,{'regressor__alpha': 0.01},
+KO,Lasso,{'regressor__alpha': 1e-05},
+KO,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+KO,Choquet 1-additive,{},
+KO,Choquet 1-additive scaled-q,{},0.05688477578729086
+KO,Choquet 2-additive,{},
+KO,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+KO,Choquet 2-additive scaled-q,{},0.05688477578729085
+KO,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.05688477578729085
+MSFT,OLS,{},
+MSFT,OLS oriented,{},
+MSFT,Monotone linear,{},
+MSFT,Ridge,{'regressor__alpha': 10.0},
+MSFT,Lasso,{'regressor__alpha': 0.0001},
+MSFT,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}",
+MSFT,Choquet 1-additive,{},
+MSFT,Choquet 1-additive scaled-q,{},0.12456739850490889
+MSFT,Choquet 2-additive,{},
+MSFT,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+MSFT,Choquet 2-additive scaled-q,{},0.12456739850490889
+MSFT,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.12456739850490532
+NVDA,OLS,{},
+NVDA,OLS oriented,{},
+NVDA,Monotone linear,{},
+NVDA,Ridge,{'regressor__alpha': 0.01},
+NVDA,Lasso,{'regressor__alpha': 1e-05},
+NVDA,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+NVDA,Choquet 1-additive,{},
+NVDA,Choquet 1-additive scaled-q,{},0.15979988348148164
+NVDA,Choquet 2-additive,{},
+NVDA,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+NVDA,Choquet 2-additive scaled-q,{},0.1597998834814816
+NVDA,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.15979988348147248
+UNH,OLS,{},
+UNH,OLS oriented,{},
+UNH,Monotone linear,{},
+UNH,Ridge,{'regressor__alpha': 0.01},
+UNH,Lasso,{'regressor__alpha': 0.0001},
+UNH,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}",
+UNH,Choquet 1-additive,{},
+UNH,Choquet 1-additive scaled-q,{},0.08848017383098206
+UNH,Choquet 2-additive,{},
+UNH,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+UNH,Choquet 2-additive scaled-q,{},0.08848017383098206
+UNH,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.088480173830979
+WMT,OLS,{},
+WMT,OLS oriented,{},
+WMT,Monotone linear,{},
+WMT,Ridge,{'regressor__alpha': 10.0},
+WMT,Lasso,{'regressor__alpha': 0.001},
+WMT,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+WMT,Choquet 1-additive,{},
+WMT,Choquet 1-additive scaled-q,{},0.06254101952291126
+WMT,Choquet 2-additive,{},
+WMT,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+WMT,Choquet 2-additive scaled-q,{},0.06254101952291123
+WMT,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.06254101952291123
+XOM,OLS,{},
+XOM,OLS oriented,{},
+XOM,Monotone linear,{},
+XOM,Ridge,{'regressor__alpha': 0.01},
+XOM,Lasso,{'regressor__alpha': 0.0001},
+XOM,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+XOM,Choquet 1-additive,{},
+XOM,Choquet 1-additive scaled-q,{},0.10170229922334162
+XOM,Choquet 2-additive,{},
+XOM,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+XOM,Choquet 2-additive scaled-q,{},0.10170229922334162
+XOM,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.10170229922333747

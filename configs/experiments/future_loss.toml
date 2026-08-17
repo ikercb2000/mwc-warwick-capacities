@@ -27,21 +27,30 @@ oos_block_years = 1
 main = [
     "Historical mean", "OLS", "OLS oriented", "Monotone linear", "Ridge",
     "Lasso", "Elastic net", "Explicit interactions", "Random forest",
-    "Gradient boosting", "Choquet 1-additive", "Choquet 2-additive",
-    "Choquet 2-additive L1", "MLP",
+    "Gradient boosting", "Choquet 1-additive",
+    "Choquet 1-additive scaled-q", "Choquet 2-additive",
+    "Choquet 2-additive L1", "Choquet 2-additive scaled-q",
+    "Choquet 2-additive scaled-q L1", "MLP",
+    "Fuzzy Choquet neural network",
 ]
 cap_weight = [
     "Historical mean", "OLS", "OLS oriented", "Monotone linear",
     "Explicit interactions", "Gradient boosting", "Choquet 1-additive",
+    "Choquet 1-additive scaled-q",
     "Choquet 2-additive", "Choquet 2-additive L1",
+    "Choquet 2-additive scaled-q", "Choquet 2-additive scaled-q L1",
 ]
 orientation = [
-    "OLS", "OLS oriented", "Monotone linear",
-    "Choquet 1-additive", "Choquet 2-additive",
+    "OLS", "OLS oriented", "Monotone linear", "Choquet 1-additive",
+    "Choquet 1-additive scaled-q", "Choquet 2-additive",
+    "Choquet 2-additive L1", "Choquet 2-additive scaled-q",
+    "Choquet 2-additive scaled-q L1",
 ]
 extreme_robustness = [
     "OLS", "Ridge", "Lasso", "Monotone linear", "Gradient boosting",
-    "Choquet 1-additive", "Choquet 2-additive", "Choquet 2-additive L1",
+    "Choquet 1-additive", "Choquet 1-additive scaled-q",
+    "Choquet 2-additive", "Choquet 2-additive L1",
+    "Choquet 2-additive scaled-q", "Choquet 2-additive scaled-q L1",
 ]
 
 [analysis]
@@ -53,6 +62,14 @@ high_loss_quantile = 0.90
 top_interactions = 12
 hac_minimum_lags = 10
 forecast_plot_start = "2020-01-01"
+
+[aggregation]
+model_name = "Choquet model aggregator"
+base_models = [
+    "Historical mean", "OLS", "OLS oriented", "Monotone linear", "Ridge",
+    "Lasso", "Elastic net", "Explicit interactions", "Random forest",
+    "Gradient boosting", "MLP",
+]
 
 [validation_stress]
 validation_start = "2018-01-01"
@@ -84,6 +101,14 @@ stress_end = "2021-12-31"
 
 [parameter_grids."Choquet 2-additive L1"]
 "regressor__regressor__penalty" = [0.00001, 0.0001, 0.001, 0.01]
+
+[parameter_grids."Choquet 2-additive scaled-q L1"]
+"regressor__penalty" = [0.00001, 0.0001, 0.001, 0.01]
+
+[parameter_grids."Fuzzy Choquet neural network"]
+"regressor__hidden_layer_sizes" = [[32], [32, 16]]
+"regressor__alpha" = [0.0001, 0.001]
+"regressor__mlp_solver" = ["adam"]
 
 [parameter_grids.MLP]
 "regressor__hidden_layer_sizes" = [[32], [32, 16]]

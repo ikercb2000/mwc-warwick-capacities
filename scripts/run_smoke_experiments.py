@@ -20,7 +20,15 @@ factor = run_factor_experiment(
     {"AAPL": data.factor_frames["AAPL"]},
     assets=("AAPL",),
     quick=True,
-    model_names=("OLS", "Choquet 1-additive", "Choquet 2-additive"),
+    model_names=(
+        "OLS",
+        "Choquet 1-additive",
+        "Choquet 1-additive scaled-q",
+        "Choquet 2-additive",
+        "Choquet 2-additive L1",
+        "Choquet 2-additive scaled-q",
+        "Choquet 2-additive scaled-q L1",
+    ),
 )
 print("\nFactor smoke test")
 print(factor.metrics.to_string())
@@ -29,7 +37,16 @@ regression = run_future_loss_experiment(
     data.equal_weight_dataset,
     horizons=(1,),
     quick=True,
-    model_names=("Historical mean", "OLS", "Choquet 2-additive"),
+    model_names=(
+        "Historical mean",
+        "OLS",
+        "Choquet 1-additive",
+        "Choquet 1-additive scaled-q",
+        "Choquet 2-additive",
+        "Choquet 2-additive L1",
+        "Choquet 2-additive scaled-q",
+        "Choquet 2-additive scaled-q L1",
+    ),
 )
 print("\nFuture-loss smoke test")
 print(regression.horizons[1].metrics.to_string())

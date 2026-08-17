@@ -1,0 +1,13 @@
+first,second,interaction,interpretation
+Historical mean,Explicit interactions,0.008619482201769883,complementary
+Lasso,Explicit interactions,0.007820060203120795,complementary
+Monotone linear,Explicit interactions,0.007640549303797599,complementary
+Elastic net,Explicit interactions,0.00721588227962448,complementary
+Random forest,Gradient boosting,-0.006839083171463181,redundant
+Ridge,Explicit interactions,0.006068010372098866,complementary
+OLS,Explicit interactions,0.0059931099684315215,complementary
+OLS oriented,Explicit interactions,0.005993109968431519,complementary
+Explicit interactions,Random forest,0.005206344033153809,complementary
+Gradient boosting,MLP,-0.0041679893942982455,redundant
+OLS,MLP,0.0035307246262902573,complementary
+OLS oriented,MLP,0.0035307246262902487,complementary

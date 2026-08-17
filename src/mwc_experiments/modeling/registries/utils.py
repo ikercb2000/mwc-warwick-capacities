@@ -23,7 +23,14 @@ from sklearn.neural_network import MLPClassifier, MLPRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler, PolynomialFeatures
 from sklearn.svm import SVC
-from capacities_ml_fin.ml.models import ChoquetRegressor, ChoquisticRegression
+from capacities_ml_fin.ml.models import (
+    ChoquetClassifier,
+    ChoquetRegressor,
+    ChoquisticRegression,
+    FuzzyChoquetNeuralClassifier,
+    FuzzyChoquetNeuralRegressor,
+    ScaledChoquetRegressor,
+)
 from capacities_ml_fin.ml.optimization import KAdditivity, L1Penalty
 from mwc_experiments.modeling.preprocessing import (
     make_capacity_preprocessor,
@@ -217,6 +224,18 @@ def regression_candidates(
                 ),
                 {},
             ),
+            "Choquet 1-additive scaled-q": Candidate(
+                pipeline(
+                    ScaledChoquetRegressor(
+                        sparsity=KAdditivity(order=1),
+                        solver="scipy",
+                        solver_options={"options": {"maxiter": 2_000}},
+                        q_bounds=(0.0, float("inf")),
+                    ),
+                    capacity_input=True,
+                ),
+                {},
+            ),
             "Choquet 2-additive": Candidate(
                 pipeline(
                     _target_scaled_regressor(
@@ -225,6 +244,18 @@ def regression_candidates(
                             solver="scipy",
                             solver_options={"options": {"maxiter": 2_000}},
                         )
+                    ),
+                    capacity_input=True,
+                ),
+                {},
+            ),
+            "Choquet 2-additive scaled-q": Candidate(
+                pipeline(
+                    ScaledChoquetRegressor(
+                        sparsity=KAdditivity(order=2),
+                        solver="scipy",
+                        solver_options={"options": {"maxiter": 2_000}},
+                        q_bounds=(0.0, float("inf")),
                     ),
                     capacity_input=True,
                 ),
@@ -253,15 +284,47 @@ def regression_candidates(
                 ]
             },
         )
+        candidates["Choquet 2-additive scaled-q L1"] = Candidate(
+            pipeline(
+                ScaledChoquetRegressor(
+                    sparsity=KAdditivity(order=2),
+                    solver="scipy",
+                    solver_options={"options": {"maxiter": 2_000}},
+                    penalty=_interaction_penalty(n_features, 1e-3),
+                    q_bounds=(0.0, float("inf")),
+                ),
+                capacity_input=True,
+            ),
+            {
+                "regressor__penalty": [
+                    _interaction_penalty(n_features, weight)
+                    for weight in (1e-5, 1e-4, 1e-3, 1e-2)
+                ]
+            },
+        )
 
     if include_mlp:
         candidates["MLP"] = Candidate(
             pipeline(
                 MLPRegressor(
                     max_iter=2_000,
-                    early_stopping=True,
                     random_state=random_state,
                 )
+            ),
+            {
+                "regressor__hidden_layer_sizes": [(32,), (32, 16)],
+                "regressor__alpha": [1e-4, 1e-3],
+            },
+        )
+        candidates["Fuzzy Choquet neural network"] = Candidate(
+            pipeline(
+                FuzzyChoquetNeuralRegressor(
+                    max_iter=2_000,
+                    random_state=random_state,
+                    mlp_solver="adam",
+                    solver_options={"options": {"maxiter": 2_000}},
+                ),
+                capacity_input=True,
             ),
             {
                 "regressor__hidden_layer_sizes": [(32,), (32, 16)],
@@ -416,15 +479,42 @@ def classification_candidates(
             ),
             {},
         ),
+        "Choquet linear classifier": Candidate(
+            pipeline(
+                ChoquetClassifier(
+                    sparsity=KAdditivity(order=2),
+                    solver="pymoo",
+                    solver_options={"seed": random_state},
+                    learn_feature_scales=True,
+                ),
+                capacity_input=True,
+            ),
+            {},
+        ),
     }
     if include_mlp:
         candidates["MLP"] = Candidate(
             pipeline(
                 MLPClassifier(
                     max_iter=2_000,
-                    early_stopping=True,
                     random_state=random_state,
                 )
+            ),
+            {
+                "classifier__hidden_layer_sizes": [(32,), (32, 16)],
+                "classifier__alpha": [1e-4, 1e-3],
+            },
+        )
+        candidates["Fuzzy Choquet neural network"] = Candidate(
+            pipeline(
+                FuzzyChoquetNeuralClassifier(
+                    max_iter=2_000,
+                    random_state=random_state,
+                    mlp_solver="adam",
+                    solver_options={"options": {"maxiter": 2_000}},
+                    class_weight=class_weight,
+                ),
+                capacity_input=True,
             ),
             {
                 "classifier__hidden_layer_sizes": [(32,), (32, 16)],

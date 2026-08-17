@@ -65,4 +65,18 @@ def model_parameter_count(estimator: Any) -> int | float:
         if hasattr(inner, "intercept_"):
             count += int(np.asarray(inner.intercept_).size)
         return count
+    if hasattr(inner, "coefs_") and hasattr(inner, "intercepts_"):
+        return int(
+            sum(np.asarray(weights).size for weights in inner.coefs_)
+            + sum(np.asarray(bias).size for bias in inner.intercepts_)
+        )
+    if hasattr(inner, "network_") and hasattr(inner, "capacity_model_"):
+        network = inner.network_
+        network_count = sum(
+            np.asarray(weights).size for weights in network.coefs_
+        ) + sum(np.asarray(bias).size for bias in network.intercepts_)
+        capacity_count = int(
+            np.asarray(inner.capacity_model_.result_.parameters).size
+        )
+        return int(network_count + capacity_count)
     return float("nan")

@@ -2,6 +2,7 @@
 
 from .utils import (
     _select_model,
+    classification_score,
     select_regression_model,
     select_classification_model,
     refit_selected,
@@ -9,6 +10,7 @@ from .utils import (
 )
 
 __all__ = [
+    "classification_score",
     "select_regression_model",
     "select_classification_model",
     "refit_selected",

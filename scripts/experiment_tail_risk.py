@@ -54,6 +54,7 @@ analysis_config = config["analysis"]
 walk_forward_config = config["walk_forward"]
 calibration_config = config["calibration"]
 class_weight_config = config["class_weight"]
+aggregation_config = config["aggregation"]
 execution_config = config["execution"]
 HORIZONS = tuple(int(value) for value in dataset_config["horizons"])
 MAIN_RISK_FEATURES = tuple(str(value) for value in dataset_config["features"])
@@ -68,6 +69,13 @@ CALIBRATION_METHODS = tuple(
 )
 CLASS_WEIGHT_MODES = tuple(
     str(value) for value in class_weight_config["modes"]
+)
+AGGREGATION_MODEL = str(aggregation_config["model_name"])
+AGGREGATION_BASE_MODELS = tuple(
+    str(value) for value in aggregation_config["base_models"]
+)
+ROBUSTNESS_AGGREGATION_BASE_MODELS = tuple(
+    str(value) for value in aggregation_config["robustness_base_models"]
 )
 STABILITY_CUTOFFS = tuple(
     str(value) for value in analysis_config["stability_cutoffs"]
@@ -96,6 +104,8 @@ primary = run_tail_classification_experiment(
     oos_block_years=int(walk_forward_config["oos_block_years"]),
     calibration_methods=CALIBRATION_METHODS,
     class_weight_modes=CLASS_WEIGHT_MODES,
+    aggregation_model_name=AGGREGATION_MODEL,
+    aggregation_base_models=AGGREGATION_BASE_MODELS,
     parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
@@ -120,6 +130,8 @@ rare = run_tail_classification_experiment(
     oos_block_years=int(walk_forward_config["oos_block_years"]),
     calibration_methods=CALIBRATION_METHODS,
     class_weight_modes=CLASS_WEIGHT_MODES,
+    aggregation_model_name=AGGREGATION_MODEL,
+    aggregation_base_models=ROBUSTNESS_AGGREGATION_BASE_MODELS,
     parameter_grids=PARAMETER_GRIDS,
     verbose=verbose,
 )
@@ -283,7 +295,9 @@ for horizon, horizon_result in primary.items():
         paths,
     )
     preferred = horizon_result.metrics.index[
-        horizon_result.metrics["base model"].isin(REPORT_MODELS)
+        horizon_result.metrics["base model"].isin(
+            (*REPORT_MODELS, AGGREGATION_MODEL)
+        )
         & horizon_result.metrics["probability calibration"].eq(
             "uncalibrated"
         )
@@ -305,7 +319,11 @@ for horizon, horizon_result in primary.items():
     calibration_bases = (
         "Logistic",
         "Gradient boosting",
+        "MLP",
+        "Fuzzy Choquet neural network",
         "Choquistic 2-additive",
+        "Choquet linear classifier",
+        AGGREGATION_MODEL,
     )
     calibration_models = horizon_result.metrics.index[
         horizon_result.metrics["base model"].isin(calibration_bases)
@@ -329,6 +347,8 @@ for horizon, horizon_result in primary.items():
         "Logistic",
         "Gradient boosting",
         "Choquistic 2-additive",
+        "Choquet linear classifier",
+        AGGREGATION_MODEL,
     )
     probability_models = horizon_result.metrics.index[
         horizon_result.metrics["base model"].isin(probability_families)

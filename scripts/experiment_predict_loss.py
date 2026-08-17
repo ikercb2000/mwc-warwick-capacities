@@ -58,6 +58,7 @@ model_config = config["models"]
 analysis_config = config["analysis"]
 walk_forward_config = config["walk_forward"]
 stress_config = config["validation_stress"]
+aggregation_config = config["aggregation"]
 execution_config = config["execution"]
 HORIZONS = tuple(int(value) for value in dataset_config["horizons"])
 MAIN_RISK_FEATURES = tuple(str(value) for value in dataset_config["features"])
@@ -73,6 +74,10 @@ STABILITY_CUTOFFS = tuple(
 CAP_WEIGHT_HORIZON = int(analysis_config["cap_weight_horizon"])
 STABILITY_HORIZON = int(analysis_config["stability_horizon"])
 PARAMETER_GRIDS = parameter_grid_overrides(config)
+AGGREGATION_MODEL = str(aggregation_config["model_name"])
+AGGREGATION_BASE_MODELS = tuple(
+    str(value) for value in aggregation_config["base_models"]
+)
 data = load_or_build_processed_data(paths)
 dataset = data.equal_weight_dataset
 result = run_future_loss_experiment(
@@ -92,6 +97,8 @@ result = run_future_loss_experiment(
         walk_forward_config["validation_window_months"]
     ),
     oos_block_years=int(walk_forward_config["oos_block_years"]),
+    aggregation_model_name=AGGREGATION_MODEL,
+    aggregation_base_models=AGGREGATION_BASE_MODELS,
     verbose=verbose,
 )
 cap_result = run_future_loss_experiment(
@@ -143,6 +150,16 @@ for horizon, horizon_result in result.horizons.items():
         f"experiment_2a_selected_parameters_h{horizon}.csv",
         paths,
     )
+    q_scales = (
+        horizon_result.selected_parameters[["fitted q"]].dropna()
+        if "fitted q" in horizon_result.selected_parameters
+        else pd.DataFrame()
+    )
+    artifacts[f"scaled-q estimates h{horizon}"] = save_table(
+        q_scales,
+        f"experiment_2a_q_scales_h{horizon}.csv",
+        paths,
+    )
     artifacts[f"walk-forward folds h{horizon}"] = save_table(
         horizon_result.fold_summary,
         f"experiment_2a_walk_forward_folds_h{horizon}.csv",
@@ -165,7 +182,10 @@ for horizon, horizon_result in result.horizons.items():
     )
     artifacts[f"validation-selected Choquet h{horizon}"] = save_table(
         select_model_family_by_validation(
-            horizon_result.metrics,
+            horizon_result.metrics.drop(
+                index=AGGREGATION_MODEL,
+                errors="ignore",
+            ),
             family_prefix="Choquet",
             score_column="validation RMSE",
         ),
@@ -276,7 +296,7 @@ for horizon, horizon_result in result.horizons.items():
     validation_comparison = compare_validation_stress_regimes(
         dataset[list(MAIN_RISK_FEATURES)],
         dataset[f"future_loss_h{horizon}"],
-        model_names=tuple(horizon_result.metrics.index.astype(str)),
+        model_names=MAIN_MODELS,
         horizon=horizon,
         quick=quick,
         random_state=int(execution_config["random_state"]),
@@ -356,7 +376,12 @@ for horizon, horizon_result in result.horizons.items():
     )
     preferred = [
         model
-        for model in CAP_WEIGHT_MODELS
+        for model in (
+            *CAP_WEIGHT_MODELS,
+            "MLP",
+            "Fuzzy Choquet neural network",
+            AGGREGATION_MODEL,
+        )
         if model in horizon_result.predictions
     ]
     axis = plot_actual_predictions(

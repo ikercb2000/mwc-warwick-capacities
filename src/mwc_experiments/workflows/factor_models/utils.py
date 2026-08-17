@@ -9,6 +9,7 @@ import pandas as pd
 from mwc_experiments.settings import EQUITY_TICKERS, FACTOR_COLUMNS, RANDOM_STATE
 from mwc_experiments.evaluation.interpretation import capacity_summary
 from mwc_experiments.evaluation.metrics import regression_metrics
+from mwc_experiments.modeling.inspection import fitted_q
 from mwc_experiments.modeling.registries import (
     apply_parameter_grid_overrides,
     regression_candidates,
@@ -39,7 +40,15 @@ def run_factor_experiment(
         random_state=random_state,
         include_mlp=False,
         include_dummy=False,
-        include_regularized_choquet=(model_names is None or "Choquet 2-additive L1" in model_names),
+        include_regularized_choquet=(
+            model_names is None
+            or bool(
+                {
+                    "Choquet 2-additive L1",
+                    "Choquet 2-additive scaled-q L1",
+                }.intersection(model_names)
+            )
+        ),
     )
     candidates = apply_parameter_grid_overrides(
         candidates,
@@ -149,6 +158,7 @@ def run_factor_experiment(
                         "asset": asset,
                         "model": model_name,
                         "best parameters": selected.best_params,
+                        "fitted q": fitted_q(fitted),
                     }
                 )
                 for message in selected.failures:

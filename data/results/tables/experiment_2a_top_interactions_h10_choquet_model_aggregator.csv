@@ -1,0 +1,13 @@
+first,second,interaction,interpretation
+Historical mean,Explicit interactions,0.02921715896886752,complementary
+Lasso,Explicit interactions,0.029217158437391706,complementary
+Historical mean,Elastic net,0.02392685850712826,complementary
+Lasso,Elastic net,0.023926858289522436,complementary
+Historical mean,Lasso,0.021800611227056167,complementary
+Historical mean,Ridge,0.01998135964731355,complementary
+Ridge,Lasso,0.019981359562386655,complementary
+Historical mean,Monotone linear,0.019038573657357994,complementary
+Monotone linear,Lasso,0.01903857365735798,complementary
+OLS oriented,Random forest,-0.018564400721910915,redundant
+OLS,Random forest,-0.01856440072191087,redundant
+Historical mean,OLS,0.0182759601041123,complementary

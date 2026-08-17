@@ -8,6 +8,7 @@ import pytest
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.frozen import FrozenEstimator
 from sklearn.pipeline import Pipeline
+from capacities_ml_fin.ml.models import ChoquisticRegression
 
 from mwc_experiments.configuration import load_experiment_config
 from mwc_experiments.evaluation.metrics import classification_metrics
@@ -48,6 +49,8 @@ def _run(dataset: pd.DataFrame):
         oos_block_years=1,
         calibration_methods=("sigmoid",),
         class_weight_modes=("balanced", "unweighted"),
+        aggregation_model_name="Choquistic model aggregator",
+        aggregation_base_models=("Logistic",),
         verbose=False,
     )[1]
 
@@ -60,15 +63,24 @@ def test_tail_risk_uses_frozen_full_pipelines_for_temporal_calibration() -> None
         "Logistic [balanced] [sigmoid]",
         "Logistic [unweighted]",
         "Logistic [unweighted] [sigmoid]",
+        "Choquistic model aggregator [balanced]",
+        "Choquistic model aggregator [balanced] [sigmoid]",
+        "Choquistic model aggregator [unweighted]",
+        "Choquistic model aggregator [unweighted] [sigmoid]",
     ]
     assert set(result.calibrated_models) == {
         "Logistic [balanced] [sigmoid]",
         "Logistic [unweighted] [sigmoid]",
+        "Choquistic model aggregator [balanced] [sigmoid]",
+        "Choquistic model aggregator [unweighted] [sigmoid]",
     }
     for calibrated in result.calibrated_models.values():
         assert isinstance(calibrated, CalibratedClassifierCV)
         assert isinstance(calibrated.estimator, FrozenEstimator)
-        assert isinstance(calibrated.estimator.estimator, Pipeline)
+        assert isinstance(
+            calibrated.estimator.estimator,
+            (Pipeline, ChoquisticRegression),
+        )
 
     assert set(result.metrics["class weight"]) == {"balanced", "unweighted"}
     assert (
@@ -83,6 +95,20 @@ def test_tail_risk_uses_frozen_full_pipelines_for_temporal_calibration() -> None
         .class_weight
         is None
     )
+    assert set(
+        result.shapley["Choquistic model aggregator [balanced]"].index
+    ) == {"Logistic [balanced]"}
+    assert set(
+        result.shapley["Choquistic model aggregator [unweighted]"].index
+    ) == {"Logistic [unweighted]"}
+    assert result.selected_parameters.loc[
+        (0, "Choquistic model aggregator [balanced]"),
+        "best parameters",
+    ]["base models"] == ["Logistic [balanced]"]
+    assert result.selected_parameters.loc[
+        (0, "Choquistic model aggregator [unweighted]"),
+        "best parameters",
+    ]["base models"] == ["Logistic [unweighted]"]
 
     summary = result.calibration_sample_summary
     for fold in summary.index.get_level_values("fold").unique():
@@ -157,5 +183,18 @@ def test_tail_risk_rejects_non_sigmoid_calibration() -> None:
             features=("signal", "trend"),
             horizons=(1,),
             calibration_methods=("isotonic",),
+            verbose=False,
+        )
+
+
+def test_tail_risk_rejects_choquet_aggregation_sources() -> None:
+    with pytest.raises(ValueError, match="must be non-Choquet"):
+        run_tail_classification_experiment(
+            _classification_dataset(),
+            features=("signal", "trend"),
+            horizons=(1,),
+            model_names=("Choquistic 1-additive",),
+            aggregation_model_name="Choquistic model aggregator",
+            aggregation_base_models=("Choquistic 1-additive",),
             verbose=False,
         )

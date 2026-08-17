@@ -89,6 +89,10 @@ def orientation_tables(
         key = raw_key if isinstance(raw_key, tuple) else (raw_key,)
         if len(key) != len(key_names):
             raise ValueError("Model key does not match orientation table key names.")
+        # Aggregators operate directly on model predictions and therefore do not
+        # have a feature-preprocessing pipeline or feature orientations to report.
+        if not isinstance(model, Pipeline):
+            continue
         try:
             table = orientation_table(model).rename_axis("feature").reset_index()
         except AttributeError:

@@ -2,10 +2,21 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
+import pytest
 from sklearn.compose import TransformedTargetRegressor
+from sklearn.neural_network import MLPClassifier, MLPRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
+from capacities_ml_fin.ml.models import (
+    ChoquetClassifier,
+    FuzzyChoquetNeuralClassifier,
+    FuzzyChoquetNeuralRegressor,
+    ScaledChoquetRegressor,
+)
+from capacities_ml_fin.ml.preprocessing import CapacityNormalizer
 
+from mwc_experiments.evaluation.interpretation import orientation_tables
+from mwc_experiments.modeling.inspection import fitted_q
 from mwc_experiments.modeling.registries import (
     classification_candidates,
     regression_candidates,
@@ -72,6 +83,62 @@ def test_registries_use_native_pipelines_and_shared_tree_preprocessing() -> None
 
     choquet = regressors["Choquet 2-additive"].estimator.named_steps["regressor"]
     assert isinstance(choquet, TransformedTargetRegressor)
+    scaled_choquet = regressors[
+        "Choquet 1-additive scaled-q"
+    ].estimator.named_steps["regressor"]
+    assert isinstance(scaled_choquet, ScaledChoquetRegressor)
+    for model in (
+        "Choquet 2-additive scaled-q",
+        "Choquet 2-additive scaled-q L1",
+    ):
+        assert isinstance(
+            regressors[model].estimator.named_steps["regressor"],
+            ScaledChoquetRegressor,
+        )
+
+    fuzzy_regressor = regression_candidates(3)[
+        "Fuzzy Choquet neural network"
+    ].estimator
+    fuzzy_classifier = classification_candidates(3)[
+        "Fuzzy Choquet neural network"
+    ].estimator
+    mlp_regressor = regression_candidates(3)["MLP"].estimator
+    mlp_classifier = classification_candidates(3)["MLP"].estimator
+    linear_classifier = classification_candidates(3)[
+        "Choquet linear classifier"
+    ].estimator
+    assert isinstance(mlp_regressor.named_steps["regressor"], MLPRegressor)
+    assert isinstance(mlp_classifier.named_steps["classifier"], MLPClassifier)
+    assert isinstance(
+        linear_classifier.named_steps["classifier"],
+        ChoquetClassifier,
+    )
+    assert isinstance(
+        linear_classifier.named_steps["preprocessor"].named_steps["scale"],
+        CapacityNormalizer,
+    )
+    assert linear_classifier.named_steps["classifier"].learn_feature_scales
+    assert linear_classifier.named_steps["classifier"].solver_options == {
+        "seed": 42
+    }
+    assert isinstance(
+        mlp_regressor.named_steps["preprocessor"].named_steps["scale"],
+        StandardScaler,
+    )
+    assert isinstance(
+        fuzzy_regressor.named_steps["preprocessor"].named_steps["scale"],
+        CapacityNormalizer,
+    )
+    assert fuzzy_regressor.named_steps["regressor"].mlp_solver == "adam"
+    assert fuzzy_classifier.named_steps["classifier"].mlp_solver == "adam"
+    assert isinstance(
+        fuzzy_regressor.named_steps["regressor"],
+        FuzzyChoquetNeuralRegressor,
+    )
+    assert isinstance(
+        fuzzy_classifier.named_steps["classifier"],
+        FuzzyChoquetNeuralClassifier,
+    )
 
 
 def test_ols_orientation_ablation_preserves_predictions() -> None:
@@ -131,12 +198,12 @@ def test_logistic_orientation_ablation_preserves_probabilities() -> None:
 def test_classifier_registry_exposes_balanced_and_unweighted_variants() -> None:
     balanced = classification_candidates(
         3,
-        include_mlp=False,
+        include_mlp=True,
         class_weight="balanced",
     )
     unweighted = classification_candidates(
         3,
-        include_mlp=False,
+        include_mlp=True,
         class_weight=None,
     )
     parameter_by_model = {
@@ -149,6 +216,7 @@ def test_classifier_registry_exposes_balanced_and_unweighted_variants() -> None:
         "Gradient boosting": "classifier__class_weight",
         "Choquistic 1-additive": "classifier__class_weight",
         "Choquistic 2-additive": "classifier__class_weight",
+        "Fuzzy Choquet neural network": "classifier__class_weight",
     }
 
     for model, parameter in parameter_by_model.items():
@@ -189,6 +257,29 @@ def test_orientation_threshold_and_chronological_sign_stability() -> None:
     assert not bool(table.loc["weak", "meets_correlation_threshold"])
     assert table.loc["weak", "orientation_sign"] == 1.0
     assert "training_subperiod_3_correlation" in table.columns
+
+
+def test_orientation_tables_skip_direct_prediction_aggregators() -> None:
+    """Aggregators have no raw-feature orientation and must not break reporting."""
+    X = pd.DataFrame(
+        {"feature": np.linspace(-1.0, 1.0, 30)},
+        index=pd.date_range("2020-01-01", periods=30),
+    )
+    y = pd.Series(-X["feature"], index=X.index)
+    oriented = regression_candidates(
+        1,
+        include_mlp=False,
+        include_regularized_choquet=False,
+    )[
+        "OLS oriented"
+    ].estimator.fit(X, y)
+
+    table = orientation_tables(
+        {"OLS oriented": oriented, "Choquet model aggregator": object()},
+        key_names=("model",),
+    )
+
+    assert set(table.index.get_level_values("model")) == {"OLS oriented"}
 
 
 def test_final_refit_freezes_training_only_orientation() -> None:
@@ -274,6 +365,37 @@ def test_one_additive_choquet_matches_monotone_linear_on_simplex_solution() -> N
         atol=1e-5,
         rtol=1e-5,
     )
+
+
+def test_scaled_q_choquet_recovers_positive_linear_response_scale() -> None:
+    """A scaled 1-additive capacity is a positive linear model with free scale."""
+    corners = np.asarray(
+        [
+            [0.0, 0.0, 0.0],
+            [0.0, 0.0, 1.0],
+            [0.0, 1.0, 0.0],
+            [0.0, 1.0, 1.0],
+            [1.0, 0.0, 0.0],
+            [1.0, 0.0, 1.0],
+            [1.0, 1.0, 0.0],
+            [1.0, 1.0, 1.0],
+        ]
+    )
+    X = pd.DataFrame(
+        np.tile(corners, (4, 1)),
+        columns=["x1", "x2", "x3"],
+    )
+    weights = np.array([0.55, 0.15, 0.30])
+    y = pd.Series(0.2 + 2.5 * (X.to_numpy() @ weights))
+    fitted = regression_candidates(
+        3,
+        include_mlp=False,
+        include_dummy=False,
+        include_regularized_choquet=False,
+    )["Choquet 1-additive scaled-q"].estimator.fit(X, y)
+
+    np.testing.assert_allclose(fitted.predict(X), y, atol=1e-5, rtol=1e-5)
+    assert fitted_q(fitted) == pytest.approx(2.5, abs=1e-4)
 
 
 def test_choquet_family_selection_uses_validation_score() -> None:

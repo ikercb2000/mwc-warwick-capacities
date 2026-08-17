@@ -1,1 +1,3 @@
-
+fold,model,message
+0,Choquet linear classifier,RuntimeError: Every configuration failed for Choquet linear classifier: ['params={}: RuntimeError: Choquet classification optimization failed: pymoo did not return a candidate solution. Maximum constraint violation: 0.0.']
+4,Choquistic model aggregator [balanced],ValueError: Breach in monotonicity: adding element 4 to event set() has marginal value -1.0904683043082955e-08.

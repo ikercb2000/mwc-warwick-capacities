@@ -30,11 +30,13 @@ def _run(dataset: pd.DataFrame):
         features=("x1", "x2"),
         horizons=(1,),
         quick=True,
-        model_names=("OLS oriented", "Choquet 1-additive"),
+        model_names=("OLS", "Ridge", "OLS oriented", "Choquet 1-additive"),
         oos_start="2020-01-01",
         training_window_years=5,
         validation_window_months=12,
         oos_block_years=1,
+        aggregation_model_name="Choquet model aggregator",
+        aggregation_base_models=("OLS", "Ridge"),
         verbose=False,
     ).horizons[1]
 
@@ -55,6 +57,11 @@ def test_future_loss_refits_preprocessing_and_capacity_in_every_fold() -> None:
     assert choquet_shapley.index.get_level_values("fold").nunique() == 3
     assert result.final_split.X_test.index.min().year == 2022
     assert result.split.X_test.index.min().year == 2020
+    assert "Choquet model aggregator" in result.predictions
+    assert set(result.shapley["Choquet model aggregator"].index) == {
+        "OLS",
+        "Ridge",
+    }
 
 
 def test_final_oos_targets_cannot_change_walk_forward_predictions() -> None:

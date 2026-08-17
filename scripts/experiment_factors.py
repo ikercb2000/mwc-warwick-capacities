@@ -16,6 +16,7 @@ from mwc_experiments.configuration import (
 )
 from mwc_experiments.data import load_or_build_processed_data
 from mwc_experiments.evaluation import (
+    capacity_summary,
     clipping_diagnostics,
     fit_empirical_stress_definition,
     hac_model_comparison,
@@ -27,6 +28,7 @@ from mwc_experiments.evaluation import (
     plot_shapley,
     regression_estimation_robustness,
     regression_regime_metrics,
+    top_interactions,
 )
 from mwc_experiments.workflows import (
     compare_validation_stress_regimes,
@@ -88,6 +90,46 @@ result = run_factor_experiment(
     verbose=verbose,
 )
 artifacts: dict[str, Path] = {}
+
+capacity_shapley_rows: list[dict[str, object]] = []
+capacity_interaction_rows: list[pd.DataFrame] = []
+capacity_matrices: dict[tuple[str, str], pd.DataFrame] = {}
+for (asset, model), fitted in result.fitted_models.items():
+    if not str(model).startswith("Choquet"):
+        continue
+    values, matrix = capacity_summary(fitted, list(FACTOR_COLUMNS))
+    capacity_matrices[(asset, model)] = matrix
+    capacity_shapley_rows.extend(
+        {
+            "asset": asset,
+            "model": model,
+            "feature": feature,
+            "Shapley importance": float(value),
+        }
+        for feature, value in values.items()
+    )
+    interactions = top_interactions(
+        matrix,
+        n=len(FACTOR_COLUMNS) * (len(FACTOR_COLUMNS) - 1) // 2,
+    )
+    interactions.insert(0, "model", model)
+    interactions.insert(0, "asset", asset)
+    capacity_interaction_rows.append(interactions)
+
+capacity_shapley_panel = (
+    pd.DataFrame(capacity_shapley_rows)
+    .set_index(["asset", "model", "feature"])
+    .sort_index()
+    if capacity_shapley_rows
+    else pd.DataFrame()
+)
+capacity_interaction_panel = (
+    pd.concat(capacity_interaction_rows, ignore_index=True)
+    .set_index(["asset", "model", "first", "second"])
+    .sort_index()
+    if capacity_interaction_rows
+    else pd.DataFrame()
+)
 
 residual_rows: list[dict[str, float | str]] = []
 for model, residuals in result.residuals.items():
@@ -373,6 +415,16 @@ artifacts["validation-stress failures"] = save_table(
 artifacts["failures"] = save_table(
     result.failures, "experiment_1_failures.csv", paths, index=False
 )
+artifacts["all capacity Shapley indices"] = save_table(
+    capacity_shapley_panel,
+    "experiment_1_all_capacity_shapley.csv",
+    paths,
+)
+artifacts["all capacity interactions"] = save_table(
+    capacity_interaction_panel,
+    "experiment_1_all_capacity_interactions.csv",
+    paths,
+)
 
 for model, predictions in result.predictions.items():
     slug = artifact_slug(model)
@@ -481,6 +533,27 @@ figure.tight_layout()
 artifacts["asset RMSE figure"] = save_figure(
     figure, "experiment_1_asset_rmse.png", paths
 )
+
+for model in (
+    "Choquet 2-additive",
+    "Choquet 2-additive L1",
+    "Choquet 2-additive scaled-q",
+    "Choquet 2-additive scaled-q L1",
+):
+    matrix = capacity_matrices.get((STABILITY_ASSET, model))
+    if matrix is None:
+        continue
+    axis = plot_matrix(
+        matrix,
+        title=f"{STABILITY_ASSET}: pairwise interactions — {model}",
+        symmetric=True,
+    )
+    artifacts[f"{STABILITY_ASSET} interactions {model}"] = save_figure(
+        axis.figure,
+        f"experiment_1_{artifact_slug(STABILITY_ASSET)}_interactions_"
+        f"{artifact_slug(model)}.png",
+        paths,
+    )
 
 for model in RESIDUAL_COVARIANCE_MODELS:
     if model in result.residuals:

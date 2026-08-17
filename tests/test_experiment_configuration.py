@@ -51,7 +51,24 @@ def test_distortion_risk_real_data_configuration_is_coherent() -> None:
     assert float(real_data["stress_vix_threshold"]) > 0.0
 
 
-def test_factor_experiment_only_configures_linear_models() -> None:
+def test_forecasting_aggregators_only_use_non_choquet_sources() -> None:
+    for experiment_id in ("future_loss", "tail_risk"):
+        config = load_experiment_config(experiment_id)
+        aggregation = config["aggregation"]
+        source_groups = [aggregation["base_models"]]
+        if "robustness_base_models" in aggregation:
+            source_groups.append(aggregation["robustness_base_models"])
+        for sources in source_groups:
+            assert sources
+            assert all("choquet" not in name.casefold() for name in sources)
+            assert all("choquistic" not in name.casefold() for name in sources)
+
+        primary_sources = set(aggregation["base_models"])
+        assert "MLP" in primary_sources
+        assert "Fuzzy Choquet neural network" not in primary_sources
+
+
+def test_factor_experiment_configures_requested_choquet_families() -> None:
     config = load_experiment_config("factor_models")
     allowed = {
         "OLS",
@@ -61,6 +78,11 @@ def test_factor_experiment_only_configures_linear_models() -> None:
         "Lasso",
         "Elastic net",
         "Choquet 1-additive",
+        "Choquet 1-additive scaled-q",
+        "Choquet 2-additive",
+        "Choquet 2-additive L1",
+        "Choquet 2-additive scaled-q",
+        "Choquet 2-additive scaled-q L1",
     }
 
     assert set(config["models"]["main"]) == allowed
@@ -73,6 +95,25 @@ def test_factor_experiment_only_configures_linear_models() -> None:
         assert set(config["models"][model_group]).issubset(allowed)
     assert config["analysis"]["representative_model"] == "Choquet 1-additive"
     assert set(parameter_grid_overrides(config)).issubset(allowed)
+
+
+def test_future_loss_keeps_scaled_and_unscaled_choquet_variants() -> None:
+    config = load_experiment_config("future_loss")
+    required = {
+        "Choquet 1-additive",
+        "Choquet 1-additive scaled-q",
+        "Choquet 2-additive",
+        "Choquet 2-additive L1",
+        "Choquet 2-additive scaled-q",
+        "Choquet 2-additive scaled-q L1",
+    }
+
+    for group in ("main", "cap_weight", "orientation", "extreme_robustness"):
+        assert required.issubset(config["models"][group])
+    assert {
+        "Choquet 2-additive L1",
+        "Choquet 2-additive scaled-q L1",
+    }.issubset(parameter_grid_overrides(config))
 
 
 @pytest.mark.parametrize(

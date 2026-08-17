@@ -95,10 +95,17 @@ def compare_validation_stress_regimes(
     candidates = regression_candidates(
         X.shape[1],
         random_state=random_state,
-        include_mlp="MLP" in model_names,
+        include_mlp=bool(
+            {"MLP", "Fuzzy Choquet neural network"}.intersection(model_names)
+        ),
         include_dummy="Historical mean" in model_names,
         include_regularized_choquet=(
-            "Choquet 2-additive L1" in model_names
+            bool(
+                {
+                    "Choquet 2-additive L1",
+                    "Choquet 2-additive scaled-q L1",
+                }.intersection(model_names)
+            )
         ),
     )
     candidates = apply_parameter_grid_overrides(

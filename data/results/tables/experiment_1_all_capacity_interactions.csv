@@ -1,0 +1,1135 @@
+asset,model,first,second,interaction,interpretation
+AAPL,Choquet 1-additive,market_excess_return,low_volatility_spread,1.1564823173178714e-19,complementary
+AAPL,Choquet 1-additive,market_excess_return,momentum_spread,5.782411586589358e-19,complementary
+AAPL,Choquet 1-additive,market_excess_return,quality_spread,0.0,neutral
+AAPL,Choquet 1-additive,market_excess_return,sector_excess_return,1.1564823173178711e-19,complementary
+AAPL,Choquet 1-additive,market_excess_return,size_spread,1.1564823173178714e-19,complementary
+AAPL,Choquet 1-additive,market_excess_return,value_growth_spread,5.782411586589358e-19,complementary
+AAPL,Choquet 1-additive,momentum_spread,low_volatility_spread,-2.0227711469064194e-18,redundant
+AAPL,Choquet 1-additive,momentum_spread,quality_spread,-2.803396711095982e-18,redundant
+AAPL,Choquet 1-additive,quality_spread,low_volatility_spread,-4.3260796059434615e-19,redundant
+AAPL,Choquet 1-additive,sector_excess_return,low_volatility_spread,-6.648700416177905e-18,redundant
+AAPL,Choquet 1-additive,sector_excess_return,momentum_spread,8.963810867613358e-18,complementary
+AAPL,Choquet 1-additive,sector_excess_return,quality_spread,1.8225325581755055e-18,complementary
+AAPL,Choquet 1-additive,sector_excess_return,size_spread,-2.02277114690642e-18,redundant
+AAPL,Choquet 1-additive,sector_excess_return,value_growth_spread,-2.6010123055653558e-18,redundant
+AAPL,Choquet 1-additive,size_spread,low_volatility_spread,-3.7574946228832265e-18,redundant
+AAPL,Choquet 1-additive,size_spread,momentum_spread,3.990936903146512e-18,complementary
+AAPL,Choquet 1-additive,size_spread,quality_spread,-5.0797412879787646e-17,redundant
+AAPL,Choquet 1-additive,size_spread,value_growth_spread,-3.5329461885661114e-17,redundant
+AAPL,Choquet 1-additive,value_growth_spread,low_volatility_spread,4.916122757000808e-18,complementary
+AAPL,Choquet 1-additive,value_growth_spread,momentum_spread,-7.226941574836843e-18,redundant
+AAPL,Choquet 1-additive,value_growth_spread,quality_spread,1.3387355731354214e-17,complementary
+AAPL,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive,market_excess_return,low_volatility_spread,-0.03539625885339002,redundant
+AAPL,Choquet 2-additive,market_excess_return,momentum_spread,-0.030460389692211886,redundant
+AAPL,Choquet 2-additive,market_excess_return,quality_spread,6.129356281784718e-18,complementary
+AAPL,Choquet 2-additive,market_excess_return,sector_excess_return,-0.0043414716708314385,redundant
+AAPL,Choquet 2-additive,market_excess_return,size_spread,-0.0002656476844921817,redundant
+AAPL,Choquet 2-additive,market_excess_return,value_growth_spread,-0.027440301881801882,redundant
+AAPL,Choquet 2-additive,momentum_spread,low_volatility_spread,-0.0043794112890146045,redundant
+AAPL,Choquet 2-additive,momentum_spread,quality_spread,-1.9313254699208448e-17,redundant
+AAPL,Choquet 2-additive,quality_spread,low_volatility_spread,-0.013592094778515947,redundant
+AAPL,Choquet 2-additive,sector_excess_return,low_volatility_spread,0.02477190956733999,complementary
+AAPL,Choquet 2-additive,sector_excess_return,momentum_spread,0.06186038743473959,complementary
+AAPL,Choquet 2-additive,sector_excess_return,quality_spread,-0.006829380491983955,redundant
+AAPL,Choquet 2-additive,sector_excess_return,size_spread,0.06469909518351294,complementary
+AAPL,Choquet 2-additive,sector_excess_return,value_growth_spread,0.047854633065736014,complementary
+AAPL,Choquet 2-additive,size_spread,low_volatility_spread,0.002471619718042873,complementary
+AAPL,Choquet 2-additive,size_spread,momentum_spread,-0.005072800526061784,redundant
+AAPL,Choquet 2-additive,size_spread,quality_spread,-0.009373668336053137,redundant
+AAPL,Choquet 2-additive,size_spread,value_growth_spread,0.0006181731110879658,complementary
+AAPL,Choquet 2-additive,value_growth_spread,low_volatility_spread,-0.02643304255363551,redundant
+AAPL,Choquet 2-additive,value_growth_spread,momentum_spread,0.025872773552265915,complementary
+AAPL,Choquet 2-additive,value_growth_spread,quality_spread,-1.838806884535415e-17,redundant
+AAPL,Choquet 2-additive L1,market_excess_return,low_volatility_spread,-0.03603703070412193,redundant
+AAPL,Choquet 2-additive L1,market_excess_return,momentum_spread,-0.03126465918815383,redundant
+AAPL,Choquet 2-additive L1,market_excess_return,quality_spread,-0.00044539148372291736,redundant
+AAPL,Choquet 2-additive L1,market_excess_return,sector_excess_return,-0.0013906990485043887,redundant
+AAPL,Choquet 2-additive L1,market_excess_return,size_spread,4.163336342344337e-18,complementary
+AAPL,Choquet 2-additive L1,market_excess_return,value_growth_spread,-0.02677009670215711,redundant
+AAPL,Choquet 2-additive L1,momentum_spread,low_volatility_spread,-0.00293892851735556,redundant
+AAPL,Choquet 2-additive L1,momentum_spread,quality_spread,-2.775557561562892e-18,redundant
+AAPL,Choquet 2-additive L1,quality_spread,low_volatility_spread,-0.013359032310271059,redundant
+AAPL,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,0.023609901073600472,complementary
+AAPL,Choquet 2-additive L1,sector_excess_return,momentum_spread,0.061888329186163826,complementary
+AAPL,Choquet 2-additive L1,sector_excess_return,quality_spread,-0.006286544231770533,redundant
+AAPL,Choquet 2-additive L1,sector_excess_return,size_spread,0.0632455566141174,complementary
+AAPL,Choquet 2-additive L1,sector_excess_return,value_growth_spread,0.048112792598362236,complementary
+AAPL,Choquet 2-additive L1,size_spread,low_volatility_spread,0.000739764386685199,complementary
+AAPL,Choquet 2-additive L1,size_spread,momentum_spread,-0.004868232091354926,redundant
+AAPL,Choquet 2-additive L1,size_spread,quality_spread,-0.008574373812579488,redundant
+AAPL,Choquet 2-additive L1,size_spread,value_growth_spread,-0.00012932919512238238,redundant
+AAPL,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,-0.02605400951492605,redundant
+AAPL,Choquet 2-additive L1,value_growth_spread,momentum_spread,0.027094908971413628,complementary
+AAPL,Choquet 2-additive L1,value_growth_spread,quality_spread,-5.088522196198634e-18,redundant
+AAPL,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+AAPL,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,-2.6504614429138464e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,-3.165734822433799e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,-4.2713981425931047e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,-2.0877583735886184e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,-3.560552676769763e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,-2.3688763820898603e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,-3.719106532000064e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,-6.010076103457605e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,-5.194236531632276e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,-2.0435183082737994e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,-2.5819194837684015e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,-3.8528939020713656e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,-3.1197286050795495e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,-1.8547543223501604e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,-4.184410271982724e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,-4.864452729513856e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,size_spread,quality_spread,-5.735596516250512e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,-3.3087258118532266e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,-2.5086030475129906e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,-2.9241085478896395e-10,redundant
+AAPL,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,-4.0664791719121277e-10,redundant
+AMZN,Choquet 1-additive,market_excess_return,low_volatility_spread,4.625929269271486e-19,complementary
+AMZN,Choquet 1-additive,market_excess_return,momentum_spread,-9.251858538542971e-19,redundant
+AMZN,Choquet 1-additive,market_excess_return,quality_spread,3.7007434154171884e-18,complementary
+AMZN,Choquet 1-additive,market_excess_return,sector_excess_return,4.625929269271486e-19,complementary
+AMZN,Choquet 1-additive,market_excess_return,size_spread,-1.3877787807814458e-18,redundant
+AMZN,Choquet 1-additive,market_excess_return,value_growth_spread,-1.3877787807814456e-18,redundant
+AMZN,Choquet 1-additive,momentum_spread,low_volatility_spread,1.1279316601090861e-17,complementary
+AMZN,Choquet 1-additive,momentum_spread,quality_spread,2.677617965315034e-17,complementary
+AMZN,Choquet 1-additive,quality_spread,low_volatility_spread,1.4286170626117328e-17,complementary
+AMZN,Choquet 1-additive,sector_excess_return,low_volatility_spread,1.7293024651143796e-17,complementary
+AMZN,Choquet 1-additive,sector_excess_return,momentum_spread,2.2381546847342427e-17,complementary
+AMZN,Choquet 1-additive,sector_excess_return,quality_spread,3.2789887703203267e-17,complementary
+AMZN,Choquet 1-additive,sector_excess_return,size_spread,1.7755617578070943e-17,complementary
+AMZN,Choquet 1-additive,sector_excess_return,value_growth_spread,2.2381546847342427e-17,complementary
+AMZN,Choquet 1-additive,size_spread,low_volatility_spread,-2.598471206723591e-18,redundant
+AMZN,Choquet 1-additive,size_spread,momentum_spread,2.561969733583247e-17,complementary
+AMZN,Choquet 1-additive,size_spread,quality_spread,1.752432111460737e-17,complementary
+AMZN,Choquet 1-additive,size_spread,value_growth_spread,2.561969733583247e-17,complementary
+AMZN,Choquet 1-additive,value_growth_spread,low_volatility_spread,1.1279316601090861e-17,complementary
+AMZN,Choquet 1-additive,value_growth_spread,momentum_spread,5.337527295146138e-17,complementary
+AMZN,Choquet 1-additive,value_growth_spread,quality_spread,2.677617965315034e-17,complementary
+AMZN,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive,market_excess_return,low_volatility_spread,-0.03546477423749532,redundant
+AMZN,Choquet 2-additive,market_excess_return,momentum_spread,2.775557561562892e-18,complementary
+AMZN,Choquet 2-additive,market_excess_return,quality_spread,0.005534064120236227,complementary
+AMZN,Choquet 2-additive,market_excess_return,sector_excess_return,0.010009230366258786,complementary
+AMZN,Choquet 2-additive,market_excess_return,size_spread,1.8503717077085946e-18,complementary
+AMZN,Choquet 2-additive,market_excess_return,value_growth_spread,0.006248345688452468,complementary
+AMZN,Choquet 2-additive,momentum_spread,low_volatility_spread,0.047158500797397335,complementary
+AMZN,Choquet 2-additive,momentum_spread,quality_spread,-0.0667086320037475,redundant
+AMZN,Choquet 2-additive,quality_spread,low_volatility_spread,0.030534718627033653,complementary
+AMZN,Choquet 2-additive,sector_excess_return,low_volatility_spread,0.06810104783772311,complementary
+AMZN,Choquet 2-additive,sector_excess_return,momentum_spread,-0.015515002232826182,redundant
+AMZN,Choquet 2-additive,sector_excess_return,quality_spread,0.01331083312219016,complementary
+AMZN,Choquet 2-additive,sector_excess_return,size_spread,0.02625249796265154,complementary
+AMZN,Choquet 2-additive,sector_excess_return,value_growth_spread,0.015082550811095887,complementary
+AMZN,Choquet 2-additive,size_spread,low_volatility_spread,-0.02352932225260053,redundant
+AMZN,Choquet 2-additive,size_spread,momentum_spread,0.09588490209385961,complementary
+AMZN,Choquet 2-additive,size_spread,quality_spread,0.009550812625382536,complementary
+AMZN,Choquet 2-additive,size_spread,value_growth_spread,-0.00388064570830998,redundant
+AMZN,Choquet 2-additive,value_growth_spread,low_volatility_spread,0.05083829010996707,complementary
+AMZN,Choquet 2-additive,value_growth_spread,momentum_spread,0.007745672694556,complementary
+AMZN,Choquet 2-additive,value_growth_spread,quality_spread,0.06741568717936462,complementary
+AMZN,Choquet 2-additive L1,market_excess_return,low_volatility_spread,0.0001823270597926618,complementary
+AMZN,Choquet 2-additive L1,market_excess_return,momentum_spread,0.0010452196036743078,complementary
+AMZN,Choquet 2-additive L1,market_excess_return,quality_spread,0.00021055291431138943,complementary
+AMZN,Choquet 2-additive L1,market_excess_return,sector_excess_return,0.0016532891923858515,complementary
+AMZN,Choquet 2-additive L1,market_excess_return,size_spread,0.015837626392119178,complementary
+AMZN,Choquet 2-additive L1,market_excess_return,value_growth_spread,-0.00039045555777039286,redundant
+AMZN,Choquet 2-additive L1,momentum_spread,low_volatility_spread,0.0030623473365659283,complementary
+AMZN,Choquet 2-additive L1,momentum_spread,quality_spread,0.001739887525606625,complementary
+AMZN,Choquet 2-additive L1,quality_spread,low_volatility_spread,0.000934533117388298,complementary
+AMZN,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,0.0006863426596914947,complementary
+AMZN,Choquet 2-additive L1,sector_excess_return,momentum_spread,-0.00017960356856723474,redundant
+AMZN,Choquet 2-additive L1,sector_excess_return,quality_spread,0.0037335254405895064,complementary
+AMZN,Choquet 2-additive L1,sector_excess_return,size_spread,0.008941858543263997,complementary
+AMZN,Choquet 2-additive L1,sector_excess_return,value_growth_spread,0.005370886577244285,complementary
+AMZN,Choquet 2-additive L1,size_spread,low_volatility_spread,0.002277544127042554,complementary
+AMZN,Choquet 2-additive L1,size_spread,momentum_spread,0.003449578543976038,complementary
+AMZN,Choquet 2-additive L1,size_spread,quality_spread,0.006134432123617016,complementary
+AMZN,Choquet 2-additive L1,size_spread,value_growth_spread,0.0007824837028064364,complementary
+AMZN,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,0.00135130908917039,complementary
+AMZN,Choquet 2-additive L1,value_growth_spread,momentum_spread,-0.0002569250954912023,redundant
+AMZN,Choquet 2-additive L1,value_growth_spread,quality_spread,0.00465434568293434,complementary
+AMZN,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+AMZN,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,-2.3368201364689277e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,-2.3639113777562663e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,-2.3948123326992617e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,-2.302664566429986e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,-2.4358918502646417e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,-2.3248969333034e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,-2.3554408349705602e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,-2.426079725078208e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,-2.4043946176647654e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,-2.2763831227419935e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,-2.3309118792521256e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,-2.3535805073378777e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,-2.406479732153244e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,-2.290595022917211e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,-2.466038842574569e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,-2.4493787526003176e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,size_spread,quality_spread,-2.5077528933066996e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,-2.424102846232401e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,-2.3084355232905193e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,-2.349503126312472e-09,redundant
+AMZN,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,-2.36974255866477e-09,redundant
+JPM,Choquet 1-additive,market_excess_return,low_volatility_spread,5.551115123125782e-18,complementary
+JPM,Choquet 1-additive,market_excess_return,momentum_spread,-1.1564823173178711e-19,redundant
+JPM,Choquet 1-additive,market_excess_return,quality_spread,1.2605657258764797e-17,complementary
+JPM,Choquet 1-additive,market_excess_return,sector_excess_return,-4.278984574076124e-18,redundant
+JPM,Choquet 1-additive,market_excess_return,size_spread,2.8912057932946782e-18,complementary
+JPM,Choquet 1-additive,market_excess_return,value_growth_spread,3.585095183685401e-18,complementary
+JPM,Choquet 1-additive,momentum_spread,low_volatility_spread,-2.770588301605666e-18,redundant
+JPM,Choquet 1-additive,momentum_spread,quality_spread,-3.8114223871917506e-18,redundant
+JPM,Choquet 1-additive,quality_spread,low_volatility_spread,1.353581237257632e-17,complementary
+JPM,Choquet 1-additive,sector_excess_return,low_volatility_spread,-2.3079953746785185e-18,redundant
+JPM,Choquet 1-additive,sector_excess_return,momentum_spread,1.1614515772750965e-18,complementary
+JPM,Choquet 1-additive,sector_excess_return,quality_spread,-7.97475872953609e-18,redundant
+JPM,Choquet 1-additive,sector_excess_return,size_spread,5.44043615135122e-18,complementary
+JPM,Choquet 1-additive,sector_excess_return,value_growth_spread,3.4744162119108395e-18,complementary
+JPM,Choquet 1-additive,size_spread,low_volatility_spread,3.8213609071062005e-18,complementary
+JPM,Choquet 1-additive,size_spread,momentum_spread,5.832104186161608e-19,complementary
+JPM,Choquet 1-additive,size_spread,quality_spread,1.2032385360063087e-17,complementary
+JPM,Choquet 1-additive,size_spread,value_growth_spread,2.433582126324756e-18,complementary
+JPM,Choquet 1-additive,value_growth_spread,low_volatility_spread,-4.576236669699241e-19,redundant
+JPM,Choquet 1-additive,value_growth_spread,momentum_spread,5.324787919619433e-18,complementary
+JPM,Choquet 1-additive,value_growth_spread,quality_spread,1.469229468989419e-17,complementary
+JPM,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+JPM,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive,market_excess_return,low_volatility_spread,2.9150590583668034e-18,complementary
+JPM,Choquet 2-additive,market_excess_return,momentum_spread,-0.02373908176465835,redundant
+JPM,Choquet 2-additive,market_excess_return,quality_spread,-1.665811602239177e-17,redundant
+JPM,Choquet 2-additive,market_excess_return,sector_excess_return,-6.018478703067357e-18,redundant
+JPM,Choquet 2-additive,market_excess_return,size_spread,-6.986600434051487e-19,redundant
+JPM,Choquet 2-additive,market_excess_return,value_growth_spread,-1.110700089926599e-17,redundant
+JPM,Choquet 2-additive,momentum_spread,low_volatility_spread,0.00017379945919562036,complementary
+JPM,Choquet 2-additive,momentum_spread,quality_spread,0.012026667584069794,complementary
+JPM,Choquet 2-additive,quality_spread,low_volatility_spread,0.006649987437839142,complementary
+JPM,Choquet 2-additive,sector_excess_return,low_volatility_spread,0.0299020980155,complementary
+JPM,Choquet 2-additive,sector_excess_return,momentum_spread,0.0738721077886255,complementary
+JPM,Choquet 2-additive,sector_excess_return,quality_spread,-0.011935771559502557,redundant
+JPM,Choquet 2-additive,sector_excess_return,size_spread,0.00482792546772309,complementary
+JPM,Choquet 2-additive,sector_excess_return,value_growth_spread,0.02228815897918494,complementary
+JPM,Choquet 2-additive,size_spread,low_volatility_spread,0.014467902841021358,complementary
+JPM,Choquet 2-additive,size_spread,momentum_spread,-0.020266288590739104,redundant
+JPM,Choquet 2-additive,size_spread,quality_spread,-0.01177919088365463,redundant
+JPM,Choquet 2-additive,size_spread,value_growth_spread,-0.003298939824647672,redundant
+JPM,Choquet 2-additive,value_growth_spread,low_volatility_spread,0.010578557276147725,complementary
+JPM,Choquet 2-additive,value_growth_spread,momentum_spread,-0.007284656450556681,redundant
+JPM,Choquet 2-additive,value_growth_spread,quality_spread,0.015206499578230809,complementary
+JPM,Choquet 2-additive L1,market_excess_return,low_volatility_spread,-4.396484946917445e-05,redundant
+JPM,Choquet 2-additive L1,market_excess_return,momentum_spread,-6.321159321459394e-05,redundant
+JPM,Choquet 2-additive L1,market_excess_return,quality_spread,-1.893565994770182e-05,redundant
+JPM,Choquet 2-additive L1,market_excess_return,sector_excess_return,5.0765546239113274e-05,complementary
+JPM,Choquet 2-additive L1,market_excess_return,size_spread,6.461425847809087e-05,complementary
+JPM,Choquet 2-additive L1,market_excess_return,value_growth_spread,0.00010377121918218811,complementary
+JPM,Choquet 2-additive L1,momentum_spread,low_volatility_spread,1.3922401915747512e-06,complementary
+JPM,Choquet 2-additive L1,momentum_spread,quality_spread,-0.0003541713451366328,redundant
+JPM,Choquet 2-additive L1,quality_spread,low_volatility_spread,-0.000724780306079118,redundant
+JPM,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,0.00023455134475842106,complementary
+JPM,Choquet 2-additive L1,sector_excess_return,momentum_spread,0.004652259993498923,complementary
+JPM,Choquet 2-additive L1,sector_excess_return,quality_spread,-0.00015548653321793027,redundant
+JPM,Choquet 2-additive L1,sector_excess_return,size_spread,-0.00028466096069494943,redundant
+JPM,Choquet 2-additive L1,sector_excess_return,value_growth_spread,0.00014042077461415376,complementary
+JPM,Choquet 2-additive L1,size_spread,low_volatility_spread,-2.683853874671705e-05,redundant
+JPM,Choquet 2-additive L1,size_spread,momentum_spread,9.556484466881982e-07,complementary
+JPM,Choquet 2-additive L1,size_spread,quality_spread,-0.00025781853641005525,redundant
+JPM,Choquet 2-additive L1,size_spread,value_growth_spread,0.0005875924197751754,complementary
+JPM,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,-9.803599998846914e-05,redundant
+JPM,Choquet 2-additive L1,value_growth_spread,momentum_spread,0.00010752511963182201,complementary
+JPM,Choquet 2-additive L1,value_growth_spread,quality_spread,0.0007050612267751858,complementary
+JPM,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+JPM,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,-2.3737772118318874e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,-2.5573824261974454e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,-3.1806766757439913e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,-1.642974950533116e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,-3.770258688584605e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,-3.6644570711175106e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,-2.985241813006448e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,-4.2127564399881575e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,-3.7940361500658304e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,-1.438167733051425e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,-1.6137105078121538e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,-2.450503096736629e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,-3.112260245815198e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,-3.007765869700306e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,-4.2841291347794914e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,-4.751391844785382e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,size_spread,quality_spread,-5.174877313699847e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,-5.41479046785772e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,-4.157638696285679e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,-4.440555395612834e-10,redundant
+JPM,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,-4.929097620805698e-10,redundant
+KO,Choquet 1-additive,market_excess_return,low_volatility_spread,2.7755575615628915e-18,complementary
+KO,Choquet 1-additive,market_excess_return,momentum_spread,3.73137777367622e-18,complementary
+KO,Choquet 1-additive,market_excess_return,quality_spread,-1.0262058265870024e-17,redundant
+KO,Choquet 1-additive,market_excess_return,sector_excess_return,3.731377773676219e-18,complementary
+KO,Choquet 1-additive,market_excess_return,size_spread,4.932272851861792e-19,complementary
+KO,Choquet 1-additive,market_excess_return,value_growth_spread,-1.8197373494495634e-18,redundant
+KO,Choquet 1-additive,momentum_spread,low_volatility_spread,3.285640802399431e-18,complementary
+KO,Choquet 1-additive,momentum_spread,quality_spread,6.671090320417001e-19,complementary
+KO,Choquet 1-additive,quality_spread,low_volatility_spread,3.285640802399431e-18,complementary
+KO,Choquet 1-additive,sector_excess_return,low_volatility_spread,-5.041031882289243e-18,redundant
+KO,Choquet 1-additive,sector_excess_return,momentum_spread,9.10942994846216e-18,complementary
+KO,Choquet 1-additive,sector_excess_return,quality_spread,3.859972904006788e-17,complementary
+KO,Choquet 1-additive,sector_excess_return,size_spread,3.408944800252818e-17,complementary
+KO,Choquet 1-additive,sector_excess_return,value_growth_spread,3.131389044096529e-17,complementary
+KO,Choquet 1-additive,size_spread,low_volatility_spread,5.100832408365395e-19,complementary
+KO,Choquet 1-additive,size_spread,momentum_spread,3.131389044096529e-17,complementary
+KO,Choquet 1-additive,size_spread,quality_spread,3.489898562465069e-17,complementary
+KO,Choquet 1-additive,size_spread,value_growth_spread,2.5762775317839508e-17,complementary
+KO,Choquet 1-additive,value_growth_spread,low_volatility_spread,-2.265474320726352e-18,redundant
+KO,Choquet 1-additive,value_growth_spread,momentum_spread,2.6331289714820812e-18,complementary
+KO,Choquet 1-additive,value_growth_spread,quality_spread,-4.884006091084083e-18,redundant
+KO,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive,market_excess_return,low_volatility_spread,-1.1142606792400373e-18,redundant
+KO,Choquet 2-additive,market_excess_return,momentum_spread,-0.012301400509324689,redundant
+KO,Choquet 2-additive,market_excess_return,quality_spread,9.127765979195618e-18,complementary
+KO,Choquet 2-additive,market_excess_return,sector_excess_return,-0.0035829320118639712,redundant
+KO,Choquet 2-additive,market_excess_return,size_spread,-0.003208611840491587,redundant
+KO,Choquet 2-additive,market_excess_return,value_growth_spread,-0.005389765613900809,redundant
+KO,Choquet 2-additive,momentum_spread,low_volatility_spread,1.4300004188592798e-18,complementary
+KO,Choquet 2-additive,momentum_spread,quality_spread,-0.006957176430696332,redundant
+KO,Choquet 2-additive,quality_spread,low_volatility_spread,-2.5020394600214833e-18,redundant
+KO,Choquet 2-additive,sector_excess_return,low_volatility_spread,-4.203712888493146e-19,redundant
+KO,Choquet 2-additive,sector_excess_return,momentum_spread,-0.01771056171704079,redundant
+KO,Choquet 2-additive,sector_excess_return,quality_spread,0.025070281309932017,complementary
+KO,Choquet 2-additive,sector_excess_return,size_spread,0.056134106722273355,complementary
+KO,Choquet 2-additive,sector_excess_return,value_growth_spread,-0.040379226003426145,redundant
+KO,Choquet 2-additive,size_spread,low_volatility_spread,1.4300004188592798e-18,complementary
+KO,Choquet 2-additive,size_spread,momentum_spread,0.03641870177294595,complementary
+KO,Choquet 2-additive,size_spread,quality_spread,0.012875739536929155,complementary
+KO,Choquet 2-additive,size_spread,value_growth_spread,-0.0483219747097371,redundant
+KO,Choquet 2-additive,value_growth_spread,low_volatility_spread,1.4300004188592798e-18,complementary
+KO,Choquet 2-additive,value_growth_spread,momentum_spread,0.028311093812550467,complementary
+KO,Choquet 2-additive,value_growth_spread,quality_spread,0.008350740886299357,complementary
+KO,Choquet 2-additive L1,market_excess_return,low_volatility_spread,-4.863519360635263e-19,redundant
+KO,Choquet 2-additive L1,market_excess_return,momentum_spread,-0.025227694763848937,redundant
+KO,Choquet 2-additive L1,market_excess_return,quality_spread,-6.702845638616379e-18,redundant
+KO,Choquet 2-additive L1,market_excess_return,sector_excess_return,0.0016101121514014907,complementary
+KO,Choquet 2-additive L1,market_excess_return,size_spread,1.1569574975005989e-17,complementary
+KO,Choquet 2-additive L1,market_excess_return,value_growth_spread,0.0003122873587724476,complementary
+KO,Choquet 2-additive L1,momentum_spread,low_volatility_spread,-2.550554725999521e-19,redundant
+KO,Choquet 2-additive L1,momentum_spread,quality_spread,0.0011772559961386927,complementary
+KO,Choquet 2-additive L1,quality_spread,low_volatility_spread,-1.1802413264542492e-18,redundant
+KO,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,-3.95579888801714e-18,redundant
+KO,Choquet 2-additive L1,sector_excess_return,momentum_spread,-0.0008538536625900704,redundant
+KO,Choquet 2-additive L1,sector_excess_return,quality_spread,0.014459097395079775,complementary
+KO,Choquet 2-additive L1,sector_excess_return,size_spread,0.03911730181601112,complementary
+KO,Choquet 2-additive L1,sector_excess_return,value_growth_spread,-0.01264689591015085,redundant
+KO,Choquet 2-additive L1,size_spread,low_volatility_spread,3.214391479353662e-18,complementary
+KO,Choquet 2-additive L1,size_spread,momentum_spread,0.013139647349721357,complementary
+KO,Choquet 2-additive L1,size_spread,quality_spread,0.009174569107632136,complementary
+KO,Choquet 2-additive L1,size_spread,value_growth_spread,-0.022093012449610677,redundant
+KO,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,2.5205020889629392e-18,complementary
+KO,Choquet 2-additive L1,value_growth_spread,momentum_spread,0.01174652088090158,complementary
+KO,Choquet 2-additive L1,value_growth_spread,quality_spread,0.0051337359424505884,complementary
+KO,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,size_spread,quality_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+KO,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive,market_excess_return,low_volatility_spread,-1.8503717077085934e-18,redundant
+MSFT,Choquet 1-additive,market_excess_return,momentum_spread,-1.8503717077085946e-18,redundant
+MSFT,Choquet 1-additive,market_excess_return,quality_spread,-2.220446049250313e-17,redundant
+MSFT,Choquet 1-additive,market_excess_return,sector_excess_return,3.700743415417189e-18,complementary
+MSFT,Choquet 1-additive,market_excess_return,size_spread,-3.700743415417188e-18,redundant
+MSFT,Choquet 1-additive,market_excess_return,value_growth_spread,-1.8503717077085934e-18,redundant
+MSFT,Choquet 1-additive,momentum_spread,low_volatility_spread,-3.700743415417188e-18,redundant
+MSFT,Choquet 1-additive,momentum_spread,quality_spread,2.220446049250313e-17,complementary
+MSFT,Choquet 1-additive,quality_spread,low_volatility_spread,-1.4802973661668754e-17,redundant
+MSFT,Choquet 1-additive,sector_excess_return,low_volatility_spread,1.8503717077085957e-18,complementary
+MSFT,Choquet 1-additive,sector_excess_return,momentum_spread,1.8503717077085946e-18,complementary
+MSFT,Choquet 1-additive,sector_excess_return,quality_spread,-1.850371707708594e-17,redundant
+MSFT,Choquet 1-additive,sector_excess_return,size_spread,-9.251858538542969e-18,redundant
+MSFT,Choquet 1-additive,sector_excess_return,value_growth_spread,-7.401486830834377e-18,redundant
+MSFT,Choquet 1-additive,size_spread,low_volatility_spread,8.326672684688674e-18,complementary
+MSFT,Choquet 1-additive,size_spread,momentum_spread,3.700743415417188e-18,complementary
+MSFT,Choquet 1-additive,size_spread,quality_spread,6.47630097698008e-18,complementary
+MSFT,Choquet 1-additive,size_spread,value_growth_spread,-5.5511151231257815e-18,redundant
+MSFT,Choquet 1-additive,value_growth_spread,low_volatility_spread,-3.700743415417188e-18,redundant
+MSFT,Choquet 1-additive,value_growth_spread,momentum_spread,5.551115123125782e-18,complementary
+MSFT,Choquet 1-additive,value_growth_spread,quality_spread,-1.480297366166875e-17,redundant
+MSFT,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive,market_excess_return,low_volatility_spread,-0.0013838151059280851,redundant
+MSFT,Choquet 2-additive,market_excess_return,momentum_spread,-0.01103295348908249,redundant
+MSFT,Choquet 2-additive,market_excess_return,quality_spread,0.05859959406188199,complementary
+MSFT,Choquet 2-additive,market_excess_return,sector_excess_return,0.03014204458888299,complementary
+MSFT,Choquet 2-additive,market_excess_return,size_spread,0.02188291912153253,complementary
+MSFT,Choquet 2-additive,market_excess_return,value_growth_spread,0.06994557812767105,complementary
+MSFT,Choquet 2-additive,momentum_spread,low_volatility_spread,0.0030212160293145523,complementary
+MSFT,Choquet 2-additive,momentum_spread,quality_spread,-0.023567207461687435,redundant
+MSFT,Choquet 2-additive,quality_spread,low_volatility_spread,-0.052783120325656796,redundant
+MSFT,Choquet 2-additive,sector_excess_return,low_volatility_spread,-0.0006794824467550427,redundant
+MSFT,Choquet 2-additive,sector_excess_return,momentum_spread,0.019362724145943318,complementary
+MSFT,Choquet 2-additive,sector_excess_return,quality_spread,0.017607898680191466,complementary
+MSFT,Choquet 2-additive,sector_excess_return,size_spread,0.03024391900747749,complementary
+MSFT,Choquet 2-additive,sector_excess_return,value_growth_spread,-0.01351779030527284,redundant
+MSFT,Choquet 2-additive,size_spread,low_volatility_spread,0.04105170112001886,complementary
+MSFT,Choquet 2-additive,size_spread,momentum_spread,0.006033449265227949,complementary
+MSFT,Choquet 2-additive,size_spread,quality_spread,-0.04219171626129844,redundant
+MSFT,Choquet 2-additive,size_spread,value_growth_spread,0.05597824397695238,complementary
+MSFT,Choquet 2-additive,value_growth_spread,low_volatility_spread,0.00736470751877609,complementary
+MSFT,Choquet 2-additive,value_growth_spread,momentum_spread,0.026976742543474853,complementary
+MSFT,Choquet 2-additive,value_growth_spread,quality_spread,0.0017733847160740642,complementary
+MSFT,Choquet 2-additive L1,market_excess_return,low_volatility_spread,-1.766545030627379e-09,redundant
+MSFT,Choquet 2-additive L1,market_excess_return,momentum_spread,-3.4635088001315017e-09,redundant
+MSFT,Choquet 2-additive L1,market_excess_return,quality_spread,-4.121312819719651e-09,redundant
+MSFT,Choquet 2-additive L1,market_excess_return,sector_excess_return,-8.314912823085646e-10,redundant
+MSFT,Choquet 2-additive L1,market_excess_return,size_spread,-6.394094466862416e-10,redundant
+MSFT,Choquet 2-additive L1,market_excess_return,value_growth_spread,-1.973455268644564e-09,redundant
+MSFT,Choquet 2-additive L1,momentum_spread,low_volatility_spread,-5.847722998423661e-09,redundant
+MSFT,Choquet 2-additive L1,momentum_spread,quality_spread,-8.891038501731195e-09,redundant
+MSFT,Choquet 2-additive L1,quality_spread,low_volatility_spread,-8.577235484826439e-09,redundant
+MSFT,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,-2.0883138653523177e-09,redundant
+MSFT,Choquet 2-additive L1,sector_excess_return,momentum_spread,-3.813072447604129e-09,redundant
+MSFT,Choquet 2-additive L1,sector_excess_return,quality_spread,-4.852322249560005e-09,redundant
+MSFT,Choquet 2-additive L1,sector_excess_return,size_spread,-8.875975750684736e-10,redundant
+MSFT,Choquet 2-additive L1,sector_excess_return,value_growth_spread,-2.880791036274921e-09,redundant
+MSFT,Choquet 2-additive L1,size_spread,low_volatility_spread,-2.740301658736104e-09,redundant
+MSFT,Choquet 2-additive L1,size_spread,momentum_spread,-5.260133364067462e-09,redundant
+MSFT,Choquet 2-additive L1,size_spread,quality_spread,-7.115486110505684e-09,redundant
+MSFT,Choquet 2-additive L1,size_spread,value_growth_spread,-3.575665144528451e-09,redundant
+MSFT,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,-4.567988539279827e-09,redundant
+MSFT,Choquet 2-additive L1,value_growth_spread,momentum_spread,-6.459073763805575e-09,redundant
+MSFT,Choquet 2-additive L1,value_growth_spread,quality_spread,-7.712916918108568e-09,redundant
+MSFT,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+MSFT,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,-1.9523678969809067e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,-2.6115694329309486e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,-2.6737643488150566e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,-1.6465853588017628e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,-2.5208886737330486e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,-2.2527118873997637e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,-3.1277813117291944e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,-3.8254329611427546e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,-3.5352424506325995e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,-1.8600245232924805e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,-2.535966695897211e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,-2.676936330011278e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,-2.45285192157496e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,-2.2340458742201955e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,-3.0617861764466646e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,-3.5413658394656276e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,size_spread,quality_spread,-3.856943856887322e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,-3.117637500012667e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,-2.7432335292232325e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,-3.1511196152411725e-10,redundant
+MSFT,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,-3.4989123727976094e-10,redundant
+NVDA,Choquet 1-additive,market_excess_return,low_volatility_spread,8.557969148152249e-18,complementary
+NVDA,Choquet 1-additive,market_excess_return,momentum_spread,-2.5442610980993165e-18,redundant
+NVDA,Choquet 1-additive,market_excess_return,quality_spread,3.932039878880763e-18,complementary
+NVDA,Choquet 1-additive,market_excess_return,sector_excess_return,-1.5496863052059477e-17,redundant
+NVDA,Choquet 1-additive,market_excess_return,size_spread,3.469446951953614e-18,complementary
+NVDA,Choquet 1-additive,market_excess_return,value_growth_spread,2.081668171172168e-18,complementary
+NVDA,Choquet 1-additive,momentum_spread,low_volatility_spread,-4.093947403305265e-17,redundant
+NVDA,Choquet 1-additive,momentum_spread,quality_spread,-3.932039878880764e-18,redundant
+NVDA,Choquet 1-additive,quality_spread,low_volatility_spread,-3.215020842143682e-17,redundant
+NVDA,Choquet 1-additive,sector_excess_return,low_volatility_spread,-2.266705341943028e-17,redundant
+NVDA,Choquet 1-additive,sector_excess_return,momentum_spread,-1.52655665885959e-17,redundant
+NVDA,Choquet 1-additive,sector_excess_return,quality_spread,-2.0354088784794535e-17,redundant
+NVDA,Choquet 1-additive,sector_excess_return,size_spread,-1.6190752442450197e-17,redundant
+NVDA,Choquet 1-additive,sector_excess_return,value_growth_spread,5.551115123125782e-18,complementary
+NVDA,Choquet 1-additive,size_spread,low_volatility_spread,6.707597440443655e-18,complementary
+NVDA,Choquet 1-additive,size_spread,momentum_spread,2.3129646346357423e-19,complementary
+NVDA,Choquet 1-additive,size_spread,quality_spread,6.707597440443653e-18,complementary
+NVDA,Choquet 1-additive,size_spread,value_growth_spread,2.3129646346357346e-19,complementary
+NVDA,Choquet 1-additive,value_growth_spread,low_volatility_spread,-6.2450045135165065e-18,redundant
+NVDA,Choquet 1-additive,value_growth_spread,momentum_spread,5.782411586589358e-18,complementary
+NVDA,Choquet 1-additive,value_growth_spread,quality_spread,3.0068540250264653e-18,complementary
+NVDA,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive,market_excess_return,low_volatility_spread,0.006546634022583014,complementary
+NVDA,Choquet 2-additive,market_excess_return,momentum_spread,-0.015072107201512478,redundant
+NVDA,Choquet 2-additive,market_excess_return,quality_spread,0.037325409110355964,complementary
+NVDA,Choquet 2-additive,market_excess_return,sector_excess_return,0.01287138141543192,complementary
+NVDA,Choquet 2-additive,market_excess_return,size_spread,0.07299686167541718,complementary
+NVDA,Choquet 2-additive,market_excess_return,value_growth_spread,0.06210606127103014,complementary
+NVDA,Choquet 2-additive,momentum_spread,low_volatility_spread,0.030691397227420286,complementary
+NVDA,Choquet 2-additive,momentum_spread,quality_spread,-0.02568480994765358,redundant
+NVDA,Choquet 2-additive,quality_spread,low_volatility_spread,-0.02750059661410467,redundant
+NVDA,Choquet 2-additive,sector_excess_return,low_volatility_spread,8.326672684688675e-18,complementary
+NVDA,Choquet 2-additive,sector_excess_return,momentum_spread,-0.024500888448881403,redundant
+NVDA,Choquet 2-additive,sector_excess_return,quality_spread,-1.3877787807814454e-18,redundant
+NVDA,Choquet 2-additive,sector_excess_return,size_spread,3.932039878880763e-18,complementary
+NVDA,Choquet 2-additive,sector_excess_return,value_growth_spread,0.005164284500976772,complementary
+NVDA,Choquet 2-additive,size_spread,low_volatility_spread,0.0335293647138246,complementary
+NVDA,Choquet 2-additive,size_spread,momentum_spread,0.08526629120127427,complementary
+NVDA,Choquet 2-additive,size_spread,quality_spread,-0.02623851267444067,redundant
+NVDA,Choquet 2-additive,size_spread,value_growth_spread,0.009471007671917797,complementary
+NVDA,Choquet 2-additive,value_growth_spread,low_volatility_spread,0.0258507296810147,complementary
+NVDA,Choquet 2-additive,value_growth_spread,momentum_spread,-0.005249192740358653,redundant
+NVDA,Choquet 2-additive,value_growth_spread,quality_spread,0.008866300951792055,complementary
+NVDA,Choquet 2-additive L1,market_excess_return,low_volatility_spread,-1.984149704722012e-09,redundant
+NVDA,Choquet 2-additive L1,market_excess_return,momentum_spread,-1.3230570962881789e-09,redundant
+NVDA,Choquet 2-additive L1,market_excess_return,quality_spread,-1.996104417867351e-09,redundant
+NVDA,Choquet 2-additive L1,market_excess_return,sector_excess_return,-2.638399326793105e-09,redundant
+NVDA,Choquet 2-additive L1,market_excess_return,size_spread,-8.693900636439863e-10,redundant
+NVDA,Choquet 2-additive L1,market_excess_return,value_growth_spread,-1.7575796827188718e-09,redundant
+NVDA,Choquet 2-additive L1,momentum_spread,low_volatility_spread,-6.246055247090726e-10,redundant
+NVDA,Choquet 2-additive L1,momentum_spread,quality_spread,-1.2824245998466207e-09,redundant
+NVDA,Choquet 2-additive L1,quality_spread,low_volatility_spread,-1.5810482645317592e-09,redundant
+NVDA,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,-2.3395143618672638e-09,redundant
+NVDA,Choquet 2-additive L1,sector_excess_return,momentum_spread,-1.7388408028266393e-09,redundant
+NVDA,Choquet 2-additive L1,sector_excess_return,quality_spread,-2.3716565517029058e-09,redundant
+NVDA,Choquet 2-additive L1,sector_excess_return,size_spread,-1.2149310650115079e-09,redundant
+NVDA,Choquet 2-additive L1,sector_excess_return,value_growth_spread,-2.188634483831405e-09,redundant
+NVDA,Choquet 2-additive L1,size_spread,low_volatility_spread,-3.5379336682517234e-10,redundant
+NVDA,Choquet 2-additive L1,size_spread,momentum_spread,-4.753812713846156e-10,redundant
+NVDA,Choquet 2-additive L1,size_spread,quality_spread,-1.3923104058566336e-09,redundant
+NVDA,Choquet 2-additive L1,size_spread,value_growth_spread,-1.2478265476456582e-09,redundant
+NVDA,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,-1.400308366483749e-09,redundant
+NVDA,Choquet 2-additive L1,value_growth_spread,momentum_spread,-1.7481461417334647e-09,redundant
+NVDA,Choquet 2-additive L1,value_growth_spread,quality_spread,-1.8970828241648974e-09,redundant
+NVDA,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+NVDA,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,-1.9084780052599132e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,-5.405194828759597e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,-7.018752190557365e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,-1.723805477989634e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,-8.791349814796234e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,-4.969133780378479e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,-5.274591587574779e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,-1.0632018534092087e-09,redundant
+NVDA,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,-8.177845909710751e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,-1.0497798001255868e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,-4.916519524833515e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,-6.685134797586775e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,-8.403532351467883e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,-4.1234540504309087e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,-1.0210736617333183e-09,redundant
+NVDA,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,-1.1903874210424566e-09,redundant
+NVDA,Choquet 2-additive scaled-q L1,size_spread,quality_spread,-1.5279191014257636e-09,redundant
+NVDA,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,-1.2059800223266728e-09,redundant
+NVDA,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,-5.116225859636e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,-7.887997301632884e-10,redundant
+NVDA,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,-1.0554581033235993e-09,redundant
+UNH,Choquet 1-additive,market_excess_return,low_volatility_spread,2.5904752157015115e-17,complementary
+UNH,Choquet 1-additive,market_excess_return,momentum_spread,4.394181054902709e-18,complementary
+UNH,Choquet 1-additive,market_excess_return,quality_spread,-1.1569340682230738e-18,redundant
+UNH,Choquet 1-additive,market_excess_return,sector_excess_return,3.77008717936574e-17,complementary
+UNH,Choquet 1-additive,market_excess_return,size_spread,2.289789813198865e-17,complementary
+UNH,Choquet 1-additive,market_excess_return,value_growth_spread,-4.603341724011372e-19,redundant
+UNH,Choquet 1-additive,momentum_spread,low_volatility_spread,3.2376987375848377e-18,complementary
+UNH,Choquet 1-additive,momentum_spread,quality_spread,1.6186234933398185e-18,complementary
+UNH,Choquet 1-additive,quality_spread,low_volatility_spread,-2.3134163855409453e-18,redundant
+UNH,Choquet 1-additive,sector_excess_return,low_volatility_spread,-2.0354540535699737e-17,redundant
+UNH,Choquet 1-additive,sector_excess_return,momentum_spread,-7.170642118276007e-18,redundant
+UNH,Choquet 1-additive,sector_excess_return,quality_spread,1.5033818374227122e-17,complementary
+UNH,Choquet 1-additive,sector_excess_return,size_spread,3.908865057443885e-17,complementary
+UNH,Choquet 1-additive,sector_excess_return,value_growth_spread,-2.7732988070368806e-18,redundant
+UNH,Choquet 1-additive,size_spread,low_volatility_spread,2.8680309718578005e-17,complementary
+UNH,Choquet 1-additive,size_spread,momentum_spread,-2.0821199220773703e-18,redundant
+UNH,Choquet 1-additive,size_spread,quality_spread,-7.633235045203152e-18,redundant
+UNH,Choquet 1-additive,size_spread,value_growth_spread,2.315223389161754e-18,complementary
+UNH,Choquet 1-additive,value_growth_spread,low_volatility_spread,6.47630097698008e-18,complementary
+UNH,Choquet 1-additive,value_growth_spread,momentum_spread,4.625929269271486e-19,complementary
+UNH,Choquet 1-additive,value_growth_spread,quality_spread,-5.0885221961986346e-18,redundant
+UNH,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+UNH,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive,market_excess_return,low_volatility_spread,-0.0009389261776806275,redundant
+UNH,Choquet 2-additive,market_excess_return,momentum_spread,-0.021344109976935637,redundant
+UNH,Choquet 2-additive,market_excess_return,quality_spread,-0.0465373577991933,redundant
+UNH,Choquet 2-additive,market_excess_return,sector_excess_return,-0.024339939700422312,redundant
+UNH,Choquet 2-additive,market_excess_return,size_spread,0.0670812023343671,complementary
+UNH,Choquet 2-additive,market_excess_return,value_growth_spread,0.013723076690401355,complementary
+UNH,Choquet 2-additive,momentum_spread,low_volatility_spread,0.001286079510374535,complementary
+UNH,Choquet 2-additive,momentum_spread,quality_spread,0.08963312114078875,complementary
+UNH,Choquet 2-additive,quality_spread,low_volatility_spread,-0.06532242378945406,redundant
+UNH,Choquet 2-additive,sector_excess_return,low_volatility_spread,0.013075749496853264,complementary
+UNH,Choquet 2-additive,sector_excess_return,momentum_spread,0.07812623802614098,complementary
+UNH,Choquet 2-additive,sector_excess_return,quality_spread,0.05884039632303174,complementary
+UNH,Choquet 2-additive,sector_excess_return,size_spread,-0.025151132783327004,redundant
+UNH,Choquet 2-additive,sector_excess_return,value_growth_spread,-1.2741897292024038e-17,redundant
+UNH,Choquet 2-additive,size_spread,low_volatility_spread,0.051582497995607754,complementary
+UNH,Choquet 2-additive,size_spread,momentum_spread,0.08826351034761255,complementary
+UNH,Choquet 2-additive,size_spread,quality_spread,-0.030103069466142406,redundant
+UNH,Choquet 2-additive,size_spread,value_growth_spread,-1.3204490218951187e-17,redundant
+UNH,Choquet 2-additive,value_growth_spread,low_volatility_spread,-7.517135062566165e-18,redundant
+UNH,Choquet 2-additive,value_growth_spread,momentum_spread,-9.367506770274757e-18,redundant
+UNH,Choquet 2-additive,value_growth_spread,quality_spread,-1.700029006457271e-17,redundant
+UNH,Choquet 2-additive L1,market_excess_return,low_volatility_spread,0.0021442523273918533,complementary
+UNH,Choquet 2-additive L1,market_excess_return,momentum_spread,-0.01777770275138565,redundant
+UNH,Choquet 2-additive L1,market_excess_return,quality_spread,-0.048281121133247035,redundant
+UNH,Choquet 2-additive L1,market_excess_return,sector_excess_return,-0.015451330415323717,redundant
+UNH,Choquet 2-additive L1,market_excess_return,size_spread,0.045044213819815854,complementary
+UNH,Choquet 2-additive L1,market_excess_return,value_growth_spread,0.016889153828207656,complementary
+UNH,Choquet 2-additive L1,momentum_spread,low_volatility_spread,-0.005170879457012995,redundant
+UNH,Choquet 2-additive L1,momentum_spread,quality_spread,0.07844304354780877,complementary
+UNH,Choquet 2-additive L1,quality_spread,low_volatility_spread,-0.059959410471241543,redundant
+UNH,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,0.025828681696504804,complementary
+UNH,Choquet 2-additive L1,sector_excess_return,momentum_spread,0.07257304249798896,complementary
+UNH,Choquet 2-additive L1,sector_excess_return,quality_spread,0.05159974533926774,complementary
+UNH,Choquet 2-additive L1,sector_excess_return,size_spread,-0.004667677859905337,redundant
+UNH,Choquet 2-additive L1,sector_excess_return,value_growth_spread,0.0015033564084829545,complementary
+UNH,Choquet 2-additive L1,size_spread,low_volatility_spread,0.0501667669994949,complementary
+UNH,Choquet 2-additive L1,size_spread,momentum_spread,0.0732759498826863,complementary
+UNH,Choquet 2-additive L1,size_spread,quality_spread,-0.022891983317539347,redundant
+UNH,Choquet 2-additive L1,size_spread,value_growth_spread,-1.9696683943815153e-17,redundant
+UNH,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,-2.1741867565575982e-17,redundant
+UNH,Choquet 2-additive L1,value_growth_spread,momentum_spread,-1.1564823173178713e-17,redundant
+UNH,Choquet 2-additive L1,value_growth_spread,quality_spread,-2.6136500371383893e-17,redundant
+UNH,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+UNH,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,-2.341722363241594e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,-2.364443075590176e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,-2.3503921633046448e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,-2.312530751151046e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,-2.3709730808304143e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,-2.376279828464333e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,-2.3938182491800574e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,-2.3906111331258495e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,-2.390835839490476e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,-2.3226910774350633e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,-2.3477411718412586e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,-2.3267005590706566e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,-2.360356822957616e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,-2.3639772759690788e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,-2.4068889066993414e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,-2.4156556606887606e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,size_spread,quality_spread,-2.4128638809184362e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,-2.4313354921960226e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,-2.411595759199691e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,-2.422375458555059e-09,redundant
+UNH,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,-2.412492490037424e-09,redundant
+WMT,Choquet 1-additive,market_excess_return,low_volatility_spread,-1.7509865085640895e-18,redundant
+WMT,Choquet 1-additive,market_excess_return,momentum_spread,2.061791131343267e-18,complementary
+WMT,Choquet 1-additive,market_excess_return,quality_spread,1.0388463816031941e-17,complementary
+WMT,Choquet 1-additive,market_excess_return,sector_excess_return,-1.1815996676471188e-17,redundant
+WMT,Choquet 1-additive,market_excess_return,size_spread,-3.24013819247293e-17,redundant
+WMT,Choquet 1-additive,market_excess_return,value_growth_spread,-2.661897033813994e-17,redundant
+WMT,Choquet 1-additive,momentum_spread,low_volatility_spread,4.262721541488841e-18,complementary
+WMT,Choquet 1-additive,momentum_spread,quality_spread,-9.45062893683199e-19,redundant
+WMT,Choquet 1-additive,quality_spread,low_volatility_spread,-2.6761723624183864e-18,redundant
+WMT,Choquet 1-additive,sector_excess_return,low_volatility_spread,2.4123498337802474e-18,complementary
+WMT,Choquet 1-additive,sector_excess_return,momentum_spread,-1.4076558206103467e-18,redundant
+WMT,Choquet 1-additive,sector_excess_return,quality_spread,-2.823804558238496e-17,redundant
+WMT,Choquet 1-additive,sector_excess_return,size_spread,-1.782970472652412e-17,redundant
+WMT,Choquet 1-additive,sector_excess_return,value_growth_spread,-3.471434655936505e-17,redundant
+WMT,Choquet 1-additive,size_spread,low_volatility_spread,-3.6320772778264395e-19,redundant
+WMT,Choquet 1-additive,size_spread,momentum_spread,2.9869769851975644e-18,complementary
+WMT,Choquet 1-additive,size_spread,quality_spread,-9.040439114908297e-18,redundant
+WMT,Choquet 1-additive,size_spread,value_growth_spread,1.0388463816031941e-17,complementary
+WMT,Choquet 1-additive,value_growth_spread,low_volatility_spread,-1.288393581636941e-18,redundant
+WMT,Choquet 1-additive,value_growth_spread,momentum_spread,-1.1122107286080467e-17,redundant
+WMT,Choquet 1-additive,value_growth_spread,quality_spread,2.755680521733991e-18,complementary
+WMT,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive,market_excess_return,low_volatility_spread,1.3819963691948563e-17,complementary
+WMT,Choquet 2-additive,market_excess_return,momentum_spread,-0.03868205350453159,redundant
+WMT,Choquet 2-additive,market_excess_return,quality_spread,-0.007126034656838619,redundant
+WMT,Choquet 2-additive,market_excess_return,sector_excess_return,0.0005497257204143631,complementary
+WMT,Choquet 2-additive,market_excess_return,size_spread,0.01340440971224969,complementary
+WMT,Choquet 2-additive,market_excess_return,value_growth_spread,0.0018855811437502937,complementary
+WMT,Choquet 2-additive,momentum_spread,low_volatility_spread,-0.014933559475018812,redundant
+WMT,Choquet 2-additive,momentum_spread,quality_spread,-0.009684612671322756,redundant
+WMT,Choquet 2-additive,quality_spread,low_volatility_spread,-5.782411586589336e-20,redundant
+WMT,Choquet 2-additive,sector_excess_return,low_volatility_spread,6.649773324577759e-18,complementary
+WMT,Choquet 2-additive,sector_excess_return,momentum_spread,0.055944334618209246,complementary
+WMT,Choquet 2-additive,sector_excess_return,quality_spread,0.03451414086634166,complementary
+WMT,Choquet 2-additive,sector_excess_return,size_spread,-0.00704445206419939,redundant
+WMT,Choquet 2-additive,sector_excess_return,value_growth_spread,0.013476049051859555,complementary
+WMT,Choquet 2-additive,size_spread,low_volatility_spread,0.050864893362325234,complementary
+WMT,Choquet 2-additive,size_spread,momentum_spread,0.007409879768660536,complementary
+WMT,Choquet 2-additive,size_spread,quality_spread,-0.02507480803124497,redundant
+WMT,Choquet 2-additive,size_spread,value_growth_spread,-0.020686199395057576,redundant
+WMT,Choquet 2-additive,value_growth_spread,low_volatility_spread,0.011040281233581908,complementary
+WMT,Choquet 2-additive,value_growth_spread,momentum_spread,0.019920008988676383,complementary
+WMT,Choquet 2-additive,value_growth_spread,quality_spread,0.03244420572774984,complementary
+WMT,Choquet 2-additive L1,market_excess_return,low_volatility_spread,2.2320108724234916e-17,complementary
+WMT,Choquet 2-additive L1,market_excess_return,momentum_spread,-0.038136390012458735,redundant
+WMT,Choquet 2-additive L1,market_excess_return,quality_spread,-0.006982886702617968,redundant
+WMT,Choquet 2-additive L1,market_excess_return,sector_excess_return,0.0002067416698575175,complementary
+WMT,Choquet 2-additive L1,market_excess_return,size_spread,0.012924880610322452,complementary
+WMT,Choquet 2-additive L1,market_excess_return,value_growth_spread,0.002117157919008077,complementary
+WMT,Choquet 2-additive L1,momentum_spread,low_volatility_spread,-0.014586255252011402,redundant
+WMT,Choquet 2-additive L1,momentum_spread,quality_spread,-0.009247702719962315,redundant
+WMT,Choquet 2-additive L1,quality_spread,low_volatility_spread,7.748431526029739e-18,complementary
+WMT,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,1.052398908759263e-17,complementary
+WMT,Choquet 2-additive L1,sector_excess_return,momentum_spread,0.05562096535699505,complementary
+WMT,Choquet 2-additive L1,sector_excess_return,quality_spread,0.034330264832833225,complementary
+WMT,Choquet 2-additive L1,sector_excess_return,size_spread,-0.007302491456414317,redundant
+WMT,Choquet 2-additive L1,sector_excess_return,value_growth_spread,0.013263932581886113,complementary
+WMT,Choquet 2-additive L1,size_spread,low_volatility_spread,0.05194706383309265,complementary
+WMT,Choquet 2-additive L1,size_spread,momentum_spread,0.00607308562517404,complementary
+WMT,Choquet 2-additive L1,size_spread,quality_spread,-0.024353440294557282,redundant
+WMT,Choquet 2-additive L1,size_spread,value_growth_spread,-0.020809202604244473,redundant
+WMT,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,0.010802882268593444,complementary
+WMT,Choquet 2-additive L1,value_growth_spread,momentum_spread,0.01941082996341537,complementary
+WMT,Choquet 2-additive L1,value_growth_spread,quality_spread,0.03213367309605576,complementary
+WMT,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,size_spread,quality_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+WMT,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive,market_excess_return,low_volatility_spread,5.664956351236761e-18,complementary
+XOM,Choquet 1-additive,market_excess_return,momentum_spread,-2.412169133418166e-17,redundant
+XOM,Choquet 1-additive,market_excess_return,quality_spread,-2.6219622537941116e-18,redundant
+XOM,Choquet 1-additive,market_excess_return,sector_excess_return,-1.3019461087930099e-17,redundant
+XOM,Choquet 1-additive,market_excess_return,size_spread,-2.3798237686056825e-18,redundant
+XOM,Choquet 1-additive,market_excess_return,value_growth_spread,1.1497964039208774e-17,complementary
+XOM,Choquet 1-additive,momentum_spread,low_volatility_spread,5.664956351236761e-18,complementary
+XOM,Choquet 1-additive,momentum_spread,quality_spread,-2.6219622537941116e-18,redundant
+XOM,Choquet 1-additive,quality_spread,low_volatility_spread,-9.251858538542971e-19,redundant
+XOM,Choquet 1-additive,sector_excess_return,low_volatility_spread,9.365699766653947e-18,complementary
+XOM,Choquet 1-additive,sector_excess_return,momentum_spread,-1.5795018649492988e-17,redundant
+XOM,Choquet 1-additive,sector_excess_return,quality_spread,1.078781161623077e-18,complementary
+XOM,Choquet 1-additive,sector_excess_return,size_spread,5.946848916082991e-18,complementary
+XOM,Choquet 1-additive,sector_excess_return,value_growth_spread,1.5198707454625963e-17,complementary
+XOM,Choquet 1-additive,size_spread,low_volatility_spread,5.4336598877731864e-18,complementary
+XOM,Choquet 1-additive,size_spread,momentum_spread,-4.6927884032414256e-18,redundant
+XOM,Choquet 1-additive,size_spread,quality_spread,1.7726705520138e-18,complementary
+XOM,Choquet 1-additive,size_spread,value_growth_spread,5.484255989155844e-18,complementary
+XOM,Choquet 1-additive,value_growth_spread,low_volatility_spread,-3.818198650769785e-18,redundant
+XOM,Choquet 1-additive,value_growth_spread,momentum_spread,1.4736114527698816e-17,complementary
+XOM,Choquet 1-additive,value_growth_spread,quality_spread,1.7726705520138e-18,complementary
+XOM,Choquet 1-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+XOM,Choquet 1-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive,market_excess_return,low_volatility_spread,1.1621907453310075e-19,complementary
+XOM,Choquet 2-additive,market_excess_return,momentum_spread,-0.050781066559596716,redundant
+XOM,Choquet 2-additive,market_excess_return,quality_spread,1.221354595638426e-17,complementary
+XOM,Choquet 2-additive,market_excess_return,sector_excess_return,0.049446204341291176,complementary
+XOM,Choquet 2-additive,market_excess_return,size_spread,-0.0043956281954650065,redundant
+XOM,Choquet 2-additive,market_excess_return,value_growth_spread,-0.0043281014637912806,redundant
+XOM,Choquet 2-additive,momentum_spread,low_volatility_spread,7.980298832294625e-18,complementary
+XOM,Choquet 2-additive,momentum_spread,quality_spread,-1.230387917075461e-17,redundant
+XOM,Choquet 2-additive,quality_spread,low_volatility_spread,1.167719621084778e-18,complementary
+XOM,Choquet 2-additive,sector_excess_return,low_volatility_spread,-8.089667793211964e-19,redundant
+XOM,Choquet 2-additive,sector_excess_return,momentum_spread,0.07844193538703,complementary
+XOM,Choquet 2-additive,sector_excess_return,quality_spread,8.975395467894223e-18,complementary
+XOM,Choquet 2-additive,sector_excess_return,size_spread,0.02618811950030068,complementary
+XOM,Choquet 2-additive,sector_excess_return,value_growth_spread,-0.0851900575485414,redundant
+XOM,Choquet 2-additive,size_spread,low_volatility_spread,1.5039978553145465e-18,complementary
+XOM,Choquet 2-additive,size_spread,momentum_spread,0.02515399068772182,complementary
+XOM,Choquet 2-additive,size_spread,quality_spread,2.0365015639869947e-18,complementary
+XOM,Choquet 2-additive,size_spread,value_growth_spread,-0.02965315859814415,redundant
+XOM,Choquet 2-additive,value_growth_spread,low_volatility_spread,-9.13563946400987e-18,redundant
+XOM,Choquet 2-additive,value_growth_spread,momentum_spread,0.05465642130786924,complementary
+XOM,Choquet 2-additive,value_growth_spread,quality_spread,-8.603135755337423e-18,redundant
+XOM,Choquet 2-additive L1,market_excess_return,low_volatility_spread,1.2303244705224597e-05,complementary
+XOM,Choquet 2-additive L1,market_excess_return,momentum_spread,-0.0003718542307210588,redundant
+XOM,Choquet 2-additive L1,market_excess_return,quality_spread,-0.0003465589724142068,redundant
+XOM,Choquet 2-additive L1,market_excess_return,sector_excess_return,-0.004707091962096357,redundant
+XOM,Choquet 2-additive L1,market_excess_return,size_spread,0.0017628861514399157,complementary
+XOM,Choquet 2-additive L1,market_excess_return,value_growth_spread,0.0011405462434002241,complementary
+XOM,Choquet 2-additive L1,momentum_spread,low_volatility_spread,-2.157650625708634e-05,redundant
+XOM,Choquet 2-additive L1,momentum_spread,quality_spread,8.06462919928315e-05,complementary
+XOM,Choquet 2-additive L1,quality_spread,low_volatility_spread,2.1467203015212988e-17,complementary
+XOM,Choquet 2-additive L1,sector_excess_return,low_volatility_spread,-0.0004400604154189975,redundant
+XOM,Choquet 2-additive L1,sector_excess_return,momentum_spread,0.00013254322207185127,complementary
+XOM,Choquet 2-additive L1,sector_excess_return,quality_spread,-0.00011911219877456549,redundant
+XOM,Choquet 2-additive L1,sector_excess_return,size_spread,-0.00014873587555695242,redundant
+XOM,Choquet 2-additive L1,sector_excess_return,value_growth_spread,-4.342275358228735e-05,redundant
+XOM,Choquet 2-additive L1,size_spread,low_volatility_spread,9.257617622052042e-06,complementary
+XOM,Choquet 2-additive L1,size_spread,momentum_spread,-0.0007297450805749028,redundant
+XOM,Choquet 2-additive L1,size_spread,quality_spread,-3.537965568800432e-05,redundant
+XOM,Choquet 2-additive L1,size_spread,value_growth_spread,-0.00036542461145703923,redundant
+XOM,Choquet 2-additive L1,value_growth_spread,low_volatility_spread,1.3342780239433608e-05,complementary
+XOM,Choquet 2-additive L1,value_growth_spread,momentum_spread,-7.730255464050838e-05,redundant
+XOM,Choquet 2-additive L1,value_growth_spread,quality_spread,-0.0006993553299309493,redundant
+XOM,Choquet 2-additive scaled-q,market_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,market_excess_return,momentum_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,market_excess_return,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,market_excess_return,sector_excess_return,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,market_excess_return,size_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,market_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,momentum_spread,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,momentum_spread,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,quality_spread,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,sector_excess_return,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,sector_excess_return,momentum_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,sector_excess_return,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,sector_excess_return,size_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,sector_excess_return,value_growth_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,size_spread,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,size_spread,momentum_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,size_spread,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,size_spread,value_growth_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,value_growth_spread,low_volatility_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,value_growth_spread,momentum_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q,value_growth_spread,quality_spread,9.25185853854297e-18,complementary
+XOM,Choquet 2-additive scaled-q L1,market_excess_return,low_volatility_spread,-2.4173231379561363e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,market_excess_return,momentum_spread,-2.2591408466166028e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,market_excess_return,quality_spread,-2.8269283395646973e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,market_excess_return,sector_excess_return,-1.873999483370525e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,market_excess_return,size_spread,-2.7258742022843536e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,market_excess_return,value_growth_spread,-3.0235776567651597e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,momentum_spread,low_volatility_spread,-2.717461200507643e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,momentum_spread,quality_spread,-3.4250141334180025e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,quality_spread,low_volatility_spread,-3.493136844593772e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,sector_excess_return,low_volatility_spread,-1.9935462910088594e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,sector_excess_return,momentum_spread,-1.673745272009105e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,sector_excess_return,quality_spread,-2.5671436920671194e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,sector_excess_return,size_spread,-2.445581376298023e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,sector_excess_return,value_growth_spread,-2.863821837080967e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,size_spread,low_volatility_spread,-3.177713166676217e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,size_spread,momentum_spread,-3.094865613784137e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,size_spread,quality_spread,-3.643575173054952e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,size_spread,value_growth_spread,-3.665889499367599e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,value_growth_spread,low_volatility_spread,-3.5485484458271565e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,value_growth_spread,momentum_spread,-3.355663867147621e-10,redundant
+XOM,Choquet 2-additive scaled-q L1,value_growth_spread,quality_spread,-3.9171920152014644e-10,redundant

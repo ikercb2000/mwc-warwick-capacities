@@ -7,6 +7,8 @@ from time import perf_counter
 from typing import Any
 
 import pandas as pd
+from capacities_ml_fin.ml.aggregation import aggregate_binary_probabilities
+from capacities_ml_fin.ml.optimization import KAdditivity
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.frozen import FrozenEstimator
 
@@ -23,6 +25,7 @@ from mwc_experiments.modeling.registries import (
     classification_candidates,
 )
 from mwc_experiments.modeling.selection import (
+    classification_score,
     refit_selected,
     select_classification_model,
 )
@@ -118,6 +121,8 @@ def run_tail_classification_experiment(
     oos_block_years: int = 1,
     calibration_methods: tuple[str, ...] = ("sigmoid",),
     class_weight_modes: tuple[str, ...] = ("balanced", "unweighted"),
+    aggregation_model_name: str | None = None,
+    aggregation_base_models: tuple[str, ...] = (),
     verbose: bool = True,
 ) -> dict[int, TailClassificationResult]:
     """Run rolling selection, calibration and OOS tail classification."""
@@ -163,7 +168,11 @@ def run_tail_classification_experiment(
         candidates = {}
         candidate_family: dict[str, str] = {}
         candidate_weight: dict[str, str] = {}
-        weight_independent_models = {"Rolling prior probability", "MLP"}
+        weight_independent_models = {
+            "Rolling prior probability",
+            "MLP",
+            "Choquet linear classifier",
+        }
         for weight_mode in class_weight_modes:
             mode_candidates = classification_candidates(
                 len(features),
@@ -199,11 +208,57 @@ def run_tail_classification_experiment(
                     "not applicable" if weight_independent else weight_mode
                 )
 
+        aggregate_probabilities = bool(aggregation_base_models)
+        aggregation_names: list[str] = []
+        aggregation_sources: dict[str, tuple[str, ...]] = {}
+        aggregation_source_pool: set[str] = set()
+        if aggregate_probabilities:
+            if not aggregation_model_name:
+                raise ValueError(
+                    "aggregation_model_name is required when aggregation is enabled."
+                )
+            forbidden = [
+                name
+                for name in aggregation_base_models
+                if "choquet" in name.casefold() or "choquistic" in name.casefold()
+            ]
+            if forbidden:
+                raise ValueError(
+                    "Aggregation base models must be non-Choquet models; got "
+                    f"{forbidden}."
+                )
+            available_families = set(candidate_family.values())
+            missing = set(aggregation_base_models) - available_families
+            if missing:
+                raise KeyError(
+                    "Aggregation base models are not configured candidates: "
+                    f"{sorted(missing)}."
+                )
+            for weight_mode in class_weight_modes:
+                name = (
+                    str(aggregation_model_name)
+                    if len(class_weight_modes) == 1
+                    else f"{aggregation_model_name} [{weight_mode}]"
+                )
+                aggregation_names.append(name)
+                candidate_family[name] = str(aggregation_model_name)
+                candidate_weight[name] = weight_mode
+                sources = tuple(
+                    candidate_name
+                    for candidate_name in candidates
+                    if candidate_family[candidate_name]
+                    in aggregation_base_models
+                    and candidate_weight[candidate_name]
+                    in {"not applicable", weight_mode}
+                )
+                aggregation_sources[name] = sources
+                aggregation_source_pool.update(sources)
+
         probability_chunks: dict[str, list[pd.Series]] = {}
         threshold_chunks: dict[str, list[pd.Series]] = {}
         variant_base: dict[str, str] = {}
         variant_method: dict[str, str] = {}
-        for name in candidates:
+        for name in [*candidates, *aggregation_names]:
             for variant, method in (
                 (name, "uncalibrated"),
                 *((f"{name} [{method}]", method) for method in calibration_methods),
@@ -228,6 +283,9 @@ def run_tail_classification_experiment(
 
         for fold in folds:
             split = fold.split
+            aggregation_fit_probabilities: dict[str, pd.Series] = {}
+            aggregation_calibration_probabilities: dict[str, pd.Series] = {}
+            aggregation_test_probabilities: dict[str, pd.Series] = {}
             split.y_train = split.y_train.astype(int)
             split.y_validation = split.y_validation.astype(int)
             split.y_test = split.y_test.astype(int)
@@ -278,10 +336,22 @@ def run_tail_classification_experiment(
                         split.y_validation,
                     )
                     base_probability = pd.Series(
-                        fitted.predict_proba(split.X_test)[:, 1],
+                        classification_score(fitted, split.X_test),
                         index=split.X_test.index,
                         name=name,
                     )
+                    if name in aggregation_source_pool:
+                        aggregation_fit_probabilities[name] = pd.Series(
+                            selected.validation_predictions,
+                            index=split.y_validation.index,
+                            name=name,
+                        )
+                        aggregation_calibration_probabilities[name] = pd.Series(
+                            classification_score(fitted, X_calibration),
+                            index=X_calibration.index,
+                            name=name,
+                        )
+                        aggregation_test_probabilities[name] = base_probability
                     probability_chunks[name].append(base_probability)
                     threshold_chunks[name].append(
                         pd.Series(base_threshold, index=split.X_test.index)
@@ -399,7 +469,11 @@ def run_tail_classification_experiment(
                                 }
                             )
 
-                    if name.startswith("Choquistic"):
+                    if (
+                        name.startswith("Choquistic")
+                        or name.startswith("Choquet linear")
+                        or name.startswith("Fuzzy Choquet")
+                    ):
                         values, matrix = capacity_summary(fitted, list(features))
                         values_frame = values.rename("Shapley importance").rename_axis(
                             "feature"
@@ -427,6 +501,220 @@ def run_tail_classification_experiment(
                             "message": f"{type(error).__name__}: {error}",
                         }
                     )
+
+            for aggregate_name in aggregation_names:
+                if aggregate_name in failed_base_models:
+                    continue
+                aggregation_source_names = aggregation_sources[aggregate_name]
+                if verbose:
+                    print(
+                        f"[tail alpha={alpha:g}, h={horizon}, "
+                        f"fold={fold.fold}] {aggregate_name} "
+                        f"({len(aggregation_source_names)} classical inputs; "
+                        "sigmoid calibration follows)",
+                        flush=True,
+                    )
+                missing_sources = set(aggregation_source_names) - set(
+                    aggregation_fit_probabilities
+                )
+                if missing_sources:
+                    failed_base_models.add(aggregate_name)
+                    for variant in [
+                        aggregate_name,
+                        *(
+                            f"{aggregate_name} [{method}]"
+                            for method in calibration_methods
+                        ),
+                    ]:
+                        probability_chunks[variant].clear()
+                        threshold_chunks[variant].clear()
+                    failure_rows.append(
+                        {
+                            "fold": fold.fold,
+                            "model": aggregate_name,
+                            "message": (
+                                "Missing non-Choquet base probabilities: "
+                                f"{sorted(missing_sources)}"
+                            ),
+                        }
+                    )
+                    if verbose:
+                        print(
+                            f"[tail alpha={alpha:g}, h={horizon}, "
+                            f"fold={fold.fold}] {aggregate_name} skipped: "
+                            f"missing {sorted(missing_sources)}",
+                            flush=True,
+                        )
+                    continue
+                try:
+                    aggregation_order = min(2, len(aggregation_source_names))
+                    fit_frame = pd.DataFrame(aggregation_fit_probabilities)[
+                        list(aggregation_source_names)
+                    ]
+                    calibration_frame = pd.DataFrame(
+                        aggregation_calibration_probabilities
+                    )[list(aggregation_source_names)]
+                    test_frame = pd.DataFrame(aggregation_test_probabilities)[
+                        list(aggregation_source_names)
+                    ]
+                    weight_mode = candidate_weight[aggregate_name]
+                    started = perf_counter()
+                    aggregation = aggregate_binary_probabilities(
+                        fit_frame,
+                        split.y_validation,
+                        test_frame,
+                        sparsity=KAdditivity(order=aggregation_order),
+                        class_weight=(
+                            "balanced" if weight_mode == "balanced" else None
+                        ),
+                    )
+                    aggregation_runtime = perf_counter() - started
+                    fitted = aggregation.fitted_model
+                    selection_probability = fitted.predict_proba(fit_frame)[:, 1]
+                    threshold = optimal_f1_threshold(
+                        split.y_validation,
+                        selection_probability,
+                    )
+                    probability = pd.Series(
+                        aggregation.probabilities,
+                        index=split.X_test.index,
+                        name=aggregate_name,
+                    )
+                    probability_chunks[aggregate_name].append(probability)
+                    threshold_chunks[aggregate_name].append(
+                        pd.Series(threshold, index=split.X_test.index)
+                    )
+                    fitted_models[aggregate_name] = fitted
+                    common = {
+                        "fold": fold.fold,
+                        "base model": str(aggregation_model_name),
+                        "class weight": weight_mode,
+                        "validation PR AUC": classification_metrics(
+                            split.y_validation,
+                            selection_probability,
+                        )["PR AUC"],
+                        "selection runtime seconds": aggregation_runtime,
+                        "refit runtime seconds": 0.0,
+                        "parameter count": model_parameter_count(fitted),
+                        "calibration observations": len(X_calibration),
+                        "calibration event prevalence": float(
+                            y_calibration.mean()
+                        ),
+                    }
+                    fold_metric_rows.append(
+                        {
+                            "model": aggregate_name,
+                            "probability calibration": "uncalibrated",
+                            "threshold source": "selection validation",
+                            "calibration runtime seconds": 0.0,
+                            **classification_metrics(
+                                split.y_test,
+                                probability,
+                                threshold=threshold,
+                            ),
+                            **common,
+                        }
+                    )
+                    parameter_rows.append(
+                        {
+                            "fold": fold.fold,
+                            "model": aggregate_name,
+                            "OOS start": fold.oos_start,
+                            "OOS end": fold.oos_end,
+                            "best parameters": {
+                                "capacity": f"{aggregation_order}-additive",
+                                "class weight": weight_mode,
+                                "base models": list(aggregation_source_names),
+                            },
+                        }
+                    )
+                    for method in calibration_methods:
+                        variant = f"{aggregate_name} [{method}]"
+                        started = perf_counter()
+                        calibrated = CalibratedClassifierCV(
+                            estimator=FrozenEstimator(fitted),
+                            method=method,
+                        )
+                        calibrated.fit(calibration_frame, y_calibration)
+                        calibration_runtime = perf_counter() - started
+                        calibration_probability = calibrated.predict_proba(
+                            calibration_frame
+                        )[:, 1]
+                        calibrated_threshold = optimal_f1_threshold(
+                            y_calibration,
+                            calibration_probability,
+                        )
+                        calibrated_probability = pd.Series(
+                            calibrated.predict_proba(test_frame)[:, 1],
+                            index=split.X_test.index,
+                            name=variant,
+                        )
+                        probability_chunks[variant].append(
+                            calibrated_probability
+                        )
+                        threshold_chunks[variant].append(
+                            pd.Series(
+                                calibrated_threshold,
+                                index=split.X_test.index,
+                            )
+                        )
+                        calibrated_models[variant] = calibrated
+                        fold_metric_rows.append(
+                            {
+                                "model": variant,
+                                "probability calibration": method,
+                                "threshold source": "calibration",
+                                "calibration runtime seconds": (
+                                    calibration_runtime
+                                ),
+                                **classification_metrics(
+                                    split.y_test,
+                                    calibrated_probability,
+                                    threshold=calibrated_threshold,
+                                ),
+                                **common,
+                            }
+                        )
+                    values, matrix = capacity_summary(
+                        fitted,
+                        list(aggregation_source_names),
+                    )
+                    values_frame = values.rename(
+                        "Shapley importance"
+                    ).rename_axis("feature").reset_index()
+                    values_frame.insert(0, "model", aggregate_name)
+                    values_frame.insert(0, "fold", fold.fold)
+                    shapley_rows.append(values_frame)
+                    if fold is folds[-1]:
+                        shapley[aggregate_name] = values
+                        interactions[aggregate_name] = matrix
+                except Exception as error:
+                    failed_base_models.add(aggregate_name)
+                    for variant in [
+                        aggregate_name,
+                        *(
+                            f"{aggregate_name} [{method}]"
+                            for method in calibration_methods
+                        ),
+                    ]:
+                        probability_chunks[variant].clear()
+                        threshold_chunks[variant].clear()
+                        calibrated_models.pop(variant, None)
+                    fitted_models.pop(aggregate_name, None)
+                    failure_rows.append(
+                        {
+                            "fold": fold.fold,
+                            "model": aggregate_name,
+                            "message": f"{type(error).__name__}: {error}",
+                        }
+                    )
+                    if verbose:
+                        print(
+                            f"[tail alpha={alpha:g}, h={horizon}, "
+                            f"fold={fold.fold}] {aggregate_name} failed: "
+                            f"{type(error).__name__}: {error}",
+                            flush=True,
+                        )
 
         successful = {
             name: pd.concat(chunks).sort_index()

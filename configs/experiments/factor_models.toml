@@ -19,18 +19,33 @@ features = [
 [models]
 main = [
     "OLS", "OLS oriented", "Monotone linear", "Ridge", "Lasso",
-    "Elastic net", "Choquet 1-additive",
+    "Elastic net", "Choquet 1-additive", "Choquet 1-additive scaled-q",
+    "Choquet 2-additive", "Choquet 2-additive L1",
+    "Choquet 2-additive scaled-q", "Choquet 2-additive scaled-q L1",
 ]
 orientation = [
     "OLS", "OLS oriented", "Monotone linear",
-    "Choquet 1-additive",
+    "Choquet 1-additive", "Choquet 1-additive scaled-q",
+    "Choquet 2-additive", "Choquet 2-additive L1",
+    "Choquet 2-additive scaled-q", "Choquet 2-additive scaled-q L1",
 ]
 extreme_robustness = [
     "OLS", "Ridge", "Lasso", "Elastic net", "Monotone linear",
-    "Choquet 1-additive",
+    "Choquet 1-additive", "Choquet 1-additive scaled-q",
+    "Choquet 2-additive", "Choquet 2-additive L1",
+    "Choquet 2-additive scaled-q", "Choquet 2-additive scaled-q L1",
 ]
-residual_covariance = ["OLS", "Choquet 1-additive"]
-prediction = ["OLS", "Ridge", "Lasso", "Choquet 1-additive"]
+residual_covariance = [
+    "OLS", "Choquet 1-additive", "Choquet 1-additive scaled-q",
+    "Choquet 2-additive", "Choquet 2-additive L1",
+    "Choquet 2-additive scaled-q", "Choquet 2-additive scaled-q L1",
+]
+prediction = [
+    "OLS", "Ridge", "Lasso", "Choquet 1-additive",
+    "Choquet 1-additive scaled-q", "Choquet 2-additive",
+    "Choquet 2-additive L1", "Choquet 2-additive scaled-q",
+    "Choquet 2-additive scaled-q L1",
+]
 
 [analysis]
 stability_asset = "AAPL"
@@ -55,3 +70,9 @@ stress_end = "2021-12-31"
 [parameter_grids."Elastic net"]
 "regressor__alpha" = [0.00001, 0.0001, 0.001]
 "regressor__l1_ratio" = [0.25, 0.5, 0.75]
+
+[parameter_grids."Choquet 2-additive L1"]
+"regressor__regressor__penalty" = [0.00001, 0.0001, 0.001, 0.01]
+
+[parameter_grids."Choquet 2-additive scaled-q L1"]
+"regressor__penalty" = [0.00001, 0.0001, 0.001, 0.01]

@@ -16,6 +16,23 @@ from mwc_experiments.modeling.types import (
 )
 
 
+def classification_score(
+    estimator: BaseEstimator,
+    X: pd.DataFrame,
+) -> np.ndarray:
+    """Return a positive-class probability or an uncalibrated Choquet score."""
+    if hasattr(estimator, "predict_proba"):
+        return np.asarray(estimator.predict_proba(X)[:, 1], dtype=float)
+    if isinstance(estimator, Pipeline):
+        classifier = estimator.named_steps.get("classifier")
+        if classifier is not None and hasattr(classifier, "choquet_score"):
+            transformed = estimator[:-1].transform(X)
+            return np.asarray(classifier.choquet_score(transformed), dtype=float)
+    raise TypeError(
+        "Classifier must expose predict_proba or a Choquet choquet_score."
+    )
+
+
 def _frozen_orientation_parameters(
     estimator: BaseEstimator,
 ) -> dict[str, object]:
@@ -148,7 +165,7 @@ def select_classification_model(
         y_train,
         X_validation,
         y_validation,
-        predict_validation=lambda estimator, X: estimator.predict_proba(X)[:, 1],
+        predict_validation=classification_score,
         score_validation=lambda y, probability: float(
             average_precision_score(y, probability)
         ),

@@ -1,1 +1,2 @@
-
+fold,model,message
+0,Choquet linear classifier,RuntimeError: Every configuration failed for Choquet linear classifier: ['params={}: RuntimeError: Choquet classification optimization failed: pymoo did not return a candidate solution. Maximum constraint violation: 0.0.']

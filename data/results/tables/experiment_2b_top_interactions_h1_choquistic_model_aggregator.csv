@@ -1,0 +1,13 @@
+first,second,interaction,interpretation
+Logistic oriented [balanced],Random forest [balanced],0.3700452446372413,complementary
+Logistic [balanced],Random forest [balanced],0.3700446114226147,complementary
+Rolling prior probability,RBF SVM [balanced],0.2599101439401452,complementary
+Logistic [balanced],Gradient boosting [balanced],-4.875315988686739e-16,redundant
+Logistic oriented [balanced],Gradient boosting [balanced],4.0351065334333767e-16,complementary
+Logistic oriented [balanced],Penalized logistic [balanced],-2.0689195503179002e-16,redundant
+Logistic [balanced],Penalized logistic [balanced],-1.9377072293524788e-16,redundant
+Logistic oriented [balanced],Explicit interactions [balanced],1.7361994662410694e-16,complementary
+RBF SVM [balanced],Random forest [balanced],1.7299488337810527e-16,complementary
+Logistic [balanced],RBF SVM [balanced],-1.6265495474891564e-16,redundant
+Explicit interactions [balanced],Gradient boosting [balanced],-1.4967819180373152e-16,redundant
+Penalized logistic [balanced],Gradient boosting [balanced],-1.4938473925590045e-16,redundant

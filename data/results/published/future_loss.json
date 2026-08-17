@@ -2,647 +2,1037 @@
   "artifacts": [
     {
       "destination": "data\\results\\tables\\experiment_2a_regression_metrics_h1.csv",
-      "sha256": "c21b9ab82c4eeb419edd26659d7f03a5beea507a0fb6670ddb3650bdf163bde1",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_regression_metrics_h1.csv"
+      "sha256": "cb5071c2b9d6da29caa5269703110f2c05682bfbf804ac569d1d60a5eb9749fa",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_regression_metrics_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_predictions_h1.parquet",
-      "sha256": "78ae26acc21f7d3eb80be130da218242b164bf5f47edf116204f8eda085f8902",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_predictions_h1.parquet"
+      "sha256": "6a82bd4cdc87e45b1f804088c9629dcf0ced5d20db8cab83e7359c25643b8bda",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_predictions_h1.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_selected_parameters_h1.csv",
-      "sha256": "6bcbf089bc9eeafd7e128fdc24ef677f95a7f8847a2b4608e1a238f6efa09f25",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_selected_parameters_h1.csv"
+      "sha256": "240b1895bbceb888d5d989e39346f87ebe6fce97d615bf58577523e00899b924",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_selected_parameters_h1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_q_scales_h1.csv",
+      "sha256": "5fb90357712a3cbd250ae7f5e27b313173f62ff002878e31fef476f452348667",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_q_scales_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_walk_forward_folds_h1.csv",
       "sha256": "cec0a829dda23bbc6fce93aed45e340627a5d1e7ede9428423f20c1aa4d7054b",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_walk_forward_folds_h1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_walk_forward_folds_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_walk_forward_metrics_h1.csv",
-      "sha256": "2918b20f087a8623be2687e26a8b9ec6e9213c49b5e6bc49e953f0dd70f918b8",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_walk_forward_metrics_h1.csv"
+      "sha256": "06e9c42464a1644e942dcc27817827ccd46968470e62f4891391a56f7178fc72",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_walk_forward_metrics_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientation_history_h1.csv",
-      "sha256": "61d80cb53dffef59ca311a9ac3bc44ddf73fc30693b85ec49cabaf50ccf51e2e",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientation_history_h1.csv"
+      "sha256": "8677413d9abe3be9c355f3a5a786e21eb08ee8ffd2e0cd91ec566c3cdeb409ac",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientation_history_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_history_h1.csv",
-      "sha256": "ef79b8d29248c27575a3d2a9b4ea19769ff1eb4c103971c1d4e3b5368bc7e0d5",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_history_h1.csv"
+      "sha256": "00635574fbde7210864e7c79a8b0cbcbb2956d49e1dc8b13233e3f633c711329",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_history_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_selected_choquet_h1.csv",
-      "sha256": "912f3b373d8b56d1a48c04df2ccb1281dedc6207b1db802a8d6f53999726db40",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_selected_choquet_h1.csv"
+      "sha256": "39af2eb8f9d3f100aa7d66bd0a7b928b1070da58f17a0fed9ca753727b20c71c",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_selected_choquet_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientation_ablation_h1.csv",
-      "sha256": "f5f26b2a6d78ecf53d370e5074feaf8336eb1790373f5751d83b9fb996282c1a",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientation_ablation_h1.csv"
+      "sha256": "2ed3f7c81b0dc3b4a384598a04ad4c1972a41307abba6ee40be627fee94b9ec5",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientation_ablation_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientations_h1.csv",
-      "sha256": "733b3cc0af1ee2517f864474268b5f32d57bc0abe98e5b3ed87abad1fdf8b41e",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientations_h1.csv"
+      "sha256": "156ca2f7cf9853df8335238e7cd2637395d5a0402d2c67c28794a0a12e09a65e",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientations_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_failures_h1.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_failures_h1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_failures_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_high_loss_metrics_h1.csv",
-      "sha256": "dd4389d65da40ce3b4d88c0b3e8ebacca24267e76e5b493e2b110d20199471a4",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_high_loss_metrics_h1.csv"
+      "sha256": "3d9f913825b43842b93f95f057f043a7f6fa787475941d1967971f43c026450f",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_high_loss_metrics_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_empirical_stress_audit_h1.csv",
       "sha256": "17026e07c4b80006be665b5ab0a5685ef027577796a25d5197827694b4ffa844",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_empirical_stress_audit_h1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_empirical_stress_audit_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_empirical_stress_metrics_h1.csv",
-      "sha256": "e15464fb1e185eb840e9f9228f59943cd1549af94b7a2ce8c2c009fe26eb298a",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_empirical_stress_metrics_h1.csv"
+      "sha256": "b3278f4bed803038a11a109a3ce101b9314296faceb36c3f506888efab789a94",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_empirical_stress_metrics_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_clipping_audit_h1.csv",
       "sha256": "b1620a513a67c9edd749e27360db82895d522e47ebd3b341491a29dc6baf24ce",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_clipping_audit_h1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_clipping_audit_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_extreme_estimation_robustness_h1.csv",
-      "sha256": "b99759af5cf45a079ec4daab3ca9491ecc7ca623bc399c406f81f5a6bb0d7dde",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_extreme_estimation_robustness_h1.csv"
+      "sha256": "84ce02bfbe8a1d03dabe0936ab4fc47f393f50e79aca9e82ca7a91e995ce6428",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_extreme_estimation_robustness_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_comparison_h1.csv",
-      "sha256": "26f155ea6772b2b4da59d37849c74f0d6d49ff825a872cdf0258dd241d867e73",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_comparison_h1.csv"
+      "sha256": "9fefd8f7683806a33fdb1e35c21fe8007c686362715ff5c64a4e8d7aa26a20fe",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_comparison_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_samples_h1.csv",
       "sha256": "69c163e5ebdfb25bf7d69eacb5bfdfe32831a57d09a6eeb4f1f24f588a50d0a1",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_samples_h1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_samples_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_selection_summary_h1.csv",
       "sha256": "d7d2ecf3fe33559a042e21f74c093a650a8103db86f6d60a2f5330a11aa105ce",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_selection_summary_h1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_selection_summary_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_failures_h1.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_failures_h1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_failures_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_hac_comparison_h1.csv",
-      "sha256": "cba4e496dacdb6fbe86d545afafa5ee802b10e8a7c86838e0e6bc7bb4b2a5b70",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_hac_comparison_h1.csv"
+      "sha256": "d6e089c1a951d621cdb6b9212b45e539d1676afb83b2e09babe0f2f9034266dc",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_hac_comparison_h1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h1_choquet_1-additive.csv",
       "sha256": "7ff5f61623ad82bb422136d594408b728c8dc9d112ce658e803a2c1b99ae0e09",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h1_choquet_1-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h1_choquet_1-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h1_choquet_1-additive.csv",
       "sha256": "015268a219382e81efdb13eaff17cd45a82a983f761f2565e225e25aabaac160",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h1_choquet_1-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h1_choquet_1-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h1_choquet_1_additive.csv",
       "sha256": "5ef49cdd2d102987e6f9ab9a64237933ca7a9be38bb6ebca1501dd00ecc6ff66",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h1_choquet_1_additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h1_choquet_1_additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h1_choquet_1-additive_scaled-q.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h1_choquet_1-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h1_choquet_1-additive_scaled-q.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h1_choquet_1-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h1_choquet_1_additive_scaled_q.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h1_choquet_1_additive_scaled_q.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h1_choquet_2-additive.csv",
       "sha256": "69c87d06b1eb6f2eb7b83cb70f9663078bdb7b178f982d47412fb2a2f3db55ef",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h1_choquet_2-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h1_choquet_2-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h1_choquet_2-additive.csv",
       "sha256": "d7e2515f569caeeb3af6fef4d22a9339e4d8e59c83572cb1b2160fca26b062bd",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h1_choquet_2-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h1_choquet_2-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive.csv",
       "sha256": "b3fbc4f7a448b99f9c0f339778a49c3ba399ed86dfc2b60ffc967811064033f1",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h1_choquet_2-additive_l1.csv",
       "sha256": "d90b54a8f2c93d12940b5bcdf3a92a227ff4b9437399c9e48f3d5e54b8aa664b",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h1_choquet_2-additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h1_choquet_2-additive_l1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h1_choquet_2-additive_l1.csv",
       "sha256": "d670740ea1c4734fec28d6ab6b6c9e00821e3ecf6b2c427c8e4342373c56a3c0",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h1_choquet_2-additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h1_choquet_2-additive_l1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive_l1.csv",
       "sha256": "a9a8af6d9b7b3e6b269255d1e895ff28290ac430b2bf6ff9afb8ae151438911c",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h1_choquet_2-additive_scaled-q.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h1_choquet_2-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h1_choquet_2-additive_scaled-q.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h1_choquet_2-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive_scaled_q.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive_scaled_q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h1_choquet_2-additive_scaled-q_l1.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h1_choquet_2-additive_scaled-q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h1_choquet_2-additive_scaled-q_l1.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h1_choquet_2-additive_scaled-q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive_scaled_q_l1.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h1_choquet_2_additive_scaled_q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h1_fuzzy_choquet_neural_network.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h1_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h1_fuzzy_choquet_neural_network.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h1_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h1_fuzzy_choquet_neural_network.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h1_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h1_choquet_model_aggregator.csv",
+      "sha256": "b8cb7dd34dc269989b60199cf48cc9f887111ab7860292c17bb126da74ac63ba",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h1_choquet_model_aggregator.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h1_choquet_model_aggregator.csv",
+      "sha256": "ae671fe7792276e36a97511df01de692c5ba54a2884ed0029f2e5f720e4ab936",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h1_choquet_model_aggregator.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h1_choquet_model_aggregator.csv",
+      "sha256": "37ad9ba72934531b4afcf3f1dff067c715263a74a6035c988a76d307396228fc",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h1_choquet_model_aggregator.csv"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_rmse_ranking_h1.png",
-      "sha256": "72fab3bfc404728c688de9ea515c15317c37e7fe113e2f13efb8b354bce33ed8",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_rmse_ranking_h1.png"
+      "sha256": "e0337c60d034cb8cb32720641b2c738a77bef7893d2622f4389425e2d009b53f",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_rmse_ranking_h1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_forecasts_h1.png",
-      "sha256": "1d32dfbf6d1aafc39be12521806fd2727ba823dffcdc452339ae644ed0ba3eca",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_forecasts_h1.png"
+      "sha256": "955e390be65d954aa2b71a04cd18247fa4d2c4fb2c7e12fd5ad4a50bbc0c2f82",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_forecasts_h1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h1_choquet_1_additive.png",
       "sha256": "54e55690f61ed8c8dd35624297f7cad672ef21fcf074d4a068f13c4f6e252a7f",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h1_choquet_1_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h1_choquet_1_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h1_choquet_1_additive.png",
       "sha256": "e650b9fa5ebd891144b16ec57941231829d822907793eab34a4dcac90b4ddccd",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h1_choquet_1_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h1_choquet_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h1_choquet_1_additive_scaled_q.png",
+      "sha256": "33ecbdfe2551c67b619323df71c50a6f44387e644b060a17f8293e768020fcb6",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h1_choquet_1_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h1_choquet_1_additive_scaled_q.png",
+      "sha256": "e9a80871f0feae3f8b111741015aa144ccba114292e92efa5067a299b6d7483e",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h1_choquet_1_additive_scaled_q.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h1_choquet_2_additive.png",
       "sha256": "29e987472430d120fcb84e4342120b40edc87f5764d6c1a7d390216828280de1",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h1_choquet_2_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h1_choquet_2_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h1_choquet_2_additive.png",
       "sha256": "100109fa395103ec1790863779a8f624c5ca4cb0de6295982211924ae236ab06",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h1_choquet_2_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h1_choquet_2_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h1_choquet_2_additive_l1.png",
       "sha256": "7f65abde8e02c378e0de100eae579d228b31c308104f020e01c8f5e24c093f96",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h1_choquet_2_additive_l1.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h1_choquet_2_additive_l1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h1_choquet_2_additive_l1.png",
       "sha256": "62675519dc73e748bc02a2460e1163c2d936074e29d47e0c22a9f1016e7d8810",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h1_choquet_2_additive_l1.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h1_choquet_2_additive_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h1_choquet_2_additive_scaled_q.png",
+      "sha256": "35942167be39c8cf4d1f296512b0de78751c1cb724f6d775ad55587197fb5991",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h1_choquet_2_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h1_choquet_2_additive_scaled_q.png",
+      "sha256": "2dbbf0f08903248250572a917c0da3dd6706dd1c0f75e1a618916fb4311cb339",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h1_choquet_2_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h1_choquet_2_additive_scaled_q_l1.png",
+      "sha256": "cecf7cff40f27c52567cc434cb4ab5508ba068cbe6ebbd7a3a81efe16a484afc",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h1_choquet_2_additive_scaled_q_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h1_choquet_2_additive_scaled_q_l1.png",
+      "sha256": "1b68b2f1a6a5367bc99889026ff58f3f8e196c6c47abb80640e2d701270f2348",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h1_choquet_2_additive_scaled_q_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h1_fuzzy_choquet_neural_network.png",
+      "sha256": "f138c75a38541b94e4ce3da2bf0c94565d2ed57ffa12772b92b531c9b17d5b56",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h1_fuzzy_choquet_neural_network.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h1_fuzzy_choquet_neural_network.png",
+      "sha256": "51801ed5e6785a18bbb9fa8a8eec42b41ee4f3ad109e951d7384277fa1599dc5",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h1_fuzzy_choquet_neural_network.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h1_choquet_model_aggregator.png",
+      "sha256": "38d9d5ec7c97af6da6c61cbb82cbf5fbf21da54e82a2e8011c2c0bd8825b125d",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h1_choquet_model_aggregator.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h1_choquet_model_aggregator.png",
+      "sha256": "6973e5cf33f84b1bb2be3454a210da5639dd43d4a9f9a9f140b0ce1e2b0f7cd3",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h1_choquet_model_aggregator.png"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_regression_metrics_h5.csv",
-      "sha256": "6cbe2988fd61302c7a2b834fb01935a94087c6924a9600ede65a2f8c00008bc8",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_regression_metrics_h5.csv"
+      "sha256": "8530506e90296fed7a758a845f118b304d5203b1a657db9c4f14b113786fc51a",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_regression_metrics_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_predictions_h5.parquet",
-      "sha256": "255e6eed901e38f6f80264ab31a6d7c9d1ba671eea184ac1e1917ec5d6844d42",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_predictions_h5.parquet"
+      "sha256": "0a9564998d284f4a0d984bbfd87d8edc4d185aa8516bc3998f62c7cbba60f796",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_predictions_h5.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_selected_parameters_h5.csv",
-      "sha256": "ecba37c19abd30c9a3a077f06b9cfd9910d13def5544120365c73cfe0e12e1da",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_selected_parameters_h5.csv"
+      "sha256": "902c2c3220fc252519eddc13447f9a35dce8937baf809cbbf71ba5aeafd9d07f",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_selected_parameters_h5.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_q_scales_h5.csv",
+      "sha256": "29a9965e1a46e7a35edccef33f7b90ad7327672835e9176cc68af0ff9ab12321",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_q_scales_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_walk_forward_folds_h5.csv",
       "sha256": "66339fd87fc3f346fe5d0b9065cf4af4563093bdd793e4eff192acf65ba1959f",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_walk_forward_folds_h5.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_walk_forward_folds_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_walk_forward_metrics_h5.csv",
-      "sha256": "a583cef8b4af033ae03420f7cce28f0010a415555f467a11a9e6f93688bb7228",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_walk_forward_metrics_h5.csv"
+      "sha256": "41594e040bb365a8e728cc06e92db25585e1e6540e4d11dfe7035e2d1a85b665",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_walk_forward_metrics_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientation_history_h5.csv",
-      "sha256": "be24b321021eac8ef63216a79647ad6d0870d0d5c7f688501e4a363a01a755e9",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientation_history_h5.csv"
+      "sha256": "0ef88e97ff38aeaf759aff2c10f4317aa1e5897509d59b5e02d661b58f7be3d1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientation_history_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_history_h5.csv",
-      "sha256": "4cd041969d1b5bf78c578cf80ecf6218089e73451277ba714c93aecf7794ff92",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_history_h5.csv"
+      "sha256": "62ed5187f2a5c9d38fac3845422125009c69d205703364e28e7745eafce5a3f5",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_history_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_selected_choquet_h5.csv",
-      "sha256": "5c5f275520fe7e2393bdaa3e7d6c76a3153acd2abe8e9c3c01624503f01e839c",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_selected_choquet_h5.csv"
+      "sha256": "cb5d4f0e89980754a7c64f20092caf6d6d5cc60828bd51db9fbc241eaa8808e9",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_selected_choquet_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientation_ablation_h5.csv",
-      "sha256": "3d825ff6d584c1052c89ee06ddea245e1bfe14cb62d9b62d69e5237ac4df71d8",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientation_ablation_h5.csv"
+      "sha256": "d05984bbf541d80249542f389c11b1a603296fd68a220f14873298dfc7e5b957",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientation_ablation_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientations_h5.csv",
-      "sha256": "ff1dd8e1455669628f48b8157772a0274a8efe4d6ce7ff72db9a8bd3fe332c00",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientations_h5.csv"
+      "sha256": "6ae9cb72c0fbf905d1dc4d4cb70d5ede05f44993d069221efffc96814110740f",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientations_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_failures_h5.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_failures_h5.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_failures_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_high_loss_metrics_h5.csv",
-      "sha256": "6887684a4b19f04a8c959598d6c854af654548019fd986a763125de224a67a78",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_high_loss_metrics_h5.csv"
+      "sha256": "e5ca8357a53fb32d65c8b18ad4e938f21ad430b88221da518ac76dc3ba92e53d",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_high_loss_metrics_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_empirical_stress_audit_h5.csv",
       "sha256": "7c02e39cc17ca77235693cf5a71e0e84af810f8a5003324bc63fc4a28576713b",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_empirical_stress_audit_h5.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_empirical_stress_audit_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_empirical_stress_metrics_h5.csv",
-      "sha256": "b6b3877f66910860d2f62c1c827fa5479a1a37cf804c137f05a34563958de0b4",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_empirical_stress_metrics_h5.csv"
+      "sha256": "04327aba84e1f1e4bd85f89a9c0f6220d945a9e4e1a7bc6a1d1ae9e76c7945f8",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_empirical_stress_metrics_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_clipping_audit_h5.csv",
       "sha256": "7d2f1da81992fecee336c4f586830d33b2a29f14ba009d9e9f9b7a0b46322f75",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_clipping_audit_h5.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_clipping_audit_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_extreme_estimation_robustness_h5.csv",
-      "sha256": "81ff92f93544da05d0d1fa0d46d12a712624795bea6a1ce6a2ec30f85fc46425",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_extreme_estimation_robustness_h5.csv"
+      "sha256": "3deb619d4482d24bc500cdfe909bd6ffd90b894957a7cde8b1a9c34be6c2c825",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_extreme_estimation_robustness_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_comparison_h5.csv",
-      "sha256": "5837bcdde7211eeb4ed245d838e79ed4cd1355cc541bed720310b55afc31646c",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_comparison_h5.csv"
+      "sha256": "3b70dde2c04fbe66fc3b2aabca1139d994f40e3f93f3f92f61da7d3d4452d3e0",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_comparison_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_samples_h5.csv",
       "sha256": "cbfcabf93c6fab0f45b821ef54046491e02813c35931fb5bf2e0d3100b61f410",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_samples_h5.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_samples_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_selection_summary_h5.csv",
-      "sha256": "bd220c643e1bbc99c909ec86b99727848f13e40677efffd2223aeee2592a912a",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_selection_summary_h5.csv"
+      "sha256": "7eb31856212d241f66c8ae4567245e04636eac686ba3b96eddd95d7f73512c3e",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_selection_summary_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_failures_h5.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_failures_h5.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_failures_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_hac_comparison_h5.csv",
-      "sha256": "f68433b9960159017836c509a6b8081a75c9ba5e415023f9065ae6ee9f986770",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_hac_comparison_h5.csv"
+      "sha256": "f03df2549aab2dcbe3f301914c088e4b6f24f9de5ed640cdb5014d0484b0341b",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_hac_comparison_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h5_choquet_1-additive.csv",
       "sha256": "3002d30c3746afe92451fe3b04175d5786b656ffb1821f7ef3dc7e5aba5dc6a2",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h5_choquet_1-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h5_choquet_1-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h5_choquet_1-additive.csv",
       "sha256": "081061f1424630ed9539e6bd965760b2788790e2be9f19e8d29e57fac6100c94",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h5_choquet_1-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h5_choquet_1-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h5_choquet_1_additive.csv",
       "sha256": "f95af12727e828ad05e5bad7ebe545f3afe76a0723b9b5ac7b48ab7e16e677c4",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h5_choquet_1_additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h5_choquet_1_additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h5_choquet_1-additive_scaled-q.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h5_choquet_1-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h5_choquet_1-additive_scaled-q.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h5_choquet_1-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h5_choquet_1_additive_scaled_q.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h5_choquet_1_additive_scaled_q.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h5_choquet_2-additive.csv",
       "sha256": "762182a9863529935e3167ce8dc695f86c2655ae352a2e2e9ea1e29d23c5902f",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h5_choquet_2-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h5_choquet_2-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h5_choquet_2-additive.csv",
       "sha256": "0b0b57bba319c665dee2c0651906c8e7a6a4f908d0e260461dd7e6e176919cdc",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h5_choquet_2-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h5_choquet_2-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive.csv",
       "sha256": "304d93d1908db2e035e0707e2f9c7bd97be4745dde4553e6729afd78ac9aec90",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h5_choquet_2-additive_l1.csv",
       "sha256": "7e1b5bbe71ef04f489ae497d4038977e5101e6749f44cf6d6d9c10d417ee7b83",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h5_choquet_2-additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h5_choquet_2-additive_l1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h5_choquet_2-additive_l1.csv",
       "sha256": "2ac4a8a91adf68b230b135006b71989e1af0853f13e9e0b7ac0484ef81d0a3ec",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h5_choquet_2-additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h5_choquet_2-additive_l1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive_l1.csv",
       "sha256": "2bd68eef99bee09b50b055e4c6d7a5400034e8db01c770867755d365762eab2e",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h5_choquet_2-additive_scaled-q.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h5_choquet_2-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h5_choquet_2-additive_scaled-q.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h5_choquet_2-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive_scaled_q.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive_scaled_q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h5_choquet_2-additive_scaled-q_l1.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h5_choquet_2-additive_scaled-q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h5_choquet_2-additive_scaled-q_l1.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h5_choquet_2-additive_scaled-q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive_scaled_q_l1.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h5_choquet_2_additive_scaled_q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h5_fuzzy_choquet_neural_network.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h5_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h5_fuzzy_choquet_neural_network.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h5_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h5_fuzzy_choquet_neural_network.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h5_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h5_choquet_model_aggregator.csv",
+      "sha256": "2dd3c0e3bc8dcf59808b5e1a81ed908ebd520bb30f7b0bc1700d0b7f052c1ebf",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h5_choquet_model_aggregator.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h5_choquet_model_aggregator.csv",
+      "sha256": "68f4677f7b7b4c3194b4a52b2ce9a981cc942f939af1c934d7d7704b60f6e1f1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h5_choquet_model_aggregator.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h5_choquet_model_aggregator.csv",
+      "sha256": "377d3ce8bca8dc915287e21b4b4c26c7ff1333ab58336b208a0b65bb603fb7b6",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h5_choquet_model_aggregator.csv"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_rmse_ranking_h5.png",
-      "sha256": "eff49c21b61faf37687617a6689b9d41234910a652bd38cb3976f565840b0cef",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_rmse_ranking_h5.png"
+      "sha256": "93cf4103b58f3a56436ce50bee668c31b38c2f5b670c983c634f7fe01252e629",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_rmse_ranking_h5.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_forecasts_h5.png",
-      "sha256": "0da7a072dfd14756717561d2fa359162421fdbc636c761ea63a7159511735cfa",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_forecasts_h5.png"
+      "sha256": "96a3f9902b06046d0cb83db73913c54527589dd294881b125a3903ed2c1be635",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_forecasts_h5.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h5_choquet_1_additive.png",
       "sha256": "bf1f0dd4f11de676d9baf8d888a8c9c073c72210667bc5dc90bde357ac8d16bd",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h5_choquet_1_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h5_choquet_1_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h5_choquet_1_additive.png",
       "sha256": "54a2bb63525d0f5b8084c114d7e238a7e824db30fd3b0d241f78f4cb44b4de24",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h5_choquet_1_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h5_choquet_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h5_choquet_1_additive_scaled_q.png",
+      "sha256": "b03b5477d71161b01dd7ae6cecbafb6f26b77dd0132658546a8195e95b6d644a",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h5_choquet_1_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h5_choquet_1_additive_scaled_q.png",
+      "sha256": "e1e0cc7a44fc0df3864fd7948cb2c2b3543e1c76c75b66a214dce91a38cf2981",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h5_choquet_1_additive_scaled_q.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h5_choquet_2_additive.png",
       "sha256": "e8e5bc219ae6197c89b551f5e9b629b4fb1eb948a76ca800c12d50761132edec",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h5_choquet_2_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h5_choquet_2_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h5_choquet_2_additive.png",
       "sha256": "cd35f1b146bf545a6f441ca602752590c2f9e083fb3a931f241ea2d6ef854416",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h5_choquet_2_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h5_choquet_2_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h5_choquet_2_additive_l1.png",
       "sha256": "a760194dd95b23457faf0313c9fef5c965c2ca3ff838c427f88900a0d62ecdf8",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h5_choquet_2_additive_l1.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h5_choquet_2_additive_l1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h5_choquet_2_additive_l1.png",
       "sha256": "495bbd2b4287945ce3e0a77d46219fcd06556494f85be637e93a7119f3591bb2",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h5_choquet_2_additive_l1.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h5_choquet_2_additive_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h5_choquet_2_additive_scaled_q.png",
+      "sha256": "27928a87b4ba0a9b2ad85053af00d23611d9c0c5956a48647ada47e2d934730c",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h5_choquet_2_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h5_choquet_2_additive_scaled_q.png",
+      "sha256": "0eb2934c407ef08fe22aed4cdabaf967a2b3243954f8cf72cd67676019e11a8a",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h5_choquet_2_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h5_choquet_2_additive_scaled_q_l1.png",
+      "sha256": "b578585b701eafd0497ad9be99cc254ee2759cbb43ce2665aca6a3c4c8806c29",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h5_choquet_2_additive_scaled_q_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h5_choquet_2_additive_scaled_q_l1.png",
+      "sha256": "f9f4c12263464b98b542ec0c6a9cd8282ada3315def5ae71e383fecac6fcd632",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h5_choquet_2_additive_scaled_q_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h5_fuzzy_choquet_neural_network.png",
+      "sha256": "b623e128fddc4f989120ce8abdf9c68bc11aa108c683a09b8433fd73a2f836f2",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h5_fuzzy_choquet_neural_network.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h5_fuzzy_choquet_neural_network.png",
+      "sha256": "efd9bd327a187993d83bf148377e98e212f803dc78ae52e3d6a5a38b373c265b",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h5_fuzzy_choquet_neural_network.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h5_choquet_model_aggregator.png",
+      "sha256": "2b2c6451912560186860dd5339e7ee66ea1ba7bc0c3b45d63b4be5d57dfc0983",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h5_choquet_model_aggregator.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h5_choquet_model_aggregator.png",
+      "sha256": "3b6ab434c0c1827028bc4652a3506872c0098d3bd2a5c93d30e40dddf595b765",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h5_choquet_model_aggregator.png"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_regression_metrics_h10.csv",
-      "sha256": "fba1ba432d0d643ba9712c393c35cb950ffd243730899708237dd426453909d5",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_regression_metrics_h10.csv"
+      "sha256": "ed7f97313a4e5b7431ac0489ea6699abb016d596c3a4e102c4e70785bd5c6a0d",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_regression_metrics_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_predictions_h10.parquet",
-      "sha256": "627f3773b88fc84e971b15515ff81195ceea9e24695266102d1bd9c390728c03",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_predictions_h10.parquet"
+      "sha256": "15f857ed5b7d08b7d509a4977bef053c079858d705e2a8a0787dfb20e9e8b3b1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_predictions_h10.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_selected_parameters_h10.csv",
-      "sha256": "4264c72115a203d8017ad1f5e3d0ce3351cba92223387aad52b08be63171911a",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_selected_parameters_h10.csv"
+      "sha256": "1dd9e18d82caa048e62e79c453132aae002eae6c5b09f9dc4ee854c24edc6dc0",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_selected_parameters_h10.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_q_scales_h10.csv",
+      "sha256": "69c52d8d5129df609c0feb7ea61dab6389e8bdc855e1a33bcf257018bf4f929b",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_q_scales_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_walk_forward_folds_h10.csv",
       "sha256": "94d79ab649ec868395cf8d1bd110098d9caa4ab7c7dc0de32f41af0eb526e876",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_walk_forward_folds_h10.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_walk_forward_folds_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_walk_forward_metrics_h10.csv",
-      "sha256": "0633fffc91e8a68403eac169c1f57091f266281afcfc7a39a07361c352ea576f",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_walk_forward_metrics_h10.csv"
+      "sha256": "d0b4d4e68ef226d9ddd8e37f18e57464543298990fdcdb2ce13d958d25deb052",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_walk_forward_metrics_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientation_history_h10.csv",
-      "sha256": "e48ce0b0fa758f5289fb0fc1132905d4504bc922c69ed3551956feca3ce05807",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientation_history_h10.csv"
+      "sha256": "48b94787d59d58918b80395adc2ee3cf7ab2d8ce691f92cfc2408c0399cccccf",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientation_history_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_history_h10.csv",
-      "sha256": "1b49b3f18b36535752ba32079620990b85851962bf1f1673172d7392281f512b",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_history_h10.csv"
+      "sha256": "d07ff39abc0e92bda68bce4e1d05dda69a56bc5c3ef33f0b0c237e529d583c52",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_history_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_selected_choquet_h10.csv",
-      "sha256": "e603df9d90646d364f0c662a04055e277da81217e3106648ae5ac906d51e013a",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_selected_choquet_h10.csv"
+      "sha256": "67807009725786987de12b83551355d2965a2d337d429cf63e70debdd6c9c224",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_selected_choquet_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientation_ablation_h10.csv",
-      "sha256": "218093f1c3879c0278689bb7ae440e27e37e3a185b3035d9681b01948e41314a",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientation_ablation_h10.csv"
+      "sha256": "fecfff60bb8d297a3ebab59a2a867b0511b56df80382fe0e168bf5b937fd08d5",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientation_ablation_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientations_h10.csv",
-      "sha256": "4492a76c3283c2dc9ceb08da0e8570cf06d16a24ad1a894891f215e64d12fb56",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientations_h10.csv"
+      "sha256": "5877cf95203221e40dde0b27d1a09df916f62b356c5fa24cdd0e88fdf9d068b5",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientations_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_failures_h10.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_failures_h10.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_failures_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_high_loss_metrics_h10.csv",
-      "sha256": "93eabfcf1f7287aedf581593ed2598a823b8cddd1dda36fd063f8a27d27a384d",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_high_loss_metrics_h10.csv"
+      "sha256": "f24fb99cb96e9b492f09d7abbc761c3a991b972f6cfe58c77b90022be6f7b1ad",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_high_loss_metrics_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_empirical_stress_audit_h10.csv",
       "sha256": "7c0028427540b16ee7183c540017574598e0c9de8ad2c6b64c8e9ec2d95cd284",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_empirical_stress_audit_h10.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_empirical_stress_audit_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_empirical_stress_metrics_h10.csv",
-      "sha256": "d102432519e78a9e9efb226c033b942324066b982e27975bc2a0d6fc50b1a649",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_empirical_stress_metrics_h10.csv"
+      "sha256": "f2d917143bed75152be70eaec25c796f814361e01b0fa2e6381a39a2c7c3363b",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_empirical_stress_metrics_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_clipping_audit_h10.csv",
       "sha256": "4edcaa3b0d7d9497588d6c08c1cc48fd44f20b1c63c0cc563ceb177ce95ea879",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_clipping_audit_h10.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_clipping_audit_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_extreme_estimation_robustness_h10.csv",
-      "sha256": "e5466e22c240fa579cff43ca1b9afed253554691bd5a06c614b5aff99405ee62",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_extreme_estimation_robustness_h10.csv"
+      "sha256": "7f349874bddeb2d4c8b190c1420a75ea7557497ee24a65e9c1f66fea6eaa32a9",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_extreme_estimation_robustness_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_comparison_h10.csv",
-      "sha256": "85f04086963185f41b9be1e57cd95ebf237476b55a86cbee03dd05100aefad25",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_comparison_h10.csv"
+      "sha256": "bc730c4de4b4aa05785a20477cdc7e95e4dfe21695832625cb801bbd21480240",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_comparison_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_samples_h10.csv",
       "sha256": "b918e98fc9529c8a8ba9dc713ee22344acdc69518c7cd6704be6035fe05c950c",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_samples_h10.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_samples_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_selection_summary_h10.csv",
-      "sha256": "1fe5e73eacbbfa0311423e455c4cf17f579bf6465c61dd5202a7d8befdd65513",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_selection_summary_h10.csv"
+      "sha256": "264f9dcf0a51fd8cebf4db228fb7039553df88bc8d78228e5d4c531bb2401485",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_selection_summary_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_validation_stress_failures_h10.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_validation_stress_failures_h10.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_validation_stress_failures_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_hac_comparison_h10.csv",
-      "sha256": "d3a6f19eba478da4adb1df831bc90767a424b752d006de3e6afa719f905caa94",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_hac_comparison_h10.csv"
+      "sha256": "93fc75a09813fb8ba2bfedf0f0ebf3823d4bfd8e2750bb63d529714da3c75e5c",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_hac_comparison_h10.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h10_choquet_1-additive.csv",
       "sha256": "086e3d4b15733ce3913cd22cfe064d994ad861c9f5d9daf4b0559d74ef02123e",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h10_choquet_1-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h10_choquet_1-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h10_choquet_1-additive.csv",
       "sha256": "e37ef1983a76ed1d2b2b2c451f8794d6c0fdcce2501358885b1475fd1bb30b97",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h10_choquet_1-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h10_choquet_1-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h10_choquet_1_additive.csv",
       "sha256": "81137ce2b53a1c66c0993038fe0865cd30d5daeb94f5ce71dab51c80b7f510b7",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h10_choquet_1_additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h10_choquet_1_additive.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h10_choquet_1-additive_scaled-q.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h10_choquet_1-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h10_choquet_1-additive_scaled-q.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h10_choquet_1-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h10_choquet_1_additive_scaled_q.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h10_choquet_1_additive_scaled_q.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h10_choquet_2-additive.csv",
       "sha256": "e43fe642a05852bb9c67be784a6b3ebe5db98671fb8b6047784f1b6dfca091f4",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h10_choquet_2-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h10_choquet_2-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h10_choquet_2-additive.csv",
       "sha256": "edfbbbafb55c3fe5e769283833e2695302a58c08902b7e4146155093f9d3393d",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h10_choquet_2-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h10_choquet_2-additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive.csv",
       "sha256": "ca0de024d885a31a983d1b5a59882e752ba3a35e201be0de9dea836de39bbae2",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_h10_choquet_2-additive_l1.csv",
       "sha256": "d95e43e7cead279c73170a30062d2fd6d20ea0bf183068a481378d3840e48ead",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_h10_choquet_2-additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h10_choquet_2-additive_l1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interactions_h10_choquet_2-additive_l1.csv",
       "sha256": "645455aef855a101f7b9a11783143176e2f5aa0c9690b016967b05514130d46f",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interactions_h10_choquet_2-additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h10_choquet_2-additive_l1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive_l1.csv",
       "sha256": "60b27c0e1e609481368ae91fd728ab16365810a6bb9b52253eaf5228f7f786bc",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive_l1.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h10_choquet_2-additive_scaled-q.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h10_choquet_2-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h10_choquet_2-additive_scaled-q.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h10_choquet_2-additive_scaled-q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive_scaled_q.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive_scaled_q.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h10_choquet_2-additive_scaled-q_l1.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h10_choquet_2-additive_scaled-q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h10_choquet_2-additive_scaled-q_l1.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h10_choquet_2-additive_scaled-q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive_scaled_q_l1.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h10_choquet_2_additive_scaled_q_l1.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h10_fuzzy_choquet_neural_network.csv",
+      "sha256": "15f044172c30c8aca6b1750f5d79951fa5cf7e11b8dcfa9abe3f1821e75c1f20",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h10_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h10_fuzzy_choquet_neural_network.csv",
+      "sha256": "5f1ac7524a19758dcdccb420d8db409bde87b686c6fc467dc51a3a488602bdb1",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h10_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h10_fuzzy_choquet_neural_network.csv",
+      "sha256": "7d4fe7a94c5e6ef6abcda867e4fa5333b1607f12c6db3066fdf38af5b8551146",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h10_fuzzy_choquet_neural_network.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_shapley_h10_choquet_model_aggregator.csv",
+      "sha256": "39dc00ab84a5dd9df35652b43693da189b3e0114861d0e226327294c6ca1291f",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_h10_choquet_model_aggregator.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_interactions_h10_choquet_model_aggregator.csv",
+      "sha256": "67a710b9da766a70d25e770b1f0f89d18ce6dcea11b6e906c381f49c85871431",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interactions_h10_choquet_model_aggregator.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_2a_top_interactions_h10_choquet_model_aggregator.csv",
+      "sha256": "81dc4dba5566694e1ce81e0ab1747b397c17c6dcedfabf5ea31411a64caac025",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_top_interactions_h10_choquet_model_aggregator.csv"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_rmse_ranking_h10.png",
-      "sha256": "45fdcb3584733a6c9cb84ce8d73d3935ef0ea25a9e3980dfb8dd0267c224283e",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_rmse_ranking_h10.png"
+      "sha256": "c1ae50bab11d87625499cffb7995c5632ff66d2bc11f1c2988f72fd8c7ff9d9d",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_rmse_ranking_h10.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_forecasts_h10.png",
-      "sha256": "9881f54a8dd95519225d8499c482d501e483a446760c96598b3bf6ff136fffc2",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_forecasts_h10.png"
+      "sha256": "a124da393d9c50c79ff77af4ae8937e54a8911c35e404c552b6c4a2ec6e43c46",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_forecasts_h10.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h10_choquet_1_additive.png",
       "sha256": "3fe8671ce9291190463b1c84cdb39e8acf6c89230363339c09453d6f48e96d3d",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h10_choquet_1_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h10_choquet_1_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h10_choquet_1_additive.png",
       "sha256": "b9b6eeb02d4abf5ce688f1958e7539915f629ca4eb0049e0e27d3d1fdf2e72d4",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h10_choquet_1_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h10_choquet_1_additive.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h10_choquet_1_additive_scaled_q.png",
+      "sha256": "7886aa6b643cac43a2a8459fd6d64b38cb718f336840d8dc393e4e9a0e29ec3c",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h10_choquet_1_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h10_choquet_1_additive_scaled_q.png",
+      "sha256": "ed57eac0cfad411901054a4cdaee92bf6210f7375f1250563f3983809cb6301c",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h10_choquet_1_additive_scaled_q.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h10_choquet_2_additive.png",
       "sha256": "c706f61ff3946002d8e6cc890f0e059be5784c274fc8849fe23437f01db3160f",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h10_choquet_2_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h10_choquet_2_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h10_choquet_2_additive.png",
       "sha256": "e9fb2b29e5a3d3e1ab7006da2745a21454ddc018171610cdaa81639fb2c44051",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h10_choquet_2_additive.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h10_choquet_2_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_h10_choquet_2_additive_l1.png",
       "sha256": "864489ff6f70dccaeda368c51ec2942a24d43b9c6a4b07def042d66719f16637",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_h10_choquet_2_additive_l1.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h10_choquet_2_additive_l1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_interactions_h10_choquet_2_additive_l1.png",
       "sha256": "ab6af0e9e37c028b7ca063389488ade5ecb752b8c5552ce4889159da8beed210",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_interactions_h10_choquet_2_additive_l1.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h10_choquet_2_additive_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h10_choquet_2_additive_scaled_q.png",
+      "sha256": "1e56e5c1769dce6a552ee0e50d15fc068a4299abd4baad711b00307e8d21d418",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h10_choquet_2_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h10_choquet_2_additive_scaled_q.png",
+      "sha256": "f8cdff5ac0ef1c64f414802d7af7b8369c0f165459edd46b435c8d8df65ec53d",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h10_choquet_2_additive_scaled_q.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h10_choquet_2_additive_scaled_q_l1.png",
+      "sha256": "bc28f9e504e2391c683c19bc0e870a40e6242dfeef0cca9e2e131170a8bb6fa8",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h10_choquet_2_additive_scaled_q_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h10_choquet_2_additive_scaled_q_l1.png",
+      "sha256": "d4330433545c9974adf8c14fc57e46469b9e4576187db40e22ad69679e2b1159",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h10_choquet_2_additive_scaled_q_l1.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h10_fuzzy_choquet_neural_network.png",
+      "sha256": "c25ede523fd684bcece9c9ee9d8faeec4e604d536398f0892c3cd6a96080b40d",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h10_fuzzy_choquet_neural_network.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h10_fuzzy_choquet_neural_network.png",
+      "sha256": "ea476d4ef70bf8bf40421aeb9f1cf15a44671a084df3046225d0be43b92558e8",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h10_fuzzy_choquet_neural_network.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_shapley_h10_choquet_model_aggregator.png",
+      "sha256": "a12f742cf83ac9225747719ddd88013e8b7e48d31ff3553f997bd71296fb0d74",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_h10_choquet_model_aggregator.png"
+    },
+    {
+      "destination": "data\\results\\figures\\experiment_2a_interactions_h10_choquet_model_aggregator.png",
+      "sha256": "d9cee90f36f3546c5cf40c9f0339521998b1c0f588d99fecb71309a53223938b",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_interactions_h10_choquet_model_aggregator.png"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_all_metrics.csv",
-      "sha256": "82b06fdafaa27e7b41722b5e5d62a04f44d278da0889b1dc7c830f552b5560fa",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_all_metrics.csv"
+      "sha256": "337f68eb593a8f1f4a2d213cd68c498f79320ad38a3f5f07024d14f68a002227",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_all_metrics.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_cap_weight_robustness_h5.csv",
-      "sha256": "bbce400ce9b79c53fe4c6372fb18ace3e4e39dd82c012080e16c654bba91dfac",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_cap_weight_robustness_h5.csv"
+      "sha256": "ff388956e15a530253d6b128a6f3abf42d69465c5c4fdff272d351d00e0e0c8f",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_cap_weight_robustness_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_cap_weight_validation_selected_choquet_h5.csv",
-      "sha256": "6639811b5449836c2443d758c2061f6ade7fd78ae29c6bb5861d8781b57da132",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_cap_weight_validation_selected_choquet_h5.csv"
+      "sha256": "408f2a1ffb741ca77d26c8f1ca9ce1536764ad1dee41900f4abbc3374d3ae93f",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_cap_weight_validation_selected_choquet_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_portfolio_comparison_h5.csv",
-      "sha256": "13551a87bcccf579513af52a47ee5ef2a33ab182b0ce5e8f06c08f60fb562a97",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_portfolio_comparison_h5.csv"
+      "sha256": "a2cc7e42799aa799ce1fb0f24dcb5d6e7e6b86d6cf2d7c8733c03bcfacf8861b",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_portfolio_comparison_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_shapley_stability_h5.csv",
       "sha256": "64344006f74efc8fe66dde3e25d32dc756338fc6bf7f1fde97498bd2bffea08b",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_shapley_stability_h5.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_shapley_stability_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interaction_stability_h5_long.csv",
       "sha256": "c42228dc79ef04a1fb2976b150f8e309739470c297aee7f31ee91380645be5ab",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interaction_stability_h5_long.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interaction_stability_h5_long.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_interaction_stability_h5_summary.csv",
       "sha256": "b2b01d668a60ffc9ced8394c27dbef11bb772ec5353820f04b4a3304e9535591",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_interaction_stability_h5_summary.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_interaction_stability_h5_summary.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_stability_failures_h5.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_stability_failures_h5.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_stability_failures_h5.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_2a_orientation_h5_choquet_2-additive.csv",
       "sha256": "e8fc3940e25cfa89ca7c3f6dda367df03442b5b7f6dbac5252c87a3cad46e750",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\tables\\experiment_2a_orientation_h5_choquet_2-additive.csv"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\tables\\experiment_2a_orientation_h5_choquet_2-additive.csv"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_predictor_correlation.png",
       "sha256": "92d773e1284e14ddfd6bd910432fa506e96d7785645134287358730d0c5633e8",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_predictor_correlation.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_predictor_correlation.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_future_loss_history.png",
       "sha256": "411515138d762f54a17bd712e5ca52babe3f80b6c496764791bfe5e2162e6506",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_future_loss_history.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_future_loss_history.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_rmse_across_horizons.png",
-      "sha256": "6727efd96620e19c21e7e0958356af95cb69de1816b81a50dcca358936565084",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_rmse_across_horizons.png"
+      "sha256": "d3247fcc0c75e875190ad989c131f8000e61c2b41fc9c412f15213ca8872c65c",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_rmse_across_horizons.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_shapley_stability_h5.png",
       "sha256": "efb1fa4fee79ff1e575be824768721269eb690dff04e934c2c98b48c051f7a83",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_shapley_stability_h5.png"
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_shapley_stability_h5.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_2a_portfolio_robustness_h5.png",
-      "sha256": "c73725cf47784c5552efc879cbc8b7024f72ec46fcf378aececebaf3d84bff69",
-      "source": "data\\results\\runs\\future_loss\\20260816T140404Z_e114350_full_19104\\figures\\experiment_2a_portfolio_robustness_h5.png"
+      "sha256": "59b5eefef0cd53de1c6d195b2f19e6f2a713b315444ccd6020d88fb897a9ee03",
+      "source": "data\\results\\runs\\future_loss\\20260817T022244Z_0ed5a6b_full_28148\\figures\\experiment_2a_portfolio_robustness_h5.png"
     }
   ],
   "experiment_id": "future_loss",
-  "published_at_utc": "2026-08-16T14:22:48.342953+00:00",
-  "run_id": "20260816T140404Z_e114350_full_19104",
-  "run_manifest_sha256": "de7337dbee7ea6fb1589819103fb81242aa294d8b2ca990e5c4a46f917efbd88"
+  "published_at_utc": "2026-08-17T03:41:53.830860+00:00",
+  "run_id": "20260817T022244Z_0ed5a6b_full_28148",
+  "run_manifest_sha256": "48b0ca180bae6f13f1754e9eaa8741d7df5cc7e2367339eed3dca45ecb2a9952"
 }

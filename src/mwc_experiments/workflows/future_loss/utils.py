@@ -3,16 +3,20 @@
 from __future__ import annotations
 
 from collections.abc import Mapping
+from time import perf_counter
 from typing import Any
 
 import numpy as np
 import pandas as pd
+from capacities_ml_fin.ml.aggregation import aggregate_regression_predictions
+from capacities_ml_fin.ml.optimization import KAdditivity
 
 from mwc_experiments.evaluation.interpretation import (
     capacity_summary,
     orientation_table,
 )
 from mwc_experiments.evaluation.metrics import regression_metrics
+from mwc_experiments.modeling.inspection import fitted_q
 from mwc_experiments.modeling.registries import (
     apply_parameter_grid_overrides,
     regression_candidates,
@@ -49,6 +53,8 @@ def run_future_loss_experiment(
     training_window_years: int = 5,
     validation_window_months: int = 12,
     oos_block_years: int = 1,
+    aggregation_model_name: str | None = None,
+    aggregation_base_models: tuple[str, ...] = (),
     verbose: bool = True,
 ) -> FutureLossExperimentResult:
     """Run rolling walk-forward loss forecasts and concatenate every OOS block."""
@@ -73,7 +79,13 @@ def run_future_loss_experiment(
             include_mlp=True,
             include_dummy=True,
             include_regularized_choquet=(
-                model_names is None or "Choquet 2-additive L1" in model_names
+                model_names is None
+                or bool(
+                    {
+                        "Choquet 2-additive L1",
+                        "Choquet 2-additive scaled-q L1",
+                    }.intersection(model_names)
+                )
             ),
         )
         candidates = apply_parameter_grid_overrides(
@@ -86,9 +98,34 @@ def run_future_loss_experiment(
         if model_names is not None:
             candidates = {name: candidates[name] for name in model_names}
 
+        aggregate_predictions = bool(aggregation_base_models)
+        if aggregate_predictions:
+            if not aggregation_model_name:
+                raise ValueError(
+                    "aggregation_model_name is required when aggregation is enabled."
+                )
+            forbidden = [
+                name
+                for name in aggregation_base_models
+                if "choquet" in name.casefold() or "choquistic" in name.casefold()
+            ]
+            if forbidden:
+                raise ValueError(
+                    "Aggregation base models must be non-Choquet models; got "
+                    f"{forbidden}."
+                )
+            missing = set(aggregation_base_models) - set(candidates)
+            if missing:
+                raise KeyError(
+                    "Aggregation base models are not configured candidates: "
+                    f"{sorted(missing)}."
+                )
+
         prediction_chunks: dict[str, list[pd.Series]] = {
             name: [] for name in candidates
         }
+        if aggregate_predictions:
+            prediction_chunks[str(aggregation_model_name)] = []
         benchmark_chunks: list[pd.Series] = []
         fold_metric_rows: list[dict[str, object]] = []
         parameter_rows: list[dict[str, object]] = []
@@ -99,9 +136,12 @@ def run_future_loss_experiment(
         fitted_models: dict[str, object] = {}
         shapley: dict[str, pd.Series] = {}
         interactions: dict[str, pd.DataFrame] = {}
+        aggregation_failed = False
 
         for fold in folds:
             split = fold.split
+            aggregation_fit_predictions: dict[str, pd.Series] = {}
+            aggregation_test_predictions: dict[str, pd.Series] = {}
             training_mean = pd.concat(
                 [split.y_train, split.y_validation]
             ).mean()
@@ -138,6 +178,13 @@ def run_future_loss_experiment(
                         name=name,
                     )
                     prediction_chunks[name].append(prediction)
+                    if name in aggregation_base_models:
+                        aggregation_fit_predictions[name] = pd.Series(
+                            selected.validation_predictions,
+                            index=split.y_validation.index,
+                            name=name,
+                        )
+                        aggregation_test_predictions[name] = prediction
                     fitted_models[name] = fitted
                     fold_metric_rows.append(
                         {
@@ -165,6 +212,7 @@ def run_future_loss_experiment(
                             "OOS start": fold.oos_start,
                             "OOS end": fold.oos_end,
                             "best parameters": selected.best_params,
+                            "fitted q": fitted_q(fitted),
                         }
                     )
                     for message in selected.failures:
@@ -184,7 +232,9 @@ def run_future_loss_experiment(
                         orientation_rows.append(orientations)
                     except AttributeError:
                         pass
-                    if name.startswith("Choquet"):
+                    if name.startswith("Choquet") or name.startswith(
+                        "Fuzzy Choquet"
+                    ):
                         values, matrix = capacity_summary(fitted, list(features))
                         values_frame = values.rename("Shapley importance").rename_axis(
                             "feature"
@@ -206,6 +256,137 @@ def run_future_loss_experiment(
                             "message": f"{type(error).__name__}: {error}",
                         }
                     )
+
+            if aggregate_predictions and not aggregation_failed:
+                aggregate_name = str(aggregation_model_name)
+                if verbose:
+                    print(
+                        f"[future loss h={horizon}, fold={fold.fold}] "
+                        f"{aggregate_name} "
+                        f"({len(aggregation_base_models)} classical inputs)",
+                        flush=True,
+                    )
+                missing_sources = set(aggregation_base_models) - set(
+                    aggregation_fit_predictions
+                )
+                if missing_sources:
+                    aggregation_failed = True
+                    prediction_chunks[aggregate_name].clear()
+                    failure_rows.append(
+                        {
+                            "fold": fold.fold,
+                            "model": aggregate_name,
+                            "message": (
+                                "Missing non-Choquet base predictions: "
+                                f"{sorted(missing_sources)}"
+                            ),
+                        }
+                    )
+                    if verbose:
+                        print(
+                            f"[future loss h={horizon}, fold={fold.fold}] "
+                            f"{aggregate_name} skipped: missing "
+                            f"{sorted(missing_sources)}",
+                            flush=True,
+                        )
+                else:
+                    try:
+                        fit_frame = pd.DataFrame(aggregation_fit_predictions)[
+                            list(aggregation_base_models)
+                        ]
+                        test_frame = pd.DataFrame(aggregation_test_predictions)[
+                            list(aggregation_base_models)
+                        ]
+                        started = perf_counter()
+                        aggregation = aggregate_regression_predictions(
+                            fit_frame,
+                            split.y_validation,
+                            test_frame,
+                            sparsity=KAdditivity(order=2),
+                        )
+                        aggregation_runtime = perf_counter() - started
+                        prediction = pd.Series(
+                            aggregation.predictions,
+                            index=split.y_test.index,
+                            name=aggregate_name,
+                        )
+                        validation_prediction = pd.Series(
+                            aggregation.fitted_model.predict(fit_frame),
+                            index=split.y_validation.index,
+                        )
+                        prediction_chunks[aggregate_name].append(prediction)
+                        fitted_models[aggregate_name] = aggregation.fitted_model
+                        fold_metric_rows.append(
+                            {
+                                "fold": fold.fold,
+                                "model": aggregate_name,
+                                **regression_metrics(
+                                    split.y_test,
+                                    prediction,
+                                    benchmark_prediction=np.repeat(
+                                        training_mean,
+                                        len(split.y_test),
+                                    ),
+                                ),
+                                "validation RMSE": regression_metrics(
+                                    split.y_validation,
+                                    validation_prediction,
+                                )["RMSE"],
+                                "selection runtime seconds": aggregation_runtime,
+                                "refit runtime seconds": 0.0,
+                                "parameter count": model_parameter_count(
+                                    aggregation.fitted_model
+                                ),
+                                "best parameters": {
+                                    "capacity": "2-additive",
+                                    "base models": list(aggregation_base_models),
+                                },
+                            }
+                        )
+                        parameter_rows.append(
+                            {
+                                "fold": fold.fold,
+                                "model": aggregate_name,
+                                "OOS start": fold.oos_start,
+                                "OOS end": fold.oos_end,
+                                "best parameters": {
+                                    "capacity": "2-additive",
+                                    "base models": list(aggregation_base_models),
+                                },
+                                "fitted q": None,
+                            }
+                        )
+                        values, matrix = capacity_summary(
+                            aggregation.fitted_model,
+                            list(aggregation_base_models),
+                        )
+                        values_frame = values.rename(
+                            "Shapley importance"
+                        ).rename_axis("feature").reset_index()
+                        values_frame.insert(0, "model", aggregate_name)
+                        values_frame.insert(0, "fold", fold.fold)
+                        shapley_rows.append(values_frame)
+                        if fold is folds[-1]:
+                            shapley[aggregate_name] = values
+                            interactions[aggregate_name] = matrix
+                    except Exception as error:
+                        aggregation_failed = True
+                        prediction_chunks[aggregate_name].clear()
+                        fitted_models.pop(aggregate_name, None)
+                        failure_rows.append(
+                            {
+                                "fold": fold.fold,
+                                "model": aggregate_name,
+                                "message": f"{type(error).__name__}: {error}",
+                            }
+                        )
+                        if verbose:
+                            print(
+                                f"[future loss h={horizon}, fold={fold.fold}] "
+                                f"{aggregate_name} failed: "
+                                f"{type(error).__name__}: {error}",
+                                flush=True,
+                            )
 
         successful = {
             name: pd.concat(chunks).sort_index()

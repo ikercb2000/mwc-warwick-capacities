@@ -39,6 +39,35 @@ fold,model,feature,Shapley importance
 0,Choquistic 2-additive [unweighted],realized_volatility_20d,4.235066908192092e-17
 0,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.24392847877448287
 0,Choquistic 2-additive [unweighted],vix,1.8993937459322084e-18
+0,Choquistic model aggregator [unweighted],Explicit interactions [unweighted],-2.992107374287272e-17
+0,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.0040166192246416975
+0,Choquistic model aggregator [unweighted],Logistic [unweighted],0.00022859806910695732
+0,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.00022859768284837442
+0,Choquistic model aggregator [unweighted],MLP,0.0002361251905210094
+0,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],-2.2038863814487616e-16
+0,Choquistic model aggregator [unweighted],RBF SVM [unweighted],0.0007240971991868158
+0,Choquistic model aggregator [unweighted],Random forest [unweighted],0.49739065996920667
+0,Choquistic model aggregator [unweighted],Rolling prior probability,0.4971753026644876
+0,Fuzzy Choquet neural network [balanced],average_equity_correlation_60d,7.310488816593211e-16
+0,Fuzzy Choquet neural network [balanced],baa_credit_spread_pct,0.23950644370308027
+0,Fuzzy Choquet neural network [balanced],drawdown_severity,1.6427117899604555e-15
+0,Fuzzy Choquet neural network [balanced],lagged_portfolio_loss_1d,0.17895469821508694
+0,Fuzzy Choquet neural network [balanced],liquidity_stress_20d,1.269856292104245e-15
+0,Fuzzy Choquet neural network [balanced],market_loss_1d,0.0946530591923755
+0,Fuzzy Choquet neural network [balanced],negative_momentum_21d,0.16584049710454446
+0,Fuzzy Choquet neural network [balanced],realized_volatility_20d,1.7086206926080604e-15
+0,Fuzzy Choquet neural network [balanced],term_spread_10y_2y_pct,0.32104530178490803
+0,Fuzzy Choquet neural network [balanced],vix,-1.0113355486601436e-15
+0,Fuzzy Choquet neural network [unweighted],average_equity_correlation_60d,-1.531130423966447e-16
+0,Fuzzy Choquet neural network [unweighted],baa_credit_spread_pct,0.27857788073730405
+0,Fuzzy Choquet neural network [unweighted],drawdown_severity,-9.316288630999678e-17
+0,Fuzzy Choquet neural network [unweighted],lagged_portfolio_loss_1d,0.1166600145680591
+0,Fuzzy Choquet neural network [unweighted],liquidity_stress_20d,0.09400040759412218
+0,Fuzzy Choquet neural network [unweighted],market_loss_1d,0.14693906388516953
+0,Fuzzy Choquet neural network [unweighted],negative_momentum_21d,0.11989418164336701
+0,Fuzzy Choquet neural network [unweighted],realized_volatility_20d,-2.6926357407011178e-17
+0,Fuzzy Choquet neural network [unweighted],term_spread_10y_2y_pct,0.24392845157197804
+0,Fuzzy Choquet neural network [unweighted],vix,4.406410387623349e-17
 1,Choquistic 1-additive [balanced],average_equity_correlation_60d,1.1896632061854996e-16
 1,Choquistic 1-additive [balanced],baa_credit_spread_pct,7.92708997401915e-16
 1,Choquistic 1-additive [balanced],drawdown_severity,0.7000065636324702
@@ -79,6 +108,35 @@ fold,model,feature,Shapley importance
 1,Choquistic 2-additive [unweighted],realized_volatility_20d,0.23344202821157511
 1,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,1.258545786664796e-16
 1,Choquistic 2-additive [unweighted],vix,-5.621329056050121e-17
+1,Choquistic model aggregator [unweighted],Explicit interactions [unweighted],0.12677933340349964
+1,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],-2.1410496845838577e-14
+1,Choquistic model aggregator [unweighted],Logistic [unweighted],-2.750340921065653e-14
+1,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],-2.0747169894203638e-14
+1,Choquistic model aggregator [unweighted],MLP,0.0006732595216157486
+1,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.09926435628679937
+1,Choquistic model aggregator [unweighted],RBF SVM [unweighted],0.2276491725066741
+1,Choquistic model aggregator [unweighted],Random forest [unweighted],0.30896445343838924
+1,Choquistic model aggregator [unweighted],Rolling prior probability,0.23666942484309136
+1,Fuzzy Choquet neural network [balanced],average_equity_correlation_60d,1.6522702887993798e-15
+1,Fuzzy Choquet neural network [balanced],baa_credit_spread_pct,-1.5789347765006132e-15
+1,Fuzzy Choquet neural network [balanced],drawdown_severity,0.17131304111833237
+1,Fuzzy Choquet neural network [balanced],lagged_portfolio_loss_1d,0.14592445237253998
+1,Fuzzy Choquet neural network [balanced],liquidity_stress_20d,0.16201212424677996
+1,Fuzzy Choquet neural network [balanced],market_loss_1d,0.22437322540667204
+1,Fuzzy Choquet neural network [balanced],negative_momentum_21d,-5.347727612418679e-15
+1,Fuzzy Choquet neural network [balanced],realized_volatility_20d,0.2162305697666244
+1,Fuzzy Choquet neural network [balanced],term_spread_10y_2y_pct,-1.6077195964571475e-15
+1,Fuzzy Choquet neural network [balanced],vix,0.08014658708905846
+1,Fuzzy Choquet neural network [unweighted],average_equity_correlation_60d,2.654882849680273e-17
+1,Fuzzy Choquet neural network [unweighted],baa_credit_spread_pct,5.839381224062063e-17
+1,Fuzzy Choquet neural network [unweighted],drawdown_severity,0.19515084389349738
+1,Fuzzy Choquet neural network [unweighted],lagged_portfolio_loss_1d,0.14728027171157348
+1,Fuzzy Choquet neural network [unweighted],liquidity_stress_20d,0.1440422602569774
+1,Fuzzy Choquet neural network [unweighted],market_loss_1d,0.2800841808934431
+1,Fuzzy Choquet neural network [unweighted],negative_momentum_21d,5.2491005589407743e-17
+1,Fuzzy Choquet neural network [unweighted],realized_volatility_20d,0.233442443244508
+1,Fuzzy Choquet neural network [unweighted],term_spread_10y_2y_pct,2.4130449463224428e-17
+1,Fuzzy Choquet neural network [unweighted],vix,7.191841302014437e-17
 2,Choquistic 1-additive [balanced],average_equity_correlation_60d,-1.5700458071587577e-16
 2,Choquistic 1-additive [balanced],baa_credit_spread_pct,0.4839194977288105
 2,Choquistic 1-additive [balanced],drawdown_severity,0.010451002963990878
@@ -119,6 +177,35 @@ fold,model,feature,Shapley importance
 2,Choquistic 2-additive [unweighted],realized_volatility_20d,0.13638899505220786
 2,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.08308537772247689
 2,Choquistic 2-additive [unweighted],vix,0.1360788418854904
+2,Choquistic model aggregator [unweighted],Explicit interactions [unweighted],0.05061654460043582
+2,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.011040990028568294
+2,Choquistic model aggregator [unweighted],Logistic [unweighted],1.198590570696779e-16
+2,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],8.108938799487026e-17
+2,Choquistic model aggregator [unweighted],MLP,1.5866818989686053e-16
+2,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.08005255516099784
+2,Choquistic model aggregator [unweighted],RBF SVM [unweighted],0.3693309002385663
+2,Choquistic model aggregator [unweighted],Random forest [unweighted],0.08175608007307719
+2,Choquistic model aggregator [unweighted],Rolling prior probability,0.40720292989835416
+2,Fuzzy Choquet neural network [balanced],average_equity_correlation_60d,-4.57484248361982e-16
+2,Fuzzy Choquet neural network [balanced],baa_credit_spread_pct,0.24856380571728584
+2,Fuzzy Choquet neural network [balanced],drawdown_severity,-2.4880600728959272e-16
+2,Fuzzy Choquet neural network [balanced],lagged_portfolio_loss_1d,0.07886481232497523
+2,Fuzzy Choquet neural network [balanced],liquidity_stress_20d,0.09343182537040241
+2,Fuzzy Choquet neural network [balanced],market_loss_1d,0.03284470996203639
+2,Fuzzy Choquet neural network [balanced],negative_momentum_21d,0.15386109244260143
+2,Fuzzy Choquet neural network [balanced],realized_volatility_20d,0.18590650814871174
+2,Fuzzy Choquet neural network [balanced],term_spread_10y_2y_pct,0.11309542066358436
+2,Fuzzy Choquet neural network [balanced],vix,0.09343182537040245
+2,Fuzzy Choquet neural network [unweighted],average_equity_correlation_60d,-1.0920304988728541e-16
+2,Fuzzy Choquet neural network [unweighted],baa_credit_spread_pct,0.24094438978535557
+2,Fuzzy Choquet neural network [unweighted],drawdown_severity,-2.7497412748033298e-17
+2,Fuzzy Choquet neural network [unweighted],lagged_portfolio_loss_1d,0.04971546511769374
+2,Fuzzy Choquet neural network [unweighted],liquidity_stress_20d,0.13607619878176785
+2,Fuzzy Choquet neural network [unweighted],market_loss_1d,0.029458345689326145
+2,Fuzzy Choquet neural network [unweighted],negative_momentum_21d,0.1882519354184149
+2,Fuzzy Choquet neural network [unweighted],realized_volatility_20d,0.13639163010830901
+2,Fuzzy Choquet neural network [unweighted],term_spread_10y_2y_pct,0.08308583631736523
+2,Fuzzy Choquet neural network [unweighted],vix,0.13607619878176774
 3,Choquistic 1-additive [balanced],average_equity_correlation_60d,-6.345685540615596e-16
 3,Choquistic 1-additive [balanced],baa_credit_spread_pct,0.49623863330241075
 3,Choquistic 1-additive [balanced],drawdown_severity,-1.6189864531092128e-15
@@ -159,6 +246,35 @@ fold,model,feature,Shapley importance
 3,Choquistic 2-additive [unweighted],realized_volatility_20d,0.06835268785974326
 3,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,-5.694480977305416e-17
 3,Choquistic 2-additive [unweighted],vix,0.05312356147022987
+3,Choquistic model aggregator [unweighted],Explicit interactions [unweighted],0.13301514431868275
+3,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],-2.2460949586183347e-14
+3,Choquistic model aggregator [unweighted],Logistic [unweighted],0.007434264550876756
+3,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.007434275312639498
+3,Choquistic model aggregator [unweighted],MLP,-4.679290961833948e-13
+3,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.3681462944056618
+3,Choquistic model aggregator [unweighted],RBF SVM [unweighted],0.35014980670224927
+3,Choquistic model aggregator [unweighted],Random forest [unweighted],-1.0340779689659177e-13
+3,Choquistic model aggregator [unweighted],Rolling prior probability,0.13382021471048405
+3,Fuzzy Choquet neural network [balanced],average_equity_correlation_60d,4.6531108015779384e-14
+3,Fuzzy Choquet neural network [balanced],baa_credit_spread_pct,0.4792090919885723
+3,Fuzzy Choquet neural network [balanced],drawdown_severity,3.068020755374147e-14
+3,Fuzzy Choquet neural network [balanced],lagged_portfolio_loss_1d,0.07018740131857679
+3,Fuzzy Choquet neural network [balanced],liquidity_stress_20d,0.14440175044278922
+3,Fuzzy Choquet neural network [balanced],market_loss_1d,0.07507839835993974
+3,Fuzzy Choquet neural network [balanced],negative_momentum_21d,0.07197488141949439
+3,Fuzzy Choquet neural network [balanced],realized_volatility_20d,0.09896116836605014
+3,Fuzzy Choquet neural network [balanced],term_spread_10y_2y_pct,4.7476763740894223e-14
+3,Fuzzy Choquet neural network [balanced],vix,0.0601873081044531
+3,Fuzzy Choquet neural network [unweighted],average_equity_correlation_60d,-2.682699841310924e-16
+3,Fuzzy Choquet neural network [unweighted],baa_credit_spread_pct,0.45467402967599996
+3,Fuzzy Choquet neural network [unweighted],drawdown_severity,-5.012261954283534e-18
+3,Fuzzy Choquet neural network [unweighted],lagged_portfolio_loss_1d,0.10420052272747135
+3,Fuzzy Choquet neural network [unweighted],liquidity_stress_20d,0.16427367601328727
+3,Fuzzy Choquet neural network [unweighted],market_loss_1d,0.11142500925003639
+3,Fuzzy Choquet neural network [unweighted],negative_momentum_21d,0.044010355059694785
+3,Fuzzy Choquet neural network [unweighted],realized_volatility_20d,0.06828492173827641
+3,Fuzzy Choquet neural network [unweighted],term_spread_10y_2y_pct,1.1980112739829102e-16
+3,Fuzzy Choquet neural network [unweighted],vix,0.053131485535232795
 4,Choquistic 1-additive [balanced],average_equity_correlation_60d,-7.614349850263367e-15
 4,Choquistic 1-additive [balanced],baa_credit_spread_pct,-2.4508658368294243e-15
 4,Choquistic 1-additive [balanced],drawdown_severity,-6.179668362968993e-15
@@ -199,6 +315,35 @@ fold,model,feature,Shapley importance
 4,Choquistic 2-additive [unweighted],realized_volatility_20d,-9.085641687176863e-17
 4,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,-1.4486235706612598e-16
 4,Choquistic 2-additive [unweighted],vix,-2.296415945666028e-16
+4,Choquistic model aggregator [unweighted],Explicit interactions [unweighted],0.044844398181108726
+4,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.05852984476241433
+4,Choquistic model aggregator [unweighted],Logistic [unweighted],0.219638040298174
+4,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.2196380402981742
+4,Choquistic model aggregator [unweighted],MLP,0.20696463853020103
+4,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.11095527269312605
+4,Choquistic model aggregator [unweighted],RBF SVM [unweighted],0.05849663909036383
+4,Choquistic model aggregator [unweighted],Random forest [unweighted],0.03405134849399669
+4,Choquistic model aggregator [unweighted],Rolling prior probability,0.04688177765244138
+4,Fuzzy Choquet neural network [balanced],average_equity_correlation_60d,4.366545245616386e-14
+4,Fuzzy Choquet neural network [balanced],baa_credit_spread_pct,2.7704439923862885e-14
+4,Fuzzy Choquet neural network [balanced],drawdown_severity,-3.7669184865746275e-14
+4,Fuzzy Choquet neural network [balanced],lagged_portfolio_loss_1d,0.1980492186569144
+4,Fuzzy Choquet neural network [balanced],liquidity_stress_20d,0.26163967420315337
+4,Fuzzy Choquet neural network [balanced],market_loss_1d,0.23836032579679958
+4,Fuzzy Choquet neural network [balanced],negative_momentum_21d,0.3019507813430363
+4,Fuzzy Choquet neural network [balanced],realized_volatility_20d,5.2683267235222003e-14
+4,Fuzzy Choquet neural network [balanced],term_spread_10y_2y_pct,1.8186818498894958e-14
+4,Fuzzy Choquet neural network [balanced],vix,-8.648062678008088e-15
+4,Fuzzy Choquet neural network [unweighted],average_equity_correlation_60d,-3.8591382620556326e-16
+4,Fuzzy Choquet neural network [unweighted],baa_credit_spread_pct,-6.423506760784951e-17
+4,Fuzzy Choquet neural network [unweighted],drawdown_severity,3.896977418154801e-16
+4,Fuzzy Choquet neural network [unweighted],lagged_portfolio_loss_1d,0.41880161236049146
+4,Fuzzy Choquet neural network [unweighted],liquidity_stress_20d,0.04223239600369567
+4,Fuzzy Choquet neural network [unweighted],market_loss_1d,0.49673359563211433
+4,Fuzzy Choquet neural network [unweighted],negative_momentum_21d,0.042232396003695785
+4,Fuzzy Choquet neural network [unweighted],realized_volatility_20d,4.910402786413683e-16
+4,Fuzzy Choquet neural network [unweighted],term_spread_10y_2y_pct,7.382714917462917e-16
+4,Fuzzy Choquet neural network [unweighted],vix,-4.202883225598764e-17
 5,Choquistic 1-additive [balanced],average_equity_correlation_60d,1.7605800171073028e-15
 5,Choquistic 1-additive [balanced],baa_credit_spread_pct,1.16582818222005e-15
 5,Choquistic 1-additive [balanced],drawdown_severity,1.6865181743118496e-15
@@ -239,6 +384,35 @@ fold,model,feature,Shapley importance
 5,Choquistic 2-additive [unweighted],realized_volatility_20d,1.4466123672379318e-16
 5,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.4236129391504073
 5,Choquistic 2-additive [unweighted],vix,1.0048568730977778e-17
+5,Choquistic model aggregator [unweighted],Explicit interactions [unweighted],-6.9511618445791376e-12
+5,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],-6.520291124287856e-13
+5,Choquistic model aggregator [unweighted],Logistic [unweighted],9.42647144193098e-13
+5,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],9.417727727283503e-13
+5,Choquistic model aggregator [unweighted],MLP,-3.207489946469546e-12
+5,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.5000000000118423
+5,Choquistic model aggregator [unweighted],RBF SVM [unweighted],-1.2492045414012289e-12
+5,Choquistic model aggregator [unweighted],Random forest [unweighted],-3.316183906584326e-13
+5,Choquistic model aggregator [unweighted],Rolling prior probability,0.4999999999986649
+5,Fuzzy Choquet neural network [balanced],average_equity_correlation_60d,-2.589771927239361e-15
+5,Fuzzy Choquet neural network [balanced],baa_credit_spread_pct,-3.4003645403196033e-15
+5,Fuzzy Choquet neural network [balanced],drawdown_severity,-4.8728641350691524e-15
+5,Fuzzy Choquet neural network [balanced],lagged_portfolio_loss_1d,0.0901138090954632
+5,Fuzzy Choquet neural network [balanced],liquidity_stress_20d,-3.4822297724763407e-15
+5,Fuzzy Choquet neural network [balanced],market_loss_1d,0.11550997487852847
+5,Fuzzy Choquet neural network [balanced],negative_momentum_21d,0.30116906056220116
+5,Fuzzy Choquet neural network [balanced],realized_volatility_20d,-2.8623561085204864e-15
+5,Fuzzy Choquet neural network [balanced],term_spread_10y_2y_pct,0.4932071554638299
+5,Fuzzy Choquet neural network [balanced],vix,-3.9449824598344094e-15
+5,Fuzzy Choquet neural network [unweighted],average_equity_correlation_60d,5.455007949275825e-18
+5,Fuzzy Choquet neural network [unweighted],baa_credit_spread_pct,4.991559613828656e-17
+5,Fuzzy Choquet neural network [unweighted],drawdown_severity,-6.998877066257522e-17
+5,Fuzzy Choquet neural network [unweighted],lagged_portfolio_loss_1d,0.13664698899439137
+5,Fuzzy Choquet neural network [unweighted],liquidity_stress_20d,-4.15242544385658e-18
+5,Fuzzy Choquet neural network [unweighted],market_loss_1d,0.16686704420165135
+5,Fuzzy Choquet neural network [unweighted],negative_momentum_21d,0.27287364053883617
+5,Fuzzy Choquet neural network [unweighted],realized_volatility_20d,1.1635211676726223e-16
+5,Fuzzy Choquet neural network [unweighted],term_spread_10y_2y_pct,0.4236123262651199
+5,Fuzzy Choquet neural network [unweighted],vix,-6.400376072400172e-17
 6,Choquistic 1-additive [balanced],average_equity_correlation_60d,-5.086163303555307e-16
 6,Choquistic 1-additive [balanced],baa_credit_spread_pct,-1.1106194360444705e-16
 6,Choquistic 1-additive [balanced],drawdown_severity,-3.7518319252865205e-16
@@ -279,3 +453,32 @@ fold,model,feature,Shapley importance
 6,Choquistic 2-additive [unweighted],realized_volatility_20d,0.5011221283266653
 6,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.16966300259333514
 6,Choquistic 2-additive [unweighted],vix,0.1488354290168186
+6,Choquistic model aggregator [unweighted],Explicit interactions [unweighted],-1.4124575421771035e-17
+6,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.11161545758534834
+6,Choquistic model aggregator [unweighted],Logistic [unweighted],0.034092257860755766
+6,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.034092263045291
+6,Choquistic model aggregator [unweighted],MLP,0.4494506948246592
+6,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],6.206625062773189e-17
+6,Choquistic model aggregator [unweighted],RBF SVM [unweighted],0.29712937092905073
+6,Choquistic model aggregator [unweighted],Random forest [unweighted],-4.210127966786196e-17
+6,Choquistic model aggregator [unweighted],Rolling prior probability,0.07361995575489466
+6,Fuzzy Choquet neural network [balanced],average_equity_correlation_60d,1.3250463298893567e-15
+6,Fuzzy Choquet neural network [balanced],baa_credit_spread_pct,-3.83868092013606e-16
+6,Fuzzy Choquet neural network [balanced],drawdown_severity,-1.692599168332587e-15
+6,Fuzzy Choquet neural network [balanced],lagged_portfolio_loss_1d,0.029599950439469783
+6,Fuzzy Choquet neural network [balanced],liquidity_stress_20d,-5.147461594193305e-16
+6,Fuzzy Choquet neural network [balanced],market_loss_1d,0.06358117391747757
+6,Fuzzy Choquet neural network [balanced],negative_momentum_21d,0.01941095741076647
+6,Fuzzy Choquet neural network [balanced],realized_volatility_20d,0.34552980442924913
+6,Fuzzy Choquet neural network [balanced],term_spread_10y_2y_pct,0.27898908985271875
+6,Fuzzy Choquet neural network [balanced],vix,0.2628890239503194
+6,Fuzzy Choquet neural network [unweighted],average_equity_correlation_60d,-2.6351166612180617e-16
+6,Fuzzy Choquet neural network [unweighted],baa_credit_spread_pct,-3.5398184135736796e-16
+6,Fuzzy Choquet neural network [unweighted],drawdown_severity,3.188315134932033e-16
+6,Fuzzy Choquet neural network [unweighted],lagged_portfolio_loss_1d,0.03552037789235894
+6,Fuzzy Choquet neural network [unweighted],liquidity_stress_20d,-4.015913243676277e-16
+6,Fuzzy Choquet neural network [unweighted],market_loss_1d,0.08356119416641518
+6,Fuzzy Choquet neural network [unweighted],negative_momentum_21d,0.061297904452517496
+6,Fuzzy Choquet neural network [unweighted],realized_volatility_20d,0.5011221680184801
+6,Fuzzy Choquet neural network [unweighted],term_spread_10y_2y_pct,0.16966297153327878
+6,Fuzzy Choquet neural network [unweighted],vix,0.14883538393694706

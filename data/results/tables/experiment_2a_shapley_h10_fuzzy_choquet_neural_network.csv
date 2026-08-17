@@ -1,0 +1,11 @@
+,Shapley importance
+market_loss_1d,0.10000000000000013
+vix,0.10000000000000013
+realized_volatility_20d,0.10000000000000013
+drawdown_severity,0.10000000000000013
+liquidity_stress_20d,0.10000000000000013
+baa_credit_spread_pct,0.10000000000000013
+term_spread_10y_2y_pct,0.10000000000000013
+average_equity_correlation_60d,0.10000000000000013
+negative_momentum_21d,0.10000000000000013
+lagged_portfolio_loss_1d,0.10000000000000013

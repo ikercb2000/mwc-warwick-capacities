@@ -22,3 +22,10 @@ def unwrap_fitted_estimator(estimator: BaseEstimator) -> BaseEstimator:
             continue
         return current
     raise RuntimeError("Estimator containers form an unexpected cycle.")
+
+
+def fitted_q(estimator: BaseEstimator) -> float | None:
+    """Return a fitted scaled-Choquet q coefficient when one is available."""
+    inner = unwrap_fitted_estimator(estimator)
+    value = getattr(inner, "q_", None)
+    return None if value is None else float(value)

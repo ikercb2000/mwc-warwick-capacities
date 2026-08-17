@@ -1,0 +1,11 @@
+,Shapley importance
+vix,0.47040516155708284
+lagged_portfolio_loss_1d,0.24748085366926037
+term_spread_10y_2y_pct,0.2229243078878284
+negative_momentum_21d,0.029594838442921597
+realized_volatility_20d,0.029594838442919557
+liquidity_stress_20d,-1.7266862143707021e-15
+baa_credit_spread_pct,-1.796263732779553e-15
+average_equity_correlation_60d,-2.4897692558879568e-15
+drawdown_severity,-2.967278568008354e-15
+market_loss_1d,-3.682218802900566e-15

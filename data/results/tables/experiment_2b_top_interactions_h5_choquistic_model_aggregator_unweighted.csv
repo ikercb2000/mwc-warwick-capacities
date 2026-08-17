@@ -1,0 +1,13 @@
+first,second,interaction,interpretation
+Rolling prior probability,Explicit interactions [unweighted],0.5614825505035648,complementary
+Rolling prior probability,Gradient boosting [unweighted],0.4018854413669829,complementary
+Logistic oriented [unweighted],Penalized logistic [unweighted],0.01832458104946011,complementary
+Logistic [unweighted],Penalized logistic [unweighted],0.01830742707999097,complementary
+Rolling prior probability,Logistic oriented [unweighted],-8.721956400550665e-16,redundant
+Rolling prior probability,Penalized logistic [unweighted],5.937670407874503e-16,complementary
+Rolling prior probability,Logistic [unweighted],5.05230914231165e-16,complementary
+Logistic [unweighted],RBF SVM [unweighted],4.999403873122566e-16,complementary
+Explicit interactions [unweighted],RBF SVM [unweighted],4.953595792269502e-16,complementary
+Logistic [unweighted],Gradient boosting [unweighted],-3.3593200590516854e-16,redundant
+Random forest [unweighted],Gradient boosting [unweighted],-3.2550299540723595e-16,redundant
+Logistic [unweighted],Random forest [unweighted],2.507899620487313e-16,complementary

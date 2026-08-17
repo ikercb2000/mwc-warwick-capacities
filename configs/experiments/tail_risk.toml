@@ -37,21 +37,23 @@ main = [
     "Rolling prior probability", "Logistic", "Logistic oriented",
     "Penalized logistic", "Explicit interactions", "RBF SVM",
     "Random forest", "Gradient boosting", "Choquistic 1-additive",
-    "Choquistic 2-additive", "MLP",
+    "Choquistic 2-additive", "Choquet linear classifier", "MLP",
+    "Fuzzy Choquet neural network",
 ]
 robustness = [
     "Rolling prior probability", "Logistic", "Logistic oriented",
     "Penalized logistic", "Gradient boosting", "Choquistic 1-additive",
-    "Choquistic 2-additive",
+    "Choquistic 2-additive", "Choquet linear classifier",
 ]
 orientation = [
     "Logistic", "Logistic oriented", "Choquistic 1-additive",
-    "Choquistic 2-additive",
+    "Choquistic 2-additive", "Choquet linear classifier",
 ]
 report = [
     "Rolling prior probability", "Logistic", "Logistic oriented",
     "Explicit interactions", "Gradient boosting", "Choquistic 1-additive",
-    "Choquistic 2-additive",
+    "Choquistic 2-additive", "Choquet linear classifier", "MLP",
+    "Fuzzy Choquet neural network",
 ]
 
 [analysis]
@@ -59,6 +61,18 @@ stability_horizon = 5
 stability_cutoffs = ["2018-12-31", "2020-12-31", "2022-12-30", "2024-12-31", "2026-07-30"]
 stability_purge = 5
 top_interactions = 12
+
+[aggregation]
+model_name = "Choquistic model aggregator"
+base_models = [
+    "Rolling prior probability", "Logistic", "Logistic oriented",
+    "Penalized logistic", "Explicit interactions", "RBF SVM",
+    "Random forest", "Gradient boosting", "MLP",
+]
+robustness_base_models = [
+    "Rolling prior probability", "Logistic", "Logistic oriented",
+    "Penalized logistic", "Gradient boosting",
+]
 
 [parameter_grids."Penalized logistic"]
 "classifier__C" = [0.01, 0.1, 1.0, 10.0]
@@ -78,6 +92,11 @@ top_interactions = 12
 "classifier__learning_rate" = [0.03, 0.1]
 "classifier__max_leaf_nodes" = [7, 15]
 "classifier__l2_regularization" = [0.0, 1.0]
+
+[parameter_grids."Fuzzy Choquet neural network"]
+"classifier__hidden_layer_sizes" = [[32], [32, 16]]
+"classifier__alpha" = [0.0001, 0.001]
+"classifier__mlp_solver" = ["adam"]
 
 [parameter_grids.MLP]
 "classifier__hidden_layer_sizes" = [[32], [32, 16]]
