@@ -8,6 +8,9 @@ description = "Classical and Choquet financial factor models"
 quick_mode_default = true
 random_state = 42
 
+[preprocessing]
+clipping_enabled = false
+
 [dataset]
 assets = ["AAPL", "AMZN", "JPM", "KO", "MSFT", "NVDA", "UNH", "WMT", "XOM"]
 features = [

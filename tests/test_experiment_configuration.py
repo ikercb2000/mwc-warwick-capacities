@@ -68,6 +68,18 @@ def test_forecasting_aggregators_only_use_non_choquet_sources() -> None:
         assert "Fuzzy Choquet neural network" not in primary_sources
 
 
+@pytest.mark.parametrize(
+    "experiment_id",
+    ["factor_models", "future_loss", "tail_risk"],
+)
+def test_predictive_experiments_disable_clipping_by_default(
+    experiment_id: str,
+) -> None:
+    config = load_experiment_config(experiment_id)
+
+    assert config["preprocessing"]["clipping_enabled"] is False
+
+
 def test_factor_experiment_configures_requested_choquet_families() -> None:
     config = load_experiment_config("factor_models")
     allowed = {

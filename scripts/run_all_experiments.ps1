@@ -10,9 +10,17 @@ $mode = if ($args -contains "--quick") { "--quick" } else { "--full" }
 $renderNotebooks = $args -notcontains "--no-render"
 
 poetry run python scripts/build_experiment_data.py
-poetry run python scripts/experiment_factors.py $mode
-poetry run python scripts/experiment_predict_loss.py $mode
-poetry run python scripts/experiment_tail_risk.py $mode
+$clippingModes = if ($mode -eq "--full") {
+    @("--with-clipping", "--without-clipping")
+} else {
+    @("--without-clipping")
+}
+
+foreach ($clippingMode in $clippingModes) {
+    poetry run python scripts/experiment_factors.py $mode $clippingMode
+    poetry run python scripts/experiment_predict_loss.py $mode $clippingMode
+    poetry run python scripts/experiment_tail_risk.py $mode $clippingMode
+}
 poetry run python scripts/experiment_distortion_risk.py
 poetry run python scripts/experiment_autoregression.py
 poetry run python scripts/audit_results.py

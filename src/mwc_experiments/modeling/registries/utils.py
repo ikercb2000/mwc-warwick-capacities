@@ -117,6 +117,7 @@ def regression_candidates(
     n_features: int,
     *,
     random_state: int = 42,
+    clipping: bool = False,
     include_mlp: bool = True,
     include_dummy: bool = True,
     include_regularized_choquet: bool = True,
@@ -124,9 +125,9 @@ def regression_candidates(
     """Build regression candidates and validation grids as sklearn pipelines."""
     if n_features < 1:
         raise ValueError("n_features must be positive.")
-    standard = make_standard_preprocessor()
-    oriented_standard = make_oriented_standard_preprocessor()
-    capacity = make_capacity_preprocessor()
+    standard = make_standard_preprocessor(clipping=clipping)
+    oriented_standard = make_oriented_standard_preprocessor(clipping=clipping)
+    capacity = make_capacity_preprocessor(clipping=clipping)
 
     def pipeline(regressor: BaseEstimator, *, capacity_input: bool = False) -> Pipeline:
         """Build one regression pipeline with the appropriate feature scaling."""
@@ -344,6 +345,7 @@ def classification_candidates(
     n_features: int,
     *,
     random_state: int = 42,
+    clipping: bool = False,
     include_mlp: bool = True,
     class_weight: str | None = "balanced",
 ) -> dict[str, Candidate]:
@@ -352,9 +354,9 @@ def classification_candidates(
         raise ValueError("n_features must be positive.")
     if class_weight not in {"balanced", None}:
         raise ValueError("class_weight must be 'balanced' or None.")
-    standard = make_standard_preprocessor()
-    oriented_standard = make_oriented_standard_preprocessor()
-    capacity = make_capacity_preprocessor()
+    standard = make_standard_preprocessor(clipping=clipping)
+    oriented_standard = make_oriented_standard_preprocessor(clipping=clipping)
+    capacity = make_capacity_preprocessor(clipping=clipping)
 
     def pipeline(classifier: BaseEstimator, *, capacity_input: bool = False) -> Pipeline:
         """Build one classifier pipeline with the appropriate feature scaling."""

@@ -26,8 +26,10 @@ from mwc_experiments.modeling.selection import (
     select_classification_model,
     select_regression_model,
 )
-from mwc_experiments.modeling.types import Candidate
-from mwc_experiments.modeling.types import CorrelationOrientationTransformer
+from mwc_experiments.modeling.types import (
+    Candidate,
+    CorrelationOrientationTransformer,
+)
 from mwc_experiments.workflows.common import select_model_family_by_validation
 
 
@@ -42,6 +44,7 @@ def test_registries_use_native_pipelines_and_shared_tree_preprocessing() -> None
     tree_preprocessor = regressors["Random forest"].estimator.named_steps[
         "preprocessor"
     ]
+    assert not tree_preprocessor.named_steps["clip"].enabled
     assert isinstance(tree_preprocessor.named_steps["scale"], StandardScaler)
     assert "orient" not in tree_preprocessor.named_steps
 
@@ -72,6 +75,13 @@ def test_registries_use_native_pipelines_and_shared_tree_preprocessing() -> None
         "preprocessor"
     ]
     assert "orient" not in logistic_preprocessor.named_steps
+
+    clipping_preprocessor = regression_candidates(
+        3,
+        clipping=True,
+        include_mlp=False,
+    )["OLS"].estimator.named_steps["preprocessor"]
+    assert clipping_preprocessor.named_steps["clip"].enabled
 
     oriented_logistic_preprocessor = classifiers[
         "Logistic oriented"

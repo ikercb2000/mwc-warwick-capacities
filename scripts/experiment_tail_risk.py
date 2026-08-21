@@ -45,8 +45,9 @@ args = parse_experiment_args(
     experiment_id="tail_risk",
 )
 quick = args.quick
+clipping = args.clipping
 verbose = not args.quiet
-paths = prepare_output_paths()
+paths = prepare_output_paths(clipping=clipping)
 config = load_experiment_config("tail_risk", paths.root)
 dataset_config = config["dataset"]
 model_config = config["models"]
@@ -89,6 +90,7 @@ primary = run_tail_classification_experiment(
     horizons=HORIZONS,
     alpha=PRIMARY_TAIL_ALPHA,
     quick=quick,
+    clipping=clipping,
     model_names=MAIN_MODELS,
     random_state=int(execution_config["random_state"]),
     oos_start=str(walk_forward_config["oos_start"]),
@@ -115,6 +117,7 @@ rare = run_tail_classification_experiment(
     horizons=HORIZONS,
     alpha=ROBUSTNESS_TAIL_ALPHA,
     quick=quick,
+    clipping=clipping,
     model_names=ROBUSTNESS_MODELS,
     random_state=int(execution_config["random_state"]),
     oos_start=str(walk_forward_config["oos_start"]),
@@ -144,6 +147,7 @@ stability = expanding_capacity_stability(
     cutoffs=STABILITY_CUTOFFS,
     task="classification",
     purge=int(analysis_config["stability_purge"]),
+    clipping=clipping,
     verbose=verbose,
 )
 artifacts: dict[str, Path] = {}

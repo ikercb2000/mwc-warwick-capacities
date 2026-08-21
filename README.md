@@ -141,7 +141,10 @@ poetry run python scripts/experiment_autoregression.py
 ```
 
 Alternatively, run the complete sequence, final artifact audit and HTML report
-rendering with the platform-specific wrapper.
+rendering with the platform-specific wrapper. A full run executes experiments
+1, 2a and 2b twice: first with feature clipping and then without it. The two
+variants are stored separately as `full_clipping` and `full_no_clipping`; the
+final `latest` pointers therefore select the default no-clipping results.
 
 Windows PowerShell:
 
@@ -186,9 +189,13 @@ The three predictive scripts accept:
 
 - `--quick`: use one representative configuration per model family;
 - `--full`: evaluate the complete validation grids;
+- `--with-clipping`: enable training-only 0.5%--99.5% feature clipping;
+- `--without-clipping`: disable feature clipping;
 - `--quiet`: suppress model-by-model progress messages.
 
 If no mode is given, `quick_mode_default` from the TOML configuration is used.
+If no clipping switch is given, `[preprocessing].clipping_enabled` is used; it
+is `false` for experiments 1, 2a and 2b.
 The smoke script provides a small end-to-end check:
 
 ```powershell
@@ -226,7 +233,7 @@ final two years.
 
 Forecast-horizon observations are purged before every inner-validation,
 calibration and OOS boundary, preventing 5-day and 10-day targets from crossing
-into the next partition. Orientation, clipping, scaling, hyperparameters and
+into the next partition. Orientation, optional clipping, scaling, hyperparameters and
 Choquet capacities are newly estimated in every fold. No preprocessing or
 selection state is carried forward, although outcomes from completed OOS blocks
 may legitimately enter later rolling windows as past observations.
@@ -327,8 +334,9 @@ rather than replace the ordinary 1-additive, 2-additive and 2-additive-L1
 versions. Hyperparameters are selected using validation performance, never
 test performance.
 
-Classical models use clipping and their usual scaling without target-driven
-feature orientation. Capacity models are additionally oriented using
+Classical models use their usual scaling without target-driven feature
+orientation. Optional quantile clipping, when enabled, precedes that scaling.
+Capacity models are additionally oriented using
 training-sample correlations and scaled to a common interval because their
 monotonicity constraints require a common increasing direction. The monotone
 linear benchmark uses the same capacity preprocessing.
@@ -355,12 +363,13 @@ monotonicity, capacity normalisation and interactions.
 
 ### Extremes, clipping and factor-risk diagnostics
 
-Clipping is part of each fitted preprocessing pipeline. Its bounds are estimated
+The clipping step remains part of each fitted preprocessing pipeline but is an
+identity transform by default. With `--with-clipping`, its bounds are estimated
 without the test sample and it caps predictor values passed to the estimator; it
 does not discard observations, alter the target or overwrite the raw datasets.
-The experiment scripts save clipping audits with the raw minima and maxima,
-fitted bounds, and the number of observations affected in estimation and test
-samples.
+The experiment scripts save clipping audits with the enabled state, raw minima
+and maxima, fitted bounds, and the number of observations affected in estimation
+and test samples.
 
 Regression robustness uses one empirical stress definition shared by all
 models in the final rolling block. Thresholds are estimated on that block's

@@ -46,6 +46,7 @@ def compare_validation_stress_regimes(
     horizon: int = 0,
     quick: bool = True,
     random_state: int = RANDOM_STATE,
+    clipping: bool = False,
     validation_start: str = VALIDATION_STRESS_VALIDATION_START,
     validation_end: str = VALIDATION_STRESS_END,
     stress_start: str = VALIDATION_STRESS_START,
@@ -95,6 +96,7 @@ def compare_validation_stress_regimes(
     candidates = regression_candidates(
         X.shape[1],
         random_state=random_state,
+        clipping=clipping,
         include_mlp=bool(
             {"MLP", "Fuzzy Choquet neural network"}.intersection(model_names)
         ),

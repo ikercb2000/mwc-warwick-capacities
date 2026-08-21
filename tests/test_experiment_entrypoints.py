@@ -157,6 +157,8 @@ def test_complete_runner_renders_notebook_reports() -> None:
     for runner in (windows_runner, unix_runner):
         assert "--quick" in runner
         assert "--full" in runner
+        assert "--with-clipping" in runner
+        assert "--without-clipping" in runner
         assert "--no-render" in runner
         assert "audit_results.py" in runner
     assert "--execute" in windows_renderer.read_text(encoding="utf-8")

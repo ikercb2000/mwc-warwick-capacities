@@ -50,8 +50,9 @@ args = parse_experiment_args(
     experiment_id="future_loss",
 )
 quick = args.quick
+clipping = args.clipping
 verbose = not args.quiet
-paths = prepare_output_paths()
+paths = prepare_output_paths(clipping=clipping)
 config = load_experiment_config("future_loss", paths.root)
 dataset_config = config["dataset"]
 model_config = config["models"]
@@ -86,6 +87,7 @@ result = run_future_loss_experiment(
     features=MAIN_RISK_FEATURES,
     horizons=HORIZONS,
     quick=quick,
+    clipping=clipping,
     model_names=MAIN_MODELS,
     random_state=int(execution_config["random_state"]),
     parameter_grids=PARAMETER_GRIDS,
@@ -107,6 +109,7 @@ cap_result = run_future_loss_experiment(
     features=MAIN_RISK_FEATURES,
     horizons=(CAP_WEIGHT_HORIZON,),
     quick=quick,
+    clipping=clipping,
     model_names=CAP_WEIGHT_MODELS,
     random_state=int(execution_config["random_state"]),
     parameter_grids=PARAMETER_GRIDS,
@@ -126,6 +129,7 @@ stability = expanding_capacity_stability(
     cutoffs=STABILITY_CUTOFFS,
     task="regression",
     purge=int(analysis_config["stability_purge"]),
+    clipping=clipping,
     verbose=verbose,
 )
 artifacts: dict[str, Path] = {}
@@ -299,6 +303,7 @@ for horizon, horizon_result in result.horizons.items():
         model_names=MAIN_MODELS,
         horizon=horizon,
         quick=quick,
+        clipping=clipping,
         random_state=int(execution_config["random_state"]),
         validation_start=str(stress_config["validation_start"]),
         validation_end=str(stress_config["validation_end"]),

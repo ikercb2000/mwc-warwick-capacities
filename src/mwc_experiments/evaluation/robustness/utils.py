@@ -63,6 +63,7 @@ def clipping_diagnostics(
     return pd.DataFrame(
         {
             "sample": sample,
+            "clipping enabled": bool(clipper.enabled),
             "raw minimum": X.min(),
             "lower clipping bound": lower,
             "raw maximum": X.max(),

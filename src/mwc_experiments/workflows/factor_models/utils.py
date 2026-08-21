@@ -32,12 +32,14 @@ def run_factor_experiment(
     model_names: tuple[str, ...] | None = None,
     parameter_grids: Mapping[str, Mapping[str, list[Any]]] | None = None,
     random_state: int = RANDOM_STATE,
+    clipping: bool = False,
     verbose: bool = True,
 ) -> FactorExperimentResult:
     """Fit every factor-model benchmark separately to each equity."""
     candidates = regression_candidates(
         len(features),
         random_state=random_state,
+        clipping=clipping,
         include_mlp=False,
         include_dummy=False,
         include_regularized_choquet=(

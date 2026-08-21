@@ -21,6 +21,7 @@ def expanding_capacity_stability(
     model_name: str | None = None,
     purge: int = 0,
     random_state: int = 42,
+    clipping: bool = False,
     verbose: bool = True,
 ) -> CapacityStabilityResult:
     """Refit a capacity model on expanding samples and track intrinsic interpretation."""
@@ -34,6 +35,7 @@ def expanding_capacity_stability(
         candidate = regression_candidates(
             len(features),
             random_state=random_state,
+            clipping=clipping,
             include_mlp=False,
             include_dummy=False,
             include_regularized_choquet=False,
@@ -43,6 +45,7 @@ def expanding_capacity_stability(
         candidate = classification_candidates(
             len(features),
             random_state=random_state,
+            clipping=clipping,
             include_mlp=False,
         )[name]
 

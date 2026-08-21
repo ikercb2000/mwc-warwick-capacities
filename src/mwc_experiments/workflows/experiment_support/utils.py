@@ -62,6 +62,7 @@ def parse_experiment_args(
         help="Use the complete validation grids.",
     )
     quick_default = QUICK_MODE_DEFAULT
+    clipping_default = False
     if experiment_id is not None:
         config = load_experiment_config(experiment_id)
         quick_default = bool(
@@ -70,7 +71,26 @@ def parse_experiment_args(
                 quick_default,
             )
         )
-    parser.set_defaults(quick=quick_default)
+        clipping_default = bool(
+            config.get("preprocessing", {}).get(
+                "clipping_enabled",
+                clipping_default,
+            )
+        )
+    clipping_mode = parser.add_mutually_exclusive_group()
+    clipping_mode.add_argument(
+        "--with-clipping",
+        action="store_true",
+        dest="clipping",
+        help="Enable training-only feature quantile clipping.",
+    )
+    clipping_mode.add_argument(
+        "--without-clipping",
+        action="store_false",
+        dest="clipping",
+        help="Disable feature quantile clipping.",
+    )
+    parser.set_defaults(quick=quick_default, clipping=clipping_default)
     parser.add_argument(
         "--quiet",
         action="store_true",
@@ -83,6 +103,7 @@ def prepare_output_paths(
     paths: RepoPaths | None = None,
     *,
     experiment_id: str | None = None,
+    clipping: bool | None = None,
 ) -> ExperimentRunPaths:
     """Create an immutable output directory for this script execution."""
     global _ACTIVE_RUN, _RUN_FINISHED
@@ -104,6 +125,9 @@ def prepare_output_paths(
         mode = "quick" if quick_default else "full"
     else:
         mode = "standard"
+    if clipping is not None:
+        clipping_mode = "clipping" if clipping else "no_clipping"
+        mode = f"{mode}_{clipping_mode}"
     _ACTIVE_RUN = create_experiment_run(
         resolved,
         experiment_id=resolved_experiment_id,

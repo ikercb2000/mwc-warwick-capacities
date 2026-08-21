@@ -43,6 +43,7 @@ def test_clipping_and_estimation_robustness_use_raw_extreme_dates() -> None:
     X_test, y_test = X.iloc[45:], y.iloc[45:]
     candidate = regression_candidates(
         2,
+        clipping=True,
         include_mlp=False,
         include_dummy=False,
         include_regularized_choquet=False,
@@ -70,6 +71,7 @@ def test_clipping_and_estimation_robustness_use_raw_extreme_dates() -> None:
     )
 
     assert (clipping["sample"] == "test").all()
+    assert clipping["clipping enabled"].all()
     assert clipping["clipped observations"].sum() > 0
     assert regime.index.name == "model"
     assert regime.loc["OLS", "stress observations"] == int(test_mask.sum())
@@ -77,3 +79,18 @@ def test_clipping_and_estimation_robustness_use_raw_extreme_dates() -> None:
     assert robustness.loc["OLS", "extreme fit observations removed"] == int(
         fit_mask.sum()
     )
+
+
+def test_clipping_is_disabled_by_default() -> None:
+    X, y = _sample()
+    fitted = regression_candidates(
+        2,
+        include_mlp=False,
+        include_dummy=False,
+        include_regularized_choquet=False,
+    )["OLS"].estimator.fit(X.iloc[:45], y.iloc[:45])
+
+    audit = clipping_diagnostics(fitted, X.iloc[45:], sample="test")
+
+    assert not audit["clipping enabled"].any()
+    assert audit["clipped observations"].sum() == 0

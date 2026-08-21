@@ -79,12 +79,19 @@ class ClassWeightedMLPClassifier(ClassifierMixin, BaseEstimator):
 
 
 class QuantileClipper(TransformerMixin, BaseEstimator):
-    """Clip each feature using quantiles estimated only on the training sample."""
+    """Optionally clip features using training-only empirical quantiles."""
 
-    def __init__(self, lower: float = 0.005, upper: float = 0.995) -> None:
-        """Configure the lower and upper clipping quantiles."""
+    def __init__(
+        self,
+        lower: float = 0.005,
+        upper: float = 0.995,
+        *,
+        enabled: bool = False,
+    ) -> None:
+        """Configure clipping quantiles and whether clipping is active."""
         self.lower = lower
         self.upper = upper
+        self.enabled = enabled
 
     def fit(self, X: ArrayLike, y: Any = None) -> "QuantileClipper":
         """Estimate feature-wise clipping bounds from the fitting sample."""
@@ -95,8 +102,12 @@ class QuantileClipper(TransformerMixin, BaseEstimator):
         columns = getattr(X, "columns", None)
         if columns is not None:
             self.feature_names_in_ = np.asarray(columns, dtype=object)
-        self.lower_bounds_ = np.nanquantile(matrix, self.lower, axis=0)
-        self.upper_bounds_ = np.nanquantile(matrix, self.upper, axis=0)
+        if self.enabled:
+            self.lower_bounds_ = np.nanquantile(matrix, self.lower, axis=0)
+            self.upper_bounds_ = np.nanquantile(matrix, self.upper, axis=0)
+        else:
+            self.lower_bounds_ = np.full(self.n_features_in_, -np.inf)
+            self.upper_bounds_ = np.full(self.n_features_in_, np.inf)
         return self
 
     def transform(self, X: ArrayLike) -> np.ndarray | pd.DataFrame:

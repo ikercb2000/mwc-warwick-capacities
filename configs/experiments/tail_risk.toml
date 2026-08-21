@@ -8,6 +8,9 @@ description = "Tail-event classification"
 quick_mode_default = true
 random_state = 42
 
+[preprocessing]
+clipping_enabled = false
+
 [dataset]
 horizons = [1, 5, 10]
 primary_alpha = 0.95

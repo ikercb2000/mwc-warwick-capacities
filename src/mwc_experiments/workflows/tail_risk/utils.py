@@ -114,6 +114,7 @@ def run_tail_classification_experiment(
     model_names: tuple[str, ...] | None = None,
     parameter_grids: Mapping[str, Mapping[str, list[Any]]] | None = None,
     random_state: int = RANDOM_STATE,
+    clipping: bool = False,
     oos_start: str = "2020-01-01",
     training_window_years: int = 5,
     selection_window_months: int = 18,
@@ -176,6 +177,7 @@ def run_tail_classification_experiment(
             mode_candidates = classification_candidates(
                 len(features),
                 random_state=random_state,
+                clipping=clipping,
                 include_mlp=True,
                 class_weight=(
                     "balanced" if weight_mode == "balanced" else None

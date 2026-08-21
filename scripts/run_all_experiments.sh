@@ -31,9 +31,17 @@ repository_root="$(cd "$script_dir/.." && pwd)"
 cd "$repository_root"
 
 poetry run python scripts/build_experiment_data.py
-poetry run python scripts/experiment_factors.py "$mode"
-poetry run python scripts/experiment_predict_loss.py "$mode"
-poetry run python scripts/experiment_tail_risk.py "$mode"
+if [[ "$mode" == "--full" ]]; then
+    clipping_modes=("--with-clipping" "--without-clipping")
+else
+    clipping_modes=("--without-clipping")
+fi
+
+for clipping_mode in "${clipping_modes[@]}"; do
+    poetry run python scripts/experiment_factors.py "$mode" "$clipping_mode"
+    poetry run python scripts/experiment_predict_loss.py "$mode" "$clipping_mode"
+    poetry run python scripts/experiment_tail_risk.py "$mode" "$clipping_mode"
+done
 poetry run python scripts/experiment_distortion_risk.py
 poetry run python scripts/experiment_autoregression.py
 poetry run python scripts/audit_results.py

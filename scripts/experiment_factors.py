@@ -51,8 +51,9 @@ args = parse_experiment_args(
     experiment_id="factor_models",
 )
 quick = args.quick
+clipping = args.clipping
 verbose = not args.quiet
-paths = prepare_output_paths()
+paths = prepare_output_paths(clipping=clipping)
 config = load_experiment_config("factor_models", paths.root)
 dataset_config = config["dataset"]
 model_config = config["models"]
@@ -84,6 +85,7 @@ result = run_factor_experiment(
     assets=ASSETS,
     features=FACTOR_COLUMNS,
     quick=quick,
+    clipping=clipping,
     model_names=MAIN_MODELS,
     random_state=int(execution_config["random_state"]),
     parameter_grids=PARAMETER_GRIDS,
@@ -235,13 +237,15 @@ for asset, split in result.splits.items():
             ("estimation", X_fit),
             ("test", split.X_test),
         ):
-            clipping = clipping_diagnostics(
+            clipping_audit = clipping_diagnostics(
                 clipping_reference,
                 X_sample,
                 sample=sample,
             )
-            clipping["asset"] = asset
-            clipping_panels.append(clipping.reset_index(names="feature"))
+            clipping_audit["asset"] = asset
+            clipping_panels.append(
+                clipping_audit.reset_index(names="feature")
+            )
 
     robustness_models = {
         model: result.fitted_models[(asset, model)]
@@ -268,6 +272,7 @@ for asset, split in result.splits.items():
             result.metrics.xs(asset, level="asset").index.astype(str)
         ),
         quick=quick,
+        clipping=clipping,
         random_state=int(execution_config["random_state"]),
         validation_start=str(stress_config["validation_start"]),
         validation_end=str(stress_config["validation_end"]),
@@ -464,6 +469,7 @@ stability = expanding_capacity_stability(
     task="regression",
     model_name=reference,
     purge=int(analysis_config["stability_purge"]),
+    clipping=clipping,
     verbose=verbose,
 )
 artifacts["AAPL Shapley stability"] = save_table(
