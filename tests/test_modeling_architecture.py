@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pytest
 from sklearn.compose import TransformedTargetRegressor
-from sklearn.neural_network import MLPClassifier, MLPRegressor
+from sklearn.neural_network import MLPRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 from capacities_ml_fin.ml.models import (
@@ -107,8 +107,17 @@ def test_registries_use_native_pipelines_and_shared_tree_preprocessing() -> None
     linear_classifier = classification_candidates(3)[
         "Choquet linear classifier"
     ].estimator
-    assert isinstance(mlp_regressor.named_steps["regressor"], MLPRegressor)
-    assert isinstance(mlp_classifier.named_steps["classifier"], MLPClassifier)
+    assert isinstance(
+        mlp_regressor.named_steps["regressor"],
+        TransformedTargetRegressor,
+    )
+    assert isinstance(
+        mlp_regressor.named_steps["regressor"].regressor,
+        MLPRegressor,
+    )
+    assert (
+        mlp_classifier.named_steps["classifier"].class_weight == "balanced"
+    )
     assert isinstance(
         linear_classifier.named_steps["classifier"],
         ChoquetClassifier,
@@ -214,6 +223,7 @@ def test_classifier_registry_exposes_balanced_and_unweighted_variants() -> None:
         "RBF SVM": "classifier__class_weight",
         "Random forest": "classifier__class_weight",
         "Gradient boosting": "classifier__class_weight",
+        "MLP": "classifier__class_weight",
         "Choquistic 1-additive": "classifier__class_weight",
         "Choquistic 2-additive": "classifier__class_weight",
         "Fuzzy Choquet neural network": "classifier__class_weight",

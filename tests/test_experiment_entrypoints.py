@@ -222,10 +222,27 @@ def test_tail_risk_persists_separate_probability_evaluations() -> None:
         "experiment_2b_calibration_sample_h{horizon}_a095.csv",
     ):
         assert artifact_name in source
-
     assert "experiment_2b_classifier_discrimination_h{horizon}_a095.png" in source
     assert "experiment_2b_calibration_comparison_h{horizon}_a095.png" in source
     assert "experiment_2b_classifier_diagnostics_h{horizon}_a095.png" not in source
+
+
+def test_tail_risk_splits_confusion_matrices_into_two_by_two_panels() -> None:
+    """Keep the eight reported classifiers legible across two figures."""
+    script = (ROOT / "scripts" / "experiment_tail_risk.py").read_text(
+        encoding="utf-8"
+    )
+    notebook = (
+        ROOT / "notebooks" / "03_tail_risk_classification.ipynb"
+    ).read_text(encoding="utf-8")
+
+    assert "range(0, len(confusion_models), 4)" in script
+    assert "plt.subplots(2, 2" in script
+    for part in (1, 2):
+        artifact = f"experiment_2b_confusion_matrices_h5_a095_part{part}.png"
+        assert "_a095_part{part}.png" in script
+        assert artifact in notebook
+    assert "experiment_2b_confusion_matrices_h5_a095.png" not in notebook
 
 
 def test_distortion_risk_uses_only_real_data_artifacts() -> None:

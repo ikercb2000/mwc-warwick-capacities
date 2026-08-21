@@ -1,10 +1,10 @@
 ,Shapley importance
-Penalized logistic [unweighted],0.5935156730474191
-Gradient boosting [unweighted],0.2536549118217446
-Rolling prior probability,0.10675374334565305
-Random forest [unweighted],0.04090182911394834
-RBF SVM [unweighted],0.005173842671234136
-Logistic oriented [unweighted],8.077842802348337e-16
-Explicit interactions [unweighted],6.571410970891486e-16
-Logistic [unweighted],-6.633823259580618e-16
-MLP,-6.858416829372215e-16
+Rolling prior probability,0.9999999999999977
+Logistic oriented [unweighted],3.6915990339660806e-17
+RBF SVM [unweighted],3.376989367265122e-17
+MLP [unweighted],2.5632543978505383e-17
+Gradient boosting [unweighted],2.393705130035991e-17
+Logistic [unweighted],-3.3234305929903693e-18
+Random forest [unweighted],-1.0355657422036405e-17
+Explicit interactions [unweighted],-5.739249567267419e-17
+Penalized logistic [unweighted],-3.936477664141547e-16

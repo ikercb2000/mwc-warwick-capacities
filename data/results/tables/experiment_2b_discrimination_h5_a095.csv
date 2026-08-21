@@ -10,10 +10,13 @@ Logistic oriented [unweighted] [sigmoid],Logistic oriented,unweighted,sigmoid,0.
 Logistic [unweighted] [sigmoid],Logistic,unweighted,sigmoid,0.543619519005013,0.09878879675920989,0.07520721860112593
 Penalized logistic [balanced] [sigmoid],Penalized logistic,balanced,sigmoid,0.5654927343105527,0.09767150689703274,0.10778376770048467
 Random forest [unweighted],Random forest,unweighted,uncalibrated,0.581137762548385,0.08763280464558867,0.06840325886283263
+MLP [balanced],MLP,balanced,uncalibrated,0.5882226029570404,0.08648125052999674,0.11551266727242689
 Random forest [balanced],Random forest,balanced,uncalibrated,0.5018402182879624,0.0837624320883516,0.06353692019059405
-MLP [sigmoid],MLP,not applicable,sigmoid,0.5049019607843137,0.07790542131254172,0.07115526256485497
+MLP [unweighted] [sigmoid],MLP,unweighted,sigmoid,0.4963512913255917,0.08079055125664106,0.11595505626337362
+MLP [balanced] [sigmoid],MLP,balanced,sigmoid,0.5805000317279014,0.07884043252174751,0.11551266727242689
 Gradient boosting [balanced],Gradient boosting,balanced,uncalibrated,0.48355542864394946,0.07764051464726195,0.07257670834050463
 RBF SVM [balanced],RBF SVM,balanced,uncalibrated,0.5633225458468177,0.07567297401885166,0.07688972989032052
+Choquistic model aggregator [balanced],Choquistic model aggregator,balanced,uncalibrated,0.5738879370518435,0.0750620011667834,0.10748660351467479
 Gradient boosting [unweighted],Gradient boosting,unweighted,uncalibrated,0.4565867123548449,0.07465634400314321,0.06861181847389217
 Choquistic 1-additive [unweighted] [sigmoid],Choquistic 1-additive,unweighted,sigmoid,0.5129894028808935,0.07412294300264993,0.0705284083721929
 RBF SVM [unweighted],RBF SVM,unweighted,uncalibrated,0.4943778158512596,0.07316350031745142,0.0791142390569898
@@ -28,22 +31,21 @@ Explicit interactions [balanced],Explicit interactions,balanced,uncalibrated,0.5
 Penalized logistic [balanced],Penalized logistic,balanced,uncalibrated,0.5310108509423187,0.06833259440327125,0.10778376770048467
 Random forest [unweighted] [sigmoid],Random forest,unweighted,sigmoid,0.49517418617932607,0.06725479108670995,0.06840325886283263
 Penalized logistic [unweighted],Penalized logistic,unweighted,uncalibrated,0.5253823212132749,0.06547938583698837,0.09956245186512772
-MLP,MLP,not applicable,uncalibrated,0.467548702328828,0.06406042999242562,0.07115526256485497
+Choquistic model aggregator [unweighted],Choquistic model aggregator,unweighted,uncalibrated,0.4952852338346342,0.06321524125408114,0.1134396891223078
+MLP [unweighted],MLP,unweighted,uncalibrated,0.48192144171584483,0.06320642499963817,0.11595505626337362
+Choquistic model aggregator [balanced] [sigmoid],Choquistic model aggregator,balanced,sigmoid,0.5378958055714195,0.06299144719124519,0.10748660351467479
 Random forest [balanced] [sigmoid],Random forest,balanced,sigmoid,0.5310489244241385,0.06192771179544345,0.06353692019059405
 Rolling prior probability,Rolling prior probability,not applicable,uncalibrated,0.4413382828859699,0.061457803621915386,0.05661425156833951
 Choquistic 1-additive [balanced] [sigmoid],Choquistic 1-additive,balanced,sigmoid,0.49388286058760067,0.06112851629050594,0.076484875655589
 Logistic [balanced],Logistic,balanced,uncalibrated,0.48461196776445203,0.06089096488815967,0.09098603490887548
 Logistic oriented [balanced],Logistic oriented,balanced,uncalibrated,0.48461196776445203,0.06089096488815967,0.09098603490887548
-Choquistic model aggregator [unweighted] [sigmoid],Choquistic model aggregator,unweighted,sigmoid,0.4759185227489054,0.059610296631225586,0.12751461211485113
 Explicit interactions [balanced] [sigmoid],Explicit interactions,balanced,sigmoid,0.47970683418998666,0.05920571037573729,0.07602372986128476
-Choquistic model aggregator [balanced] [sigmoid],Choquistic model aggregator,balanced,sigmoid,0.4185164033250841,0.05882271234280447,0.11997921689596978
 Penalized logistic [unweighted] [sigmoid],Penalized logistic,unweighted,sigmoid,0.5118598895869028,0.058481328408026424,0.09956245186512772
 RBF SVM [balanced] [sigmoid],RBF SVM,balanced,sigmoid,0.505374706516911,0.057593660459744275,0.07688972989032052
-Logistic oriented [unweighted],Logistic oriented,unweighted,uncalibrated,0.4592169553905705,0.05689181992394278,0.07520721860112593
+Choquistic model aggregator [unweighted] [sigmoid],Choquistic model aggregator,unweighted,sigmoid,0.4864902595342344,0.05729349276305361,0.1134396891223078
 Logistic [unweighted],Logistic,unweighted,uncalibrated,0.4592169553905705,0.05689181992394278,0.07520721860112593
+Logistic oriented [unweighted],Logistic oriented,unweighted,uncalibrated,0.4592169553905705,0.05689181992394278,0.07520721860112593
 Rolling prior probability [sigmoid],Rolling prior probability,not applicable,sigmoid,0.4303921568627451,0.05452702515688125,0.05661425156833951
-Choquistic model aggregator [unweighted],Choquistic model aggregator,unweighted,uncalibrated,0.4596421092708928,0.0528689294219829,0.12751461211485113
 Gradient boosting [unweighted] [sigmoid],Gradient boosting,unweighted,sigmoid,0.43672504600545725,0.050919158167529864,0.06861181847389217
 Gradient boosting [balanced] [sigmoid],Gradient boosting,balanced,sigmoid,0.4424868329208706,0.050744624232399546,0.07257670834050463
-Choquistic model aggregator [balanced],Choquistic model aggregator,balanced,uncalibrated,0.4012627704803604,0.04729219242128463,0.11997921689596978
 Fuzzy Choquet neural network [balanced],Fuzzy Choquet neural network,balanced,uncalibrated,0.39528523383463415,0.04724226459322764,0.08815727171733989

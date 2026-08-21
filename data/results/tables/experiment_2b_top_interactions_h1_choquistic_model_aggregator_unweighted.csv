@@ -1,13 +1,13 @@
 first,second,interaction,interpretation
-Penalized logistic [unweighted],Gradient boosting [unweighted],-0.34761763376124544,redundant
-Rolling prior probability,Gradient boosting [unweighted],-0.159692189882237,redundant
-Penalized logistic [unweighted],Random forest [unweighted],0.08180365822789681,complementary
-Rolling prior probability,Penalized logistic [unweighted],-0.043467611466604626,redundant
-Rolling prior probability,RBF SVM [unweighted],0.010347685342465218,complementary
-Logistic oriented [unweighted],RBF SVM [unweighted],1.8675916333722476e-15,complementary
-MLP,Gradient boosting [unweighted],-1.8513757645775947e-15,redundant
-Explicit interactions [unweighted],RBF SVM [unweighted],1.6637078820160624e-15,complementary
-RBF SVM [unweighted],Gradient boosting [unweighted],1.640267938808305e-15,complementary
-Logistic [unweighted],Penalized logistic [unweighted],-1.515850956209302e-15,redundant
-Penalized logistic [unweighted],RBF SVM [unweighted],1.4886301828572584e-15,complementary
-Penalized logistic [unweighted],Explicit interactions [unweighted],-1.4700829008449482e-15,redundant
+Rolling prior probability,Penalized logistic [unweighted],-4.92061260704157e-16,redundant
+Rolling prior probability,MLP [unweighted],-4.4192952704427836e-16,redundant
+Penalized logistic [unweighted],MLP [unweighted],3.7534856852326756e-16,complementary
+Penalized logistic [unweighted],Random forest [unweighted],-3.0939328364991306e-16,redundant
+Logistic oriented [unweighted],Random forest [unweighted],1.9539643293567625e-16,complementary
+Rolling prior probability,Logistic oriented [unweighted],1.8678898014619346e-16,complementary
+Explicit interactions [unweighted],RBF SVM [unweighted],1.8390753644034478e-16,complementary
+Rolling prior probability,Explicit interactions [unweighted],-1.663895930920894e-16,redundant
+Logistic [unweighted],Penalized logistic [unweighted],-1.488434452961132e-16,redundant
+Rolling prior probability,Random forest [unweighted],1.4768887105506527e-16,complementary
+Penalized logistic [unweighted],RBF SVM [unweighted],1.1936448065719552e-16,complementary
+Rolling prior probability,RBF SVM [unweighted],1.1342355796188662e-16,complementary

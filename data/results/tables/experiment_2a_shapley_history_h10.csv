@@ -59,17 +59,17 @@ fold,model,feature,Shapley importance
 0,Choquet 2-additive scaled-q L1,realized_volatility_20d,0.10000000000000013
 0,Choquet 2-additive scaled-q L1,term_spread_10y_2y_pct,0.10000000000000013
 0,Choquet 2-additive scaled-q L1,vix,0.10000000000000013
-0,Choquet model aggregator,Elastic net,0.08416747702996316
-0,Choquet model aggregator,Explicit interactions,0.04943831804162306
-0,Choquet model aggregator,Gradient boosting,0.02921269747579507
-0,Choquet model aggregator,Historical mean,0.24331326545280937
-0,Choquet model aggregator,Lasso,0.24331326546493937
-0,Choquet model aggregator,MLP,0.009127905336209887
-0,Choquet model aggregator,Monotone linear,0.14686358528752852
-0,Choquet model aggregator,OLS,0.05343748349692512
-0,Choquet model aggregator,OLS oriented,0.05343748344015139
-0,Choquet model aggregator,Random forest,0.03380335957184475
-0,Choquet model aggregator,Ridge,0.053885159402210364
+0,Choquet model aggregator,Elastic net,0.061153956871171214
+0,Choquet model aggregator,Explicit interactions,0.06611378456507501
+0,Choquet model aggregator,Gradient boosting,0.024530615613695968
+0,Choquet model aggregator,Historical mean,0.25139711750013266
+0,Choquet model aggregator,Lasso,0.25139711791150593
+0,Choquet model aggregator,MLP,0.06119115716556738
+0,Choquet model aggregator,Monotone linear,0.1328914808415648
+0,Choquet model aggregator,OLS,0.041517768366741335
+0,Choquet model aggregator,OLS oriented,0.04151776842277523
+0,Choquet model aggregator,Random forest,0.02612137288715377
+0,Choquet model aggregator,Ridge,0.04216785985461659
 0,Fuzzy Choquet neural network,average_equity_correlation_60d,0.10000000000000013
 0,Fuzzy Choquet neural network,baa_credit_spread_pct,0.10000000000000013
 0,Fuzzy Choquet neural network,drawdown_severity,0.10000000000000013
@@ -140,17 +140,17 @@ fold,model,feature,Shapley importance
 1,Choquet 2-additive scaled-q L1,realized_volatility_20d,0.10000000000000013
 1,Choquet 2-additive scaled-q L1,term_spread_10y_2y_pct,0.10000000000000013
 1,Choquet 2-additive scaled-q L1,vix,0.10000000000000013
-1,Choquet model aggregator,Elastic net,0.10374431967397803
-1,Choquet model aggregator,Explicit interactions,0.14541932769609753
-1,Choquet model aggregator,Gradient boosting,0.044448280665591144
-1,Choquet model aggregator,Historical mean,0.0841039283043008
-1,Choquet model aggregator,Lasso,0.10330023813416514
-1,Choquet model aggregator,MLP,0.04792323280864855
-1,Choquet model aggregator,Monotone linear,0.08977565173272037
-1,Choquet model aggregator,OLS,0.10374923401164596
-1,Choquet model aggregator,OLS oriented,0.10374923604714154
-1,Choquet model aggregator,Random forest,0.07051929141649836
-1,Choquet model aggregator,Ridge,0.10326725950921245
+1,Choquet model aggregator,Elastic net,0.11015029531634452
+1,Choquet model aggregator,Explicit interactions,0.13117865184424046
+1,Choquet model aggregator,Gradient boosting,0.04169895575665554
+1,Choquet model aggregator,Historical mean,0.07189358708990962
+1,Choquet model aggregator,Lasso,0.10924357307260091
+1,Choquet model aggregator,MLP,0.0800447705847004
+1,Choquet model aggregator,Monotone linear,0.08243608186458998
+1,Choquet model aggregator,OLS,0.11047482729622152
+1,Choquet model aggregator,OLS oriented,0.11047482710013556
+1,Choquet model aggregator,Random forest,0.042929855669259796
+1,Choquet model aggregator,Ridge,0.1094745744053417
 1,Fuzzy Choquet neural network,average_equity_correlation_60d,0.10000000000000013
 1,Fuzzy Choquet neural network,baa_credit_spread_pct,0.10000000000000013
 1,Fuzzy Choquet neural network,drawdown_severity,0.10000000000000013
@@ -221,17 +221,17 @@ fold,model,feature,Shapley importance
 2,Choquet 2-additive scaled-q L1,realized_volatility_20d,0.10000000000000013
 2,Choquet 2-additive scaled-q L1,term_spread_10y_2y_pct,0.10000000000000013
 2,Choquet 2-additive scaled-q L1,vix,0.10000000000000013
-2,Choquet model aggregator,Elastic net,0.0866300758716945
-2,Choquet model aggregator,Explicit interactions,0.17170958953924065
-2,Choquet model aggregator,Gradient boosting,0.08153527741723901
-2,Choquet model aggregator,Historical mean,0.0905219006676364
-2,Choquet model aggregator,Lasso,0.09052190066990841
-2,Choquet model aggregator,MLP,0.04653759087297426
-2,Choquet model aggregator,Monotone linear,0.08178635716405828
-2,Choquet model aggregator,OLS,0.08683206651507516
-2,Choquet model aggregator,OLS oriented,0.08683206632531912
-2,Choquet model aggregator,Random forest,0.09020161008414553
-2,Choquet model aggregator,Ridge,0.08689156487270838
+2,Choquet model aggregator,Elastic net,0.08575855219247097
+2,Choquet model aggregator,Explicit interactions,0.13515548565920577
+2,Choquet model aggregator,Gradient boosting,0.08211023670657078
+2,Choquet model aggregator,Historical mean,0.08741666444834555
+2,Choquet model aggregator,Lasso,0.08741666445017307
+2,Choquet model aggregator,MLP,0.09562593191237523
+2,Choquet model aggregator,Monotone linear,0.0842139831650501
+2,Choquet model aggregator,OLS,0.08492840132285577
+2,Choquet model aggregator,OLS oriented,0.08492840132285577
+2,Choquet model aggregator,Random forest,0.08735338675491691
+2,Choquet model aggregator,Ridge,0.0850922920651807
 2,Fuzzy Choquet neural network,average_equity_correlation_60d,0.10000000000000013
 2,Fuzzy Choquet neural network,baa_credit_spread_pct,0.10000000000000013
 2,Fuzzy Choquet neural network,drawdown_severity,0.10000000000000013
@@ -302,17 +302,17 @@ fold,model,feature,Shapley importance
 3,Choquet 2-additive scaled-q L1,realized_volatility_20d,0.10000000000000013
 3,Choquet 2-additive scaled-q L1,term_spread_10y_2y_pct,0.10000000000000013
 3,Choquet 2-additive scaled-q L1,vix,0.10000000000000013
-3,Choquet model aggregator,Elastic net,0.053285209643045416
-3,Choquet model aggregator,Explicit interactions,0.11584050694014136
-3,Choquet model aggregator,Gradient boosting,0.20838710239189281
-3,Choquet model aggregator,Historical mean,0.039486597800664616
-3,Choquet model aggregator,Lasso,0.054532353231399704
-3,Choquet model aggregator,MLP,0.03826628207993779
-3,Choquet model aggregator,Monotone linear,0.08279703551277937
-3,Choquet model aggregator,OLS,0.055680092263725944
-3,Choquet model aggregator,OLS oriented,0.05568009239533983
-3,Choquet model aggregator,Random forest,0.2409162364309364
-3,Choquet model aggregator,Ridge,0.055128491310136994
+3,Choquet model aggregator,Elastic net,0.05004676030468538
+3,Choquet model aggregator,Explicit interactions,0.11363503830977167
+3,Choquet model aggregator,Gradient boosting,0.18991948361777555
+3,Choquet model aggregator,Historical mean,0.04190585292263007
+3,Choquet model aggregator,Lasso,0.051874657937757696
+3,Choquet model aggregator,MLP,0.15067974790586866
+3,Choquet model aggregator,Monotone linear,0.059436525994077304
+3,Choquet model aggregator,OLS,0.0528179214481553
+3,Choquet model aggregator,OLS oriented,0.05281792160749013
+3,Choquet model aggregator,Random forest,0.18316829120869946
+3,Choquet model aggregator,Ridge,0.05369779874308887
 3,Fuzzy Choquet neural network,average_equity_correlation_60d,0.10000000000000013
 3,Fuzzy Choquet neural network,baa_credit_spread_pct,0.10000000000000013
 3,Fuzzy Choquet neural network,drawdown_severity,0.10000000000000013
@@ -383,17 +383,17 @@ fold,model,feature,Shapley importance
 4,Choquet 2-additive scaled-q L1,realized_volatility_20d,0.10000000000000014
 4,Choquet 2-additive scaled-q L1,term_spread_10y_2y_pct,0.10000000000000014
 4,Choquet 2-additive scaled-q L1,vix,0.10000000000000014
-4,Choquet model aggregator,Elastic net,0.03298176159172971
-4,Choquet model aggregator,Explicit interactions,0.17183955865029482
-4,Choquet model aggregator,Gradient boosting,0.03447177452334875
-4,Choquet model aggregator,Historical mean,0.2498677907862238
-4,Choquet model aggregator,Lasso,0.23136794287129964
-4,Choquet model aggregator,MLP,0.023326437334080644
-4,Choquet model aggregator,Monotone linear,0.08270234922040678
-4,Choquet model aggregator,OLS,0.02900837864918713
-4,Choquet model aggregator,OLS oriented,0.029008379132982796
-4,Choquet model aggregator,Random forest,0.08341970311279596
-4,Choquet model aggregator,Ridge,0.03200592412764963
+4,Choquet model aggregator,Elastic net,0.019241834718450243
+4,Choquet model aggregator,Explicit interactions,0.09690079675561013
+4,Choquet model aggregator,Gradient boosting,0.05461068281783005
+4,Choquet model aggregator,Historical mean,0.18021154649435894
+4,Choquet model aggregator,Lasso,0.16510657841624996
+4,Choquet model aggregator,MLP,0.24295328032540722
+4,Choquet model aggregator,Monotone linear,0.07765489870816926
+4,Choquet model aggregator,OLS,0.023121463654773477
+4,Choquet model aggregator,OLS oriented,0.02312146377036879
+4,Choquet model aggregator,Random forest,0.09576292164655424
+4,Choquet model aggregator,Ridge,0.02131453269222771
 4,Fuzzy Choquet neural network,average_equity_correlation_60d,0.10000000000000013
 4,Fuzzy Choquet neural network,baa_credit_spread_pct,0.10000000000000013
 4,Fuzzy Choquet neural network,drawdown_severity,0.10000000000000013
@@ -464,17 +464,17 @@ fold,model,feature,Shapley importance
 5,Choquet 2-additive scaled-q L1,realized_volatility_20d,0.10000000000000014
 5,Choquet 2-additive scaled-q L1,term_spread_10y_2y_pct,0.10000000000000014
 5,Choquet 2-additive scaled-q L1,vix,0.10000000000000014
-5,Choquet model aggregator,Elastic net,0.0280611932620934
-5,Choquet model aggregator,Explicit interactions,0.03383085871550402
-5,Choquet model aggregator,Gradient boosting,0.09462134553814974
-5,Choquet model aggregator,Historical mean,0.2189244162838545
-5,Choquet model aggregator,Lasso,0.2189244155915232
-5,Choquet model aggregator,MLP,0.22187644681031082
-5,Choquet model aggregator,Monotone linear,0.03333811050824159
-5,Choquet model aggregator,OLS,0.013482442487868642
-5,Choquet model aggregator,OLS oriented,0.013482442257733498
-5,Choquet model aggregator,Random forest,0.10260062153798594
-5,Choquet model aggregator,Ridge,0.02085770700673422
+5,Choquet model aggregator,Elastic net,0.06639516479818061
+5,Choquet model aggregator,Explicit interactions,0.07070961029650577
+5,Choquet model aggregator,Gradient boosting,0.11109880082080661
+5,Choquet model aggregator,Historical mean,0.14434399622244554
+5,Choquet model aggregator,Lasso,0.14434399622244584
+5,Choquet model aggregator,MLP,0.1301973196666732
+5,Choquet model aggregator,Monotone linear,0.07309593531942192
+5,Choquet model aggregator,OLS,0.046511183260402975
+5,Choquet model aggregator,OLS oriented,0.04651118326040298
+5,Choquet model aggregator,Random forest,0.1196217817590938
+5,Choquet model aggregator,Ridge,0.047171028373621346
 5,Fuzzy Choquet neural network,average_equity_correlation_60d,0.10000000000000013
 5,Fuzzy Choquet neural network,baa_credit_spread_pct,0.10000000000000013
 5,Fuzzy Choquet neural network,drawdown_severity,0.10000000000000013
@@ -545,17 +545,17 @@ fold,model,feature,Shapley importance
 6,Choquet 2-additive scaled-q L1,realized_volatility_20d,0.10000000000000013
 6,Choquet 2-additive scaled-q L1,term_spread_10y_2y_pct,0.10000000000000013
 6,Choquet 2-additive scaled-q L1,vix,0.10000000000000013
-6,Choquet model aggregator,Elastic net,0.10251919034667592
-6,Choquet model aggregator,Explicit interactions,0.04932354026040765
-6,Choquet model aggregator,Gradient boosting,0.05349933271064994
-6,Choquet model aggregator,Historical mean,0.20261572504798298
-6,Choquet model aggregator,Lasso,0.20261572504426856
-6,Choquet model aggregator,MLP,0.013056438559443691
-6,Choquet model aggregator,Monotone linear,0.13113930248308078
-6,Choquet model aggregator,OLS,0.059974853803551234
-6,Choquet model aggregator,OLS oriented,0.05997485398107446
-6,Choquet model aggregator,Random forest,0.05550432106130022
-6,Choquet model aggregator,Ridge,0.06977671670156499
+6,Choquet model aggregator,Elastic net,0.09090909090909105
+6,Choquet model aggregator,Explicit interactions,0.09090909090909105
+6,Choquet model aggregator,Gradient boosting,0.09090909090909105
+6,Choquet model aggregator,Historical mean,0.09090909090909105
+6,Choquet model aggregator,Lasso,0.09090909090909105
+6,Choquet model aggregator,MLP,0.09090909090909105
+6,Choquet model aggregator,Monotone linear,0.09090909090909105
+6,Choquet model aggregator,OLS,0.09090909090909105
+6,Choquet model aggregator,OLS oriented,0.09090909090909105
+6,Choquet model aggregator,Random forest,0.09090909090909105
+6,Choquet model aggregator,Ridge,0.09090909090909105
 6,Fuzzy Choquet neural network,average_equity_correlation_60d,0.10000000000000013
 6,Fuzzy Choquet neural network,baa_credit_spread_pct,0.10000000000000013
 6,Fuzzy Choquet neural network,drawdown_severity,0.10000000000000013

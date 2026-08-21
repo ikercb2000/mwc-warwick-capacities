@@ -39,11 +39,16 @@ fold,model,feature,Shapley importance
 0,Choquistic 2-additive [unweighted],realized_volatility_20d,2.0633257487896034e-17
 0,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.03308100427133809
 0,Choquistic 2-additive [unweighted],vix,-1.297739527147199e-17
-0,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.09552233569124055
-0,Choquistic model aggregator [unweighted],Logistic [unweighted],0.293567347406703
-0,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.2935673474067026
-0,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.27385566618221724
-0,Choquistic model aggregator [unweighted],Rolling prior probability,0.04348730331313669
+0,Choquistic model aggregator [balanced],Gradient boosting [balanced],0.9999999999999996
+0,Choquistic model aggregator [balanced],Logistic [balanced],1.2776961202017508e-16
+0,Choquistic model aggregator [balanced],Logistic oriented [balanced],-1.44777130099231e-17
+0,Choquistic model aggregator [balanced],Penalized logistic [balanced],1.3720217092079897e-16
+0,Choquistic model aggregator [balanced],Rolling prior probability,1.9379752432454233e-16
+0,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],1.7162197588997217e-16
+0,Choquistic model aggregator [unweighted],Logistic [unweighted],0.3437210786295703
+0,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.3437210773083358
+0,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.3125578440620935
+0,Choquistic model aggregator [unweighted],Rolling prior probability,-1.0797298385240015e-17
 1,Choquistic 1-additive [balanced],average_equity_correlation_60d,3.703879857416159e-17
 1,Choquistic 1-additive [balanced],baa_credit_spread_pct,1.6371531323140793e-16
 1,Choquistic 1-additive [balanced],drawdown_severity,0.22296480453559678
@@ -84,11 +89,16 @@ fold,model,feature,Shapley importance
 1,Choquistic 2-additive [unweighted],realized_volatility_20d,0.055235067408337044
 1,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.1833799162059248
 1,Choquistic 2-additive [unweighted],vix,0.03378116690183961
-1,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.08102059984803191
-1,Choquistic model aggregator [unweighted],Logistic [unweighted],-9.95432208138581e-17
-1,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],-2.9247856452231645e-16
-1,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.9189794001519687
-1,Choquistic model aggregator [unweighted],Rolling prior probability,-3.7286816111789643e-16
+1,Choquistic model aggregator [balanced],Gradient boosting [balanced],1.6304365384160015e-16
+1,Choquistic model aggregator [balanced],Logistic [balanced],-6.739172203144021e-17
+1,Choquistic model aggregator [balanced],Logistic oriented [balanced],-2.0211833701848056e-17
+1,Choquistic model aggregator [balanced],Penalized logistic [balanced],0.8986442659673588
+1,Choquistic model aggregator [balanced],Rolling prior probability,0.10135573403264127
+1,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.09999498246521069
+1,Choquistic model aggregator [unweighted],Logistic [unweighted],7.814137351884563e-17
+1,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],3.1335557032627197e-18
+1,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.9000050175347893
+1,Choquistic model aggregator [unweighted],Rolling prior probability,1.7601223116981376e-16
 2,Choquistic 1-additive [balanced],average_equity_correlation_60d,3.711378775611122e-16
 2,Choquistic 1-additive [balanced],baa_credit_spread_pct,-1.170213477307813e-16
 2,Choquistic 1-additive [balanced],drawdown_severity,1.7046845383614195e-16
@@ -129,11 +139,16 @@ fold,model,feature,Shapley importance
 2,Choquistic 2-additive [unweighted],realized_volatility_20d,0.07370737792632959
 2,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.34518912003103147
 2,Choquistic 2-additive [unweighted],vix,0.22577555108951775
-2,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.6307278612390717
-2,Choquistic model aggregator [unweighted],Logistic [unweighted],0.08248486070974315
-2,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.08248486070974353
-2,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.09237097177441647
-2,Choquistic model aggregator [unweighted],Rolling prior probability,0.1119314455670252
+2,Choquistic model aggregator [balanced],Gradient boosting [balanced],1.2244256534602962e-17
+2,Choquistic model aggregator [balanced],Logistic [balanced],2.40143553191056e-16
+2,Choquistic model aggregator [balanced],Logistic oriented [balanced],6.443052110357191e-17
+2,Choquistic model aggregator [balanced],Penalized logistic [balanced],1.0
+2,Choquistic model aggregator [balanced],Rolling prior probability,-7.994184018459789e-18
+2,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.9999999999999998
+2,Choquistic model aggregator [unweighted],Logistic [unweighted],1.8467577004669763e-17
+2,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],6.032229837166225e-17
+2,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],-1.2777774353646873e-16
+2,Choquistic model aggregator [unweighted],Rolling prior probability,-1.0984775010898971e-16
 3,Choquistic 1-additive [balanced],average_equity_correlation_60d,-1.1067782965383142e-15
 3,Choquistic 1-additive [balanced],baa_credit_spread_pct,-5.597203184281339e-16
 3,Choquistic 1-additive [balanced],drawdown_severity,2.9443680550432804e-16
@@ -174,11 +189,16 @@ fold,model,feature,Shapley importance
 3,Choquistic 2-additive [unweighted],realized_volatility_20d,-8.295276160473081e-18
 3,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.11647929256754168
 3,Choquistic 2-additive [unweighted],vix,-3.1662725771629923e-17
-3,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.25229574630622187
-3,Choquistic model aggregator [unweighted],Logistic [unweighted],0.24376438285303836
-3,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.24376374340986662
-3,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.16586229843211722
-3,Choquistic model aggregator [unweighted],Rolling prior probability,0.09431382899875597
+3,Choquistic model aggregator [balanced],Gradient boosting [balanced],0.12013253757631955
+3,Choquistic model aggregator [balanced],Logistic [balanced],-1.220583308335558e-16
+3,Choquistic model aggregator [balanced],Logistic oriented [balanced],-4.012284333890079e-17
+3,Choquistic model aggregator [balanced],Penalized logistic [balanced],0.8798674624236809
+3,Choquistic model aggregator [balanced],Rolling prior probability,-1.0262299031262969e-16
+3,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],7.350701558760166e-17
+3,Choquistic model aggregator [unweighted],Logistic [unweighted],0.35519703641489925
+3,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.3551970076162605
+3,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.2896059559688403
+3,Choquistic model aggregator [unweighted],Rolling prior probability,-6.620132818310175e-17
 4,Choquistic 1-additive [balanced],average_equity_correlation_60d,0.044053600293890306
 4,Choquistic 1-additive [balanced],baa_credit_spread_pct,1.0466906286858017e-15
 4,Choquistic 1-additive [balanced],drawdown_severity,-7.64991477472491e-18
@@ -219,11 +239,16 @@ fold,model,feature,Shapley importance
 4,Choquistic 2-additive [unweighted],realized_volatility_20d,1.4737789733332252e-17
 4,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,-3.916981601534985e-17
 4,Choquistic 2-additive [unweighted],vix,0.02334404388338266
-4,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.5867081702575525
-4,Choquistic model aggregator [unweighted],Logistic [unweighted],0.0765096854455442
-4,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.07650968387616672
-4,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.10127349205846564
-4,Choquistic model aggregator [unweighted],Rolling prior probability,0.15899896836227095
+4,Choquistic model aggregator [balanced],Gradient boosting [balanced],0.2132507547756478
+4,Choquistic model aggregator [balanced],Logistic [balanced],-1.0900071716173539e-17
+4,Choquistic model aggregator [balanced],Logistic oriented [balanced],3.401977954261651e-17
+4,Choquistic model aggregator [balanced],Penalized logistic [balanced],0.46283483943818526
+4,Choquistic model aggregator [balanced],Rolling prior probability,0.32391440578616715
+4,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],5.635447946522796e-17
+4,Choquistic model aggregator [unweighted],Logistic [unweighted],9.10623178886884e-17
+4,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],-8.550986498031096e-17
+4,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],1.7957238904406874e-17
+4,Choquistic model aggregator [unweighted],Rolling prior probability,0.9999999999999998
 5,Choquistic 1-additive [balanced],average_equity_correlation_60d,1.1871861416132864e-15
 5,Choquistic 1-additive [balanced],baa_credit_spread_pct,1.1064696519316328e-16
 5,Choquistic 1-additive [balanced],drawdown_severity,1.2885435119114786e-15
@@ -264,11 +289,16 @@ fold,model,feature,Shapley importance
 5,Choquistic 2-additive [unweighted],realized_volatility_20d,-1.710681612656891e-16
 5,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.3002719698929866
 5,Choquistic 2-additive [unweighted],vix,4.240325201174462e-18
-5,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.29831511834195423
-5,Choquistic model aggregator [unweighted],Logistic [unweighted],0.28938723861105997
-5,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.28938814131528345
-5,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.02347135980029866
-5,Choquistic model aggregator [unweighted],Rolling prior probability,0.09943814193140357
+5,Choquistic model aggregator [balanced],Gradient boosting [balanced],0.11188206128943615
+5,Choquistic model aggregator [balanced],Logistic [balanced],1.2183496037853256e-16
+5,Choquistic model aggregator [balanced],Logistic oriented [balanced],8.761257055493281e-17
+5,Choquistic model aggregator [balanced],Penalized logistic [balanced],0.7871101853904242
+5,Choquistic model aggregator [balanced],Rolling prior probability,0.1010077533201396
+5,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.07229914122733783
+5,Choquistic model aggregator [unweighted],Logistic [unweighted],0.21811867770398388
+5,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.21811866357257154
+5,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],7.001252481921326e-18
+5,Choquistic model aggregator [unweighted],Rolling prior probability,0.4914635174961067
 6,Choquistic 1-additive [balanced],average_equity_correlation_60d,1.4965070491234458e-16
 6,Choquistic 1-additive [balanced],baa_credit_spread_pct,-1.3293435642565236e-16
 6,Choquistic 1-additive [balanced],drawdown_severity,-3.541210379798225e-16
@@ -309,8 +339,13 @@ fold,model,feature,Shapley importance
 6,Choquistic 2-additive [unweighted],realized_volatility_20d,0.0452870029022345
 6,Choquistic 2-additive [unweighted],term_spread_10y_2y_pct,0.09703026162950369
 6,Choquistic 2-additive [unweighted],vix,0.33310902069629456
-6,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],0.18179169117439792
-6,Choquistic model aggregator [unweighted],Logistic [unweighted],0.04945239938380252
-6,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],0.04945239938380317
-6,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],0.19325400209503343
-6,Choquistic model aggregator [unweighted],Rolling prior probability,0.5260495079629629
+6,Choquistic model aggregator [balanced],Gradient boosting [balanced],-8.975895908520388e-17
+6,Choquistic model aggregator [balanced],Logistic [balanced],1.3094967878162655e-17
+6,Choquistic model aggregator [balanced],Logistic oriented [balanced],1.88183915968191e-16
+6,Choquistic model aggregator [balanced],Penalized logistic [balanced],0.8575623518392671
+6,Choquistic model aggregator [balanced],Rolling prior probability,0.14243764816073246
+6,Choquistic model aggregator [unweighted],Gradient boosting [unweighted],-1.189199821842056e-16
+6,Choquistic model aggregator [unweighted],Logistic [unweighted],2.798771973331397e-17
+6,Choquistic model aggregator [unweighted],Logistic oriented [unweighted],4.865823376182702e-17
+6,Choquistic model aggregator [unweighted],Penalized logistic [unweighted],5.480404469648188e-16
+6,Choquistic model aggregator [unweighted],Rolling prior probability,0.9999999999999998

@@ -8,8 +8,74 @@ from typing import Any
 import numpy as np
 import pandas as pd
 from numpy.typing import ArrayLike
-from sklearn.base import BaseEstimator, TransformerMixin
+from sklearn.base import BaseEstimator, ClassifierMixin, TransformerMixin
+from sklearn.neural_network import MLPClassifier
+from sklearn.utils.class_weight import compute_sample_weight
 from sklearn.utils.validation import check_array, check_is_fitted
+
+
+class ClassWeightedMLPClassifier(ClassifierMixin, BaseEstimator):
+    """MLP classifier with sklearn-style balanced class weighting."""
+
+    def __init__(
+        self,
+        hidden_layer_sizes: tuple[int, ...] = (100,),
+        *,
+        alpha: float = 0.0001,
+        solver: str = "adam",
+        learning_rate_init: float = 0.001,
+        max_iter: int = 200,
+        random_state: int | None = None,
+        early_stopping: bool = False,
+        n_iter_no_change: int = 10,
+        class_weight: str | None = None,
+    ) -> None:
+        self.hidden_layer_sizes = hidden_layer_sizes
+        self.alpha = alpha
+        self.solver = solver
+        self.learning_rate_init = learning_rate_init
+        self.max_iter = max_iter
+        self.random_state = random_state
+        self.early_stopping = early_stopping
+        self.n_iter_no_change = n_iter_no_change
+        self.class_weight = class_weight
+
+    def fit(
+        self,
+        X: Any,
+        y: Any,
+        sample_weight: Any = None,
+    ) -> "ClassWeightedMLPClassifier":
+        """Fit the MLP with observation weights derived from class_weight."""
+        self.estimator_ = MLPClassifier(
+            hidden_layer_sizes=self.hidden_layer_sizes,
+            alpha=self.alpha,
+            solver=self.solver,
+            learning_rate_init=self.learning_rate_init,
+            max_iter=self.max_iter,
+            random_state=self.random_state,
+            early_stopping=self.early_stopping,
+            n_iter_no_change=self.n_iter_no_change,
+        )
+        if self.class_weight == "balanced":
+            balanced_weight = compute_sample_weight("balanced", y)
+            sample_weight = (
+                balanced_weight
+                if sample_weight is None
+                else balanced_weight * sample_weight
+            )
+        self.estimator_.fit(X, y, sample_weight=sample_weight)
+        self.classes_ = self.estimator_.classes_
+        self.n_features_in_ = self.estimator_.n_features_in_
+        return self
+
+    def predict(self, X: Any) -> Any:
+        """Predict class labels."""
+        return self.estimator_.predict(X)
+
+    def predict_proba(self, X: Any) -> Any:
+        """Predict class probabilities."""
+        return self.estimator_.predict_proba(X)
 
 
 class QuantileClipper(TransformerMixin, BaseEstimator):

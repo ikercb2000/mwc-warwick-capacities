@@ -269,14 +269,14 @@ css = ["tinycss2 (>=1.1.0)"]
 
 [[package]]
 name = "capacities-ml-fin"
-version = "0.2.0"
+version = "0.3.0"
 description = "Capacities, Choquet machine learning, and non-additive financial risk measures."
 optional = false
 python-versions = "<3.15,>=3.12"
 groups = ["main"]
 files = [
-    {file = "capacities_ml_fin-0.2.0-py3-none-any.whl", hash = "sha256:deef716d5e29f7b601e436963fd60e515e13d0622b22c2addecbd258c4c35d47"},
-    {file = "capacities_ml_fin-0.2.0.tar.gz", hash = "sha256:96be756a3b6636f8eba3d925f666772934bff8d79d2b931d0c7b4d94d97ba629"},
+    {file = "capacities_ml_fin-0.3.0-py3-none-any.whl", hash = "sha256:665c99286e5099ccb0c2d7f6cbf326cccd82036484fc2ed5b9b70d7a019e10de"},
+    {file = "capacities_ml_fin-0.3.0.tar.gz", hash = "sha256:7de90229145a4bff46def540d1331507c868797a632d0af0f4bf75670180cf57"},
 ]
 
 [package.dependencies]
@@ -4246,4 +4246,4 @@ dev = ["pytest", "setuptools"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<3.15"
-content-hash = "58353d922c885e5bb2ad55bdd96c9247b3a0d97d4f914ab2fc3d04c054e2f98d"
+content-hash = "b2209f9bb9f42d4d30635edd29272783f40c57086e4f185de5fb54a9af58e1f0"

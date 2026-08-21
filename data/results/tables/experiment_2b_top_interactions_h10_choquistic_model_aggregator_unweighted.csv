@@ -1,13 +1,13 @@
 first,second,interaction,interpretation
-MLP,RBF SVM [unweighted],0.3710278266874044,complementary
-RBF SVM [unweighted],Gradient boosting [unweighted],0.2232309151706967,complementary
-Rolling prior probability,Logistic oriented [unweighted],0.06818452609058204,complementary
-Rolling prior probability,Logistic [unweighted],0.06818451572151141,complementary
-Rolling prior probability,MLP,0.010870869697695906,complementary
-Penalized logistic [unweighted],Gradient boosting [unweighted],-7.377666197326003e-17,redundant
-MLP,Gradient boosting [unweighted],-6.364007365674435e-17,redundant
-MLP,Penalized logistic [unweighted],-5.3802154516782064e-17,redundant
-MLP,Random forest [unweighted],5.222237141186613e-17,complementary
-Random forest [unweighted],Gradient boosting [unweighted],4.697409868793522e-17,complementary
-Logistic oriented [unweighted],Random forest [unweighted],-4.062253508832524e-17,redundant
-Logistic oriented [unweighted],RBF SVM [unweighted],3.879110914860151e-17,complementary
+Rolling prior probability,Gradient boosting [unweighted],0.08195014636359407,complementary
+Rolling prior probability,Penalized logistic [unweighted],2.7238619607502963e-16,complementary
+Logistic [unweighted],Logistic oriented [unweighted],-1.666804748017231e-16,redundant
+Logistic [unweighted],RBF SVM [unweighted],-1.0634266563728714e-16,redundant
+Logistic oriented [unweighted],Penalized logistic [unweighted],1.0475053472777022e-16,complementary
+Penalized logistic [unweighted],RBF SVM [unweighted],9.630796885892605e-17,complementary
+Logistic oriented [unweighted],MLP [unweighted],8.282325979090788e-17,complementary
+Rolling prior probability,MLP [unweighted],7.207886457598604e-17,complementary
+Logistic oriented [unweighted],Gradient boosting [unweighted],6.698919577110826e-17,complementary
+Logistic [unweighted],Penalized logistic [unweighted],-6.044655625758562e-17,redundant
+Logistic oriented [unweighted],Explicit interactions [unweighted],5.728339988074901e-17,complementary
+Rolling prior probability,Logistic [unweighted],-5.6775581392634e-17,redundant

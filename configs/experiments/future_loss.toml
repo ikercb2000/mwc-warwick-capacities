@@ -111,5 +111,7 @@ stress_end = "2021-12-31"
 "regressor__mlp_solver" = ["adam"]
 
 [parameter_grids.MLP]
-"regressor__hidden_layer_sizes" = [[32], [32, 16]]
-"regressor__alpha" = [0.0001, 0.001]
+"regressor__regressor__hidden_layer_sizes" = [[8], [16], [32]]
+"regressor__regressor__alpha" = [0.0001, 0.001, 0.01]
+"regressor__regressor__solver" = ["adam", "lbfgs"]
+"regressor__regressor__learning_rate_init" = [0.0003, 0.001]

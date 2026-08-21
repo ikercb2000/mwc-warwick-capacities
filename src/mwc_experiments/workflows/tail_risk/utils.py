@@ -170,7 +170,6 @@ def run_tail_classification_experiment(
         candidate_weight: dict[str, str] = {}
         weight_independent_models = {
             "Rolling prior probability",
-            "MLP",
             "Choquet linear classifier",
         }
         for weight_mode in class_weight_modes:

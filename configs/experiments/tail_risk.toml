@@ -99,5 +99,7 @@ robustness_base_models = [
 "classifier__mlp_solver" = ["adam"]
 
 [parameter_grids.MLP]
-"classifier__hidden_layer_sizes" = [[32], [32, 16]]
-"classifier__alpha" = [0.0001, 0.001]
+"classifier__hidden_layer_sizes" = [[8], [16], [32]]
+"classifier__alpha" = [0.0001, 0.001, 0.01]
+"classifier__solver" = ["adam", "lbfgs"]
+"classifier__learning_rate_init" = [0.0003, 0.001]

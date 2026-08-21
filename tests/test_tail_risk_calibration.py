@@ -8,6 +8,9 @@ import pytest
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.frozen import FrozenEstimator
 from sklearn.pipeline import Pipeline
+from capacities_ml_fin.ml.aggregation.shared_capacity import (
+    SharedCapacityBinaryAggregator,
+)
 from capacities_ml_fin.ml.models import ChoquisticRegression
 
 from mwc_experiments.configuration import load_experiment_config
@@ -79,7 +82,11 @@ def test_tail_risk_uses_frozen_full_pipelines_for_temporal_calibration() -> None
         assert isinstance(calibrated.estimator, FrozenEstimator)
         assert isinstance(
             calibrated.estimator.estimator,
-            (Pipeline, ChoquisticRegression),
+            (
+                Pipeline,
+                ChoquisticRegression,
+                SharedCapacityBinaryAggregator,
+            ),
         )
 
     assert set(result.metrics["class weight"]) == {"balanced", "unweighted"}

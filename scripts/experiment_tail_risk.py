@@ -387,29 +387,36 @@ for horizon, horizon_result in primary.items():
     )
 
     confusion_models = probability_models
-    figure, axes = plt.subplots(
-        1, len(confusion_models), figsize=(5 * len(confusion_models), 4)
-    )
-    axes = np.atleast_1d(axes)
-    for axis, model in zip(axes, confusion_models):
-        predicted = (
-            horizon_result.probabilities[model]
-            >= horizon_result.thresholds[model]
-        ).astype(int)
-        ConfusionMatrixDisplay.from_predictions(
-            horizon_result.split.y_test,
-            predicted,
-            display_labels=["non-tail", "tail"],
-            ax=axis,
-            colorbar=False,
+    for part, start in enumerate(range(0, len(confusion_models), 4), start=1):
+        models = confusion_models[start : start + 4]
+        figure, axes = plt.subplots(2, 2, figsize=(10, 8), squeeze=False)
+        flat_axes = axes.ravel()
+        for axis in flat_axes:
+            axis.set_visible(False)
+        for axis, model in zip(flat_axes, models):
+            axis.set_visible(True)
+            predicted = (
+                horizon_result.probabilities[model]
+                >= horizon_result.thresholds[model]
+            ).astype(int)
+            ConfusionMatrixDisplay.from_predictions(
+                horizon_result.split.y_test,
+                predicted,
+                display_labels=["non-tail", "tail"],
+                ax=axis,
+                colorbar=False,
+            )
+            axis.set_title(f"{model} — h={horizon}")
+        figure.suptitle(
+            f"Confusion matrices — h={horizon}, part {part}",
+            y=1.01,
         )
-        axis.set_title(f"{model} — h={horizon}")
-    figure.tight_layout()
-    artifacts[f"confusion matrices h{horizon}"] = save_figure(
-        figure,
-        f"experiment_2b_confusion_matrices_h{horizon}_a095.png",
-        paths,
-    )
+        figure.tight_layout()
+        artifacts[f"confusion matrices h{horizon} part {part}"] = save_figure(
+            figure,
+            f"experiment_2b_confusion_matrices_h{horizon}_a095_part{part}.png",
+            paths,
+        )
 
     for model, shapley in horizon_result.shapley.items():
         base_model = str(horizon_result.metrics.loc[model, "base model"])

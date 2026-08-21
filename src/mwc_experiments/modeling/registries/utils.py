@@ -19,7 +19,7 @@ from sklearn.linear_model import (
     LogisticRegression,
     Ridge,
 )
-from sklearn.neural_network import MLPClassifier, MLPRegressor
+from sklearn.neural_network import MLPRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import MinMaxScaler, PolynomialFeatures
 from sklearn.svm import SVC
@@ -37,7 +37,7 @@ from mwc_experiments.modeling.preprocessing import (
     make_oriented_standard_preprocessor,
     make_standard_preprocessor,
 )
-from mwc_experiments.modeling.types import Candidate
+from mwc_experiments.modeling.types import Candidate, ClassWeightedMLPClassifier
 
 def _model_pipeline(
     preprocessor: Pipeline,
@@ -306,14 +306,20 @@ def regression_candidates(
     if include_mlp:
         candidates["MLP"] = Candidate(
             pipeline(
-                MLPRegressor(
-                    max_iter=2_000,
-                    random_state=random_state,
+                _target_scaled_regressor(
+                    MLPRegressor(
+                        max_iter=2_000,
+                        random_state=random_state,
+                        early_stopping=True,
+                        n_iter_no_change=20,
+                    )
                 )
             ),
             {
-                "regressor__hidden_layer_sizes": [(32,), (32, 16)],
-                "regressor__alpha": [1e-4, 1e-3],
+                "regressor__regressor__hidden_layer_sizes": [(8,), (16,), (32,)],
+                "regressor__regressor__alpha": [1e-4, 1e-3, 1e-2],
+                "regressor__regressor__solver": ["adam", "lbfgs"],
+                "regressor__regressor__learning_rate_init": [3e-4, 1e-3],
             },
         )
         candidates["Fuzzy Choquet neural network"] = Candidate(
@@ -495,14 +501,19 @@ def classification_candidates(
     if include_mlp:
         candidates["MLP"] = Candidate(
             pipeline(
-                MLPClassifier(
+                ClassWeightedMLPClassifier(
                     max_iter=2_000,
                     random_state=random_state,
+                    early_stopping=True,
+                    n_iter_no_change=20,
+                    class_weight=class_weight,
                 )
             ),
             {
-                "classifier__hidden_layer_sizes": [(32,), (32, 16)],
-                "classifier__alpha": [1e-4, 1e-3],
+                "classifier__hidden_layer_sizes": [(8,), (16,), (32,)],
+                "classifier__alpha": [1e-4, 1e-3, 1e-2],
+                "classifier__solver": ["adam", "lbfgs"],
+                "classifier__learning_rate_init": [3e-4, 1e-3],
             },
         )
         candidates["Fuzzy Choquet neural network"] = Candidate(
