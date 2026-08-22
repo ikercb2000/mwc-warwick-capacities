@@ -37,10 +37,18 @@ else
     clipping_modes=("--without-clipping")
 fi
 
-for clipping_mode in "${clipping_modes[@]}"; do
-    poetry run python scripts/experiment_factors.py "$mode" "$clipping_mode"
-    poetry run python scripts/experiment_predict_loss.py "$mode" "$clipping_mode"
-    poetry run python scripts/experiment_tail_risk.py "$mode" "$clipping_mode"
+if [[ "$mode" == "--full" ]]; then
+    evaluation_structures=("fixed" "rolling_5y")
+else
+    evaluation_structures=("rolling_5y")
+fi
+
+for evaluation_structure in "${evaluation_structures[@]}"; do
+    for clipping_mode in "${clipping_modes[@]}"; do
+        poetry run python scripts/experiment_factors.py "$mode" --evaluation-structure "$evaluation_structure" "$clipping_mode"
+        poetry run python scripts/experiment_predict_loss.py "$mode" --evaluation-structure "$evaluation_structure" "$clipping_mode"
+        poetry run python scripts/experiment_tail_risk.py "$mode" --evaluation-structure "$evaluation_structure" "$clipping_mode"
+    done
 done
 poetry run python scripts/experiment_distortion_risk.py
 poetry run python scripts/experiment_autoregression.py

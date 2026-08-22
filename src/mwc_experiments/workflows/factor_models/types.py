@@ -23,6 +23,7 @@ from mwc_experiments.workflows.common import model_parameter_count, quick_candid
 
 @dataclass(slots=True)
 class FactorExperimentResult:
+    evaluation_structure: str
     metrics: pd.DataFrame
     in_sample_metrics: pd.DataFrame
     predictions: dict[str, pd.DataFrame]
@@ -31,6 +32,8 @@ class FactorExperimentResult:
     selected_parameters: pd.DataFrame
     failures: pd.DataFrame
     splits: dict[str, TemporalSplit]
+    fold_summaries: dict[str, pd.DataFrame]
+    fold_metrics: pd.DataFrame
     shapley: dict[str, pd.Series] = field(default_factory=dict)
     interactions: dict[str, pd.DataFrame] = field(default_factory=dict)
     fitted_models: dict[tuple[str, str], object] = field(default_factory=dict)

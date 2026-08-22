@@ -142,9 +142,12 @@ poetry run python scripts/experiment_autoregression.py
 
 Alternatively, run the complete sequence, final artifact audit and HTML report
 rendering with the platform-specific wrapper. A full run executes experiments
-1, 2a and 2b twice: first with feature clipping and then without it. The two
-variants are stored separately as `full_clipping` and `full_no_clipping`; the
-final `latest` pointers therefore select the default no-clipping results.
+1, 2a and 2b under both `fixed` and `rolling_5y`, first with feature clipping
+and then without it. This gives four immutable variants per predictive
+experiment: `full_fixed_clipping`, `full_fixed_no_clipping`,
+`full_rolling_5y_clipping` and `full_rolling_5y_no_clipping`. The rolling,
+no-clipping variant runs last and therefore becomes the default `latest`.
+Experiment 3 and the autoregression are each run once and are unchanged.
 
 Windows PowerShell:
 
@@ -191,11 +194,18 @@ The three predictive scripts accept:
 - `--full`: evaluate the complete validation grids;
 - `--with-clipping`: enable training-only 0.5%--99.5% feature clipping;
 - `--without-clipping`: disable feature clipping;
+- `--evaluation-structure fixed|rolling_5y`: select the temporal design;
 - `--quiet`: suppress model-by-model progress messages.
 
 If no mode is given, `quick_mode_default` from the TOML configuration is used.
 If no clipping switch is given, `[preprocessing].clipping_enabled` is used; it
 is `false` for experiments 1, 2a and 2b.
+If no evaluation switch is given, `[evaluation].structure` is used; it is `rolling_5y`.
+For example, run one fixed no-clipping variant with:
+
+```powershell
+poetry run python scripts/experiment_predict_loss.py --full --evaluation-structure fixed --without-clipping
+```
 The smoke script provides a small end-to-end check:
 
 ```powershell
@@ -216,20 +226,23 @@ poetry run python scripts/run_smoke_experiments.py
 
 ## Model selection and evaluation
 
-Predictive experiments 2a and 2b use rolling walk-forward evaluation. The first
-OOS block starts in 2020 and each block covers one year (the final block may be
-partial). Before predicting a block, the complete selection and fitting process
-uses only the configurable five-year lookback immediately preceding it. After
-the block finishes, both the lookback and OOS boundaries advance by one year.
-All OOS block predictions are concatenated before calculating final metrics.
+Predictive experiments 1, 2a and 2b support exactly two primary temporal
+designs. `rolling_5y` is the default. Its first OOS block starts in 2020 and
+each block covers one year (the final block may be partial). Before predicting
+a block, the complete selection and fitting process uses only the five-year
+lookback immediately preceding it. Experiments 1 and 2a use four years for
+training and one year for validation, refit on all five years, and concatenate
+the annual OOS predictions. Experiment 2b divides the same lookback into 18
+months of training, 18 months of selection and 24 months of calibration; its
+base pipeline is refitted on training plus selection, frozen, and only then
+calibrated.
 
-For 2a, the last 12 months of each lookback are internal validation and the
-earlier four years are inner training. After hyperparameter selection, the model
-is refitted using both past partitions. For 2b, each five-year lookback is split
-into 18 months of inner training, 18 months of selection validation and 24
-months of probability calibration. The base classifier is refitted on the first
-three years, then its complete fitted pipeline is frozen and calibrated on the
-final two years.
+`fixed` uses training from the beginning of the sample through 2018-12-31,
+validation during calendar 2019, and a single OOS test from 2020-01-01 to the
+end. Experiments 1 and 2a refit on training plus validation after selection.
+For 2b, the leakage-free fixed partition is training through 2017-12-31,
+selection during 2018, calibration during 2019 and OOS testing from 2020.
+Calibrated and uncalibrated classifier variants remain separate.
 
 Forecast-horizon observations are purged before every inner-validation,
 calibration and OOS boundary, preventing 5-day and 10-day targets from crossing
@@ -263,7 +276,11 @@ with sigmoid calibration. `CalibratedClassifierCV` is applied to a
 `FrozenEstimator` containing the complete fitted pipeline, so calibration
 cannot refit preprocessing or the classifier. Its
 decision threshold is estimated on the calibration block; the uncalibrated
-threshold remains selection-validation based. The current or future OOS block
+threshold remains selection-validation based.
+If a reserved calibration block contains only one class, sigmoid fitting is
+not identifiable; the calibrated variant therefore uses a finite smoothed
+prior estimated only from that calibration block and reports the
+single-class fallback explicitly in its metadata. The current or future OOS block
 is never used for selection, fitting, threshold choice or calibration.
 
 The two 2b aggregators also remain weight-specific. The balanced aggregator
@@ -287,7 +304,8 @@ configured under `[calibration]` and `[class_weight]` in
 `configs/experiments/tail_risk.toml`. Separate
 `experiment_2b_discrimination_*`, `experiment_2b_calibration_*` and
 `experiment_2b_calibration_sample_*` tables make the comparison auditable.
-Both forecasting experiments additionally persist `*_walk_forward_folds_*`,
+All predictive experiments persist fold dates, observation counts and `evaluation_structure`.
+The forecasting experiments additionally persist `*_walk_forward_folds_*`,
 `*_walk_forward_metrics_*`, `*_orientation_history_*` and
 `*_shapley_history_*` tables.
 
@@ -455,7 +473,7 @@ data/
     `-- figures/                legacy/published snapshot
 ```
 
-Run identifiers contain the UTC timestamp, Git commit, execution mode and
+Run identifiers contain the UTC timestamp, Git commit, execution mode, evaluation structure, clipping mode and
 process identifier. A manifest records the command, Git state, Python and
 package versions, configuration hash, data fingerprint, duration, artifact
 sizes and SHA-256 checksums. Files are written atomically. `latest` is updated

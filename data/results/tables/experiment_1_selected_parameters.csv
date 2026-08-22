@@ -1,109 +1,757 @@
-asset,model,best parameters,fitted q
-AAPL,OLS,{},
-AAPL,OLS oriented,{},
-AAPL,Monotone linear,{},
-AAPL,Ridge,{'regressor__alpha': 0.01},
-AAPL,Lasso,{'regressor__alpha': 1e-05},
-AAPL,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
-AAPL,Choquet 1-additive,{},
-AAPL,Choquet 1-additive scaled-q,{},0.13823393616687057
-AAPL,Choquet 2-additive,{},
-AAPL,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-AAPL,Choquet 2-additive scaled-q,{},0.1382339361668706
-AAPL,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.1382339361668657
-AMZN,OLS,{},
-AMZN,OLS oriented,{},
-AMZN,Monotone linear,{},
-AMZN,Ridge,{'regressor__alpha': 0.01},
-AMZN,Lasso,{'regressor__alpha': 1e-05},
-AMZN,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
-AMZN,Choquet 1-additive,{},
-AMZN,Choquet 1-additive scaled-q,{},0.16252013778201468
-AMZN,Choquet 2-additive,{},
-AMZN,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-AMZN,Choquet 2-additive scaled-q,{},0.1625201377820148
-AMZN,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.16252013778201177
-JPM,OLS,{},
-JPM,OLS oriented,{},
-JPM,Monotone linear,{},
-JPM,Ridge,{'regressor__alpha': 0.01},
-JPM,Lasso,{'regressor__alpha': 1e-05},
-JPM,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
-JPM,Choquet 1-additive,{},
-JPM,Choquet 1-additive scaled-q,{},0.1282321693039034
-JPM,Choquet 2-additive,{},
-JPM,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-JPM,Choquet 2-additive scaled-q,{},0.12823216930390335
-JPM,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.12823216930389847
-KO,OLS,{},
-KO,OLS oriented,{},
-KO,Monotone linear,{},
-KO,Ridge,{'regressor__alpha': 0.01},
-KO,Lasso,{'regressor__alpha': 1e-05},
-KO,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
-KO,Choquet 1-additive,{},
-KO,Choquet 1-additive scaled-q,{},0.05688477578729086
-KO,Choquet 2-additive,{},
-KO,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-KO,Choquet 2-additive scaled-q,{},0.05688477578729085
-KO,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.05688477578729085
-MSFT,OLS,{},
-MSFT,OLS oriented,{},
-MSFT,Monotone linear,{},
-MSFT,Ridge,{'regressor__alpha': 10.0},
-MSFT,Lasso,{'regressor__alpha': 0.0001},
-MSFT,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}",
-MSFT,Choquet 1-additive,{},
-MSFT,Choquet 1-additive scaled-q,{},0.12456739850490889
-MSFT,Choquet 2-additive,{},
-MSFT,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-MSFT,Choquet 2-additive scaled-q,{},0.12456739850490889
-MSFT,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.12456739850490532
-NVDA,OLS,{},
-NVDA,OLS oriented,{},
-NVDA,Monotone linear,{},
-NVDA,Ridge,{'regressor__alpha': 0.01},
-NVDA,Lasso,{'regressor__alpha': 1e-05},
-NVDA,Elastic net,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
-NVDA,Choquet 1-additive,{},
-NVDA,Choquet 1-additive scaled-q,{},0.15979988348148164
-NVDA,Choquet 2-additive,{},
-NVDA,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-NVDA,Choquet 2-additive scaled-q,{},0.1597998834814816
-NVDA,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.15979988348147248
-UNH,OLS,{},
-UNH,OLS oriented,{},
-UNH,Monotone linear,{},
-UNH,Ridge,{'regressor__alpha': 0.01},
-UNH,Lasso,{'regressor__alpha': 0.0001},
-UNH,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}",
-UNH,Choquet 1-additive,{},
-UNH,Choquet 1-additive scaled-q,{},0.08848017383098206
-UNH,Choquet 2-additive,{},
-UNH,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-UNH,Choquet 2-additive scaled-q,{},0.08848017383098206
-UNH,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.088480173830979
-WMT,OLS,{},
-WMT,OLS oriented,{},
-WMT,Monotone linear,{},
-WMT,Ridge,{'regressor__alpha': 10.0},
-WMT,Lasso,{'regressor__alpha': 0.001},
-WMT,Elastic net,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
-WMT,Choquet 1-additive,{},
-WMT,Choquet 1-additive scaled-q,{},0.06254101952291126
-WMT,Choquet 2-additive,{},
-WMT,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-WMT,Choquet 2-additive scaled-q,{},0.06254101952291123
-WMT,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.06254101952291123
-XOM,OLS,{},
-XOM,OLS oriented,{},
-XOM,Monotone linear,{},
-XOM,Ridge,{'regressor__alpha': 0.01},
-XOM,Lasso,{'regressor__alpha': 0.0001},
-XOM,Elastic net,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
-XOM,Choquet 1-additive,{},
-XOM,Choquet 1-additive scaled-q,{},0.10170229922334162
-XOM,Choquet 2-additive,{},
-XOM,Choquet 2-additive L1,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
-XOM,Choquet 2-additive scaled-q,{},0.10170229922334162
-XOM,Choquet 2-additive scaled-q L1,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.10170229922333747
+asset,fold,model,evaluation_structure,OOS start,OOS end,best parameters,fitted q
+AAPL,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+AAPL,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.21329548826745376
+AAPL,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+AAPL,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AAPL,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.2132954882674538
+AAPL,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.21329548826744738
+AAPL,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+AAPL,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 1e-05},
+AAPL,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+AAPL,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+AAPL,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+AAPL,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.01},
+AAPL,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+AAPL,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.36778318021150963
+AAPL,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+AAPL,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AAPL,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.36778318021150996
+AAPL,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3677831802115066
+AAPL,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}",
+AAPL,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.0001},
+AAPL,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+AAPL,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+AAPL,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+AAPL,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 10.0},
+AAPL,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+AAPL,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.3663014661474494
+AAPL,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+AAPL,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AAPL,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.3675590836439403
+AAPL,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.367560242646202
+AAPL,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+AAPL,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.0001},
+AAPL,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+AAPL,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+AAPL,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+AAPL,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 10.0},
+AAPL,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+AAPL,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.3021193623575551
+AAPL,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+AAPL,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AAPL,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.30271579641898433
+AAPL,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.30308922080068784
+AAPL,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+AAPL,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.0001},
+AAPL,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+AAPL,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+AAPL,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+AAPL,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.01},
+AAPL,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+AAPL,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.33914705250640975
+AAPL,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+AAPL,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AAPL,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.34029868328792273
+AAPL,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.34029963547358655
+AAPL,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+AAPL,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.001},
+AAPL,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+AAPL,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+AAPL,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+AAPL,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 10.0},
+AAPL,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+AAPL,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.311543182955001
+AAPL,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+AAPL,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AAPL,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.31154318295500094
+AAPL,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.31154318295500094
+AAPL,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.5}",
+AAPL,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.01},
+AAPL,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+AAPL,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+AAPL,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+AAPL,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 10.0},
+AAPL,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+AAPL,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.2760456334433102
+AAPL,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+AAPL,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AAPL,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.2760456334433103
+AAPL,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.2760456334433061
+AAPL,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+AAPL,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 0.001},
+AAPL,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+AAPL,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+AAPL,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+AAPL,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 10.0},
+AMZN,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+AMZN,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.24378244704167049
+AMZN,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+AMZN,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AMZN,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.24378244704167054
+AMZN,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.24378244704166724
+AMZN,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+AMZN,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 1e-05},
+AMZN,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+AMZN,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+AMZN,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+AMZN,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.01},
+AMZN,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+AMZN,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.35298132390373366
+AMZN,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+AMZN,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AMZN,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.35298132390373366
+AMZN,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3529813239037308
+AMZN,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+AMZN,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.001},
+AMZN,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+AMZN,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+AMZN,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+AMZN,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 10.0},
+AMZN,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+AMZN,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.3240862353070518
+AMZN,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+AMZN,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AMZN,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.3240862353070517
+AMZN,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3240862353070487
+AMZN,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+AMZN,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.001},
+AMZN,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+AMZN,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+AMZN,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+AMZN,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 10.0},
+AMZN,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+AMZN,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.352183085357898
+AMZN,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+AMZN,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AMZN,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.35328583950447984
+AMZN,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3521830853578828
+AMZN,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+AMZN,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 1e-05},
+AMZN,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+AMZN,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+AMZN,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+AMZN,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.01},
+AMZN,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+AMZN,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.388859167772489
+AMZN,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+AMZN,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AMZN,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.3902189007111855
+AMZN,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3901640719479404
+AMZN,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+AMZN,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 1e-05},
+AMZN,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+AMZN,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+AMZN,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+AMZN,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.01},
+AMZN,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+AMZN,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.37373257531564175
+AMZN,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+AMZN,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AMZN,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.37399925510526655
+AMZN,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3740028665586238
+AMZN,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+AMZN,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.001},
+AMZN,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+AMZN,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+AMZN,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+AMZN,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 10.0},
+AMZN,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+AMZN,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.37661632226208197
+AMZN,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+AMZN,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+AMZN,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.3731748694454316
+AMZN,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3766163222620335
+AMZN,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}",
+AMZN,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 0.001},
+AMZN,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+AMZN,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+AMZN,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+AMZN,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 0.01},
+JPM,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+JPM,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.19116226532239347
+JPM,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+JPM,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+JPM,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.19116226532239344
+JPM,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.19116226532238745
+JPM,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+JPM,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 1e-05},
+JPM,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+JPM,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+JPM,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+JPM,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.01},
+JPM,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+JPM,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.33694212230866843
+JPM,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+JPM,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+JPM,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.340750625236058
+JPM,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.33694212230866466
+JPM,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+JPM,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 1e-05},
+JPM,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+JPM,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+JPM,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+JPM,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.01},
+JPM,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+JPM,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.32881882153775316
+JPM,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+JPM,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+JPM,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.3288188215377531
+JPM,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3288188215377531
+JPM,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+JPM,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.0001},
+JPM,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+JPM,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+JPM,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+JPM,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 1.0},
+JPM,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+JPM,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.3342693170723592
+JPM,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+JPM,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+JPM,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.33843106276230905
+JPM,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3384258079139342
+JPM,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+JPM,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.0001},
+JPM,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+JPM,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+JPM,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+JPM,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 1.0},
+JPM,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+JPM,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.3089970127265309
+JPM,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+JPM,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+JPM,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.30899701272653063
+JPM,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.30899701272653063
+JPM,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+JPM,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 1e-05},
+JPM,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+JPM,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+JPM,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+JPM,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.01},
+JPM,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+JPM,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.256661092083273
+JPM,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+JPM,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+JPM,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.2571725277093379
+JPM,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.2571569943266781
+JPM,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+JPM,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 1e-05},
+JPM,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+JPM,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+JPM,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+JPM,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.01},
+JPM,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+JPM,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.21974043134771273
+JPM,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+JPM,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+JPM,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.21974043134771268
+JPM,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.21974043134770857
+JPM,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.25}",
+JPM,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 1e-05},
+JPM,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+JPM,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+JPM,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+JPM,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 10.0},
+KO,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+KO,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.0848722377791515
+KO,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+KO,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+KO,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.08487223777915141
+KO,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.08487223777915141
+KO,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+KO,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 1e-05},
+KO,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+KO,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+KO,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+KO,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.01},
+KO,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+KO,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.1070316279289271
+KO,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+KO,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+KO,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.10703162792892705
+KO,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.10703162792892357
+KO,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+KO,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 1e-05},
+KO,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+KO,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+KO,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+KO,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.01},
+KO,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+KO,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.10367942176148949
+KO,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+KO,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+KO,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.10367942176148955
+KO,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.10367942176148626
+KO,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+KO,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.001},
+KO,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+KO,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+KO,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+KO,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 10.0},
+KO,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+KO,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.10747774882342054
+KO,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+KO,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+KO,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.10747774882342057
+KO,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.10747774882341651
+KO,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+KO,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.001},
+KO,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+KO,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+KO,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+KO,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 10.0},
+KO,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+KO,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.09862852030725636
+KO,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+KO,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+KO,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.09862852030725641
+KO,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.09862852030725311
+KO,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+KO,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.001},
+KO,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+KO,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+KO,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+KO,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 10.0},
+KO,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+KO,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.07933422698759751
+KO,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+KO,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+KO,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.0793342269875975
+KO,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.07933422698759382
+KO,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+KO,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.0001},
+KO,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+KO,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+KO,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+KO,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 10.0},
+KO,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+KO,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.07309342170762421
+KO,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+KO,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+KO,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.07309342170762424
+KO,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.07309342170762424
+KO,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}",
+KO,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 1e-05},
+KO,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+KO,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+KO,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+KO,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 10.0},
+MSFT,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+MSFT,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.18835425200111752
+MSFT,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+MSFT,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+MSFT,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.1883542520011176
+MSFT,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.18835425200111278
+MSFT,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}",
+MSFT,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.0001},
+MSFT,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+MSFT,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+MSFT,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+MSFT,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 10.0},
+MSFT,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+MSFT,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.2984802100087786
+MSFT,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+MSFT,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+MSFT,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.2984802100087786
+MSFT,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.2984802100087757
+MSFT,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}",
+MSFT,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.0001},
+MSFT,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+MSFT,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+MSFT,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+MSFT,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 10.0},
+MSFT,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+MSFT,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.28378787715189013
+MSFT,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+MSFT,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+MSFT,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.28378787715189013
+MSFT,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.28378787715188203
+MSFT,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+MSFT,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 1e-05},
+MSFT,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+MSFT,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+MSFT,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+MSFT,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.01},
+MSFT,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+MSFT,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.299971717756532
+MSFT,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+MSFT,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+MSFT,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.29997171775653203
+MSFT,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.29997171775651993
+MSFT,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+MSFT,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.0001},
+MSFT,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+MSFT,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+MSFT,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+MSFT,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.01},
+MSFT,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+MSFT,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.3339458511226377
+MSFT,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+MSFT,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+MSFT,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.3339458511226377
+MSFT,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3339458511226377
+MSFT,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+MSFT,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.0001},
+MSFT,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+MSFT,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+MSFT,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+MSFT,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.01},
+MSFT,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+MSFT,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.3136417625618732
+MSFT,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+MSFT,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+MSFT,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.3136417625618732
+MSFT,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3136417625618732
+MSFT,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+MSFT,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.01},
+MSFT,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+MSFT,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+MSFT,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+MSFT,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 10.0},
+MSFT,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+MSFT,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.2770112166338523
+MSFT,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+MSFT,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+MSFT,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.27701121663385236
+MSFT,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.27701121663385236
+MSFT,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+MSFT,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 0.001},
+MSFT,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+MSFT,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+MSFT,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+MSFT,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 10.0},
+NVDA,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+NVDA,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.2360905560034378
+NVDA,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+NVDA,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+NVDA,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.23609055600343792
+NVDA,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.23609055600341752
+NVDA,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+NVDA,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 1e-05},
+NVDA,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+NVDA,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+NVDA,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+NVDA,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 1.0},
+NVDA,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+NVDA,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.3966228944602837
+NVDA,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+NVDA,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+NVDA,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.4079170071322361
+NVDA,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.4084931523640952
+NVDA,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+NVDA,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.001},
+NVDA,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+NVDA,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+NVDA,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+NVDA,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 10.0},
+NVDA,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+NVDA,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.4137364133876529
+NVDA,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+NVDA,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+NVDA,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.4217661330321243
+NVDA,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.42621888340415026
+NVDA,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+NVDA,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.001},
+NVDA,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+NVDA,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+NVDA,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+NVDA,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 10.0},
+NVDA,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+NVDA,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.44489550323768723
+NVDA,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+NVDA,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+NVDA,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.4474484088766846
+NVDA,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.44828107509956105
+NVDA,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+NVDA,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.0001},
+NVDA,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+NVDA,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+NVDA,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+NVDA,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 10.0},
+NVDA,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+NVDA,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.484033542754423
+NVDA,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+NVDA,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+NVDA,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.48605011077311855
+NVDA,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.485762100807862
+NVDA,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+NVDA,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 1e-05},
+NVDA,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+NVDA,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+NVDA,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+NVDA,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.01},
+NVDA,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+NVDA,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.48711679864595675
+NVDA,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+NVDA,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+NVDA,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.4863147050072994
+NVDA,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.43493211251041647
+NVDA,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}",
+NVDA,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.0001},
+NVDA,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+NVDA,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+NVDA,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+NVDA,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 10.0},
+NVDA,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+NVDA,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.5324832142907974
+NVDA,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+NVDA,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+NVDA,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.5336813558311918
+NVDA,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.5334112559062026
+NVDA,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+NVDA,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 0.001},
+NVDA,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+NVDA,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+NVDA,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+NVDA,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 0.01},
+UNH,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+UNH,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.12846770064309748
+UNH,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+UNH,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+UNH,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.12846770064309748
+UNH,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.1284677006430944
+UNH,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}",
+UNH,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.001},
+UNH,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+UNH,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+UNH,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+UNH,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.01},
+UNH,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+UNH,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.2385128279103561
+UNH,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+UNH,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+UNH,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.2385128279103561
+UNH,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.2385128279103527
+UNH,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+UNH,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 1e-05},
+UNH,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+UNH,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+UNH,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+UNH,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.01},
+UNH,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+UNH,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.22178510573670054
+UNH,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+UNH,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+UNH,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.22178510573670054
+UNH,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.22178510573669113
+UNH,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}",
+UNH,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.001},
+UNH,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+UNH,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+UNH,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+UNH,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 10.0},
+UNH,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+UNH,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.1966248001375943
+UNH,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+UNH,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+UNH,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.19662480013759426
+UNH,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.19662480013758563
+UNH,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+UNH,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 1e-05},
+UNH,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+UNH,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+UNH,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+UNH,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.01},
+UNH,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+UNH,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.16654147413424583
+UNH,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+UNH,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+UNH,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.16654147413424586
+UNH,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.16654147413423953
+UNH,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+UNH,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.001},
+UNH,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+UNH,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+UNH,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+UNH,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 10.0},
+UNH,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+UNH,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.12382925581026138
+UNH,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+UNH,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+UNH,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.12382925581026134
+UNH,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.12382925581025675
+UNH,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}",
+UNH,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.001},
+UNH,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+UNH,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+UNH,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+UNH,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.01},
+UNH,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+UNH,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.09022706669179158
+UNH,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+UNH,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+UNH,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.09022706669179152
+UNH,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.09022706669178805
+UNH,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+UNH,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 1e-05},
+UNH,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+UNH,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+UNH,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+UNH,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 0.01},
+WMT,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+WMT,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.09413437587520494
+WMT,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+WMT,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+WMT,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.09413437587520486
+WMT,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.09413437587520486
+WMT,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+WMT,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.001},
+WMT,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+WMT,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+WMT,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+WMT,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 10.0},
+WMT,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+WMT,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.14586771081881728
+WMT,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+WMT,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+WMT,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.14586771081881716
+WMT,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.1458677108188137
+WMT,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+WMT,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.001},
+WMT,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+WMT,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+WMT,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+WMT,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.01},
+WMT,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+WMT,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.13567608803866382
+WMT,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+WMT,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+WMT,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.1356760880386638
+WMT,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.13567608803866052
+WMT,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.5}",
+WMT,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.0001},
+WMT,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+WMT,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+WMT,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+WMT,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.1},
+WMT,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+WMT,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.12773141567957952
+WMT,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+WMT,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+WMT,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.1277314156795795
+WMT,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.1277314156795795
+WMT,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+WMT,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.001},
+WMT,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+WMT,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+WMT,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+WMT,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 10.0},
+WMT,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+WMT,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.11214586235287319
+WMT,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+WMT,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+WMT,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.11214586235287324
+WMT,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.11214586235286995
+WMT,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.5}",
+WMT,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.001},
+WMT,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+WMT,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+WMT,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+WMT,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 10.0},
+WMT,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+WMT,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.09907359419544226
+WMT,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+WMT,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+WMT,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.09907359419544226
+WMT,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.09907359419544226
+WMT,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}",
+WMT,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.0001},
+WMT,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+WMT,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+WMT,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+WMT,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 10.0},
+WMT,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+WMT,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.10270578446150647
+WMT,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+WMT,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+WMT,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.10270578446150648
+WMT,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.10270578446150286
+WMT,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.25}",
+WMT,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 0.0001},
+WMT,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+WMT,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+WMT,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+WMT,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 10.0},
+XOM,0,Choquet 1-additive,rolling_5y,2020-01-01,2021-01-01,{},
+XOM,0,Choquet 1-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.151848288456996
+XOM,0,Choquet 2-additive,rolling_5y,2020-01-01,2021-01-01,{},
+XOM,0,Choquet 2-additive L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.0001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+XOM,0,Choquet 2-additive scaled-q,rolling_5y,2020-01-01,2021-01-01,{},0.15184828845699608
+XOM,0,Choquet 2-additive scaled-q L1,rolling_5y,2020-01-01,2021-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.1518482884569928
+XOM,0,Elastic net,rolling_5y,2020-01-01,2021-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+XOM,0,Lasso,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.0001},
+XOM,0,Monotone linear,rolling_5y,2020-01-01,2021-01-01,{},
+XOM,0,OLS,rolling_5y,2020-01-01,2021-01-01,{},
+XOM,0,OLS oriented,rolling_5y,2020-01-01,2021-01-01,{},
+XOM,0,Ridge,rolling_5y,2020-01-01,2021-01-01,{'regressor__alpha': 0.01},
+XOM,1,Choquet 1-additive,rolling_5y,2021-01-01,2022-01-01,{},
+XOM,1,Choquet 1-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.22802593882665814
+XOM,1,Choquet 2-additive,rolling_5y,2021-01-01,2022-01-01,{},
+XOM,1,Choquet 2-additive L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+XOM,1,Choquet 2-additive scaled-q,rolling_5y,2021-01-01,2022-01-01,{},0.22950664508896568
+XOM,1,Choquet 2-additive scaled-q L1,rolling_5y,2021-01-01,2022-01-01,"{'regressor__penalty': L1Penalty(weight=0.01, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.22802593882665464
+XOM,1,Elastic net,rolling_5y,2021-01-01,2022-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.25}",
+XOM,1,Lasso,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 1e-05},
+XOM,1,Monotone linear,rolling_5y,2021-01-01,2022-01-01,{},
+XOM,1,OLS,rolling_5y,2021-01-01,2022-01-01,{},
+XOM,1,OLS oriented,rolling_5y,2021-01-01,2022-01-01,{},
+XOM,1,Ridge,rolling_5y,2021-01-01,2022-01-01,{'regressor__alpha': 0.01},
+XOM,2,Choquet 1-additive,rolling_5y,2022-01-01,2023-01-01,{},
+XOM,2,Choquet 1-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.31039280580341644
+XOM,2,Choquet 2-additive,rolling_5y,2022-01-01,2023-01-01,{},
+XOM,2,Choquet 2-additive L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+XOM,2,Choquet 2-additive scaled-q,rolling_5y,2022-01-01,2023-01-01,{},0.31039280580341644
+XOM,2,Choquet 2-additive scaled-q L1,rolling_5y,2022-01-01,2023-01-01,"{'regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.31039280580340756
+XOM,2,Elastic net,rolling_5y,2022-01-01,2023-01-01,"{'regressor__alpha': 0.001, 'regressor__l1_ratio': 0.75}",
+XOM,2,Lasso,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.001},
+XOM,2,Monotone linear,rolling_5y,2022-01-01,2023-01-01,{},
+XOM,2,OLS,rolling_5y,2022-01-01,2023-01-01,{},
+XOM,2,OLS oriented,rolling_5y,2022-01-01,2023-01-01,{},
+XOM,2,Ridge,rolling_5y,2022-01-01,2023-01-01,{'regressor__alpha': 0.01},
+XOM,3,Choquet 1-additive,rolling_5y,2023-01-01,2024-01-01,{},
+XOM,3,Choquet 1-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.33210671722574914
+XOM,3,Choquet 2-additive,rolling_5y,2023-01-01,2024-01-01,{},
+XOM,3,Choquet 2-additive L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+XOM,3,Choquet 2-additive scaled-q,rolling_5y,2023-01-01,2024-01-01,{},0.33770010128040623
+XOM,3,Choquet 2-additive scaled-q L1,rolling_5y,2023-01-01,2024-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.3377600806772567
+XOM,3,Elastic net,rolling_5y,2023-01-01,2024-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.75}",
+XOM,3,Lasso,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.0001},
+XOM,3,Monotone linear,rolling_5y,2023-01-01,2024-01-01,{},
+XOM,3,OLS,rolling_5y,2023-01-01,2024-01-01,{},
+XOM,3,OLS oriented,rolling_5y,2023-01-01,2024-01-01,{},
+XOM,3,Ridge,rolling_5y,2023-01-01,2024-01-01,{'regressor__alpha': 0.01},
+XOM,4,Choquet 1-additive,rolling_5y,2024-01-01,2025-01-01,{},
+XOM,4,Choquet 1-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.3067380486928902
+XOM,4,Choquet 2-additive,rolling_5y,2024-01-01,2025-01-01,{},
+XOM,4,Choquet 2-additive L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+XOM,4,Choquet 2-additive scaled-q,rolling_5y,2024-01-01,2025-01-01,{},0.38006062100219956
+XOM,4,Choquet 2-additive scaled-q L1,rolling_5y,2024-01-01,2025-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.33854372696001356
+XOM,4,Elastic net,rolling_5y,2024-01-01,2025-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.5}",
+XOM,4,Lasso,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 1e-05},
+XOM,4,Monotone linear,rolling_5y,2024-01-01,2025-01-01,{},
+XOM,4,OLS,rolling_5y,2024-01-01,2025-01-01,{},
+XOM,4,OLS oriented,rolling_5y,2024-01-01,2025-01-01,{},
+XOM,4,Ridge,rolling_5y,2024-01-01,2025-01-01,{'regressor__alpha': 0.01},
+XOM,5,Choquet 1-additive,rolling_5y,2025-01-01,2026-01-01,{},
+XOM,5,Choquet 1-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.31247314567560913
+XOM,5,Choquet 2-additive,rolling_5y,2025-01-01,2026-01-01,{},
+XOM,5,Choquet 2-additive L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+XOM,5,Choquet 2-additive scaled-q,rolling_5y,2025-01-01,2026-01-01,{},0.3190749085385989
+XOM,5,Choquet 2-additive scaled-q L1,rolling_5y,2025-01-01,2026-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.31917423329522715
+XOM,5,Elastic net,rolling_5y,2025-01-01,2026-01-01,"{'regressor__alpha': 1e-05, 'regressor__l1_ratio': 0.25}",
+XOM,5,Lasso,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 1e-05},
+XOM,5,Monotone linear,rolling_5y,2025-01-01,2026-01-01,{},
+XOM,5,OLS,rolling_5y,2025-01-01,2026-01-01,{},
+XOM,5,OLS oriented,rolling_5y,2025-01-01,2026-01-01,{},
+XOM,5,Ridge,rolling_5y,2025-01-01,2026-01-01,{'regressor__alpha': 0.01},
+XOM,6,Choquet 1-additive,rolling_5y,2026-01-01,2027-01-01,{},
+XOM,6,Choquet 1-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.20456588845675522
+XOM,6,Choquet 2-additive,rolling_5y,2026-01-01,2027-01-01,{},
+XOM,6,Choquet 2-additive L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__regressor__penalty': L1Penalty(weight=0.001, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",
+XOM,6,Choquet 2-additive scaled-q,rolling_5y,2026-01-01,2027-01-01,{},0.2240252894740796
+XOM,6,Choquet 2-additive scaled-q L1,rolling_5y,2026-01-01,2027-01-01,"{'regressor__penalty': L1Penalty(weight=1e-05, selection=[7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27])}",0.22487703045707885
+XOM,6,Elastic net,rolling_5y,2026-01-01,2027-01-01,"{'regressor__alpha': 0.0001, 'regressor__l1_ratio': 0.25}",
+XOM,6,Lasso,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 1e-05},
+XOM,6,Monotone linear,rolling_5y,2026-01-01,2027-01-01,{},
+XOM,6,OLS,rolling_5y,2026-01-01,2027-01-01,{},
+XOM,6,OLS oriented,rolling_5y,2026-01-01,2027-01-01,{},
+XOM,6,Ridge,rolling_5y,2026-01-01,2027-01-01,{'regressor__alpha': 10.0},

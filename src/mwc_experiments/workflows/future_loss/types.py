@@ -21,6 +21,7 @@ from mwc_experiments.workflows.common import model_parameter_count, quick_candid
 @dataclass(slots=True)
 class HorizonRegressionResult:
     horizon: int
+    evaluation_structure: str
     split: TemporalSplit
     final_split: TemporalSplit
     fold_summary: pd.DataFrame
@@ -39,5 +40,6 @@ class HorizonRegressionResult:
 @dataclass(slots=True)
 class FutureLossExperimentResult:
     portfolio: str
+    evaluation_structure: str
     features: tuple[str, ...]
     horizons: dict[int, HorizonRegressionResult]

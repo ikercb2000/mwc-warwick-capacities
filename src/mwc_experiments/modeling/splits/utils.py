@@ -1,10 +1,23 @@
 """Splits domain."""
 
 from __future__ import annotations
-from typing import Iterator
+from typing import Iterator, Literal
 import pandas as pd
 from mwc_experiments.settings import TRAIN_END, VALIDATION_END
 from mwc_experiments.modeling.types import TemporalSplit, WalkForwardFold
+
+EvaluationStructure = Literal["fixed", "rolling_5y"]
+EVALUATION_STRUCTURES = ("fixed", "rolling_5y")
+
+
+def validate_evaluation_structure(value: str) -> EvaluationStructure:
+    """Validate the public evaluation-structure option."""
+    if value not in EVALUATION_STRUCTURES:
+        raise ValueError(
+            "evaluation_structure must be 'fixed' or 'rolling_5y'; "
+            f"got {value!r}."
+        )
+    return value  # type: ignore[return-value]
 
 
 def _purge_partition(
@@ -162,6 +175,53 @@ def rolling_walk_forward_splits(
         block_start = block_end
 
 
+def evaluation_splits(
+    X: pd.DataFrame,
+    y: pd.Series,
+    *,
+    evaluation_structure: str = "rolling_5y",
+    horizon: int = 0,
+    train_end: str = "2018-12-31",
+    validation_end: str = "2019-12-31",
+    oos_start: str = "2020-01-01",
+    training_window_years: int = 5,
+    validation_window_months: int = 12,
+    oos_block_years: int = 1,
+) -> list[WalkForwardFold]:
+    """Create comparable fixed or five-year rolling evaluation folds."""
+    structure = validate_evaluation_structure(evaluation_structure)
+    if structure == "rolling_5y":
+        return list(
+            rolling_walk_forward_splits(
+                X,
+                y,
+                oos_start=oos_start,
+                training_window_years=training_window_years,
+                validation_window_months=validation_window_months,
+                oos_block_years=oos_block_years,
+                horizon=horizon,
+            )
+        )
+
+    split = chronological_split(
+        X,
+        y,
+        train_end=train_end,
+        validation_end=validation_end,
+        horizon=horizon,
+    )
+    return [
+        WalkForwardFold(
+            fold=0,
+            window_start=split.X_train.index.min(),
+            validation_start=pd.Timestamp(train_end) + pd.Timedelta(days=1),
+            oos_start=pd.Timestamp(validation_end) + pd.Timedelta(days=1),
+            oos_end=split.X_test.index.max() + pd.Timedelta(days=1),
+            split=split,
+        )
+    ]
+
+
 def aggregate_walk_forward_split(
     folds: list[WalkForwardFold],
 ) -> TemporalSplit:
@@ -181,14 +241,18 @@ def aggregate_walk_forward_split(
 
 def walk_forward_fold_summary(
     folds: list[WalkForwardFold],
+    *,
+    evaluation_structure: str = "rolling_5y",
 ) -> pd.DataFrame:
-    """Return auditable dates and observation counts for every rolling fold."""
+    """Return auditable dates and observation counts for every evaluation fold."""
+    structure = validate_evaluation_structure(evaluation_structure)
     rows: list[dict[str, object]] = []
     for fold in folds:
         split = fold.split
         rows.append(
             {
                 "fold": fold.fold,
+                "evaluation_structure": structure,
                 "window start": fold.window_start,
                 "train start": split.X_train.index.min(),
                 "train end": split.X_train.index.max(),

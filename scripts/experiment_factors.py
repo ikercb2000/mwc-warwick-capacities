@@ -52,8 +52,12 @@ args = parse_experiment_args(
 )
 quick = args.quick
 clipping = args.clipping
+evaluation_structure = args.evaluation_structure
 verbose = not args.quiet
-paths = prepare_output_paths(clipping=clipping)
+paths = prepare_output_paths(
+    clipping=clipping,
+    evaluation_structure=evaluation_structure,
+)
 config = load_experiment_config("factor_models", paths.root)
 dataset_config = config["dataset"]
 model_config = config["models"]
@@ -86,6 +90,7 @@ result = run_factor_experiment(
     features=FACTOR_COLUMNS,
     quick=quick,
     clipping=clipping,
+    evaluation_structure=evaluation_structure,
     model_names=MAIN_MODELS,
     random_state=int(execution_config["random_state"]),
     parameter_grids=PARAMETER_GRIDS,
@@ -353,6 +358,16 @@ artifacts["in-sample residual covariance summary"] = save_table(
     "experiment_1_in_sample_residual_covariance_summary.csv",
     paths,
 )
+artifacts["evaluation folds"] = save_table(
+    pd.concat(result.fold_summaries, names=["asset", "fold"]),
+    "experiment_1_evaluation_folds.csv",
+    paths,
+)
+artifacts["fold metrics"] = save_table(
+    result.fold_metrics,
+    "experiment_1_evaluation_fold_metrics.csv",
+    paths,
+)
 artifacts["selected parameters"] = save_table(
     result.selected_parameters,
     "experiment_1_selected_parameters.csv",
@@ -434,7 +449,7 @@ artifacts["all capacity interactions"] = save_table(
 for model, predictions in result.predictions.items():
     slug = artifact_slug(model)
     artifacts[f"predictions {model}"] = save_table(
-        predictions, f"experiment_1_predictions_{slug}.parquet", paths
+        predictions.assign(evaluation_structure=evaluation_structure), f"experiment_1_predictions_{slug}.parquet", paths
     )
 for model, residuals in result.residuals.items():
     slug = artifact_slug(model)

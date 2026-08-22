@@ -1,13 +1,13 @@
 first,second,interaction,interpretation
-Historical mean,OLS,-8.326672684688672e-18,redundant
-Historical mean,OLS oriented,-8.326672684688672e-18,redundant
-Historical mean,Monotone linear,-8.326672684688672e-18,redundant
-Historical mean,Ridge,-8.326672684688672e-18,redundant
-Historical mean,Lasso,-8.326672684688672e-18,redundant
-Historical mean,Elastic net,-8.326672684688672e-18,redundant
-Historical mean,Explicit interactions,-8.326672684688672e-18,redundant
-Historical mean,Random forest,-8.326672684688672e-18,redundant
-Historical mean,Gradient boosting,-8.326672684688672e-18,redundant
-Historical mean,MLP,-8.326672684688672e-18,redundant
-OLS,OLS oriented,-8.326672684688672e-18,redundant
-OLS,Monotone linear,-8.326672684688672e-18,redundant
+Historical mean,MLP,0.02276304594310136,complementary
+Lasso,MLP,0.02276304544812214,complementary
+Historical mean,Explicit interactions,0.021841280177200037,complementary
+Lasso,Explicit interactions,0.021841280092562188,complementary
+Lasso,Elastic net,0.019420323311870574,complementary
+Historical mean,Elastic net,0.01942032279578822,complementary
+Historical mean,Lasso,0.018166650534891516,complementary
+OLS,MLP,-0.01655748909129325,redundant
+OLS oriented,MLP,-0.016557489091293245,redundant
+Historical mean,Monotone linear,0.016466625360827034,complementary
+Monotone linear,Lasso,0.01646662536082702,complementary
+Ridge,Lasso,0.016415989524477304,complementary

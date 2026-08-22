@@ -1,11 +1,11 @@
 ,Shapley importance
-realized_volatility_20d,0.34552980442924913
-term_spread_10y_2y_pct,0.27898908985271875
-vix,0.2628890239503194
-market_loss_1d,0.06358117391747757
-lagged_portfolio_loss_1d,0.029599950439469783
-negative_momentum_21d,0.01941095741076647
-average_equity_correlation_60d,1.3250463298893567e-15
-baa_credit_spread_pct,-3.83868092013606e-16
-liquidity_stress_20d,-5.147461594193305e-16
-drawdown_severity,-1.692599168332587e-15
+term_spread_10y_2y_pct,0.3017297479778862
+vix,0.3011363982462014
+realized_volatility_20d,0.22445651994237353
+market_loss_1d,0.11592836494779357
+lagged_portfolio_loss_1d,0.05536140541599154
+negative_momentum_21d,0.0013875634697412284
+baa_credit_spread_pct,5.47184983223185e-15
+drawdown_severity,5.1857507236013285e-15
+liquidity_stress_20d,4.666983713403484e-15
+average_equity_correlation_60d,-2.4580135889885123e-15

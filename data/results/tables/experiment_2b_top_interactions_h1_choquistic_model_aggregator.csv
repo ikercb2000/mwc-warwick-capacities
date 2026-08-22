@@ -1,13 +1,13 @@
 first,second,interaction,interpretation
-Random forest [balanced],MLP [balanced],0.2358470587374429,complementary
-Rolling prior probability,Random forest [balanced],0.036016313167235935,complementary
-Rolling prior probability,MLP [balanced],0.0342205564572106,complementary
-Logistic [balanced],MLP [balanced],2.4111661333237056e-16,complementary
-RBF SVM [balanced],Gradient boosting [balanced],1.664467993948441e-16,complementary
-Logistic oriented [balanced],MLP [balanced],1.5896133852773576e-16,complementary
-Logistic [balanced],Explicit interactions [balanced],-1.4708107817791686e-16,redundant
-Rolling prior probability,Gradient boosting [balanced],1.4010688818196627e-16,complementary
-Logistic [balanced],Logistic oriented [balanced],-8.84350081799553e-17,redundant
-Explicit interactions [balanced],Random forest [balanced],8.039580149678935e-17,complementary
-Rolling prior probability,Explicit interactions [balanced],-8.00126495189525e-17,redundant
-Logistic oriented [balanced],Gradient boosting [balanced],-7.92584182468607e-17,redundant
+Random forest [balanced],MLP [balanced],0.2484056037109882,complementary
+Rolling prior probability,Random forest [balanced],0.027404205815296727,complementary
+Rolling prior probability,MLP [balanced],0.010151011376791854,complementary
+Logistic oriented [balanced],MLP [balanced],-1.7360665572140747e-16,redundant
+Logistic oriented [balanced],Gradient boosting [balanced],-1.6678824153376327e-16,redundant
+Logistic oriented [balanced],Explicit interactions [balanced],-1.635951818084599e-16,redundant
+Logistic [balanced],Explicit interactions [balanced],1.5809654604877598e-16,complementary
+Logistic [balanced],Logistic oriented [balanced],-1.5653975480827344e-16,redundant
+RBF SVM [balanced],Gradient boosting [balanced],-1.560195718413943e-16,redundant
+Rolling prior probability,Logistic [balanced],-1.484433376733318e-16,redundant
+Penalized logistic [balanced],Explicit interactions [balanced],-1.4430173224870755e-16,redundant
+Logistic [balanced],MLP [balanced],1.371321729789777e-16,complementary

@@ -1,11 +1,11 @@
 asset,model,feature,Shapley importance
-AAPL,Choquet 1-additive,low_volatility_spread,0.05191536367382183
-AAPL,Choquet 1-additive,market_excess_return,-4.0843122018557355e-19
-AAPL,Choquet 1-additive,momentum_spread,0.2439052645301466
-AAPL,Choquet 1-additive,quality_spread,0.012455860866950193
-AAPL,Choquet 1-additive,sector_excess_return,0.39516758645202954
-AAPL,Choquet 1-additive,size_spread,0.0547211751549594
-AAPL,Choquet 1-additive,value_growth_spread,0.24183474932209215
+AAPL,Choquet 1-additive,low_volatility_spread,0.022868988237224237
+AAPL,Choquet 1-additive,market_excess_return,0.37851039674110076
+AAPL,Choquet 1-additive,momentum_spread,0.11371997708912501
+AAPL,Choquet 1-additive,quality_spread,0.002126523109758561
+AAPL,Choquet 1-additive,sector_excess_return,0.3706443694721782
+AAPL,Choquet 1-additive,size_spread,0.049360952218797924
+AAPL,Choquet 1-additive,value_growth_spread,0.06276879313181576
 AAPL,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
 AAPL,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
 AAPL,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
@@ -13,20 +13,20 @@ AAPL,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
 AAPL,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
 AAPL,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
 AAPL,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-AAPL,Choquet 2-additive,low_volatility_spread,0.053522168379969474
-AAPL,Choquet 2-additive,market_excess_return,0.04895203489136369
-AAPL,Choquet 2-additive,momentum_spread,0.23869540585020566
-AAPL,Choquet 2-additive,quality_spread,0.014897571803276537
-AAPL,Choquet 2-additive,sector_excess_return,0.3423714731087327
-AAPL,Choquet 2-additive,size_spread,0.06253243962738658
-AAPL,Choquet 2-additive,value_growth_spread,0.23902890633906554
-AAPL,Choquet 2-additive L1,low_volatility_spread,0.05136933325348018
-AAPL,Choquet 2-additive L1,market_excess_return,0.047953938563330106
-AAPL,Choquet 2-additive L1,momentum_spread,0.23875350469591203
-AAPL,Choquet 2-additive L1,quality_spread,0.014332670919171992
-AAPL,Choquet 2-additive L1,sector_excess_return,0.3457317091605829
-AAPL,Choquet 2-additive L1,size_spread,0.05753543122229239
-AAPL,Choquet 2-additive L1,value_growth_spread,0.24432341218523015
+AAPL,Choquet 2-additive,low_volatility_spread,0.058882933292015965
+AAPL,Choquet 2-additive,market_excess_return,0.3199492315320685
+AAPL,Choquet 2-additive,momentum_spread,0.09832154583340073
+AAPL,Choquet 2-additive,quality_spread,0.05290726770590483
+AAPL,Choquet 2-additive,sector_excess_return,0.3322324485745078
+AAPL,Choquet 2-additive,size_spread,0.062272907193750254
+AAPL,Choquet 2-additive,value_growth_spread,0.075433665868352
+AAPL,Choquet 2-additive L1,low_volatility_spread,0.058818991567347566
+AAPL,Choquet 2-additive L1,market_excess_return,0.3221490677121344
+AAPL,Choquet 2-additive L1,momentum_spread,0.09756582439781715
+AAPL,Choquet 2-additive L1,quality_spread,0.05284853934039832
+AAPL,Choquet 2-additive L1,sector_excess_return,0.3340593394638526
+AAPL,Choquet 2-additive L1,size_spread,0.06118478270665248
+AAPL,Choquet 2-additive L1,value_growth_spread,0.07337345481179779
 AAPL,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
 AAPL,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
 AAPL,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
@@ -34,20 +34,20 @@ AAPL,Choquet 2-additive scaled-q,quality_spread,0.14285714285714277
 AAPL,Choquet 2-additive scaled-q,sector_excess_return,0.14285714285714277
 AAPL,Choquet 2-additive scaled-q,size_spread,0.14285714285714277
 AAPL,Choquet 2-additive scaled-q,value_growth_spread,0.14285714285714277
-AAPL,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714295620264
-AAPL,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714312719205
-AAPL,Choquet 2-additive scaled-q L1,momentum_spread,0.1428571426403102
-AAPL,Choquet 2-additive scaled-q L1,quality_spread,0.14285714216355241
-AAPL,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714334432856
-AAPL,Choquet 2-additive scaled-q L1,size_spread,0.14285714254061846
-AAPL,Choquet 2-additive scaled-q L1,value_growth_spread,0.1428571432277956
-AMZN,Choquet 1-additive,low_volatility_spread,0.15673675071238652
-AMZN,Choquet 1-additive,market_excess_return,-2.214870152363245e-18
-AMZN,Choquet 1-additive,momentum_spread,0.10836373534430346
-AMZN,Choquet 1-additive,quality_spread,0.11601333965164681
-AMZN,Choquet 1-additive,sector_excess_return,0.28055424077876207
-AMZN,Choquet 1-additive,size_spread,0.13868273180439233
-AMZN,Choquet 1-additive,value_growth_spread,0.1996492017085086
+AAPL,Choquet 2-additive scaled-q L1,low_volatility_spread,0.1428571429756881
+AAPL,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714318789366
+AAPL,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714285505374
+AAPL,Choquet 2-additive scaled-q L1,quality_spread,0.14285714273168956
+AAPL,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714317525855
+AAPL,Choquet 2-additive scaled-q L1,size_spread,0.14285714212144854
+AAPL,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714295296786
+AMZN,Choquet 1-additive,low_volatility_spread,0.13817287060095573
+AMZN,Choquet 1-additive,market_excess_return,0.2072986455079009
+AMZN,Choquet 1-additive,momentum_spread,0.10561201222349491
+AMZN,Choquet 1-additive,quality_spread,4.38843736482228e-18
+AMZN,Choquet 1-additive,sector_excess_return,0.37268141794304727
+AMZN,Choquet 1-additive,size_spread,0.023645095086975442
+AMZN,Choquet 1-additive,value_growth_spread,0.1525899586376256
 AMZN,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
 AMZN,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
 AMZN,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
@@ -55,41 +55,41 @@ AMZN,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
 AMZN,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
 AMZN,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
 AMZN,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-AMZN,Choquet 2-additive,low_volatility_spread,0.1646915233939243
-AMZN,Choquet 2-additive,market_excess_return,0.0286282072062214
-AMZN,Choquet 2-additive,momentum_spread,0.12768904018610513
-AMZN,Choquet 2-additive,quality_spread,0.11776950677801944
-AMZN,Choquet 2-additive,sector_excess_return,0.2564069732203088
-AMZN,Choquet 2-additive,size_spread,0.133073236794162
-AMZN,Choquet 2-additive,value_growth_spread,0.17174151242125893
-AMZN,Choquet 2-additive L1,low_volatility_spread,0.15594621046174506
-AMZN,Choquet 2-additive L1,market_excess_return,0.0099722589308706
-AMZN,Choquet 2-additive L1,momentum_spread,0.11186514960547292
-AMZN,Choquet 2-additive L1,quality_spread,0.1244341352870231
-AMZN,Choquet 2-additive L1,sector_excess_return,0.2678135213752062
-AMZN,Choquet 2-additive L1,size_spread,0.1280095973880949
-AMZN,Choquet 2-additive L1,value_growth_spread,0.20195912695158735
-AMZN,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
-AMZN,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
-AMZN,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
-AMZN,Choquet 2-additive scaled-q,quality_spread,0.14285714285714277
-AMZN,Choquet 2-additive scaled-q,sector_excess_return,0.14285714285714277
-AMZN,Choquet 2-additive scaled-q,size_spread,0.14285714285714277
-AMZN,Choquet 2-additive scaled-q,value_growth_spread,0.14285714285714277
-AMZN,Choquet 2-additive scaled-q L1,low_volatility_spread,0.1428571429506908
-AMZN,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714294387278
-AMZN,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714284256804
-AMZN,Choquet 2-additive scaled-q L1,quality_spread,0.14285714264923052
-AMZN,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714312489822
-AMZN,Choquet 2-additive scaled-q L1,size_spread,0.1428571424754263
-AMZN,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714301331331
-JPM,Choquet 1-additive,low_volatility_spread,0.009974629392682104
-JPM,Choquet 1-additive,market_excess_return,-1.7772009682345428e-17
-JPM,Choquet 1-additive,momentum_spread,0.1872702826541484
-JPM,Choquet 1-additive,quality_spread,0.04938786748804242
-JPM,Choquet 1-additive,sector_excess_return,0.5482907684175805
-JPM,Choquet 1-additive,size_spread,0.05891351416420282
-JPM,Choquet 1-additive,value_growth_spread,0.1461629378833433
+AMZN,Choquet 2-additive,low_volatility_spread,0.0665127254106326
+AMZN,Choquet 2-additive,market_excess_return,0.12148879798647781
+AMZN,Choquet 2-additive,momentum_spread,0.0848334105650034
+AMZN,Choquet 2-additive,quality_spread,0.04747964873189176
+AMZN,Choquet 2-additive,sector_excess_return,0.4679111473704746
+AMZN,Choquet 2-additive,size_spread,0.07186632641523222
+AMZN,Choquet 2-additive,value_growth_spread,0.13990794352028768
+AMZN,Choquet 2-additive L1,low_volatility_spread,0.05873714638947518
+AMZN,Choquet 2-additive L1,market_excess_return,0.11339927806508693
+AMZN,Choquet 2-additive L1,momentum_spread,0.09332736473825858
+AMZN,Choquet 2-additive L1,quality_spread,0.03560975754395657
+AMZN,Choquet 2-additive L1,sector_excess_return,0.48924543030942247
+AMZN,Choquet 2-additive L1,size_spread,0.06479870888232206
+AMZN,Choquet 2-additive L1,value_growth_spread,0.14488231407147817
+AMZN,Choquet 2-additive scaled-q,low_volatility_spread,0.16124662049045857
+AMZN,Choquet 2-additive scaled-q,market_excess_return,0.1696061014519964
+AMZN,Choquet 2-additive scaled-q,momentum_spread,0.12571780552148532
+AMZN,Choquet 2-additive scaled-q,quality_spread,0.13064700259535844
+AMZN,Choquet 2-additive scaled-q,sector_excess_return,0.19000779733734147
+AMZN,Choquet 2-additive scaled-q,size_spread,0.0589350031108091
+AMZN,Choquet 2-additive scaled-q,value_growth_spread,0.16383966949255088
+AMZN,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714633138422
+AMZN,Choquet 2-additive scaled-q L1,market_excess_return,0.1428571478535925
+AMZN,Choquet 2-additive scaled-q L1,momentum_spread,0.1428571396443592
+AMZN,Choquet 2-additive scaled-q L1,quality_spread,0.1428571407293435
+AMZN,Choquet 2-additive scaled-q L1,sector_excess_return,0.1428571515246629
+AMZN,Choquet 2-additive scaled-q L1,size_spread,0.14285712724493727
+AMZN,Choquet 2-additive scaled-q L1,value_growth_spread,0.1428571466717203
+JPM,Choquet 1-additive,low_volatility_spread,0.008334315521485228
+JPM,Choquet 1-additive,market_excess_return,9.969135718654447e-17
+JPM,Choquet 1-additive,momentum_spread,-1.6597489596741264e-18
+JPM,Choquet 1-additive,quality_spread,0.12455021453707459
+JPM,Choquet 1-additive,sector_excess_return,0.86711546994144
+JPM,Choquet 1-additive,size_spread,1.0804849078941251e-17
+JPM,Choquet 1-additive,value_growth_spread,-1.0681158067700774e-17
 JPM,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
 JPM,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
 JPM,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
@@ -97,20 +97,20 @@ JPM,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
 JPM,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
 JPM,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
 JPM,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-JPM,Choquet 2-additive,low_volatility_spread,0.03088617251485195
-JPM,Choquet 2-additive,market_excess_return,0.011869540882329197
-JPM,Choquet 2-additive,momentum_spread,0.18463115924915646
-JPM,Choquet 2-additive,quality_spread,0.04353968466215239
-JPM,Choquet 2-additive,sector_excess_return,0.5197389905248583
-JPM,Choquet 2-additive,size_spread,0.06593376425249851
-JPM,Choquet 2-additive,value_growth_spread,0.14340068791415297
-JPM,Choquet 2-additive L1,low_volatility_spread,0.018006380576879068
-JPM,Choquet 2-additive L1,market_excess_return,0.0003594481938535683
-JPM,Choquet 2-additive L1,momentum_spread,0.17760363005343655
-JPM,Choquet 2-additive L1,quality_spread,0.049245234693533195
-JPM,Choquet 2-additive L1,sector_excess_return,0.5431831118703004
-JPM,Choquet 2-additive L1,size_spread,0.06313146373868084
-JPM,Choquet 2-additive L1,value_growth_spread,0.14847073087331666
+JPM,Choquet 2-additive,low_volatility_spread,0.06881830107863773
+JPM,Choquet 2-additive,market_excess_return,0.12587273072384206
+JPM,Choquet 2-additive,momentum_spread,0.0002548649337333526
+JPM,Choquet 2-additive,quality_spread,0.12219836709131351
+JPM,Choquet 2-additive,sector_excess_return,0.6523271130832505
+JPM,Choquet 2-additive,size_spread,0.03001578982319093
+JPM,Choquet 2-additive,value_growth_spread,0.000512833266032106
+JPM,Choquet 2-additive L1,low_volatility_spread,0.004164535350079475
+JPM,Choquet 2-additive L1,market_excess_return,0.07835405447039671
+JPM,Choquet 2-additive L1,momentum_spread,0.0007516646080405358
+JPM,Choquet 2-additive L1,quality_spread,0.13365489418443635
+JPM,Choquet 2-additive L1,sector_excess_return,0.7803395192598976
+JPM,Choquet 2-additive L1,size_spread,0.001347590265821488
+JPM,Choquet 2-additive L1,value_growth_spread,0.0013877418613276985
 JPM,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
 JPM,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
 JPM,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
@@ -118,20 +118,20 @@ JPM,Choquet 2-additive scaled-q,quality_spread,0.14285714285714277
 JPM,Choquet 2-additive scaled-q,sector_excess_return,0.14285714285714277
 JPM,Choquet 2-additive scaled-q,size_spread,0.14285714285714277
 JPM,Choquet 2-additive scaled-q,value_growth_spread,0.14285714285714277
-JPM,Choquet 2-additive scaled-q L1,low_volatility_spread,0.1428571430274932
-JPM,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714316944992
-JPM,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714288213872
-JPM,Choquet 2-additive scaled-q L1,quality_spread,0.1428571425928276
-JPM,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714350510761
-JPM,Choquet 2-additive scaled-q L1,size_spread,0.14285714237135608
-JPM,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714245162684
-KO,Choquet 1-additive,low_volatility_spread,-2.0111022596854355e-18
-KO,Choquet 1-additive,market_excess_return,6.2283542658676216e-18
-KO,Choquet 1-additive,momentum_spread,0.26961566486713184
-KO,Choquet 1-additive,quality_spread,0.05882524631438144
-KO,Choquet 1-additive,sector_excess_return,0.3360158693334842
-KO,Choquet 1-additive,size_spread,0.07911167500379813
-KO,Choquet 1-additive,value_growth_spread,0.25643154448120486
+JPM,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714281257625
+JPM,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714294505103
+JPM,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714269521949
+JPM,Choquet 2-additive scaled-q L1,quality_spread,0.14285714287858417
+JPM,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714348214396
+JPM,Choquet 2-additive scaled-q L1,size_spread,0.14285714286592363
+JPM,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714232050145
+KO,Choquet 1-additive,low_volatility_spread,-1.456573990059395e-18
+KO,Choquet 1-additive,market_excess_return,-7.963723100280431e-20
+KO,Choquet 1-additive,momentum_spread,0.04291988970082063
+KO,Choquet 1-additive,quality_spread,-1.3770400164063506e-17
+KO,Choquet 1-additive,sector_excess_return,0.8673698086032442
+KO,Choquet 1-additive,size_spread,0.08971030169593534
+KO,Choquet 1-additive,value_growth_spread,5.582350471428342e-19
 KO,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
 KO,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
 KO,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
@@ -139,20 +139,20 @@ KO,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
 KO,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
 KO,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
 KO,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-KO,Choquet 2-additive,low_volatility_spread,-7.300793658860091e-19
-KO,Choquet 2-additive,market_excess_return,0.012241354987790524
-KO,Choquet 2-additive,momentum_spread,0.265790139159604
-KO,Choquet 2-additive,quality_spread,0.06321999897567836
-KO,Choquet 2-additive,sector_excess_return,0.3362548694948293
-KO,Choquet 2-additive,size_spread,0.07847956729118855
-KO,Choquet 2-additive,value_growth_spread,0.24401407009090936
-KO,Choquet 2-additive L1,low_volatility_spread,1.4742283496022193e-18
-KO,Choquet 2-additive L1,market_excess_return,0.013575047137011432
-KO,Choquet 2-additive L1,momentum_spread,0.26918436733143125
-KO,Choquet 2-additive L1,quality_spread,0.057130936154048455
-KO,Choquet 2-additive L1,sector_excess_return,0.33295867859015793
-KO,Choquet 2-additive L1,size_spread,0.07515263011818338
-KO,Choquet 2-additive L1,value_growth_spread,0.2519983406691677
+KO,Choquet 2-additive,low_volatility_spread,0.03668801553947733
+KO,Choquet 2-additive,market_excess_return,0.13846252352866478
+KO,Choquet 2-additive,momentum_spread,0.032107057744191786
+KO,Choquet 2-additive,quality_spread,0.056583355173787174
+KO,Choquet 2-additive,sector_excess_return,0.6559056458336138
+KO,Choquet 2-additive,size_spread,0.08025340218026493
+KO,Choquet 2-additive,value_growth_spread,1.7144563674162392e-18
+KO,Choquet 2-additive L1,low_volatility_spread,0.0003725713262459659
+KO,Choquet 2-additive L1,market_excess_return,0.06412270055103217
+KO,Choquet 2-additive L1,momentum_spread,0.05641881767741602
+KO,Choquet 2-additive L1,quality_spread,0.019139415213787384
+KO,Choquet 2-additive L1,sector_excess_return,0.7733004509797572
+KO,Choquet 2-additive L1,size_spread,0.0862443273101761
+KO,Choquet 2-additive L1,value_growth_spread,0.00040171694158550156
 KO,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
 KO,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
 KO,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
@@ -167,13 +167,13 @@ KO,Choquet 2-additive scaled-q L1,quality_spread,0.14285714285714277
 KO,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714285714277
 KO,Choquet 2-additive scaled-q L1,size_spread,0.14285714285714277
 KO,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714285714277
-MSFT,Choquet 1-additive,low_volatility_spread,0.12148078406507465
-MSFT,Choquet 1-additive,market_excess_return,0.20260163644452547
-MSFT,Choquet 1-additive,momentum_spread,0.10344711930259445
-MSFT,Choquet 1-additive,quality_spread,0.08372213945919696
-MSFT,Choquet 1-additive,sector_excess_return,0.18417033428815058
-MSFT,Choquet 1-additive,size_spread,0.17445235337295018
-MSFT,Choquet 1-additive,value_growth_spread,0.13012563306750796
+MSFT,Choquet 1-additive,low_volatility_spread,5.6022597791790426e-18
+MSFT,Choquet 1-additive,market_excess_return,0.32011095363076697
+MSFT,Choquet 1-additive,momentum_spread,0.03564117770108523
+MSFT,Choquet 1-additive,quality_spread,2.5689783261982425e-18
+MSFT,Choquet 1-additive,sector_excess_return,0.42101452192338484
+MSFT,Choquet 1-additive,size_spread,0.0477013169637325
+MSFT,Choquet 1-additive,value_growth_spread,0.17553202978103025
 MSFT,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
 MSFT,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
 MSFT,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
@@ -181,20 +181,20 @@ MSFT,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
 MSFT,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
 MSFT,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
 MSFT,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-MSFT,Choquet 2-additive,low_volatility_spread,0.10152611589169963
-MSFT,Choquet 2-additive,market_excess_return,0.24241941676502318
-MSFT,Choquet 2-additive,momentum_spread,0.09569042095249748
-MSFT,Choquet 2-additive,quality_spread,0.09826146075339515
-MSFT,Choquet 2-additive,sector_excess_return,0.15307657163784483
-MSFT,Choquet 2-additive,size_spread,0.15982837566365532
-MSFT,Choquet 2-additive,value_growth_spread,0.14919763833588484
-MSFT,Choquet 2-additive L1,low_volatility_spread,0.14285714302521257
-MSFT,Choquet 2-additive L1,market_excess_return,0.14285715355042813
-MSFT,Choquet 2-additive L1,momentum_spread,0.1428571360812314
-MSFT,Choquet 2-additive L1,quality_spread,0.14285712842390835
-MSFT,Choquet 2-additive L1,sector_excess_return,0.14285715155487147
-MSFT,Choquet 2-additive L1,size_spread,0.1428571462105852
-MSFT,Choquet 2-additive L1,value_growth_spread,0.14285714115376266
+MSFT,Choquet 2-additive,low_volatility_spread,0.0510714667100226
+MSFT,Choquet 2-additive,market_excess_return,0.28933731870625273
+MSFT,Choquet 2-additive,momentum_spread,0.0471156648716484
+MSFT,Choquet 2-additive,quality_spread,1.2981627022707052e-17
+MSFT,Choquet 2-additive,sector_excess_return,0.38752523070280714
+MSFT,Choquet 2-additive,size_spread,0.07533475881515136
+MSFT,Choquet 2-additive,value_growth_spread,0.1496155601941177
+MSFT,Choquet 2-additive L1,low_volatility_spread,0.010487541257317342
+MSFT,Choquet 2-additive L1,market_excess_return,0.3209430342027247
+MSFT,Choquet 2-additive L1,momentum_spread,0.02502166665103264
+MSFT,Choquet 2-additive L1,quality_spread,0.0032713277082511605
+MSFT,Choquet 2-additive L1,sector_excess_return,0.4160630014644364
+MSFT,Choquet 2-additive L1,size_spread,0.030728822621901113
+MSFT,Choquet 2-additive L1,value_growth_spread,0.19348460609433651
 MSFT,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
 MSFT,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
 MSFT,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
@@ -202,62 +202,62 @@ MSFT,Choquet 2-additive scaled-q,quality_spread,0.14285714285714277
 MSFT,Choquet 2-additive scaled-q,sector_excess_return,0.14285714285714277
 MSFT,Choquet 2-additive scaled-q,size_spread,0.14285714285714277
 MSFT,Choquet 2-additive scaled-q,value_growth_spread,0.14285714285714277
-MSFT,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714291479762
-MSFT,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714313007694
-MSFT,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714269776115
-MSFT,Choquet 2-additive scaled-q L1,quality_spread,0.14285714255798698
-MSFT,Choquet 2-additive scaled-q L1,sector_excess_return,0.142857143153523
-MSFT,Choquet 2-additive scaled-q L1,size_spread,0.14285714270064176
-MSFT,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714284521256
-NVDA,Choquet 1-additive,low_volatility_spread,0.2364816810603903
-NVDA,Choquet 1-additive,market_excess_return,0.12915367165564423
-NVDA,Choquet 1-additive,momentum_spread,0.2195488649072225
-NVDA,Choquet 1-additive,quality_spread,0.11967228850898665
-NVDA,Choquet 1-additive,sector_excess_return,0.04915418283274882
-NVDA,Choquet 1-additive,size_spread,0.16129729094974304
-NVDA,Choquet 1-additive,value_growth_spread,0.08469202008526491
-NVDA,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
-NVDA,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
-NVDA,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
-NVDA,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
-NVDA,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
-NVDA,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
-NVDA,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-NVDA,Choquet 2-additive,low_volatility_spread,0.21523921577600075
-NVDA,Choquet 2-additive,market_excess_return,0.18246824697155184
-NVDA,Choquet 2-additive,momentum_spread,0.210736634604223
-NVDA,Choquet 2-additive,quality_spread,0.1156284437743699
-NVDA,Choquet 2-additive,sector_excess_return,0.021268277182645044
-NVDA,Choquet 2-additive,size_spread,0.15890307784219698
-NVDA,Choquet 2-additive,value_growth_spread,0.09575610384901242
-NVDA,Choquet 2-additive L1,low_volatility_spread,0.14285714394081941
-NVDA,Choquet 2-additive L1,market_excess_return,0.14285714174392272
-NVDA,Choquet 2-additive L1,momentum_spread,0.142857144700259
-NVDA,Choquet 2-additive L1,quality_spread,0.14285714214022574
-NVDA,Choquet 2-additive L1,sector_excess_return,0.14285714019218243
-NVDA,Choquet 2-additive L1,size_spread,0.14285714535244504
-NVDA,Choquet 2-additive L1,value_growth_spread,0.1428571419301456
-NVDA,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
-NVDA,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
-NVDA,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
-NVDA,Choquet 2-additive scaled-q,quality_spread,0.14285714285714277
-NVDA,Choquet 2-additive scaled-q,sector_excess_return,0.14285714285714277
-NVDA,Choquet 2-additive scaled-q,size_spread,0.14285714285714277
-NVDA,Choquet 2-additive scaled-q,value_growth_spread,0.14285714285714277
-NVDA,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714398223676
-NVDA,Choquet 2-additive scaled-q L1,market_excess_return,0.1428571440315515
-NVDA,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714266986552
-NVDA,Choquet 2-additive scaled-q L1,quality_spread,0.14285714153569357
-NVDA,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714429644902
-NVDA,Choquet 2-additive scaled-q L1,size_spread,0.14285714072387745
-NVDA,Choquet 2-additive scaled-q L1,value_growth_spread,0.1428571427603261
-UNH,Choquet 1-additive,low_volatility_spread,0.06846049254991234
-UNH,Choquet 1-additive,market_excess_return,0.07213526457544897
-UNH,Choquet 1-additive,momentum_spread,0.16483887474063266
-UNH,Choquet 1-additive,quality_spread,0.16114389190788964
-UNH,Choquet 1-additive,sector_excess_return,0.4030549938834195
-UNH,Choquet 1-additive,size_spread,0.13036648234269682
-UNH,Choquet 1-additive,value_growth_spread,-3.9670183061121404e-18
+MSFT,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714285714277
+MSFT,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714285714277
+MSFT,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714285714277
+MSFT,Choquet 2-additive scaled-q L1,quality_spread,0.14285714285714277
+MSFT,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714285714277
+MSFT,Choquet 2-additive scaled-q L1,size_spread,0.14285714285714277
+MSFT,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714285714277
+NVDA,Choquet 1-additive,low_volatility_spread,0.21727805319704585
+NVDA,Choquet 1-additive,market_excess_return,0.19690213719616187
+NVDA,Choquet 1-additive,momentum_spread,-1.888576927119988e-18
+NVDA,Choquet 1-additive,quality_spread,0.09925258560247982
+NVDA,Choquet 1-additive,sector_excess_return,0.2394834613599195
+NVDA,Choquet 1-additive,size_spread,-1.2741956960448691e-18
+NVDA,Choquet 1-additive,value_growth_spread,0.24708376264439286
+NVDA,Choquet 1-additive scaled-q,low_volatility_spread,0.20573093908522513
+NVDA,Choquet 1-additive scaled-q,market_excess_return,0.19077636100765755
+NVDA,Choquet 1-additive scaled-q,momentum_spread,0.030511584199790224
+NVDA,Choquet 1-additive scaled-q,quality_spread,0.12471554029886135
+NVDA,Choquet 1-additive scaled-q,sector_excess_return,0.2096277881032293
+NVDA,Choquet 1-additive scaled-q,size_spread,0.033549988981447246
+NVDA,Choquet 1-additive scaled-q,value_growth_spread,0.2050877983237889
+NVDA,Choquet 2-additive,low_volatility_spread,0.20824857449527878
+NVDA,Choquet 2-additive,market_excess_return,0.13020638681079963
+NVDA,Choquet 2-additive,momentum_spread,8.05070440842268e-18
+NVDA,Choquet 2-additive,quality_spread,0.09934533388472513
+NVDA,Choquet 2-additive,sector_excess_return,0.33879273826402584
+NVDA,Choquet 2-additive,size_spread,0.0345018451672351
+NVDA,Choquet 2-additive,value_growth_spread,0.1889051213779357
+NVDA,Choquet 2-additive L1,low_volatility_spread,0.209136784447987
+NVDA,Choquet 2-additive L1,market_excess_return,0.13255917122023766
+NVDA,Choquet 2-additive L1,momentum_spread,-1.7493038350819178e-18
+NVDA,Choquet 2-additive L1,quality_spread,0.09846265324387657
+NVDA,Choquet 2-additive L1,sector_excess_return,0.33479998752201634
+NVDA,Choquet 2-additive L1,size_spread,0.03382303082222047
+NVDA,Choquet 2-additive L1,value_growth_spread,0.19121837274366224
+NVDA,Choquet 2-additive scaled-q,low_volatility_spread,0.18351040124710793
+NVDA,Choquet 2-additive scaled-q,market_excess_return,0.17150915620328774
+NVDA,Choquet 2-additive scaled-q,momentum_spread,0.07209359903854644
+NVDA,Choquet 2-additive scaled-q,quality_spread,0.1361995079637353
+NVDA,Choquet 2-additive scaled-q,sector_excess_return,0.17789602178792133
+NVDA,Choquet 2-additive scaled-q,size_spread,0.058773497682924246
+NVDA,Choquet 2-additive scaled-q,value_growth_spread,0.20001781607647687
+NVDA,Choquet 2-additive scaled-q L1,low_volatility_spread,0.18384784735094115
+NVDA,Choquet 2-additive scaled-q L1,market_excess_return,0.1713165315861271
+NVDA,Choquet 2-additive scaled-q L1,momentum_spread,0.07321538865526318
+NVDA,Choquet 2-additive scaled-q L1,quality_spread,0.13412461074198584
+NVDA,Choquet 2-additive scaled-q L1,sector_excess_return,0.17813602807252757
+NVDA,Choquet 2-additive scaled-q L1,size_spread,0.06100172727635146
+NVDA,Choquet 2-additive scaled-q L1,value_growth_spread,0.19835786631680363
+UNH,Choquet 1-additive,low_volatility_spread,0.05539363974521905
+UNH,Choquet 1-additive,market_excess_return,0.12819164468695843
+UNH,Choquet 1-additive,momentum_spread,0.14814553085616936
+UNH,Choquet 1-additive,quality_spread,0.191504256405463
+UNH,Choquet 1-additive,sector_excess_return,0.37361483573390836
+UNH,Choquet 1-additive,size_spread,0.10008247738401928
+UNH,Choquet 1-additive,value_growth_spread,0.0030676151882622514
 UNH,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
 UNH,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
 UNH,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
@@ -265,20 +265,20 @@ UNH,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
 UNH,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
 UNH,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
 UNH,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-UNH,Choquet 2-additive,low_volatility_spread,0.0661028384849851
-UNH,Choquet 2-additive,market_excess_return,0.08698230633950015
-UNH,Choquet 2-additive,momentum_spread,0.14248418249437744
-UNH,Choquet 2-additive,quality_spread,0.1734204727936897
-UNH,Choquet 2-additive,sector_excess_return,0.39305795507871844
-UNH,Choquet 2-additive,size_spread,0.1310907064635284
-UNH,Choquet 2-additive,value_growth_spread,0.006861538345200683
-UNH,Choquet 2-additive L1,low_volatility_spread,0.07163499547582301
-UNH,Choquet 2-additive L1,market_excess_return,0.08727682266181104
-UNH,Choquet 2-additive L1,momentum_spread,0.14812585199483314
-UNH,Choquet 2-additive L1,quality_spread,0.17417833132434793
-UNH,Choquet 2-additive L1,sector_excess_return,0.38540489103842185
-UNH,Choquet 2-additive L1,size_spread,0.12418285238641766
-UNH,Choquet 2-additive L1,value_growth_spread,0.009196255118345296
+UNH,Choquet 2-additive,low_volatility_spread,0.0525448772228294
+UNH,Choquet 2-additive,market_excess_return,0.05309599903534551
+UNH,Choquet 2-additive,momentum_spread,0.16990306941258
+UNH,Choquet 2-additive,quality_spread,0.23632883194376136
+UNH,Choquet 2-additive,sector_excess_return,0.3779994588005179
+UNH,Choquet 2-additive,size_spread,0.08928971298909041
+UNH,Choquet 2-additive,value_growth_spread,0.020838050595875866
+UNH,Choquet 2-additive L1,low_volatility_spread,0.052825654657592716
+UNH,Choquet 2-additive L1,market_excess_return,0.11518839250543558
+UNH,Choquet 2-additive L1,momentum_spread,0.15689620592461767
+UNH,Choquet 2-additive L1,quality_spread,0.20476269795607702
+UNH,Choquet 2-additive L1,sector_excess_return,0.35616854601227926
+UNH,Choquet 2-additive L1,size_spread,0.10300062750481642
+UNH,Choquet 2-additive L1,value_growth_spread,0.011157875439181515
 UNH,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
 UNH,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
 UNH,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
@@ -286,20 +286,20 @@ UNH,Choquet 2-additive scaled-q,quality_spread,0.14285714285714277
 UNH,Choquet 2-additive scaled-q,sector_excess_return,0.14285714285714277
 UNH,Choquet 2-additive scaled-q,size_spread,0.14285714285714277
 UNH,Choquet 2-additive scaled-q,value_growth_spread,0.14285714285714277
-UNH,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714285067969
-UNH,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714298606436
-UNH,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714279422337
-UNH,Choquet 2-additive scaled-q L1,quality_spread,0.14285714284032577
-UNH,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714307047753
-UNH,Choquet 2-additive scaled-q L1,size_spread,0.14285714273445635
-UNH,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714272377292
-WMT,Choquet 1-additive,low_volatility_spread,-1.8033896135675557e-18
-WMT,Choquet 1-additive,market_excess_return,0.058983171102815105
-WMT,Choquet 1-additive,momentum_spread,0.2904852468232703
-WMT,Choquet 1-additive,quality_spread,0.0677276747197107
-WMT,Choquet 1-additive,sector_excess_return,0.24054108569314306
-WMT,Choquet 1-additive,size_spread,0.06428564138072883
-WMT,Choquet 1-additive,value_growth_spread,0.277977180280332
+UNH,Choquet 2-additive scaled-q L1,low_volatility_spread,0.1428571427836021
+UNH,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714287312962
+UNH,Choquet 2-additive scaled-q L1,momentum_spread,0.142857142868865
+UNH,Choquet 2-additive scaled-q L1,quality_spread,0.1428571428094043
+UNH,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714319804632
+UNH,Choquet 2-additive scaled-q L1,size_spread,0.14285714277126063
+UNH,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714269569183
+WMT,Choquet 1-additive,low_volatility_spread,0.07020063675483064
+WMT,Choquet 1-additive,market_excess_return,0.19341345206411906
+WMT,Choquet 1-additive,momentum_spread,0.03683683950817573
+WMT,Choquet 1-additive,quality_spread,0.12268808924085052
+WMT,Choquet 1-additive,sector_excess_return,0.47291437597691866
+WMT,Choquet 1-additive,size_spread,0.07726906773107374
+WMT,Choquet 1-additive,value_growth_spread,0.026677538724032102
 WMT,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
 WMT,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
 WMT,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
@@ -307,20 +307,20 @@ WMT,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
 WMT,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
 WMT,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
 WMT,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-WMT,Choquet 2-additive,low_volatility_spread,0.038419367035462976
-WMT,Choquet 2-additive,market_excess_return,0.030823902368892264
-WMT,Choquet 2-additive,momentum_spread,0.28175489896763195
-WMT,Choquet 2-additive,quality_spread,0.07406533667027414
-WMT,Choquet 2-additive,sector_excess_return,0.2526707643172953
-WMT,Choquet 2-additive,size_spread,0.06224232116686871
-WMT,Choquet 2-additive,value_growth_spread,0.2600234094735748
-WMT,Choquet 2-additive L1,low_volatility_spread,0.03866810067684874
-WMT,Choquet 2-additive L1,market_excess_return,0.030184028457132375
-WMT,Choquet 2-additive L1,momentum_spread,0.28165283500086563
-WMT,Choquet 2-additive L1,quality_spread,0.07419057030766311
-WMT,Choquet 2-additive L1,sector_excess_return,0.2532101023063217
-WMT,Choquet 2-additive L1,size_spread,0.061705082211902636
-WMT,Choquet 2-additive L1,value_growth_spread,0.26038928103926595
+WMT,Choquet 2-additive,low_volatility_spread,0.10412832244686511
+WMT,Choquet 2-additive,market_excess_return,0.06431534902246021
+WMT,Choquet 2-additive,momentum_spread,0.08166473878948302
+WMT,Choquet 2-additive,quality_spread,0.1619914245316128
+WMT,Choquet 2-additive,sector_excess_return,0.4280298841124664
+WMT,Choquet 2-additive,size_spread,0.06587506888033422
+WMT,Choquet 2-additive,value_growth_spread,0.0939952122167781
+WMT,Choquet 2-additive L1,low_volatility_spread,0.12604357079522527
+WMT,Choquet 2-additive L1,market_excess_return,0.07928726906534593
+WMT,Choquet 2-additive L1,momentum_spread,0.0679778922685215
+WMT,Choquet 2-additive L1,quality_spread,0.1609655010699452
+WMT,Choquet 2-additive L1,sector_excess_return,0.4354326318481876
+WMT,Choquet 2-additive L1,size_spread,0.05864488542606076
+WMT,Choquet 2-additive L1,value_growth_spread,0.07164824952671353
 WMT,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
 WMT,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
 WMT,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
@@ -328,20 +328,20 @@ WMT,Choquet 2-additive scaled-q,quality_spread,0.14285714285714277
 WMT,Choquet 2-additive scaled-q,sector_excess_return,0.14285714285714277
 WMT,Choquet 2-additive scaled-q,size_spread,0.14285714285714277
 WMT,Choquet 2-additive scaled-q,value_growth_spread,0.14285714285714277
-WMT,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714285714277
-WMT,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714285714277
-WMT,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714285714277
-WMT,Choquet 2-additive scaled-q L1,quality_spread,0.14285714285714277
-WMT,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714285714277
-WMT,Choquet 2-additive scaled-q L1,size_spread,0.14285714285714277
-WMT,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714285714277
-XOM,Choquet 1-additive,low_volatility_spread,-1.5922154261385635e-17
-XOM,Choquet 1-additive,market_excess_return,0.13484404395350394
-XOM,Choquet 1-additive,momentum_spread,0.14685372859245172
-XOM,Choquet 1-additive,quality_spread,1.3148532775130751e-18
-XOM,Choquet 1-additive,sector_excess_return,0.5160441452239266
-XOM,Choquet 1-additive,size_spread,0.11835471326039215
-XOM,Choquet 1-additive,value_growth_spread,0.08390336896972561
+WMT,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714280670095
+WMT,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714287550874
+WMT,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714281401538
+WMT,Choquet 2-additive scaled-q L1,quality_spread,0.14285714280784023
+WMT,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714317744763
+WMT,Choquet 2-additive scaled-q L1,size_spread,0.14285714275960176
+WMT,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714275888525
+XOM,Choquet 1-additive,low_volatility_spread,4.283114868066542e-18
+XOM,Choquet 1-additive,market_excess_return,7.997488253652123e-17
+XOM,Choquet 1-additive,momentum_spread,1.2718104512654003e-16
+XOM,Choquet 1-additive,quality_spread,-2.2337662473694208e-17
+XOM,Choquet 1-additive,sector_excess_return,0.9999999999999993
+XOM,Choquet 1-additive,size_spread,4.6982610427787325e-17
+XOM,Choquet 1-additive,value_growth_spread,-2.6267895348954165e-17
 XOM,Choquet 1-additive scaled-q,low_volatility_spread,0.14285714285714277
 XOM,Choquet 1-additive scaled-q,market_excess_return,0.14285714285714277
 XOM,Choquet 1-additive scaled-q,momentum_spread,0.14285714285714277
@@ -349,31 +349,31 @@ XOM,Choquet 1-additive scaled-q,quality_spread,0.14285714285714277
 XOM,Choquet 1-additive scaled-q,sector_excess_return,0.14285714285714277
 XOM,Choquet 1-additive scaled-q,size_spread,0.14285714285714277
 XOM,Choquet 1-additive scaled-q,value_growth_spread,0.14285714285714277
-XOM,Choquet 2-additive,low_volatility_spread,2.2779967695060593e-19
-XOM,Choquet 2-additive,market_excess_return,0.1491868128040907
-XOM,Choquet 2-additive,momentum_spread,0.16311117386382043
-XOM,Choquet 2-additive,quality_spread,5.335161709516015e-18
-XOM,Choquet 2-additive,sector_excess_return,0.49261923932188695
-XOM,Choquet 2-additive,size_spread,0.10816890455102882
-XOM,Choquet 2-additive,value_growth_spread,0.08691386945917308
-XOM,Choquet 2-additive L1,low_volatility_spread,0.00041900268709127794
-XOM,Choquet 2-additive L1,market_excess_return,0.14731115374849915
-XOM,Choquet 2-additive L1,momentum_spread,0.1370291946252995
-XOM,Choquet 2-additive L1,quality_spread,0.0010056443308473168
-XOM,Choquet 2-additive L1,sector_excess_return,0.5045420467512381
-XOM,Choquet 2-additive L1,size_spread,0.12769242557769322
-XOM,Choquet 2-additive L1,value_growth_spread,0.08200053227933171
-XOM,Choquet 2-additive scaled-q,low_volatility_spread,0.14285714285714277
-XOM,Choquet 2-additive scaled-q,market_excess_return,0.14285714285714277
-XOM,Choquet 2-additive scaled-q,momentum_spread,0.14285714285714277
-XOM,Choquet 2-additive scaled-q,quality_spread,0.14285714285714277
-XOM,Choquet 2-additive scaled-q,sector_excess_return,0.14285714285714277
-XOM,Choquet 2-additive scaled-q,size_spread,0.14285714285714277
-XOM,Choquet 2-additive scaled-q,value_growth_spread,0.14285714285714277
-XOM,Choquet 2-additive scaled-q L1,low_volatility_spread,0.14285714285280146
-XOM,Choquet 2-additive scaled-q L1,market_excess_return,0.14285714304181021
-XOM,Choquet 2-additive scaled-q L1,momentum_spread,0.14285714292904045
-XOM,Choquet 2-additive scaled-q L1,quality_spread,0.14285714261768193
-XOM,Choquet 2-additive scaled-q L1,sector_excess_return,0.14285714322011822
-XOM,Choquet 2-additive scaled-q L1,size_spread,0.1428571427319519
-XOM,Choquet 2-additive scaled-q L1,value_growth_spread,0.14285714260659568
+XOM,Choquet 2-additive,low_volatility_spread,-2.9916350031420832e-18
+XOM,Choquet 2-additive,market_excess_return,0.14641661674283782
+XOM,Choquet 2-additive,momentum_spread,7.797455285963003e-18
+XOM,Choquet 2-additive,quality_spread,1.6595006149477972e-18
+XOM,Choquet 2-additive,sector_excess_return,0.8210499849409038
+XOM,Choquet 2-additive,size_spread,0.03253339831625889
+XOM,Choquet 2-additive,value_growth_spread,1.0065999036277614e-17
+XOM,Choquet 2-additive L1,low_volatility_spread,-2.1046959139435464e-16
+XOM,Choquet 2-additive L1,market_excess_return,-7.375233500465137e-16
+XOM,Choquet 2-additive L1,momentum_spread,0.002374096326225046
+XOM,Choquet 2-additive L1,quality_spread,-1.9831318552450507e-16
+XOM,Choquet 2-additive L1,sector_excess_return,0.9976259036737749
+XOM,Choquet 2-additive L1,size_spread,6.664142138097276e-16
+XOM,Choquet 2-additive L1,value_growth_spread,1.721008763524074e-17
+XOM,Choquet 2-additive scaled-q,low_volatility_spread,0.0918878413019942
+XOM,Choquet 2-additive scaled-q,market_excess_return,0.11662074056698712
+XOM,Choquet 2-additive scaled-q,momentum_spread,0.10320293231885283
+XOM,Choquet 2-additive scaled-q,quality_spread,0.11827589224269894
+XOM,Choquet 2-additive scaled-q,sector_excess_return,0.3919990738745745
+XOM,Choquet 2-additive scaled-q,size_spread,0.11937496350324776
+XOM,Choquet 2-additive scaled-q,value_growth_spread,0.0586385561916449
+XOM,Choquet 2-additive scaled-q L1,low_volatility_spread,0.09060562869862088
+XOM,Choquet 2-additive scaled-q L1,market_excess_return,0.11803400387578473
+XOM,Choquet 2-additive scaled-q L1,momentum_spread,0.10361067952000377
+XOM,Choquet 2-additive scaled-q L1,quality_spread,0.11950468145801185
+XOM,Choquet 2-additive scaled-q L1,sector_excess_return,0.3913429153538108
+XOM,Choquet 2-additive scaled-q L1,size_spread,0.12064385384824362
+XOM,Choquet 2-additive scaled-q L1,value_growth_spread,0.056258237245524395

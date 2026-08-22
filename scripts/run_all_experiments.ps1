@@ -1,5 +1,16 @@
 $ErrorActionPreference = "Stop"
 
+function Invoke-PoetryChecked {
+    param(
+        [Parameter(ValueFromRemainingArguments = $true)]
+        [string[]]$CommandArguments
+    )
+    & poetry @CommandArguments
+    if ($LASTEXITCODE -ne 0) {
+        throw "Poetry command failed with exit code $LASTEXITCODE."
+    }
+}
+
 $allowedArguments = @("--quick", "--full", "--no-render")
 $unknownArguments = @($args | Where-Object { $_ -notin $allowedArguments })
 if ($unknownArguments.Count -gt 0) {
@@ -9,21 +20,29 @@ if ($unknownArguments.Count -gt 0) {
 $mode = if ($args -contains "--quick") { "--quick" } else { "--full" }
 $renderNotebooks = $args -notcontains "--no-render"
 
-poetry run python scripts/build_experiment_data.py
+Invoke-PoetryChecked run python scripts/build_experiment_data.py
 $clippingModes = if ($mode -eq "--full") {
     @("--with-clipping", "--without-clipping")
 } else {
     @("--without-clipping")
 }
 
-foreach ($clippingMode in $clippingModes) {
-    poetry run python scripts/experiment_factors.py $mode $clippingMode
-    poetry run python scripts/experiment_predict_loss.py $mode $clippingMode
-    poetry run python scripts/experiment_tail_risk.py $mode $clippingMode
+$evaluationStructures = if ($mode -eq "--full") {
+    @("fixed", "rolling_5y")
+} else {
+    @("rolling_5y")
 }
-poetry run python scripts/experiment_distortion_risk.py
-poetry run python scripts/experiment_autoregression.py
-poetry run python scripts/audit_results.py
+
+foreach ($evaluationStructure in $evaluationStructures) {
+    foreach ($clippingMode in $clippingModes) {
+        Invoke-PoetryChecked run python scripts/experiment_factors.py $mode --evaluation-structure $evaluationStructure $clippingMode
+        Invoke-PoetryChecked run python scripts/experiment_predict_loss.py $mode --evaluation-structure $evaluationStructure $clippingMode
+        Invoke-PoetryChecked run python scripts/experiment_tail_risk.py $mode --evaluation-structure $evaluationStructure $clippingMode
+    }
+}
+Invoke-PoetryChecked run python scripts/experiment_distortion_risk.py
+Invoke-PoetryChecked run python scripts/experiment_autoregression.py
+Invoke-PoetryChecked run python scripts/audit_results.py
 
 if ($renderNotebooks) {
     & "$PSScriptRoot\render_notebooks.ps1"

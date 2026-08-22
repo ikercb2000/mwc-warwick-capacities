@@ -31,7 +31,7 @@ from mwc_experiments.modeling.selection import (
 )
 from mwc_experiments.modeling.splits import (
     aggregate_walk_forward_split,
-    rolling_walk_forward_splits,
+    evaluation_splits,
     walk_forward_fold_summary,
 )
 from mwc_experiments.settings import (
@@ -44,7 +44,7 @@ from mwc_experiments.workflows.common import (
     quick_candidates,
 )
 
-from .types import TailClassificationResult
+from .types import SingleClassProbabilityCalibrator, TailClassificationResult
 
 
 def _partition_selection_and_calibration(
@@ -70,11 +70,30 @@ def _partition_selection_and_calibration(
         raise ValueError("Selection and calibration must both be non-empty.")
     if y_selection.nunique() < 2:
         raise ValueError("Selection validation must contain both event classes.")
-    if y_calibration.nunique() < 2:
-        raise ValueError("Calibration must contain both event classes.")
     split.X_validation = X_selection
     split.y_validation = y_selection
     return X_calibration, y_calibration
+
+
+def _fit_probability_calibrator(
+    fitted: object,
+    X_calibration: pd.DataFrame,
+    y_calibration: pd.Series,
+    *,
+    method: str,
+) -> tuple[object, str]:
+    """Fit sigmoid calibration or a reserved-block single-class fallback."""
+    if y_calibration.nunique() < 2:
+        calibrated = SingleClassProbabilityCalibrator(
+            FrozenEstimator(fitted)
+        ).fit(X_calibration, y_calibration)
+        return calibrated, f"{method} (single-class prior fallback)"
+    calibrated = CalibratedClassifierCV(
+        estimator=FrozenEstimator(fitted),
+        method=method,
+    )
+    calibrated.fit(X_calibration, y_calibration)
+    return calibrated, method
 
 
 def _fold_sample_rows(
@@ -115,6 +134,7 @@ def run_tail_classification_experiment(
     parameter_grids: Mapping[str, Mapping[str, list[Any]]] | None = None,
     random_state: int = RANDOM_STATE,
     clipping: bool = False,
+    evaluation_structure: str = "rolling_5y",
     oos_start: str = "2020-01-01",
     training_window_years: int = 5,
     selection_window_months: int = 18,
@@ -126,7 +146,7 @@ def run_tail_classification_experiment(
     aggregation_base_models: tuple[str, ...] = (),
     verbose: bool = True,
 ) -> dict[int, TailClassificationResult]:
-    """Run rolling selection, calibration and OOS tail classification."""
+    """Run fixed or rolling selection, calibration and OOS classification."""
     unsupported = set(calibration_methods) - {"sigmoid"}
     if unsupported:
         raise ValueError(
@@ -155,16 +175,17 @@ def run_tail_classification_experiment(
             raise KeyError(
                 f"Missing {target}. Build the dataset with alpha={alpha} first."
             )
-        folds = list(
-            rolling_walk_forward_splits(
-                dataset[list(features)],
-                dataset[target].astype(float),
-                oos_start=oos_start,
-                training_window_years=training_window_years,
-                validation_window_months=total_holdout_months,
-                oos_block_years=oos_block_years,
-                horizon=horizon,
-            )
+        folds = evaluation_splits(
+            dataset[list(features)],
+            dataset[target].astype(float),
+            evaluation_structure=evaluation_structure,
+            train_end="2017-12-31",
+            validation_end="2019-12-31",
+            oos_start=oos_start,
+            training_window_years=training_window_years,
+            validation_window_months=total_holdout_months,
+            oos_block_years=oos_block_years,
+            horizon=horizon,
         )
         candidates = {}
         candidate_family: dict[str, str] = {}
@@ -290,8 +311,12 @@ def run_tail_classification_experiment(
             split.y_train = split.y_train.astype(int)
             split.y_validation = split.y_validation.astype(int)
             split.y_test = split.y_test.astype(int)
-            calibration_start = fold.oos_start - pd.DateOffset(
-                months=calibration_window_months
+            calibration_start = (
+                pd.Timestamp("2019-01-01")
+                if evaluation_structure == "fixed"
+                else fold.oos_start - pd.DateOffset(
+                    months=calibration_window_months
+                )
             )
             X_calibration, y_calibration = _partition_selection_and_calibration(
                 split,
@@ -418,11 +443,15 @@ def run_tail_classification_experiment(
                             continue
                         try:
                             started = perf_counter()
-                            calibrated = CalibratedClassifierCV(
-                                estimator=FrozenEstimator(fitted),
-                                method=method,
+                            calibrated, calibration_label = (
+                                _fit_probability_calibrator(
+                                    fitted,
+                                    X_calibration,
+                                    y_calibration,
+                                    method=method,
+                                )
                             )
-                            calibrated.fit(X_calibration, y_calibration)
+                            variant_method[variant] = calibration_label
                             calibration_runtime = perf_counter() - started
                             calibration_probability = calibrated.predict_proba(
                                 X_calibration
@@ -444,7 +473,7 @@ def run_tail_classification_experiment(
                             fold_metric_rows.append(
                                 {
                                     "model": variant,
-                                    "probability calibration": method,
+                                    "probability calibration": calibration_label,
                                     "threshold source": "calibration",
                                     "calibration runtime seconds": (
                                         calibration_runtime
@@ -632,11 +661,15 @@ def run_tail_classification_experiment(
                     for method in calibration_methods:
                         variant = f"{aggregate_name} [{method}]"
                         started = perf_counter()
-                        calibrated = CalibratedClassifierCV(
-                            estimator=FrozenEstimator(fitted),
-                            method=method,
+                        calibrated, calibration_label = (
+                            _fit_probability_calibrator(
+                                fitted,
+                                calibration_frame,
+                                y_calibration,
+                                method=method,
+                            )
                         )
-                        calibrated.fit(calibration_frame, y_calibration)
+                        variant_method[variant] = calibration_label
                         calibration_runtime = perf_counter() - started
                         calibration_probability = calibrated.predict_proba(
                             calibration_frame
@@ -663,7 +696,7 @@ def run_tail_classification_experiment(
                         fold_metric_rows.append(
                             {
                                 "model": variant,
-                                "probability calibration": method,
+                                "probability calibration": calibration_label,
                                 "threshold source": "calibration",
                                 "calibration runtime seconds": (
                                     calibration_runtime
@@ -786,10 +819,14 @@ def run_tail_classification_experiment(
         metrics = pd.DataFrame(metric_rows).set_index("model").sort_values(
             "PR AUC", ascending=False
         )
+        metrics["evaluation_structure"] = evaluation_structure
+        fold_metrics["evaluation_structure"] = evaluation_structure
+        probabilities.attrs["evaluation_structure"] = evaluation_structure
         discrimination_columns = [
             "base model",
             "class weight",
             "probability calibration",
+            "evaluation_structure",
             "ROC AUC",
             "PR AUC",
             "validation PR AUC",
@@ -798,6 +835,7 @@ def run_tail_classification_experiment(
             "base model",
             "class weight",
             "probability calibration",
+            "evaluation_structure",
             "Brier",
             "Log loss",
             "Mean predicted probability",
@@ -811,15 +849,19 @@ def run_tail_classification_experiment(
         results[horizon] = TailClassificationResult(
             horizon=horizon,
             alpha=alpha,
+            evaluation_structure=evaluation_structure,
             split=split,
             final_split=folds[-1].split,
-            fold_summary=walk_forward_fold_summary(folds),
+            fold_summary=walk_forward_fold_summary(
+                folds, evaluation_structure=evaluation_structure
+            ),
             fold_metrics=fold_metrics,
             metrics=metrics,
             discrimination_metrics=metrics[discrimination_columns].copy(),
             calibration_metrics=metrics[calibration_columns].copy(),
             calibration_sample_summary=(
                 pd.DataFrame(sample_rows)
+                .assign(evaluation_structure=evaluation_structure)
                 .set_index(["fold", "sample"])
                 .sort_index()
             ),

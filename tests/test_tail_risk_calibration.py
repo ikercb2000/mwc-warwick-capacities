@@ -37,13 +37,14 @@ def _classification_dataset(*, invert_test_labels: bool = False) -> pd.DataFrame
     )
 
 
-def _run(dataset: pd.DataFrame):
+def _run(dataset: pd.DataFrame, *, evaluation_structure: str = "rolling_5y"):
     return run_tail_classification_experiment(
         dataset,
         features=("signal", "trend"),
         horizons=(1,),
         alpha=0.95,
         quick=True,
+        evaluation_structure=evaluation_structure,
         model_names=("Logistic",),
         oos_start="2020-01-01",
         training_window_years=4,
@@ -205,3 +206,47 @@ def test_tail_risk_rejects_choquet_aggregation_sources() -> None:
             aggregation_base_models=("Choquistic 1-additive",),
             verbose=False,
         )
+
+
+def test_fixed_tail_risk_uses_2018_selection_and_2019_calibration() -> None:
+    result = _run(_classification_dataset(), evaluation_structure="fixed")
+    summary = result.calibration_sample_summary.xs(0, level="fold")
+
+    assert result.evaluation_structure == "fixed"
+    assert summary.loc["train", "end"].year == 2017
+    assert summary.loc["selection_validation", "start"].year == 2018
+    assert summary.loc["selection_validation", "end"].year == 2018
+    assert summary.loc["calibration", "start"].year == 2019
+    assert summary.loc["calibration", "end"].year == 2019
+    assert summary.loc["OOS", "start"] == pd.Timestamp("2020-01-01")
+
+def test_single_class_calibration_uses_reserved_prior_fallback() -> None:
+    dataset = _classification_dataset().rename(
+        columns={"tail_event_h1_a0p95": "tail_event_h10_a0p95"}
+    )
+    dataset.loc[
+        "2019-01-01":"2019-12-31",
+        "tail_event_h10_a0p95",
+    ] = 0.0
+
+    result = run_tail_classification_experiment(
+        dataset,
+        features=("signal", "trend"),
+        horizons=(10,),
+        alpha=0.95,
+        evaluation_structure="fixed",
+        quick=True,
+        model_names=("Logistic",),
+        calibration_methods=("sigmoid",),
+        class_weight_modes=("balanced",),
+        verbose=False,
+    )[10]
+
+    calibrated = "Logistic [sigmoid]"
+    assert calibrated in result.probabilities
+    assert result.metrics.loc[
+        calibrated, "probability calibration"
+    ] == "sigmoid (single-class prior fallback)"
+    assert np.isfinite(result.probabilities[calibrated]).all()
+    summary = result.calibration_sample_summary.xs(0, level="fold")
+    assert summary.loc["calibration", "events"] == 0

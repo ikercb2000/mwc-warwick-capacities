@@ -51,8 +51,12 @@ args = parse_experiment_args(
 )
 quick = args.quick
 clipping = args.clipping
+evaluation_structure = args.evaluation_structure
 verbose = not args.quiet
-paths = prepare_output_paths(clipping=clipping)
+paths = prepare_output_paths(
+    clipping=clipping,
+    evaluation_structure=evaluation_structure,
+)
 config = load_experiment_config("future_loss", paths.root)
 dataset_config = config["dataset"]
 model_config = config["models"]
@@ -88,6 +92,7 @@ result = run_future_loss_experiment(
     horizons=HORIZONS,
     quick=quick,
     clipping=clipping,
+    evaluation_structure=evaluation_structure,
     model_names=MAIN_MODELS,
     random_state=int(execution_config["random_state"]),
     parameter_grids=PARAMETER_GRIDS,
@@ -110,6 +115,7 @@ cap_result = run_future_loss_experiment(
     horizons=(CAP_WEIGHT_HORIZON,),
     quick=quick,
     clipping=clipping,
+    evaluation_structure=evaluation_structure,
     model_names=CAP_WEIGHT_MODELS,
     random_state=int(execution_config["random_state"]),
     parameter_grids=PARAMETER_GRIDS,
@@ -145,7 +151,9 @@ for horizon, horizon_result in result.horizons.items():
         paths,
     )
     artifacts[f"predictions h{horizon}"] = save_table(
-        horizon_result.predictions,
+        horizon_result.predictions.assign(
+            evaluation_structure=evaluation_structure
+        ),
         f"experiment_2a_predictions_h{horizon}.parquet",
         paths,
     )

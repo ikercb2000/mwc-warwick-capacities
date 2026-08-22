@@ -1,7 +1,7 @@
 fold,model,fitted q
 0,Choquet 1-additive scaled-q,0.0
 0,Choquet 2-additive scaled-q,0.0
-0,Choquet 2-additive scaled-q L1,5.1698788020485825e-26
+0,Choquet 2-additive scaled-q L1,0.0
 1,Choquet 1-additive scaled-q,0.0
 1,Choquet 2-additive scaled-q,0.0
 1,Choquet 2-additive scaled-q L1,0.0
@@ -13,10 +13,10 @@ fold,model,fitted q
 3,Choquet 2-additive scaled-q L1,0.0
 4,Choquet 1-additive scaled-q,0.0
 4,Choquet 2-additive scaled-q,0.0
-4,Choquet 2-additive scaled-q L1,0.0
+4,Choquet 2-additive scaled-q L1,1.0339757390381769e-25
 5,Choquet 1-additive scaled-q,0.0
 5,Choquet 2-additive scaled-q,0.0
-5,Choquet 2-additive scaled-q L1,0.0
+5,Choquet 2-additive scaled-q L1,5.169878698561846e-26
 6,Choquet 1-additive scaled-q,0.0
 6,Choquet 2-additive scaled-q,0.0
 6,Choquet 2-additive scaled-q L1,0.0

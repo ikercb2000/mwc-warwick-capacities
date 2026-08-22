@@ -4,6 +4,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from collections.abc import Mapping
 from typing import Any
+import numpy as np
 import pandas as pd
 from mwc_experiments.settings import (
     CLASSIFICATION_TRAIN_END,
@@ -29,10 +30,39 @@ from mwc_experiments.modeling.splits import chronological_split
 from mwc_experiments.modeling.types import TemporalSplit
 from mwc_experiments.workflows.common import model_parameter_count, quick_candidates
 
+class SingleClassProbabilityCalibrator:
+    """Calibrate to a smoothed prior when a reserved block has one class."""
+
+    def __init__(self, estimator: object, smoothing: float = 0.5) -> None:
+        self.estimator = estimator
+        self.smoothing = smoothing
+
+    def fit(
+        self,
+        X: pd.DataFrame,
+        y: pd.Series,
+    ) -> "SingleClassProbabilityCalibrator":
+        """Estimate a finite prior using only the reserved calibration labels."""
+        if len(y) == 0:
+            raise ValueError("Calibration labels must not be empty.")
+        positives = float(pd.Series(y).sum())
+        self.probability_ = (positives + self.smoothing) / (
+            len(y) + 2.0 * self.smoothing
+        )
+        self.classes_ = np.asarray([0, 1], dtype=int)
+        return self
+
+    def predict_proba(self, X: pd.DataFrame) -> np.ndarray:
+        """Return the calibration-block prior for every observation."""
+        positive = np.full(len(X), self.probability_, dtype=float)
+        return np.column_stack([1.0 - positive, positive])
+
+
 @dataclass(slots=True)
 class TailClassificationResult:
     horizon: int
     alpha: float
+    evaluation_structure: str
     split: TemporalSplit
     final_split: TemporalSplit
     fold_summary: pd.DataFrame

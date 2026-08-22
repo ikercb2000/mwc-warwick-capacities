@@ -63,6 +63,7 @@ def parse_experiment_args(
     )
     quick_default = QUICK_MODE_DEFAULT
     clipping_default = False
+    evaluation_default = "rolling_5y"
     if experiment_id is not None:
         config = load_experiment_config(experiment_id)
         quick_default = bool(
@@ -75,6 +76,12 @@ def parse_experiment_args(
             config.get("preprocessing", {}).get(
                 "clipping_enabled",
                 clipping_default,
+            )
+        )
+        evaluation_default = str(
+            config.get("evaluation", {}).get(
+                "structure",
+                evaluation_default,
             )
         )
     clipping_mode = parser.add_mutually_exclusive_group()
@@ -92,6 +99,12 @@ def parse_experiment_args(
     )
     parser.set_defaults(quick=quick_default, clipping=clipping_default)
     parser.add_argument(
+        "--evaluation-structure",
+        choices=("fixed", "rolling_5y"),
+        default=evaluation_default,
+        help="Use a fixed 2019 validation split or five-year rolling evaluation.",
+    )
+    parser.add_argument(
         "--quiet",
         action="store_true",
         help="Suppress model-by-model progress messages.",
@@ -104,6 +117,7 @@ def prepare_output_paths(
     *,
     experiment_id: str | None = None,
     clipping: bool | None = None,
+    evaluation_structure: str | None = None,
 ) -> ExperimentRunPaths:
     """Create an immutable output directory for this script execution."""
     global _ACTIVE_RUN, _RUN_FINISHED
@@ -125,6 +139,10 @@ def prepare_output_paths(
         mode = "quick" if quick_default else "full"
     else:
         mode = "standard"
+    if evaluation_structure is not None:
+        if evaluation_structure not in {"fixed", "rolling_5y"}:
+            raise ValueError("Unknown evaluation structure.")
+        mode = f"{mode}_{evaluation_structure}"
     if clipping is not None:
         clipping_mode = "clipping" if clipping else "no_clipping"
         mode = f"{mode}_{clipping_mode}"

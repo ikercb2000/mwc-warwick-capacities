@@ -46,8 +46,12 @@ args = parse_experiment_args(
 )
 quick = args.quick
 clipping = args.clipping
+evaluation_structure = args.evaluation_structure
 verbose = not args.quiet
-paths = prepare_output_paths(clipping=clipping)
+paths = prepare_output_paths(
+    clipping=clipping,
+    evaluation_structure=evaluation_structure,
+)
 config = load_experiment_config("tail_risk", paths.root)
 dataset_config = config["dataset"]
 model_config = config["models"]
@@ -91,6 +95,7 @@ primary = run_tail_classification_experiment(
     alpha=PRIMARY_TAIL_ALPHA,
     quick=quick,
     clipping=clipping,
+    evaluation_structure=evaluation_structure,
     model_names=MAIN_MODELS,
     random_state=int(execution_config["random_state"]),
     oos_start=str(walk_forward_config["oos_start"]),
@@ -118,6 +123,7 @@ rare = run_tail_classification_experiment(
     alpha=ROBUSTNESS_TAIL_ALPHA,
     quick=quick,
     clipping=clipping,
+    evaluation_structure=evaluation_structure,
     model_names=ROBUSTNESS_MODELS,
     random_state=int(execution_config["random_state"]),
     oos_start=str(walk_forward_config["oos_start"]),
@@ -194,7 +200,9 @@ for horizon, horizon_result in primary.items():
         paths,
     )
     artifacts[f"probabilities h{horizon}"] = save_table(
-        horizon_result.probabilities,
+        horizon_result.probabilities.assign(
+            evaluation_structure=evaluation_structure
+        ),
         f"experiment_2b_probabilities_h{horizon}_a095.parquet",
         paths,
     )
@@ -468,7 +476,9 @@ for horizon, horizon_result in rare.items():
         paths,
     )
     artifacts[f"rare-event probabilities h{horizon}"] = save_table(
-        horizon_result.probabilities,
+        horizon_result.probabilities.assign(
+            evaluation_structure=evaluation_structure
+        ),
         f"experiment_2b_probabilities_h{horizon}_a0975.parquet",
         paths,
     )

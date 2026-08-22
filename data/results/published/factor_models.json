@@ -2,477 +2,487 @@
   "artifacts": [
     {
       "destination": "data\\results\\tables\\experiment_1_asset_model_metrics.csv",
-      "sha256": "0f9ffab67154bd972a86ed31286a013517bc9dc74cc77bf790360bfb32af2d60",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_asset_model_metrics.csv"
+      "sha256": "ed854d246ddb77836dacd47960c155514628f5a97a99715895d9c7f773180ff6",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_asset_model_metrics.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_asset_model_metrics.csv",
-      "sha256": "067417dbb7b6ef11ec75bb6eea8a57a39ef9069605baf8c1dacc6cf81656b359",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_asset_model_metrics.csv"
+      "sha256": "ad6a0a4b650ff8a2d118f02d7e1e3b94499ab633e24b0abf36356c0dbf70c0ea",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_asset_model_metrics.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_aggregate_metrics.csv",
-      "sha256": "cc188a571dcdf66d8c0cd61f6b34bcef29f47a7bced4143d56c4b8ea540a7cbc",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_aggregate_metrics.csv"
+      "sha256": "069cda56953c726c3674f6c43341f82945ad21901267b0a11d6d9b3f9b742dd7",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_aggregate_metrics.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_asset_rmse.csv",
-      "sha256": "3ff6a1c0b4eca4ea8d961366ebd04b51bc23abcd29c5025f593d9b98183baa01",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_asset_rmse.csv"
+      "sha256": "01bcec4d4c2c255f7269964fb7baeb06f680c29316f6d7ba41d37bf0e650a7e4",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_asset_rmse.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residual_covariance_summary.csv",
-      "sha256": "fac445c83d7d18941fe9a9be075b44a2c2a58c5c1027042e32f4939d6f5008e6",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residual_covariance_summary.csv"
+      "sha256": "db5e41e871eb27bdbb40bb592da61b276c386a18573a3ced058a92a15262e89f",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residual_covariance_summary.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_summary.csv",
-      "sha256": "8c6eacb8ad9b521644e28e7cacc584b357087e67b510120671fcc74731c7e035",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_summary.csv"
+      "sha256": "601f31779a12e26ce2f7077a6f131d0dc5441046dc20d50edf2614e733cd33b5",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_summary.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_1_evaluation_folds.csv",
+      "sha256": "88f8867a16423b59b4d9a92e03ca01d8cae742385c82e9f5afc616e4b971531f",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_evaluation_folds.csv"
+    },
+    {
+      "destination": "data\\results\\tables\\experiment_1_evaluation_fold_metrics.csv",
+      "sha256": "efaac5937a4df9737ca01bee94d460ad717e289410f0ce706cf1bae9bd98cc08",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_evaluation_fold_metrics.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_selected_parameters.csv",
-      "sha256": "8b6a1b9e72560a670435378fd09bca45439dfe37b3e4cfdadf49593b58988767",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_selected_parameters.csv"
+      "sha256": "438dffbd6014cd0aae1dab7bdc1c41e50ae4b9b8a7b1c8500125f6381a203cc3",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_selected_parameters.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_validation_selected_choquet.csv",
-      "sha256": "9d1ed6c04285b2514eb89b1ccaf71d501ae7fc64b4be5c7e1a4e65104a21f766",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_validation_selected_choquet.csv"
+      "sha256": "c0449bfe07b614e4b2b40cf1d559e49798155ee3dbf3b4b998af19d981842c21",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_validation_selected_choquet.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_orientation_ablation.csv",
-      "sha256": "2df4ccedb8bec512f01b12262adb8906edc903d9cba28570d3c9330672390082",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_orientation_ablation.csv"
+      "sha256": "ed4e011a54e3f9b92b5e05567b2279512d69a59d6dd841b975b02777c68ed7b9",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_orientation_ablation.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_orientations.csv",
-      "sha256": "468530f5a05098a82b8bcca7060ab4997ef6014bb9f25761ac9fa7f9e971509a",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_orientations.csv"
+      "sha256": "a7a45f1cf0645b7bfae6bacd4141eec563b1ccdd847ccc98a2e2048a74e33d4e",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_orientations.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_empirical_stress_audit.csv",
-      "sha256": "b0df81e2eccd4427d83de6be678eccdb972320d63f6481d6f2e2d133ebf68d09",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_empirical_stress_audit.csv"
+      "sha256": "1cff535276a29788406ca8f123da29413f180125bb822979772cda4e5eb5f859",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_empirical_stress_audit.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_empirical_stress_metrics.csv",
-      "sha256": "a323ebd2ecad0744846ab0f816570d468f53f4d2d35f2666edfdc5f451f1b26b",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_empirical_stress_metrics.csv"
+      "sha256": "32c1338173dcce1ada75efa9877d8e34f61c93fc4b6b7e7f1be2a6f750518fc0",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_empirical_stress_metrics.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_clipping_audit.csv",
-      "sha256": "283296d1870d8b642f1ae12532016984698a927f319155b1ca88bdfa867f8cdf",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_clipping_audit.csv"
+      "sha256": "91f7a13cb4cfe144d6df7cfcfad9858b1ed85366f1818d485ac2b84294a10af2",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_clipping_audit.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_extreme_estimation_robustness.csv",
-      "sha256": "755d0ce5aa6ee7bea41f29628e3322e694347340a39aa3f9c0d6b12a96eefd35",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_extreme_estimation_robustness.csv"
+      "sha256": "964c605a93a07fd6187226d8c35822446c158807b8f5cc3895286ff723ebc860",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_extreme_estimation_robustness.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_validation_stress_comparison.csv",
-      "sha256": "4a2c84b21391ef56c8a933c0ceec3e5d08fab4db5fbd560779a08908d15fce5d",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_validation_stress_comparison.csv"
+      "sha256": "322c51f0658c05e342935a7c2af2748077d4d9a7bdc4baa566c8af87c34d501d",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_validation_stress_comparison.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_validation_stress_samples.csv",
       "sha256": "19bf231326f802db10510ccc5dc5e1d3b1e14241b1de8ce5f97f6cec35be7331",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_validation_stress_samples.csv"
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_validation_stress_samples.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_validation_stress_selection_summary.csv",
-      "sha256": "ff52d4e08af30fa9270521ef11a63a1d0a8177b36da0e05151f79671a3813c18",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_validation_stress_selection_summary.csv"
+      "sha256": "ab58dd75d2e1a8c448e2ac80dadde05dbdff3ad2c387405b7ce6e25602c14554",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_validation_stress_selection_summary.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_validation_stress_failures.csv",
       "sha256": "e6d9bfbae016be017094ebb8d2b1c217d2e46bfddec75fb10b3061d996c6fffd",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_validation_stress_failures.csv"
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_validation_stress_failures.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_failures.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_failures.csv"
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_failures.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_all_capacity_shapley.csv",
-      "sha256": "a523043eb454fea10d26f34182dbaf7750a61197916f614899e64b2752c32f18",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_all_capacity_shapley.csv"
+      "sha256": "b7250bb2f9b8e3ae0a40c9735d52acf46a2f190d2b57cce1cc972b6e31ab7b88",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_all_capacity_shapley.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_all_capacity_interactions.csv",
-      "sha256": "e59d80a93ceaaf7624b092351c0c2d603ad211b49a3d3965de2355da28d72271",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_all_capacity_interactions.csv"
+      "sha256": "537a5f9bc362e5cddf911652bed0adbc74424303c221cfd98122dc7fb12284e8",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_all_capacity_interactions.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_ols.parquet",
-      "sha256": "8d46ed9e33d637a4d7db0546a1dce217da7b220de4e3e39076cd9a088e396f74",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_ols.parquet"
+      "sha256": "88e972ee6e30431f51b886a3aa0e549a78f6fc57b0a497c995bfff863f7dfe20",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_ols.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_ols_oriented.parquet",
-      "sha256": "8d46ed9e33d637a4d7db0546a1dce217da7b220de4e3e39076cd9a088e396f74",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_ols_oriented.parquet"
+      "sha256": "88e972ee6e30431f51b886a3aa0e549a78f6fc57b0a497c995bfff863f7dfe20",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_ols_oriented.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_monotone_linear.parquet",
-      "sha256": "6c23a43db8eadd8e6ac1f8d564083b6d82c596d3dde3f993f5a93a747cc41fad",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_monotone_linear.parquet"
+      "sha256": "c7d737acdb0b13bad28b7440499e04f077a12b1f86eb2bce6fed7b5daf52cd95",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_monotone_linear.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_ridge.parquet",
-      "sha256": "47fc0e38d0e759464764f1e04392e7f897bd904dbd29e6dda3acabbf1cd70895",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_ridge.parquet"
+      "sha256": "378ae2aa61fb8ecaba7f5cb9f8cfbf8a3ea5264fea6bc9af9e4acf668f8781c4",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_ridge.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_lasso.parquet",
-      "sha256": "33c2b06ff02ce12f716d72e980606619fe5d9c444c9d5157ad6ad273e5f9f5b5",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_lasso.parquet"
+      "sha256": "82925aef1321337b5576a225a84a42a8b072da1334392968472780ea5510bfc6",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_lasso.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_elastic_net.parquet",
-      "sha256": "121f22ba2e3bd84c0ab54fa1281f8a8640b5bea97d75b79479ff1dfe672629e2",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_elastic_net.parquet"
+      "sha256": "b06abe8a2344248f46cc1f67ac7e9602c9ff5553409979fa6b897078b9d03aba",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_elastic_net.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_choquet_1_additive.parquet",
-      "sha256": "4a9a3e5cea0fc0d4af07a387e6a385be8d0e930fdbf82b3eb0556af08bc3e19c",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_choquet_1_additive.parquet"
+      "sha256": "35a349631158c8db4af95ad07885bcb42d3a52c44dc1e2ab32da5faf432a58f0",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_choquet_1_additive.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_choquet_1_additive_scaled_q.parquet",
-      "sha256": "1d07e8735e6fc73956550668f24cee8027ef9f5ae935dbd984f68a6012f1905f",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_choquet_1_additive_scaled_q.parquet"
+      "sha256": "1578d9ba1564727eb695b1aed9816a2c6f9622d082eaf3bc6d723b6d3ecfb32a",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_choquet_1_additive_scaled_q.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_choquet_2_additive.parquet",
-      "sha256": "4778e6806e6b5054a591485eab0cd74b3db8c60be4068841931d1e5b2fbb3a39",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_choquet_2_additive.parquet"
+      "sha256": "2e87c73ae3291b6c126606d0a5882973967ba3657d21aab5f25534a97f88e523",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_choquet_2_additive.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_choquet_2_additive_l1.parquet",
-      "sha256": "827cdf26f2d13a710703a504be621d6d6121aaf667296c5ddbecd4afc72816e1",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_choquet_2_additive_l1.parquet"
+      "sha256": "d6ca4c0941cb2b0504c0eb2eea91b8af104a10d1e22317edc0dd6c49bfd684b4",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_choquet_2_additive_l1.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_choquet_2_additive_scaled_q.parquet",
-      "sha256": "398bccd74456b3c9d0054a86ca3e76546728285cfa899a9032a5116961bc3c8b",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_choquet_2_additive_scaled_q.parquet"
+      "sha256": "0b94b37852d08fccbc6fac25c22393b6991a907a91080232568f83a85f2b1dff",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_choquet_2_additive_scaled_q.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_predictions_choquet_2_additive_scaled_q_l1.parquet",
-      "sha256": "95f0503fd962d257f39f57a15184fbabc6c220a1e69f8e801518b1e14d03f846",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_predictions_choquet_2_additive_scaled_q_l1.parquet"
+      "sha256": "eb70777509210ff6eadae84cd163eb5200b505a93e23e9726ae4e01d275448a0",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_predictions_choquet_2_additive_scaled_q_l1.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_ols.parquet",
-      "sha256": "d6db7a1689121221bf71438a0bb47205505020e76fc19e4f192ba4cb12a50313",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_ols.parquet"
+      "sha256": "1f490e9e773348b3256c9de31eac218ce2f2524441d9e2c6bd52de1ff661054d",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_ols.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_ols_oriented.parquet",
-      "sha256": "d6db7a1689121221bf71438a0bb47205505020e76fc19e4f192ba4cb12a50313",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_ols_oriented.parquet"
+      "sha256": "1f490e9e773348b3256c9de31eac218ce2f2524441d9e2c6bd52de1ff661054d",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_ols_oriented.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_monotone_linear.parquet",
-      "sha256": "5f322012a7b3dba7c762c7e9808c0045c8a6bf0fc5d3daf3435d6529a1a702b7",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_monotone_linear.parquet"
+      "sha256": "16969543cdde19902c82a2071603dfaf843bf8d21ef33642e73cc64c2ff3f66b",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_monotone_linear.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_ridge.parquet",
-      "sha256": "f3622eff4e455444084d25b4a376b2ddfcd2f51bee032c67a90da9f54fb40ff2",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_ridge.parquet"
+      "sha256": "b1430f1f09f4b75ece6cfe7102d078f6c83b9ac9d2041787d540de804dc24d01",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_ridge.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_lasso.parquet",
-      "sha256": "c3bf5c6d9c762b1e3a3e8d83300aaaa80b53219cb230eae91151b26149d95280",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_lasso.parquet"
+      "sha256": "1942adfd730e6da01cfbeb9f7ca9965f87b78b4057f8100fdf96ce97145100cd",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_lasso.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_elastic_net.parquet",
-      "sha256": "8d12cbdbf9ebc3efcd83cb69fbf03fbebfc1e3c4e0f4c57f061c04c1b8ed5529",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_elastic_net.parquet"
+      "sha256": "99dadf37ccc7d0ef0fbe3e7c8009c8df4cb9a2266665f475891d1116da1daf57",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_elastic_net.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_choquet_1_additive.parquet",
-      "sha256": "36f8dae36bec08b8d7da6e8e4115d2449fedec1c8c2bf5c7f6c84fc507a22107",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_choquet_1_additive.parquet"
+      "sha256": "c721cb681a59b65f746d80006c8f1782116cdc0c4c926690a0e668f334cb636c",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_choquet_1_additive.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_choquet_1_additive_scaled_q.parquet",
-      "sha256": "08d8752361822e168dbe5695e8930c7e78d2a891589bdad4bab0c871c1c0f572",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_choquet_1_additive_scaled_q.parquet"
+      "sha256": "3da7bf5bc5840c9a9fae91e6d2be2d8168346321b8ca46a3eb89f5905cdddf2b",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_choquet_1_additive_scaled_q.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_choquet_2_additive.parquet",
-      "sha256": "e9c064d8f211aeb30ec5f12b7c7654f983cf37452513331c2b562310facf30a8",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_choquet_2_additive.parquet"
+      "sha256": "8ed79ecfb31bd5ee81271f4b81bd665f9cdef179821178ba39bf265eade92383",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_choquet_2_additive.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_choquet_2_additive_l1.parquet",
-      "sha256": "71e06b8c195d82eef1a824b537621c3a64e2ec94ad137729ae7175048ce5eeb2",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_choquet_2_additive_l1.parquet"
+      "sha256": "0aff132444fd3e0c9740d5446c8b72808d417f3ac8af23547ad6a343f9f26b5a",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_choquet_2_additive_l1.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_choquet_2_additive_scaled_q.parquet",
-      "sha256": "2d0fbd662b920c3ac463e6ead012f0fc1fbbc0b745d1dc181f4939f62210da6b",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_choquet_2_additive_scaled_q.parquet"
+      "sha256": "7c9ef142f251af80bb2facccc8ae2820368e69f3b688daa5e0717e712b5c4280",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_choquet_2_additive_scaled_q.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_residuals_choquet_2_additive_scaled_q_l1.parquet",
-      "sha256": "584ff4dabd38ae8c428076bd0a751a365d671b7162285e3fdc97fb803eb17758",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_residuals_choquet_2_additive_scaled_q_l1.parquet"
+      "sha256": "fb20197449a01bcff8c77e84eebee324ae82bf1ceb40a2c3d9db61443ed93abe",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_residuals_choquet_2_additive_scaled_q_l1.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_ols.parquet",
-      "sha256": "b969401fad07999802def8363fe6aafcd219a4b84097e98e569e00a07f5b84de",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_ols.parquet"
+      "sha256": "ec5448221ac1bbfa78504e1e1cfb7827138aa94574a2f026a3c4f1cea4321e93",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_ols.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_ols.csv",
-      "sha256": "8930fa2240175e7ecd85c011729f8794cf40ce6b3ee709f4e94a3b6a1f9d573c",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_ols.csv"
+      "sha256": "320d86c02517c2c8cdfc7c5e04a289a563df32d1faf948b65e893a75c4eaac93",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_ols.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_ols_oriented.parquet",
-      "sha256": "b969401fad07999802def8363fe6aafcd219a4b84097e98e569e00a07f5b84de",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_ols_oriented.parquet"
+      "sha256": "ec5448221ac1bbfa78504e1e1cfb7827138aa94574a2f026a3c4f1cea4321e93",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_ols_oriented.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_ols_oriented.csv",
-      "sha256": "8930fa2240175e7ecd85c011729f8794cf40ce6b3ee709f4e94a3b6a1f9d573c",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_ols_oriented.csv"
+      "sha256": "320d86c02517c2c8cdfc7c5e04a289a563df32d1faf948b65e893a75c4eaac93",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_ols_oriented.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_monotone_linear.parquet",
-      "sha256": "147c72c5cf1d4ecd63f88ce527ac3cc96e42c80f834915b13ff391222acf70f8",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_monotone_linear.parquet"
+      "sha256": "ced8a0a9492f5de3c17c1eb58703926b43922f0dd314e976d7e1bff436571e46",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_monotone_linear.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_monotone_linear.csv",
-      "sha256": "70f5499f27f295c2fcd62c3a3c4d9a4d2077257f256eef17de15fb742521940c",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_monotone_linear.csv"
+      "sha256": "380f03b0eb68b312e6868990ff379018caf27f79809d180c7e9bab0f49650914",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_monotone_linear.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_ridge.parquet",
-      "sha256": "5639380f5795ba7f5af2289324b1239957f9371184e4bfcd6dd8e74530650e94",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_ridge.parquet"
+      "sha256": "684ed94b4a275bfc55d9c51aba2269ec2d0ae8d79c798de2929b26ebaa785de8",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_ridge.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_ridge.csv",
-      "sha256": "a2725a585c44fa59572317c7e8e6561bfe7c20edf761bd7649a5f4c1fc059f97",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_ridge.csv"
+      "sha256": "2c4f71f8e67190fc19b390ae12ade600b2910cfa1c4720714c5ebd94002880ff",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_ridge.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_lasso.parquet",
-      "sha256": "edd957689a6648241c38a318aa80433bba75d36eb92f3807f0129a9388f808c4",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_lasso.parquet"
+      "sha256": "9211d6228a9d731355ee5b78f6a8b7af6820dc6491bc9533d98f7f765dc1fe28",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_lasso.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_lasso.csv",
-      "sha256": "b364d35db6ce1b921ca637ff52b03bd865118241f3647d5f0fd8b08131e30a9b",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_lasso.csv"
+      "sha256": "ad2d33cd31eb286091c718372bda3c6349762296b4dcdc98f6d46ef25feccc8d",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_lasso.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_elastic_net.parquet",
-      "sha256": "471cd7f24deb376b8f9a39f55f8dc430ff2105f233f319364f8692e72b7768b0",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_elastic_net.parquet"
+      "sha256": "a6d98758b4fdd485bfc1b0a44f4ca7cf2f8e37f74e02e1c89fb38e511e7439b0",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_elastic_net.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_elastic_net.csv",
-      "sha256": "770195f58c08accf0b29a94076fec99e4542d139040b641b98f7e764aab73940",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_elastic_net.csv"
+      "sha256": "95e3408bd107b2668cc5522757f5df9c65913df964f5adb3f355098b4c0dd7d2",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_elastic_net.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_choquet_1_additive.parquet",
-      "sha256": "caf62f2504953ca636ca3b53463a4f7bb24e538035c72faa8f25d9647a8aab63",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_choquet_1_additive.parquet"
+      "sha256": "39f8a8279476a2cbc2e70d6adb5dab42e62799fc51f7f00b3397c20ef17b85e5",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_choquet_1_additive.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_choquet_1_additive.csv",
-      "sha256": "7267cb1636cecf5b0b50153ad1744444aef7fad63e49dfaaaffee9b7bea5890d",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_choquet_1_additive.csv"
+      "sha256": "c0b716b1bf44599376b8878e06e7b995200dfec49cb128d2a4715dcc43cd9ed7",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_choquet_1_additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_choquet_1_additive_scaled_q.parquet",
-      "sha256": "1fff7f73aa208209028f10cd25f2fcc0e650a1d429b86e88e4c5fd1053149e5d",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_choquet_1_additive_scaled_q.parquet"
+      "sha256": "829994f42b7b5b2d115c09f259363ff978b3e1dc2abb324ecbc08a6981526916",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_choquet_1_additive_scaled_q.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_choquet_1_additive_scaled_q.csv",
-      "sha256": "018e281dbc469346dcaa6087dd751ffd0859b3cd963108d1a804601fea68ff16",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_choquet_1_additive_scaled_q.csv"
+      "sha256": "878905e8aeddfe4b0f9ad49ce03dc41c948d3868665bf03e733bed305473d4a3",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_choquet_1_additive_scaled_q.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_choquet_2_additive.parquet",
-      "sha256": "0acee268d8422585cea60b2fa4184de7ff5362c82b3c1c795b10932ee911cf95",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_choquet_2_additive.parquet"
+      "sha256": "f1a55b93f416975c1feda8c7567ddb357651896092576584264ec1469fddb95c",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_choquet_2_additive.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive.csv",
-      "sha256": "69fcec4eafd31443de99c8e3fed71b3aadf1e24d4012e72590e62a075d2d7d82",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive.csv"
+      "sha256": "1ad3f1e9807665bc7819c3da1e81b8019e74d01248e40747ab1e87b740ac8ea9",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_l1.parquet",
-      "sha256": "b57d47300cf3ef87653c2bfa4c29cf20329f8f73e36a305bb3916bbbb5c77561",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_l1.parquet"
+      "sha256": "407be80e8c2110dda771f408aa56397279584e720087094c2cdca3dfe495cbe1",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_l1.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_l1.csv",
-      "sha256": "d4c15db8248d7725702118c8f51cb6b9b345dd2b72fc7ae2994cf3da940ad237",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_l1.csv"
+      "sha256": "cc14c71ec5941fba44d0f0e057f1447655e474542015646ebff1aad4aee2161f",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_l1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_scaled_q.parquet",
-      "sha256": "bb9411eab8c6dfce94bdc9f61aef889e91dd89b08512aaf5b0b0c68f7557d900",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_scaled_q.parquet"
+      "sha256": "d05baaa8ed4141fbbe98a36b125c5ff58dc181cafe3c5fd749c7a22819bd34d2",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_scaled_q.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_scaled_q.csv",
-      "sha256": "7bb743164c903004714d6fa2158bcd85edacf17e95c96d51d2bab8c0931520d4",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_scaled_q.csv"
+      "sha256": "658a0f2edb0b894077ad25abca69ffca7fc59e93384fd5c3360776412d0f4399",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_scaled_q.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_scaled_q_l1.parquet",
-      "sha256": "aff886f57a9d1e06144dbc21d05ebaf671588bf9012f391003c449fde2767b29",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_scaled_q_l1.parquet"
+      "sha256": "5da842516f37d003fefca052bab2933149b9593b6fff8a18e3377290468e078a",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residuals_choquet_2_additive_scaled_q_l1.parquet"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_scaled_q_l1.csv",
-      "sha256": "52a9d75237971cc5cc9b8b3f77fe35e669246e8dbd76ee4f99d6ca3258bc6663",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_scaled_q_l1.csv"
+      "sha256": "38f9de2a6fdcb53c00177201ed0ff903d0a83643dd79de379b2273b27e432816",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_in_sample_residual_covariance_choquet_2_additive_scaled_q_l1.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_shapley_indices.csv",
-      "sha256": "88046cc8856a797d97a38b43880a264ff89b24960fcfa9c1ffc71733124ae926",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_shapley_indices.csv"
+      "sha256": "576aa581119eac79222e5d694d85f87dd859a65cce017907fc39a31f272a8119",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_shapley_indices.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_aapl_shapley_stability.csv",
-      "sha256": "8a5310bbff60b3d38dc27330e0e3a667a1582c1573775a3d4b723781dc0d671a",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_aapl_shapley_stability.csv"
+      "sha256": "2012935918254335f9c399fdd250d26e7db9ef1ee1e3da100675b466395ecb43",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_aapl_shapley_stability.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_aapl_stability_failures.csv",
       "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_aapl_stability_failures.csv"
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_aapl_stability_failures.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_aapl_hac_comparison.csv",
-      "sha256": "e3e35f78adcf56fdaa482c7542f63e9de97d08b833aca6a10aaf30ddd9e9b831",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_aapl_hac_comparison.csv"
+      "sha256": "390e01e3bd4779f9f4922f077b57358dc51321b076cb77ba2be555fee2e58065",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_aapl_hac_comparison.csv"
     },
     {
       "destination": "data\\results\\tables\\experiment_1_aapl_orientation.csv",
-      "sha256": "06e3f00648f62dd3b60d12be466f36a11e6e199f07be0a043bf9c2f71acc1fd3",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\tables\\experiment_1_aapl_orientation.csv"
+      "sha256": "3a5c3b4fe9cee4e398c84a9d364dc79bda28cf6acdd0537fe9d336796228abea",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\tables\\experiment_1_aapl_orientation.csv"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_factor_correlation.png",
       "sha256": "8c96bc8340ec29f1b4ac9ea025c226a97ae1f25968bed58998af3c1a8dc6a677",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_factor_correlation.png"
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_factor_correlation.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_mean_rmse.png",
-      "sha256": "0bea492ec366cbc2ebea8c064ac1b83186a133f0d31944bf03bb5c8f52008d40",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_mean_rmse.png"
+      "sha256": "07bd755f9594e367570c86f79a9c1d5909c4014efde532ca993039cbb33dcc41",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_mean_rmse.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_asset_rmse.png",
-      "sha256": "da699212ac18613bf67afa0c6c0f53e400b378d14fee29bc0babf4a7cbdd727f",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_asset_rmse.png"
+      "sha256": "202904c1edc168313e9fe262039cbe2ae05e12f76244fd9ed24e95c89947a9c3",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_asset_rmse.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_aapl_interactions_choquet_2_additive.png",
-      "sha256": "c9d59cb11dbe301d3b13d495e65b1d55abb08f6808e58a002eb511b0d5be3709",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_aapl_interactions_choquet_2_additive.png"
+      "sha256": "8549f186a69a7f985b6662219fcc6c557c9fa278cbb005b99cc2768e876d7b2e",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_aapl_interactions_choquet_2_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_aapl_interactions_choquet_2_additive_l1.png",
-      "sha256": "cd5dafa4e557a6928257e602b45cdfd7fb65f905f254a2921354bc9d32056ad6",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_aapl_interactions_choquet_2_additive_l1.png"
+      "sha256": "ae51b12dc48006b60b468897aa976df8286da2aefaabe0cd82e7590fd9f2b8b8",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_aapl_interactions_choquet_2_additive_l1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_aapl_interactions_choquet_2_additive_scaled_q.png",
       "sha256": "28537526ccd9d04b663a4a296fa131b4c07e0738fc89a59bb182128ba7ac42a4",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_aapl_interactions_choquet_2_additive_scaled_q.png"
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_aapl_interactions_choquet_2_additive_scaled_q.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_aapl_interactions_choquet_2_additive_scaled_q_l1.png",
-      "sha256": "82a98e631e2e61237af9d0aeeb19ecac9a635d77ad500b8981b92575871fe9f7",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_aapl_interactions_choquet_2_additive_scaled_q_l1.png"
+      "sha256": "b66ad313f4a8df84e0c1e80583fac20d49a1f5b6866848ebb6b2d8556bff75d1",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_aapl_interactions_choquet_2_additive_scaled_q_l1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_residual_covariance_ols.png",
-      "sha256": "d78dd05652c0fe78d9e74733975b79bb0ddb288c710122886825f0bc2cac3610",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_residual_covariance_ols.png"
+      "sha256": "db65244a7e757b5e6ce7238d0817a76e1475a4eaf65b389d1fe0602dd2af897b",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_residual_covariance_ols.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_residual_covariance_choquet_1_additive.png",
-      "sha256": "ac14a14d06275b0b35a1ba4aec7c54fc149fc9b270a75fe04d2bbb19743ded4c",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_residual_covariance_choquet_1_additive.png"
+      "sha256": "da057b887a38e341e29435cfee19de964f219fb696ed257dcd9db1dd6323ee88",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_residual_covariance_choquet_1_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_residual_covariance_choquet_1_additive_scaled_q.png",
-      "sha256": "4b73cfd0ef1453ccd43785ea6b84e64d825bb98a98ad179924519fc4a089f326",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_residual_covariance_choquet_1_additive_scaled_q.png"
+      "sha256": "ef07c03c404bb8cf0a90bbc49821a2a1a7a817d6070b5f924aaa8f66face4c0e",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_residual_covariance_choquet_1_additive_scaled_q.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_residual_covariance_choquet_2_additive.png",
-      "sha256": "c52da14739a7f41994016f598db487e68257997786e04302d2002a33d5ccafcd",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_residual_covariance_choquet_2_additive.png"
+      "sha256": "7eb106f17879516ac5ddb8c27c97483f22778358a37c230c25980fef89676a11",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_residual_covariance_choquet_2_additive.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_residual_covariance_choquet_2_additive_l1.png",
-      "sha256": "741a73946bd81304c01b635877a18e56cec073858c3ca8745206352682bfc460",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_residual_covariance_choquet_2_additive_l1.png"
+      "sha256": "28e06b997a5bbca68c101dcd1448136b2a431d3a4fe80e2b1a40a4718ce11aae",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_residual_covariance_choquet_2_additive_l1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_residual_covariance_choquet_2_additive_scaled_q.png",
-      "sha256": "04c14555aa9e2f1f3b2f3833c77ff48588ae83a78e4d1114ea6996f22a1cf1c0",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_residual_covariance_choquet_2_additive_scaled_q.png"
+      "sha256": "c501dd00aaa7b9cf95d1c3908bba96972c3bb097c24016307a05f5aee84bd9be",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_residual_covariance_choquet_2_additive_scaled_q.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_residual_covariance_choquet_2_additive_scaled_q_l1.png",
-      "sha256": "6d9f859af124cb2d7c9f895a332c52f675923a57b20a09d4ec93a36b8b21e3d7",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_residual_covariance_choquet_2_additive_scaled_q_l1.png"
+      "sha256": "ef50354b5cd7142437613dda6461f263e0c7508a90387e0e754b255336f525c7",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_residual_covariance_choquet_2_additive_scaled_q_l1.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_predictions_aapl.png",
-      "sha256": "a751568e5b63d895c46b6bf4dff5d81331b977ccb7181c63c6e635e8fdddd9c4",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_predictions_aapl.png"
+      "sha256": "978e5c21f8c9ee6d1f9465dfb8dee6fe3d8d7b12faf443ee525703b65d1e62f6",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_predictions_aapl.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_predictions_jpm.png",
-      "sha256": "1be8a7f2c28e1ee882a030f62f9c04e25caed38b701880a141c22459d2915813",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_predictions_jpm.png"
+      "sha256": "0c9a53b415228261a767c6c87048d556843682ef522a08b3571ac6f4914a8ad8",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_predictions_jpm.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_predictions_xom.png",
-      "sha256": "0183fdfa2b2952db34eb2c6169937b19ec2264e78409af161eb17f6b77fcd823",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_predictions_xom.png"
+      "sha256": "c3500698884fddaa01134dc8889cce0dc85f80ff73065c17dfa673896771d695",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_predictions_xom.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_average_shapley.png",
-      "sha256": "6176101b74c63d22ee1601003e336c1d138fc17e33213180d50d460de56fc7e1",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_average_shapley.png"
+      "sha256": "bc80b0dc3a1e45262d6b7b587bd43b62518a1e021aa30005dc56299970d4005b",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_average_shapley.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_shapley_by_asset.png",
-      "sha256": "0d7f7577dc72355eab4953c1622d5c6c7715d7ee5b9788ff35ebc601629ac5a0",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_shapley_by_asset.png"
+      "sha256": "c8ca143e5a65221edb773e62ac43dc3e0a1efe58ce67125027fac89075d599b6",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_shapley_by_asset.png"
     },
     {
       "destination": "data\\results\\figures\\experiment_1_aapl_shapley_stability.png",
-      "sha256": "ab857891bb3921209f6c1ea52d9c359729ae4d5935aba0c5b6a13a42b25305e3",
-      "source": "data\\results\\runs\\factor_models\\20260817T022125Z_0ed5a6b_full_32460\\figures\\experiment_1_aapl_shapley_stability.png"
+      "sha256": "bf9c5861e9253a13a99773f0b7709802f43bf7ae40d0aea25aa0c15c951f55ae",
+      "source": "data\\results\\runs\\factor_models\\20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664\\figures\\experiment_1_aapl_shapley_stability.png"
     }
   ],
   "experiment_id": "factor_models",
-  "published_at_utc": "2026-08-17T03:41:52.321751+00:00",
-  "run_id": "20260817T022125Z_0ed5a6b_full_32460",
-  "run_manifest_sha256": "9744843b57ef521a49e6380a48005afd4a43bdf26ebf9c09e17cd0a11a74ec3e"
+  "published_at_utc": "2026-08-22T01:29:38.723403+00:00",
+  "run_id": "20260822T003917Z_5f485c5_full_rolling_5y_no_clipping_11664",
+  "run_manifest_sha256": "bbb870810c171d139133341357ec4b86ee69a134d8b766958ff111ecf60c3fa1"
 }

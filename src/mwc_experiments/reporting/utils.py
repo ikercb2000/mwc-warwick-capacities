@@ -61,6 +61,71 @@ def result_artifact_path(
     return legacy / filename
 
 
+def successful_runs_by_mode(
+    experiment: str,
+    *,
+    paths: RepoPaths | None = None,
+) -> dict[str, str]:
+    """Return the newest successful immutable run for every execution mode."""
+    resolved = RepoPaths.discover() if paths is None else paths
+    selected: dict[str, tuple[str, str]] = {}
+    for manifest_path in resolved.runs.glob(f"{experiment}/*/manifest.json"):
+        payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+        if payload.get("status") != "success":
+            continue
+        run_id = str(payload["run_id"])
+        mode = str(payload["mode"])
+        started = str(payload.get("started_at_utc", ""))
+        if mode not in selected or started > selected[mode][0]:
+            selected[mode] = (started, run_id)
+    return {mode: item[1] for mode, item in selected.items()}
+
+
+def load_result_comparison(
+    filename: str,
+    *,
+    experiment: str | None = None,
+    modes: tuple[str, ...] = (
+        "full_fixed_clipping",
+        "full_fixed_no_clipping",
+        "full_rolling_5y_clipping",
+        "full_rolling_5y_no_clipping",
+    ),
+    paths: RepoPaths | None = None,
+    **read_options: Any,
+) -> pd.DataFrame:
+    """Load comparable modes without ever pooling them as one test sample."""
+    resolved = RepoPaths.discover() if paths is None else paths
+    experiment_id = experiment or infer_artifact_experiment(filename)
+    if experiment_id is None:
+        raise ValueError("Could not infer the experiment for comparison.")
+    available = successful_runs_by_mode(experiment_id, paths=resolved)
+    frames: list[pd.DataFrame] = []
+    for mode in modes:
+        run_id = available.get(mode)
+        if run_id is None:
+            continue
+        frame = load_result_table(
+            filename,
+            paths=resolved,
+            experiment=experiment_id,
+            run_id=run_id,
+            **read_options,
+        ).reset_index()
+        if "evaluation_structure" not in frame:
+            frame["evaluation_structure"] = (
+                "rolling_5y" if "rolling_5y" in mode else "fixed"
+            )
+        frame["clipping"] = not mode.endswith("no_clipping")
+        frame["run_mode"] = mode
+        frame["run_id"] = run_id
+        frames.append(frame)
+    if not frames:
+        raise FileNotFoundError(
+            f"No successful comparison runs are available for {experiment_id}."
+        )
+    return pd.concat(frames, ignore_index=True, sort=False)
+
 def load_result_table(
     filename: str,
     *,

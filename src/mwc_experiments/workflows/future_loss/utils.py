@@ -27,7 +27,7 @@ from mwc_experiments.modeling.selection import (
 )
 from mwc_experiments.modeling.splits import (
     aggregate_walk_forward_split,
-    rolling_walk_forward_splits,
+    evaluation_splits,
     walk_forward_fold_summary,
 )
 from mwc_experiments.settings import HORIZONS, MAIN_RISK_FEATURES, RANDOM_STATE
@@ -50,6 +50,7 @@ def run_future_loss_experiment(
     parameter_grids: Mapping[str, Mapping[str, list[Any]]] | None = None,
     random_state: int = RANDOM_STATE,
     clipping: bool = False,
+    evaluation_structure: str = "rolling_5y",
     oos_start: str = "2020-01-01",
     training_window_years: int = 5,
     validation_window_months: int = 12,
@@ -58,21 +59,20 @@ def run_future_loss_experiment(
     aggregation_base_models: tuple[str, ...] = (),
     verbose: bool = True,
 ) -> FutureLossExperimentResult:
-    """Run rolling walk-forward loss forecasts and concatenate every OOS block."""
+    """Run fixed or rolling loss forecasts and concatenate the permitted OOS blocks."""
     results: dict[int, HorizonRegressionResult] = {}
 
     for horizon in horizons:
         target = f"future_loss_h{horizon}"
-        folds = list(
-            rolling_walk_forward_splits(
-                dataset[list(features)],
-                dataset[target].astype(float),
-                oos_start=oos_start,
-                training_window_years=training_window_years,
-                validation_window_months=validation_window_months,
-                oos_block_years=oos_block_years,
-                horizon=horizon,
-            )
+        folds = evaluation_splits(
+            dataset[list(features)],
+            dataset[target].astype(float),
+            evaluation_structure=evaluation_structure,
+            oos_start=oos_start,
+            training_window_years=training_window_years,
+            validation_window_months=validation_window_months,
+            oos_block_years=oos_block_years,
+            horizon=horizon,
         )
         candidates = regression_candidates(
             len(features),
@@ -191,6 +191,7 @@ def run_future_loss_experiment(
                     fold_metric_rows.append(
                         {
                             "fold": fold.fold,
+                            "evaluation_structure": evaluation_structure,
                             "model": name,
                             **regression_metrics(
                                 split.y_test,
@@ -210,6 +211,7 @@ def run_future_loss_experiment(
                     parameter_rows.append(
                         {
                             "fold": fold.fold,
+                            "evaluation_structure": evaluation_structure,
                             "model": name,
                             "OOS start": fold.oos_start,
                             "OOS end": fold.oos_end,
@@ -254,6 +256,7 @@ def run_future_loss_experiment(
                     failure_rows.append(
                         {
                             "fold": fold.fold,
+                            "evaluation_structure": evaluation_structure,
                             "model": name,
                             "message": f"{type(error).__name__}: {error}",
                         }
@@ -321,6 +324,7 @@ def run_future_loss_experiment(
                         fold_metric_rows.append(
                             {
                                 "fold": fold.fold,
+                                "evaluation_structure": evaluation_structure,
                                 "model": aggregate_name,
                                 **regression_metrics(
                                     split.y_test,
@@ -348,6 +352,7 @@ def run_future_loss_experiment(
                         parameter_rows.append(
                             {
                                 "fold": fold.fold,
+                                "evaluation_structure": evaluation_structure,
                                 "model": aggregate_name,
                                 "OOS start": fold.oos_start,
                                 "OOS end": fold.oos_end,
@@ -378,6 +383,7 @@ def run_future_loss_experiment(
                         failure_rows.append(
                             {
                                 "fold": fold.fold,
+                                "evaluation_structure": evaluation_structure,
                                 "model": aggregate_name,
                                 "message": f"{type(error).__name__}: {error}",
                             }
@@ -412,6 +418,7 @@ def run_future_loss_experiment(
             metric_rows.append(
                 {
                     "model": name,
+                    "evaluation_structure": evaluation_structure,
                     **regression_metrics(
                         split.y_test.loc[prediction.index],
                         prediction,
@@ -440,9 +447,12 @@ def run_future_loss_experiment(
         }
         results[horizon] = HorizonRegressionResult(
             horizon=horizon,
+            evaluation_structure=evaluation_structure,
             split=split,
             final_split=folds[-1].split,
-            fold_summary=walk_forward_fold_summary(folds),
+            fold_summary=walk_forward_fold_summary(
+                folds, evaluation_structure=evaluation_structure
+            ),
             fold_metrics=fold_metrics,
             metrics=pd.DataFrame(metric_rows).set_index("model").sort_values(
                 "RMSE"
@@ -478,6 +488,7 @@ def run_future_loss_experiment(
 
     return FutureLossExperimentResult(
         portfolio=portfolio,
+        evaluation_structure=evaluation_structure,
         features=features,
         horizons=results,
     )
